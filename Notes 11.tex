@@ -8,6 +8,7 @@
 \usepackage{tikz-cd}
 \usepackage{spectralsequences}
 \usepackage{adjustbox}
+\usepackage{tcolorbox}
 \usepackage{xfrac}
 \usepackage{graphicx}
 \usepackage[parfill]{parskip}
@@ -16,9 +17,12 @@
 \newtheorem{problem}{problem}[section]
 \newtheorem{proposition}{Proposition}[section]
 \newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 \newtheorem{corollary}{Corollary}[theorem]
+\theoremstyle{definition}
 \newtheorem{example}{Example}[section]
+
 \title{MATH 603 Notes}
 \author{David Zhu}
 
@@ -27,27 +31,51 @@
 
 \section{More on Commutative Rings}
 Let $a,b\in R$. Then $a|b \iff \exists a'\in R, b=aa'$;
-A semi ring on $R,\leq$ defined by $a\leq b \iff a|b$. Note that $\leq $ is usally not an ordering: let $b\in R^{\times}$, then $a\leq ab\leq a$, but $a\neq ab$.
+A semi ring on $(R,\leq)$ defined by $a\leq b \iff a|b$. Note that $\leq $ is usally not a partial order: let $b\in R^{\times}$, then $a\leq ab\leq a$, but $a\neq ab$.
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
 \begin{proposition}
-$a\equiv b$ iff $a\leq b$ and $b\leq a$ iff $(a)=(b)$ is an equivalence relaation.
+    $a\sim b$ iff $a\leq b$ and $b\leq a$ iff $(a)=(b)$ is an equivalence relation.
 \end{proposition}
+\end{tcolorbox}
+
 For $R$ a domain, the induced relation gives a well-defined definition of greatest common divisor.
-\begin{definition}
-    The gcd of $a,b$, denoted by $gcd(a,b)$, if exists, is any $d\in R$ such that $d|a,b$ and for any other $d'$ satisfying the condition, $d'|d$.
-\end{definition}
-\begin{definition}
-    The lcm of $a,b$, denoted by $lcm(a,b)$, if exists, is any  $d\in R$ such that $a,b|d$ and for any other $d'$ satisfying the condition, $d'|d$.
-\end{definition}
-Note that either may not exist, for example take $R=\mathbb Z[\sqrt{6}]$, then $gcd(2,\sqrt{6})$ does not exist. 
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+    \begin{definition}
+        The \underline{\textbf{gcd}} of $a,b$, denoted by $gcd(a,b)$, if exists, is any $d\in R$ such that $d|a,b$ and for any other $d'$ satisfying the condition, $d'|d$.
+    \end{definition}    
+\end{tcolorbox}
 
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+    The \underline{\textbf{lcm}} of $a,b$, denoted by $lcm(a,b)$, if exists, is any  $d\in R$ such that $a,b|d$ and for any other $d'$ satisfying the condition, $d|d'$.
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
 \begin{proposition}
-    If $gcd(a,b)$ exists, then $gcd(a,b)=sup \{ d:d\leq a,b \}$. 
+    If $gcd(a,b)$ exists, then $gcd(a,b)=sup \{ d:d\leq a,b \}$.  If $lcm(a,b)$ exists, then $gcd(a,b)=\textrm{inf} \{ d :a,b\leq d \}$. 
 \end{proposition}
-The dual notion for lcm also holds. Note that maximal/minimal elements always exists by Zorn's lemma. However, the unique supremum/infimum may not exist.  
+\end{tcolorbox}
 
+Note that maximal/minimal elements always exists by Zorn's lemma. However, the unique supremum/ \ infimum may not exist. We have our following example:
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+Take $R=[\sqrt{-3}]$. Let $a=4=(1+\sqrt{-3})(1-\sqrt{-3})$ and $b=2(1+\sqrt{-3})$. Then, $(1+\sqrt{-3})$ and $2$ are both maximal divisors, but they are not comparable since the only divisors of $2$ are $\{ \pm 1, \pm 2 \}$ by norm reasons, and none divides $1+\sqrt{-3}$.
+\end{example}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
 \begin{proposition}
     Let $a,b\in R$ be given. Then the following hold: $gcd(a,b)=d$ exists iff $(d)$ is the unique maximal prinipal ideal such that $(a)+(b)\subset (d)$. Dually, $lcm(a,b)=c$ exists iff $(c)=(a)\cap (b)$. If both holds, then $a\cdot b=lcm(a,b)\cdot gcd(a,b)$
 \end{proposition}
+\end{tcolorbox}
+
 \begin{proof}
     Easy exercise for gcd. Note that the inclusion can be proper, for example, take $R=k[x,y]$ and ideals $(x),(y)$. Then $(1)$ is the gcd, but the containment is proper.
 \end{proof}
