@@ -278,17 +278,161 @@ To prove the theorem, we need the following lemma on contents:
 \end{proof}
 Note that proof goes similarly for quotient fields. 
 
-
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}
     Let $R$ be a UFD. For $f(t)\in R[t]$, the following are equivalent: 
     \begin{enumerate}
         \item $f(t)$ is prime
         \item  $f(t)$ is irreducible
-        \item  If $f=a_0\in R$ and $a_0$ is prime or $C(f)=1$ and $f$ is irreducible. 
+        \item  If $f$ in the polynomial ring over the quotient field is irreducible or $C(f)=1$ and $f$ is irreducible. 
     \end{enumerate} 
 \end{theorem}
 \end{tcolorbox}
+\begin{proof}
+    $1 implies 3$ trivial. By contradiction, let $f=gh$ in $K[t]$ $gh$ irreducible. Then, $C(f)=C(g)C(h)$. Let $f=x_ff_0$ and $g=x_gg_0$ such that  $1=C(f_0)C(g_0)$. Let $x_fx_g=\frac{a}{b}$ in simplest terms such that $gcd(a,b)=1$ (we can do this in UFD). We then get $bf=ag_0h_0$. We get that $f$ irreducible over $R[t]$.
+\end{proof}
+ 
 
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+$R[t_i]_{i\in I}$ is UFD if $R$ is UFD.
+\end{proposition}
+\end{tcolorbox}
+
+\section{Noetherian Rings}
+
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A commutative ring $R$ is called a \underline{\textbf{Noetherian}} ring if every chain of ideals in $R$ is stationary.
+\end{definition}
+\end{tcolorbox}
+
+
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition} The following are equivalent:
+    \begin{enumerate}
+        \item Every chain of ideals is stationary.
+        \item All ideals are finitely generated.
+        \item $Spec(R)\subseteq Id^f(R)$.    
+    \end{enumerate}
+    Terminology: the condition $1$ is called the ACC (Ascending Chain Condition).
+\end{proposition}
+\end{tcolorbox}
+
+Remark: if $R$ is not commutative, then there exists left/right Noetherian, and it is possible that a ring is left Noetherian but not right Noetherian.
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+(Basic Properties) Let $R$ be a Noetherian ring. The the following hold: 
+\begin{enumerate}
+    \item If $\mathfrak{a}$ is an ideal of $R$, then $R/\mathfrak{a}$ is Noetherian if $R$ is Noetherian.
+    \item If $\Sigma\subset R$ is a multiplicative system, then $R_{\Sigma}$ is Noetherian. 
+    \item The nilradical of an ideals $\mathfrak{a}$, $nil(\mathfrak{a})$, has a power contained in $\mathfrak{a}$.
+    \item  Let $Spec_{min}(\mathfrak{a}):=\{ p\in Spec(R): \mathfrak{a}\subset p, \ p \textrm{minimal}  \}$ is finite.
+\end{enumerate}
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    To $1$. $Spec(R_{\Sigma})$ corresponds bijectively to primes in $Spec(R)$ with empty intersection with $\Sigma$. We also have $p$ finite generated implies $p^e$ f.g.
+
+    To $2$. $nil(\mathfrak{a})=(r_1,.,,,r_n)$ f.g. For every $i$, we have $r_i^{n_i}\in \mathfrak{a}$ for some $n_i$. Take $n=\sum_{n_i}$ and $nil(\mathfrak{a})^{n}\subset \mathfrak{a}$. 
+    
+    To $3$. The first method to prove this is by contradiction: let $A=\{ \mathfrak{a}: Spec_{min}(\mathfrak{a}) \textrm{infinite} \}$. Then $A$ has maximal elements. Let $\mathfrak{a_0}$ be maximal. Note that $\mathfrak{a_0}$ cannot be prime for it is over itself. Suppose it is not prime, then there exists $xy\in \mathfrak{a}$ WLOG $x\not \in \mathfrak{a}$. Then, $\mathfrak{a}+(x)$ contradicts maximality.
+
+    The second method is using the fact that $Spec(R)$ is a Noetherian topological space, which has finitely many irreducible components.
+
+\end{proof}
+The third method is through primary decomposition. An ideal $I$ is irreducible if $I=a_1\cap a_2$ then, $I=a_1$ or $I=a_2$. For principal ideals, this is equivalent to the generator being irreducible. 
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+If $R$ is Noetherian, then every ideal $I\in R$ is in the finite intersection of irreducible ideals in $R$. 
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    By contradction, let $X$ be the set of ideals that does not satisfy the proposition. Then, $X$ is non-empty, and by Noetherian assumption, there is a maximal element $\mathfrak{a_0}$. Then, $\mathfrak{a_0}$ is not irreducible, for it would be the intersection of itself. Therefore, there exists $I_0,I_1$ such that $a_0=I_0\cap I_1$, where $a_0$ is properly contained in both. By maximality, $I_0,I_1$ are both finite intersection of irreducibles, and we can decompose $a_0$ based on such, a contradction.
+\end{proof}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $R$ be a commutative ring. Then an ideal $I\subset R$ is primary if for all $x,y\in R$ we have: if $xy\in I$, $x\not \in I$, then ther exists $n\in \mathbb{N}$ such that $y^n\in I$.
+\end{definition}
+\end{tcolorbox}
+In general, a power of prime ideal is not primary. If $I=\mathfrak{m}^n$ for some maximal ideal $\mathfrak{m}$, then $I$ is in fact primary. 
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Let $R$ be Noetherian, and $\mathfrak{a}\in Id(R)$ be a irreducible ideal. Then, $\mathfrak{a}$ is primary, and $nil(\mathfrak{a})$ is prime. 
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    Exercise
+\end{proof}
+These two facts imply $Spec_{min}$ must be finite. In general, quotient of $UFD$ and $PID$ are not $UFD$ or $PID$. but this holds for Noetherian rings. 
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+Let $R$ be a Noetherian ring. Then the following hold:
+\begin{enumerate}
+    \item (Hilbert Basis Theorem): $R[t_1,...,t_n]$ is Noetherian. 
+    \item Every finitely generated $R$-algebra $S$ is Noetherian. 
+\end{enumerate}
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+    Note that $1\implies 2$ since every finitely generated algebra is a quotient of polynomial rings over finitely many variable. To prove $1$, by induction it suffices to show for $i=1$. Let $\mathfrak{a}\in R[t]$ be an ideal. Claim: $\mathfrak{a}$ is f.g. For every $n\geq 0$, let $\{\mathfrak{a}_n\}$ be the set of leading coefficients of polynomials of degree $n$ in $\mathfrak{a}$. We note that $(\mathfrak{a_n})$ is a chain of ideals in $R$. Thus, there exists an index $m$ at which the chain stablizes. For $r\leq m$, let $\mathfrak{a_r}=(a_{r_1},...,a_{r_n})$.  Do induction on $m$. Idea is to deduct something to drop the degree by $1$. 
+ 
+\end{proof}
+
+\section{Valuation Rings}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+    Let $R$ be a domain. Then the following are equivalent:
+    \begin{enumerate}
+        \item Every ideal in $R$ is comparable, i.e $id(R)$ is a chain
+        \item For every $x\in \textrm{Quot}(R)$, either $x\in R$ or $x^{-1}$
+    \end{enumerate}
+\end{proposition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A ring $R$ satisfy one of the conditions above is called a (Krull) \underline{\textbf{Valutation Ring}}.
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+$\mathbb{Z}_{(p)}$ is a valuation ring. 
+\end{example}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+(Properties) Let $R$ be a valuation ring, and $K$ be its quotient field. The the following hold:
+\begin{enumerate}
+    \item $R$ is local, and $m=\{x\in R: x^{-1}\not \in R\}$.
+    \item $\Gamma_R:=K^{\times}/R^{\times}$ is totally ordered by $xR^{\times}\leq yR^{\times}$ iff $yR\subset xR$.
+    \item The natural map $v: K\to \Gamma_R\cup \{\infty\}$, $v(0)=\infty$ satisfies $v(xy)=v(x)+v(y)$ and $v(x+y)\geq min(v(x),v(y))$
+\end{enumerate}
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    Exercise. 
+\end{proof}
 
 \end{document}
