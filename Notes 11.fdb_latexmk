@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1710653577.77221 "c:/Users/David/Downloads/Math-Stuff/Math-Stuff/Notes 11.tex" "Notes 11.pdf" "Notes 11" 1710653579.08048 0
+["pdflatex"] 1710733949.84588 "c:/Users/David/Downloads/Math-Stuff/Math-Stuff/Notes 11.tex" "Notes 11.pdf" "Notes 11" 1710733951.28237 0
   "C:/Users/David/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1710120574 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/David/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1710120061 24233144 933dbc06b183cad27cf7d97ddbdea483 ""
   "C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -24,7 +24,6 @@
   "C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy6.tfm" 1136765053 1116 933a60c408fc0a863a92debe84b2d294 ""
   "C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy8.tfm" 1136765053 1120 8b7d695260f3cff42e636090a8002094 ""
   "C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmti10.tfm" 1136765053 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
-  "C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmti7.tfm" 1136765053 1492 86331993fe614793f5e7e755835c31c5 ""
   "C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1247596666 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
   "C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
@@ -187,9 +186,9 @@
   "C:/Users/David/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/David/AppData/Local/Programs/MiKTeX/tex/latex/xfrac/xfrac.sty" 1708099996 14847 00e49ca86bcb9e60825f609034895f26 ""
   "C:/Users/David/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "Notes 11.aux" 1710653578 512 db407530a472656f8d5edb9da138a0a6 "pdflatex"
-  "Notes 11.tex" 1710653576 9632 d5b9563a5c63c6efd53420f64ccad8e1 ""
-  "c:/Users/David/Downloads/Math-Stuff/Math-Stuff/Notes 11.tex" 1710653576 9632 d5b9563a5c63c6efd53420f64ccad8e1 ""
+  "Notes 11.aux" 1710733951 512 5d49456adb121c3a1d500989588f05ac "pdflatex"
+  "Notes 11.tex" 1710733949 15284 f38477c67094d0a781b9a018ef941768 ""
+  "c:/Users/David/Downloads/Math-Stuff/Math-Stuff/Notes 11.tex" 1710733949 15284 f38477c67094d0a781b9a018ef941768 ""
   (generated)
   "Notes 11.aux"
   "Notes 11.log"
