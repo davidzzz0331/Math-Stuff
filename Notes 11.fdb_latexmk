@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1710777125 "/Users/davidzhu/Documents/GitHub/Math-Stuff/Notes 11.tex" "Notes 11.pdf" "Notes 11" 1710777126 0
-  "/Users/davidzhu/Documents/GitHub/Math-Stuff/Notes 11.tex" 1710777125 22235 06d1dae8fba7b63a1a9bf70521903780 ""
+["pdflatex"] 1710949567 "/Users/davidzhu/Documents/GitHub/Math-Stuff/Notes 11.tex" "Notes 11.pdf" "Notes 11" 1710949568 0
+  "/Users/davidzhu/Documents/GitHub/Math-Stuff/Notes 11.tex" 1710949567 29294 beb47f5c721b45fcfd3dceb1a31c9ab6 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -197,8 +197,8 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1710130202 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1710130178 7883461 5901c145d91f673e1f689bc83c44d735 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "Notes 11.aux" 1710777126 719 44483182370f358e694e75076db01577 "pdflatex"
-  "Notes 11.tex" 1710777125 22235 06d1dae8fba7b63a1a9bf70521903780 ""
+  "Notes 11.aux" 1710949568 818 b36a8e9ac497a4b718e31adcf1bc5d92 "pdflatex"
+  "Notes 11.tex" 1710949567 29294 beb47f5c721b45fcfd3dceb1a31c9ab6 ""
   (generated)
   "Notes 11.aux"
   "Notes 11.log"
