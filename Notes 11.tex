@@ -401,7 +401,7 @@ Let $R$ be a Noetherian ring. Then the following hold:
     Let $R$ be a domain. Then the following are equivalent:
     \begin{enumerate}
         \item Every ideal in $R$ is comparable, i.e $id(R)$ is a chain
-        \item For every $x\in \textrm{Quot}(R)$, either $x\in R$ or $x^{-1}$
+        \item For every $x\in \textrm{Quot}(R)$, if $x\not \in R$ then $x^{-1}\in R$. 
     \end{enumerate}
 \end{proposition}
 \end{tcolorbox}
@@ -425,14 +425,127 @@ $\mathbb{Z}_{(p)}$ is a valuation ring.
 \begin{proposition}
 (Properties) Let $R$ be a valuation ring, and $K$ be its quotient field. The the following hold:
 \begin{enumerate}
-    \item $R$ is local, and $m=\{x\in R: x^{-1}\not \in R\}$.
-    \item $\Gamma_R:=K^{\times}/R^{\times}$ is totally ordered by $xR^{\times}\leq yR^{\times}$ iff $yR\subset xR$.
-    \item The natural map $v: K\to \Gamma_R\cup \{\infty\}$, $v(0)=\infty$ satisfies $v(xy)=v(x)+v(y)$ and $v(x+y)\geq min(v(x),v(y))$
+    \item $R$ is local, and $m=\{x\in R: x^{-1}\not \in R\}$. The maximal ideal is called \underline{\textbf{valuation ideal}} of $R$.
+    \item $\Gamma_R:=K^{\times}/R^{\times}$ is totally ordered by $xR^{\times}\leq yR^{\times}$ iff $yR\subset xR$. The group is called the \underline{\textbf{value group}} of $R$.
+    \item The natural map $v_R: K\to \Gamma_R\cup \{\infty\}$, $v(0)=\infty$ satisfies $v(xy)=v(x)+v(y)$ and $v(x+y)\geq min(v(x),v(y))$. Such map is called the (canonical )\underline{\textbf{valuation}} of $R$.
 \end{enumerate}
 \end{proposition}
 \end{tcolorbox}
 \begin{proof}
-    Exercise. 
+    Exercise.
 \end{proof}
+Note $R$ is the set $\{ x\in K:v_R(x)\geq 0 \}$; $\mathfrak{m}$ is the set $\{ x\in K:v_R(x)> 0 \}$;
+
+Let $R$ be a domain, and $K$ be a field, $(\Gamma,+,\leq )$ be a totally orderedd abelian group. Let $v: K\to \Gamma\cup \{\infty\}$ be a map satisfying 
+\begin{enumerate}
+    \item $v(x)=\infty$ iff $x=0$
+    \item $v(xy)=v(x)+v(y)$
+    \item $v(x+y)\geq min(v(x),v(y))$
+\end{enumerate}
+Then, the map $v$ is called a valuation of $K$.
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+$R_v=\{ x\in K:v(x)\geq 0 \}$ is a valuation ring. The map $\tau: \Gamma_{R_v}\to \Gamma$, given by $xR_v^{\times}\mapsto v(x)$ is an order preserving embedding. Moreover, $v=\tau \circ v_{R_v}: K\to \Gamma\cup \{\infty\}$.
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    Exercise.
+\end{proof}
+
+Given a valuation ring, $R\subset K$, every embedding of totally ordered groups $\Gamma_R\to \Gamma$ gives rise to a valuation.
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+\begin{enumerate}
+    \item Two valuations $v,w$ on $K$ are equivalent if $R_v=R_w$. If $v: K\to \Gamma_v\cup \{\infty\}$ and $w: K\to \Gamma_w\cup \{\infty\}$, with embeddings $\tau_v: \Gamma_{R_v}\to \Gamma_v$ $\tau_w: \Gamma_{R_w}\to \Gamma_w$. There exists an order preserving commutative diagram
+   \[
+   \begin{tikzcd}
+   \Gamma_{R_v}\arrow[r]&\tau_v(\Gamma_{R_v})\arrow[d,"\tau_{vw}"]\arrow[r]&\Gamma_v\\
+   \Gamma_{R_w}\arrow[r]&\tau_w(\Gamma_{R_w})\arrow[r]&\Gamma_w
+   \end{tikzcd}\]
+   \item  Two valuations $v,w$ on $K$ are equivalent iff $\mathfrak{m}_v=\mathfrak{m}_w$
+\end{enumerate}
+\end{definition}
+\end{tcolorbox}
+
+A valuation ring $R$ is called \underline{\textbf{discrete}}, if $v_R(K)\cong \mathbb{Z}$ as ordered abelian groups. If $\pi\in R$ has $v_R(\pi)$ minimal since $\mathbb{Z}$ has minimal elements, then $\pi$ is called a uniformizing parameter.
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+$\mathbb{Z}_{(p)}\subset \mathbb{Q}$ is a discrete valuation ring. The uniformation parameter is $p\epsilon$ with $\epsilon$ a unit. 
+\end{example}
+\end{tcolorbox}
+A valuation ring $R$ is called rank $1$ if $v_r(K)$ satisfies the Archimedian axiom, i.e for $\forall \gamma_1,\gamma_2\in \Gamma_R, \gamma_1>0$, $\exists n\in \mathbb{N}$ such that $\gamma_2\leq n\cdot \gamma_2$. A totally ordered group $\Gamma$ is Archimedian if there is an ordered preserving embedding into the reals. In relation to absolute values,
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+An absolute value of a field $K$ is any map $|-|: K\to \mathbb{R}_{\geq 0}^+$ iff it satisfies the norm axioms. An absolute value is called \underline{\textbf{non-Archimedian}} or \underline{\textbf{ultra-metric}} if $|x+y|\leq max\{|x|,|y|\}$.
+\end{definition}
+\end{tcolorbox}
+
+Let $|-|: K\to R$ be a non-Archimedian absolute value. Then $v_{|-|}:=- log\circ |-|:K\to \mathbb{R}\cup \{\infty\} $ is rank $1$ valuation. Conversely, let $v: K\to R\cup \{\infty\}$ be a rank one valuation, then $|-|_{v}:=e^{-v}: K\to \mathbb{R}_{\geq 0}$ is a non-Archimedian absolute value. 
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+    The following facts about possible valuations
+\begin{enumerate}
+    \item If $K|F_p$ algebraic, then no non-trivial valuations.
+    \item If $v$ is a valuation of $F(t)$ such $v$ is trivial on $F$, then $R_v=F[t]_{p(t)}$, where $p(t)$ irreducible or $R_v=F[\frac{1}{t}]_{(\frac{1}{t})}$. thus all valuations are discrete. 
+    \item If $v$ is a non-trivial valuation on $\mathbb{Q}$, then $R_v=\mathbb{Z}_{(p)}$ for some $p$ prime. Morever, all non-archimedian absolute values of $\mathbb{Q}$ corresponds to the valuation above. (Ostrowskis Theorem).
+\end{enumerate}
+\end{theorem}
+\end{tcolorbox}
+In general, the space of all valuations on $K$, denoted $Val(K)$, is called the Zariski-Riemann space. Moreover, $Val(K)$ carries a topology called a patch topology, or constrcutible topology, that makes the space compact totally disconnected. The space is usually very complicated.
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Chevalley's Theorem for Eexistence of Valuations) Let $A$ be a domain, $p\in Spec(a)$ a prime ideal, $\kappa(p)Quot(A/p)\subset \Omega$, with $\Omega$ algebraically closed. Then, there exists a valuation ring $R$ of $K=Quot(A)$ such that $\mathfrak{m}_R\cap A=p$, and $R/\mathfrak{m}\hookrightarrow \Omega$.
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+    Set up for Zorn's lemma: $H=\{ (B,q): A\subset B, q\in Spec(B), q\cap A=p \}$ such that the embedding into the closure $\Omega$ commutes. Prove that $H$ has maximal elements $R$. If $R$ is not local, then $R_{\mathfrak{m}}$ is local and bigger than $R$. Thus, $R$ is local. let $x\in K$, we want to show $x\not \in R$ implies $x^{-1}\in R$. Claim, if $m[x]=R[x]$, then $m[x^{-1}]\subset R[x^{-1}]$. If so m then $R_x:=R[x^{-1}]$ is greater than $R$, a contradictin. By contradiction, let $m[x]=R[x]$, $m[x^{-1}]=R[x^{-1}]$. Then, there exists coefficients in $m$ such that polynomials are $1$.  
+\end{proof}
+
+\section{Artin Rings}
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A commutative ring $R$ is called \underline{\textbf{Artin}}, if every descending chain of ideals $(I_n)$ is stationary. 
+\end{definition}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Let $R$ be Artinian. Then the following hold:
+\begin{enumerate}
+    \item If $\Sigma$ is a multiplicative system, then $\Sigma^{-1}R$ is also Artinian.
+    \item If $I\subset R$ is an ideal. Then, $R/I$ is Artinian. 
+    \item $Spec(R)=Max(R)$ is finite. 
+\end{enumerate}
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    To $1$. pull back of ideals respects inclusion. To $2$. obvious. To $3$, let $p\in Spec(R)$. Then, $R/p$ is an integral Artinian ring. Then, $R/p$ must be a field. Thus, all primes are maximal. If $\mathfrak{m_1},...,\mathfrak{m}_n$, then $\mathfrak{m}_1\subset \mathfrak{m}_1\mathfrak{m}_2\subset ...\subset \mathfrak{m_1}\mathfrak{m}_2\mathfrak{m}_3....$
+\end{proof}
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+Let $R$ be an Artinian ring. Then the following hold:
+\begin{enumerate}
+    \item J(R)=N(R) is nilpotent.
+    \item (Structure Theorem) Let $Max(R)=\{m_1,...,m_r\}$. Then, $R\to R/(m_1)^n\times...\times R/m_r^n$. Hence, $R$ is a product of local Artinian rings. 
+\end{enumerate}
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+    Look at $J(R)\subset J^2(R)\subset ...$ becomes stationary. Thus, there exists $n$ minimal such that $I=J^n(R)$ such that $I^k=I$ for all $k$. Let $H$ be the set of ideals in $R$ sich that  
+\end{proof}
+
 
 \end{document}
