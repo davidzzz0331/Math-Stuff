@@ -130,7 +130,6 @@ Given a Serre fibration $p:E\to B$ with fiber $F$ and a choice $x_0\in F$, we ha
 \end{theorem}
 \end{tcolorbox}
 From this theorem, we can already calculated a not so obvious homotopy group
-
 \begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
 \begin{corollary}
 $\pi_3(S^2)\cong \mathbb{Z}$
@@ -145,6 +144,110 @@ $\pi_3(S^2)\cong \mathbb{Z}$
     \]
     where the triviality of the two groups on the end follows from Corollary $0.1.1$; $\pi_3(S^3)\cong \mathbb{Z}$ follows from Corollary $1.2.1$
 \end{proof}
+ 
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Fiber replacement)Every map $f: X\to Y$ can be turned into a fibration in the following sense: there exists a space $E_f$ in 
+\end{theorem}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Puppe Sequence) Given a fibration $F\to E\to B$, we have the following sequence where any two consecutive maps form a fibration
+\[
+\begin{tikzcd}
+    ...\arrow[r]&\Omega^2B\arrow[r]&\Omega F\arrow[r]&\Omega E\arrow[r]&\Omega B\arrow[r]&F\arrow[r]&E\arrow[r]&B
+\end{tikzcd}
+\]
+where continuing to the left is applying the loop space functor.
+\end{theorem}
+\end{tcolorbox}
+
+
+
+
+
+\section{Serre Spectral Sequence}
+For the following discussions, we will use the assumption that $B$ is simply connected and work over $R=\mathbb{Z}$ to simplify things. 
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Given a Serre fibration $F\hookrightarrow X\to B$, with fiber $F$ path-connected and base $B$ simply-connected. Then, the \underline{\textbf{Serre cohomological spectral sequence}} is given by the $E_2$ page
+\[
+E_2^{p,q}=H ^{p}(B; H ^{q}(F; \mathbb{Z})) \Longrightarrow H ^{p+q}(X; \mathbb{Z})
+\]
+\end{definition}
+\end{tcolorbox}
+If the space $B$ is not simply connected, then the coefficient group $H ^{q}(F)$ is actually the local system on $B$ given by the fibers. This reduces to the integral cohomology when the action of $\pi_1(B)$ on the fibers are trivial.
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Product Structure) The Serre cohomological spectral sequence has a bigraded $\mathbb{Z}$-algebra structure, given by the product 
+\[
+E_n^{p,q}\times E_n^{s,t}\to E_n ^{p+s,q+t}
+\]
+In particular, the product structure on $E_2$ page is given by the cup product, and the product on $E_n$ induces the one on $E_{n+1}$.
+\end{theorem}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+    The differentials $d_n: E_n ^{p,q}\to E_n ^{p+n, q-n+1}$ is a graded derivation with respect to the product structure. In other words, given $a\in E_n ^{p,q}$ and $b\in E_n^{s,t}$, we have 
+    \[
+        d_n(ab)=d_n(a)b+(-1)^{|p+q|}ad_n(b) 
+    \]
+\end{proposition}
+\end{tcolorbox}
+We are ready to compute $\pi_4(S^3)$.
+
+\section{Computations}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+    $\pi_4(S^3)\cong \mathbb{Z}/2$
+\end{theorem}
+\end{tcolorbox}
+We know $\mathbb{Z}=H^3(S^3;\mathbb{Z})=[S^3,K(\mathbb{Z},3)]=\pi_3(K(\mathbb{Z},3))$. In particular, we may choose a map $f: S^3\to K(\mathbb{Z},3)$ representing the generator of the group. Note that by construction, $f_*: \pi_3(S^3)\to \pi_3(K(\mathbb{Z},3))$ is an isomorphism. Let $F_f$ be the homotopy fiber of $f$,
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+$H_4(F_f)\cong \pi_4(S^3)$.
+\end{proposition}
+\end{tcolorbox}
+
+\begin{proof}
+We have the the long exact sequence 
+\[ ...\pi_{n+1}(K(\mathbb{Z},3))\to\pi_n(F_f)\to \pi_n(S^3)\to \pi_n(K(\mathbb{Z},3))\to...\]
+For $n=3$, we note $\pi_{4}(K(\mathbb{Z},3))$ is trivial, and $\pi_n(S^3)\to \pi_n(K(\mathbb{Z},3))$ is an isomorphism, so $\pi_3(F_f)$ must be trivial; similar argument shows $\pi_n(F_f)$ is trivial for $0<n\leq 3$ by corollary $1.1.1$ and the fact that $\pi_k(K(\mathbb{Z},3))\neq 0$ iff $k=3$. Thus, $F_f$ is $3$-connected. Note that the long exact sequence at degree $4$ also gives us the isomorphism $\pi_4(F_f)\cong \pi_4(S^3)$. Apply Hurewicz Theorem gives us the desired result.
+\end{proof}
+
+We may extend the fiber sequence one step to the left, which is the next step in the Pupper sequence $\Omega K(\mathbb{Z},3)=K(\mathbb{Z},2)\to F_f\to S^3$. Our goal now is to use the spectral sequence to calculate the cohomology of $F_f$ using the the cohomology of $S^3$ and $K(\mathbb{Z},2)$, which is realized as $\mathbb{CP}^{\infty}$. 
+
+Recall that the cohomology ring of $\mathbb{CP}^{\infty}$ is $\mathbb{Z}[v]$, with $|v|=2$. The $E_2$ page of the Serre spectral sequence looks like the following 
+
+
+\begin{center}
+    \begin{sseqdata}[ name= 4, xscale = 0.6,  classes = {draw = none } ]
+    \class["\mathbb{Z}1"](0,0)
+    \class["0"](0,1)
+    \class["\mathbb{Z}v_1"](0,2)
+    \class["0"](1,0)
+    \class["0"](1,1)
+    \class["0"](1,2)
+    \class["0"](2,0)
+    \class["0"](2,1)
+    \class["0"](2,2)
+    \class["\mathbb{Z}k"](3,0)
+    \class["0"](3,1)
+    \class["\mathbb{Z}v_1k"](3,2)
+    \end{sseqdata}[]
+    \end{center}
+
+
+
+
 
 
 \end{document}
