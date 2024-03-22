@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1711050363 "/Users/davidzhu/Documents/GitHub/Math-Stuff/How to compute Pi_4(S^3).tex" "How to compute Pi_4(S^3).pdf" "How to compute Pi_4(S^3)" 1711050364 0
-  "/Users/davidzhu/Documents/GitHub/Math-Stuff/How to compute Pi_4(S^3).tex" 1711050363 11794 000469a788459f83e229c6c575e3aa80 ""
+["pdflatex"] 1711072010 "/Users/davidzhu/Documents/GitHub/Math-Stuff/How to compute Pi_4(S^3).tex" "How to compute Pi_4(S^3).pdf" "How to compute Pi_4(S^3)" 1711072011 0
+  "/Users/davidzhu/Documents/GitHub/Math-Stuff/How to compute Pi_4(S^3).tex" 1711072010 11741 1ce5e4d0c2f3bf85299831ceb32fdc78 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -190,8 +190,8 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1710130202 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1710130178 7883461 5901c145d91f673e1f689bc83c44d735 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "How to compute Pi_4(S^3).aux" 1711050364 385 635aea1dd0ee5bc99bda00f764c28845 "pdflatex"
-  "How to compute Pi_4(S^3).tex" 1711050363 11794 000469a788459f83e229c6c575e3aa80 ""
+  "How to compute Pi_4(S^3).aux" 1711072011 385 635aea1dd0ee5bc99bda00f764c28845 "pdflatex"
+  "How to compute Pi_4(S^3).tex" 1711072010 11741 1ce5e4d0c2f3bf85299831ceb32fdc78 ""
   (generated)
   "How to compute Pi_4(S^3).aux"
   "How to compute Pi_4(S^3).log"
