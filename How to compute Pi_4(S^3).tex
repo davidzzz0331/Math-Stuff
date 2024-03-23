@@ -76,7 +76,7 @@ $\pi_n(S^k)=0$ for $k>n$.
 \end{corollary}
 \end{tcolorbox}
 \begin{proof}
-    If the image of the map $\phi: S^n\to S^k$ the image misses a point $s_0\in S^k$, then $S^k-\{s_0\}$ is homotopy equivalent to $\mathbb{R}^{k}$, and everything in $\mathbb{R}^{k}$ is contractible. Equip $S^n$ with the CW structure of $2$ $k$-cell in each dimension $k$. Then, every map $\phi: S^n\to S^k$ is homotopic to a cellular map that is not surjective.
+    If the image of the map $\phi: S^n\to S^k$ the image misses a point $s_0\in S^k$, then $S^k-\{s_0\}$ is homotopy equivalent to $\mathbb{R}^{k}$, and continuous map into $\mathbb{R}^{k}$ is nullhomotopic. Equip $S^n$ with the CW structure of $2$ $k$-cell in each dimension $k$. Then, every map $\phi: S^n\to S^k$ is homotopic to a cellular map that is not surjective.
 \end{proof}
 
 The next result is very important to our discussion. 
@@ -113,10 +113,11 @@ In other words, given a homotopy in $H_t: X\to B$ and a initial lift $\tilde{H}_
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
-A map $p:E\to B$ satisfying the HLP with respect to arbitrary $X$ is called a (Hurewicz)  \underline{\textbf{fibration}}. A map satisfying the HLP with respect to CW-complexes is called a \underline{\textbf{Serre fibration}}. Assume $B$ is path-connected and based at $b_0$, the \underline{\textbf{fiber}} of the fibration is $F=p^{-1}(b_0)\subseteq E$.
+A map $p:E\to B$ satisfying the HLP with respect to arbitrary $X$ is called a (Hurewicz)  \underline{\textbf{fibration}}. A map satisfying the HLP with respect to CW-complexes is called a \underline{\textbf{Serre fibration}}. Assume $B$ is path-connected and based at $b_0$, the \underline{\textbf{fiber}} of the fibration is $F=p^{-1}(b_0)\subseteq E$. We organize the data of a fibration into the following \underline{\textbf{Fiber Sequence}}
+\[F\to E\to B\]
 \end{definition}
 \end{tcolorbox}
-Note that covering maps are fibrations with discrete fibers. In practice, Serre fibrations is good enough to give us most of the desired properties tools. It is fun to know that pathological examples exists (even in CGWH) such that a Serre Fibration is not a fibration. 
+Note that covering maps are fibrations with discrete fibers. In practice, Serre fibrations is good enough to give us most of the desired properties/tools. It is fun to know that pathological examples exists (even in CGWH) where a Serre fibration is not a fibration. 
 
 From now on we assume the base-space is path-connected.
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
@@ -165,7 +166,20 @@ where continuing to the left is applying the loop space functor.
 \end{tcolorbox}
 
 
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+    (Universal Coefficient Theorem) Given a coefficient group $G$, We have a split short exact sequence
+    \[\begin{tikzcd}
+    0\arrow[r]& \textbf{Ext}^1_{\mathbb{Z}}(H_{n-1}(X;\mathbb{Z}),G) \arrow[r]&H^n(X;G)\arrow[r]&\textbf{Hom}(H_n(X;\mathbb{Z}),G)\arrow[r]&0
+    \end{tikzcd}\]
+\end{theorem}
+\end{tcolorbox}
 
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{corollary}
+$\textrm{rank}(H_n)=\textrm{rank}(H^n)$ and $\textrm{Torsion}(H_{n-1})=\textrm{Torsion}(H^n)$
+\end{corollary}
+\end{tcolorbox}
 
 
 \section{Serre Spectral Sequence}
@@ -206,14 +220,14 @@ We are ready to compute $\pi_4(S^3)$.
 
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}
-    $\pi_4(S^3)\cong \mathbb{Z}/2$
+    $\pi_4(S^3)\cong \mathbb{Z}/2$.
 \end{theorem}
 \end{tcolorbox}
 We know $\mathbb{Z}=H^3(S^3;\mathbb{Z})=[S^3,K(\mathbb{Z},3)]=\pi_3(K(\mathbb{Z},3))$. In particular, we may choose a map $f: S^3\to K(\mathbb{Z},3)$ representing the generator of the group. Note that by construction, $f_*: \pi_3(S^3)\to \pi_3(K(\mathbb{Z},3))$ is an isomorphism. Let $F_f$ be the homotopy fiber of $f$,
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
 \begin{proposition}
-$H_4(F_f)\cong \pi_4(S^3)$.
+$H_4(F_f)\cong \pi_4(S^3)$; $H_3(F)=H_2(F)=0$.
 \end{proposition}
 \end{tcolorbox}
 
@@ -223,31 +237,48 @@ We have the the long exact sequence
 For $n=3$, we note $\pi_{4}(K(\mathbb{Z},3))$ is trivial, and $\pi_n(S^3)\to \pi_n(K(\mathbb{Z},3))$ is an isomorphism, so $\pi_3(F_f)$ must be trivial; similar argument shows $\pi_n(F_f)$ is trivial for $0<n\leq 3$ by corollary $1.1.1$ and the fact that $\pi_k(K(\mathbb{Z},3))\neq 0$ iff $k=3$. Thus, $F_f$ is $3$-connected. Note that the long exact sequence at degree $4$ also gives us the isomorphism $\pi_4(F_f)\cong \pi_4(S^3)$. Apply Hurewicz Theorem gives us the desired result.
 \end{proof}
 
-We may extend the fiber sequence one step to the left, which is the next step in the Pupper sequence $\Omega K(\mathbb{Z},3)=K(\mathbb{Z},2)\to F_f\to S^3$. Our goal now is to use the spectral sequence to calculate the cohomology of $F_f$ using the the cohomology of $S^3$ and $K(\mathbb{Z},2)$, which is realized as $\mathbb{CP}^{\infty}$. 
+We may extend the fiber sequence one step to the left, which is the next step in the Puppe sequence $\Omega K(\mathbb{Z},3)=K(\mathbb{Z},2)\to F_f\to S^3$. Our goal now is to use the spectral sequence to calculate the cohomology of $F_f$ using the the cohomology of $S^3$ and $K(\mathbb{Z},2)$, which is realized as $\mathbb{CP}^{\infty}$. 
 
 Recall that the cohomology ring of $\mathbb{CP}^{\infty}$ is $\mathbb{Z}[v]$, with $|v|=2$. The $E_2$ page of the Serre spectral sequence looks like the following 
 
+\adjustbox{scale=0.6,center}{%
+\begin{tikzcd}
+	&& {...} \\
+	& \bullet \\
+	4 && {H^0(S^3,H^4(\mathbb{CP}^{\infty}))} &&& {H^3(S^3,H^4(\mathbb{CP}^{\infty}))} \\
+	3 \\
+	2 && {H^0(S^3,H^2(\mathbb{CP}^{\infty}))} &&& {H^3(S^3,H^2(\mathbb{CP}^{\infty}))} \\
+	1 \\
+	0 && {H^0(S^3,H^0(\mathbb{CP}^{\infty}))} &&& {H^3(S^3,H^0(\mathbb{CP}^{\infty}))} \\
+	& \bullet &&&&&& \bullet \\
+	&& 0 & 1 & 2 & 3 & {}
+	\arrow[from=8-2, to=8-8]
+	\arrow[from=8-2, to=2-2]
+	\arrow[from=5-3, to=7-6]
+	\arrow[from=3-3, to=5-6]
+	\arrow[from=1-3, to=3-6]
+\end{tikzcd}
+}
 
-\begin{center}
-    \begin{sseqdata}[ name= 4, xscale = 0.6,  classes = {draw = none } ]
-    \class["\mathbb{Z}1"](0,0)
-    \class["0"](0,1)
-    \class["\mathbb{Z}v_1"](0,2)
-    \class["0"](1,0)
-    \class["0"](1,1)
-    \class["0"](1,2)
-    \class["0"](2,0)
-    \class["0"](2,1)
-    \class["0"](2,2)
-    \class["\mathbb{Z}k"](3,0)
-    \class["0"](3,1)
-    \class["\mathbb{Z}v_1k"](3,2)
-    \end{sseqdata}[]
-    \end{center}
+Note that the coefficients $H^n(\mathbb{CP}^{\infty})\cong \mathbb{Z}$ in all degrees, so all the non-trivial cohomologies in the $E_2$ page are all in fact $\mathbb{Z}$; Let $1$ denote the generator for $E_2^{0,0}$ and $k$ denote the generator for $E_2^{3,0}$; the generator for $E_2^{0,2n}$ is $v^n$ as the generator for the coefficient group $H^4(\mathbb{CP}^{\infty})$. By the product structure, the generator for $E_2^{3,2}$ is simply $vk$, for the multiplication map is just multiplication of coefficients.
+\adjustbox{scale=0.8,center}{%
+\begin{tikzcd}
+	4 & \bullet & {\mathbb{Z}v^2} \\
+	3 \\
+	2 && {\mathbb{Z}v} &&& {\mathbb{Z}vk} \\
+	1 \\
+	0 && {\mathbb{Z}1} &&& {\mathbb{Z}k} \\
+	& \bullet &&&& \bullet \\
+	&& 0 & 1 & 2 & 3
+	\arrow[from=6-2, to=1-2]
+	\arrow[from=6-2, to=6-6]
+	\arrow[from=3-3, to=5-6]
+	\arrow[from=1-3, to=3-6]
+\end{tikzcd}
+}
+A quick examination of the spectral seqeunce above shows that the $d_2$ differentials are all trivial by degree reasons. Therefore, all cohomologies survive to $E_3$ page.
 
-
-
-
+Note that a quick application of UCT and Proposition $3.1$ shows that $H^3(F_f)=0$. In particular, we see that $d_3: E_3^{0,2}\to E_3^{3,0}$ must be an isomorphism since both cohomology cannot survive to the next page. WLOG, we may assume $d_3(v)=k$. Then by the derivation law, we see that $d_3: E_3^{0,4}\to E_3^{3,2}$ is given by $d_3(v^2)=d_3(v)v+vd_3(v)=2vk$, so $H^4(F_f)=E_4^{0,4}=0$. Since there is nothing on $E_3^{6,0}$, we see that $H^5(F_f)=E_4^{3,2}=\mathbb{Z}vk/(2vk)\cong \mathbb{Z}/2 \mathbb{Z}$. An application of Corollary $1.6.1$ finishes.
 
 
 \end{document}
