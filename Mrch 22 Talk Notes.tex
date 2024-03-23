@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{fullpage}
+\usepackage{tikz-cd}
+\usepackage{spectralsequences}
+\usepackage{adjustbox}
+\usepackage{xfrac}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{ {D:/Chrome Downloads./} }
+\usepackage[parfill]{parskip}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\theoremstyle{definition}
+\newtheorem{problem}{problem}[section]
+\theoremstyle{definition}
+\newtheorem{proposition}{Proposition}[section]
+\theoremstyle{definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{corollary}{Corollary}[theorem]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[section]
+\title{Measuring Fundamental Groups using Hopf Invariants}
+\author{David Zhu}
+
+\begin{document}
+\maketitle
+ 
+The goal is to detect $\omega \in \pi_1(X)$ using $H^*(X)$. For example, we want to use invariants to tell if an element in the fundamental group is trivial. The naive approach is to take $H^1(X; K)$, which is functions on loops. We have the correspondence $H^1(X;K)=Hom_{Grp}(\pi_1(X),k)$. However, cohomolog theories are abelian, so it ignores everything in the commutator subroup. So we want to see further into the commutator subgroup and further down the central series.
+
+Rational homotopy theory(Quillen and Sullivan): if $X$ is simply-connected, then we can calculate the rational higher homotopy groups $\pi_n(X)\otimes \mathbb{Q}$ using commutaive cochains $C^*(X; \mathbb{Q})$. e.g if $x$ is a smooth manifold, then we can look at the de Rham complex, where commutative measn $xy=\pm yx$. The problem is in practice, it only compute the isomorphism type of raional homotopy groups abstractly. It gives no geometric/topological insight of what the actual element in the homotopy groups are. The sullivan model does not work in general. 
+
+Toplogical explantion came in $2008$ by (Sinha-Walter) through "higher linking numbers" and Hopf invariants. 
+Hopf initially developed the Hopf invariant to distinguish the hopf fibration from the trivial one. The inverse image of points are submanifolds, and there is a way of defining the intersection of these submanifolds as linking numbers. The linking numerb $lk(f^{-1}(p), f ^{-1}(q))$ is a topological invariant. If given any map $f: S^n\to X$ with $X$ simply-connected. The rough idea is that we find a submanifold whose boundary is the inverse image submanifolds, and take the intersection of such manifold with the inverse image submanifolds until we get a discrete set of points, and the linking number is the cardinality of the finite set, which is indepedent of the choices we make. If we do the process "correctly", we recover $[\pi_n(X)\otimes \mathbb{Q}, \mathbb{Q}]$
+
+
+Apply these techniques to fundamental group, where $X$ is not assumed to be simply connected anymore. i.e linking number for $f: S^1\to X$. $0$-linking number of $0$-dimensional submanifolds is call \underline{\textbf{letter braiding}}. 
+
+The difficulty is that we may homotope a loop out of the boundary of a submanifold, so the linking number may change. Moreover, we may homotope things so the order of intersections, which makes the linking number no longer a homotopy invariant. But together these difficulties resolves each other: if there hypersurfaces in $X$ and their intersection is not empty(case where order of intersection can be changed), the it is the boundary of some other hypersurfaces, and $lk(f^{-1}(a), f ^{-1}(b))-LKf^{-1}(E)$ is invariant. This is linking with correction. 
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+The collection of Hopf invariants given by higher linking with corrections is isomorphic to finite type invariants of $\pi_1(X)$, where finite type means $Func_{cont}(\pi_1(X), \mathbb{Z})$. 
+\end{theorem}
+\end{tcolorbox}
+
+To makes sense for general spaces, we replace submanifolds with cochains. The interplay works since boudnary of a submanifold corresponds to differential of the cochain and intersection of manifolds corresponds to the cup product. 
+
+Bar construction: construction of a DG algebra out of a space $X$ with cochains, differential and cup product. A construction due to Adams $Bar(C)=\oplus_{p\geq 0}\tilde{C}^{\otimes p}$ of reduced cochains. For simpy connected spaces $X$, the total complex of $Bar(C)$ is a model for $C^*(\Omega X, K)$. 
+
+
+\end{document}
