@@ -276,20 +276,44 @@ To prove the theorem, we need the following lemma on contents:
  given $f(t)=a_0+...+a_nt^n$ and $g(t)=b_0+...+b_mt^m$. If one of $f$, $g$ is constant, then it is easy exercise; suppose neither is constant, then set $f=f_0\cdot C(f)$ and $g=g_0\cdot C(g)$. Clearly we have $C(f)\cdot C(g)| C(fg)$. Hence it suffices to prove that $C(f_0g_0)=1$. Equivalently, let $\pi\in R$ be a prime element, we want to show there exists a coefficient $c_k\in f_0g_0$ such that $\pi$ does not divide $c_k$. Suppose $\pi| c_k=\sum_{i+j=k}a_ib_j$ for all $k$. Because $C(f_0)=C(g_0)=1$, then there exists minimal $a_i,b_j$ such that $\pi$ does not divide $a_{i_0},b_{j_0}$. Then, $\pi$ does not divede $C_{i_0+j_0}$.
 
 \end{proof}
-Note that proof goes similarly for quotient fields. 
+
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+    Let $K:=\textrm{Quot}(R)$, and $f\in K[t]$. Then, let $d$ be the least common multiple of the denominators of the coefficients of $f$. Then, $f=df/d$, and $df\in R[t]$. Define $C_{K}(f)=C(df)/d$. It is standard to check the analog for lemma $4.2$ holds for $C_K$ as well. 
+\end{proposition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Let $R$ be a UFD. For any irreducible $f\in R[t]$, either $f$ is a constant and thus prime in $R$, or $f$ is primitive, i.e $C(f)=1$.
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    If $f$ is a constant, the first part of the proposition is obvious; now suppose $f$ has degree $>0$; then $f$ can be factored into its primitive part and content; if $C(f)\neq 1$, we either have a non-trivial factorization of $f$ or $f$ will be a constant multiplied by a unit, a contradction.
+\end{proof}
 
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}
-    Let $R$ be a UFD. For $f(t)\in R[t]$, the following are equivalent: 
+    Let $R$ be a UFD. For $f(t)\in R[t]$, let $K:=\textrm{Quot}(R)$. Then, the following are equivalent: 
     \begin{enumerate}
         \item $f(t)$ is prime
         \item  $f(t)$ is irreducible
-        \item  If $f$ in the polynomial ring over the quotient field is irreducible or $C(f)=1$ and $f$ is irreducible. 
+        \item  Either $f$ is an irreducible constant in $R$ or $f$ is irreducible in $K[t]$ and $C_K(f)=1$. 
     \end{enumerate} 
 \end{theorem}
 \end{tcolorbox}
+
 \begin{proof}
-    $1 implies 3$ trivial. By contradiction, let $f=gh$ in $K[t]$ $gh$ irreducible. Then, $C(f)=C(g)C(h)$. Let $f=x_ff_0$ and $g=x_gg_0$ such that  $1=C(f_0)C(g_0)$. Let $x_fx_g=\frac{a}{b}$ in simplest terms such that $gcd(a,b)=1$ (we can do this in UFD). We then get $bf=ag_0h_0$. We get that $f$ irreducible over $R[t]$.
+    $1 \implies 2$ holds in every domain: suppose $a$ is prime and $a=bc$. Then by primeness, we have $a|b$ or $a|c$. WLOG, suppose $a|b$, such that $ax=b$ and $a=axc$, so $cx-1=0$, which implies $c$ is a unit. 
+
+    $2 \implies 1$ in UFDs: suppose $f$ is an irreducible and $f|gh$, then we have some $l$ such that $fl=gh$. Because $g,h,l$ can be uniquely written as a product of irreducibles up to permutation and units, we see that the irreducible $f$ must appear on the RHS once, i.e $f|g$ or $f|h$. 
+
+    For $2\implies 3$:  If $f$ is a constant, then it become a unit in the field of fractions; suppose $deg(f)>0$, so irreducibility implies $C(f)=1$. Suppose by contradiction that $f$ is reducible over $K[t]$, and let $f=gh$ for $g,h\in K[t]$ be a factorization in $K[t]$. Note that given $g,h\in K[t]$, there is some $x_g,x_h\in K$ such that $x_gg,x_hh\in R[t]$ and $C(x_hh)=C(x_gg)=1$. Then, $x_gx_hf=(x_gg)(x_hh)\in R[t]$. By Proposition $4.2$, we have $C(x_gx_hf)=x_gx_hC(f)=1$, which implies $x_gx_h=1$ (up to a unit in $R$). However, this implies $f=(x_gg)(x_hh)$, a contradiction. 
+    
+    So we are left to prove $3\implies 2$. Suppose $f$ is not a constant and $f$ primitive and irreducible. Suppose $f = gh \in R[x]$. WLOG $g$ is a unit in $K[x]$, so $g$ is a nonzero element of $R$. Now $g$ divides all the coefficients of $f$, so $g$ is a unit in $R$. 
 \end{proof}
  
 
@@ -298,6 +322,11 @@ Note that proof goes similarly for quotient fields.
 $R[t_i]_{i\in I}$ is UFD if $R$ is UFD.
 \end{proposition}
 \end{tcolorbox}
+\begin{proof}
+   By induction it suffices to show that $R[t]$ is a UFD. The idea is that $K[t]$ is PID so it is a UFD. A factorization in $K[t]$ will correspond to a factorization in $R[t]$ by the equivalence of $2$ and $3$ in Theorem $4.3$.
+\end{proof}
+
+
 
 \section{Noetherian Rings}
 
@@ -322,8 +351,25 @@ A commutative ring $R$ is called a \underline{\textbf{Noetherian}} ring if every
     Terminology: the condition $1$ is called the ACC (Ascending Chain Condition).
 \end{proposition}
 \end{tcolorbox}
+\begin{proof}
+    By Cohen's lemma, we deduce $2\iff 3$; $1\iff 2$ is an easy exercise.
+\end{proof}
 
-Remark: if $R$ is not commutative, then there exists left/right Noetherian, and it is possible that a ring is left Noetherian but not right Noetherian.
+
+For non-commutative rings, it is possible that a ring is left Noetherian but not right Noetherian.
+ 
+ \begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+ \begin{example}
+ $R=\{
+ \begin{bmatrix}
+ p&q\\
+ 0&m
+ \end{bmatrix}: p,q\in \mathbb{Q}; m\in \mathbb{Z} \}$ is left Noetherian but not right Noetherian. 
+ \end{example}
+ \end{tcolorbox}
+
+
+
 
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
@@ -332,17 +378,19 @@ Remark: if $R$ is not commutative, then there exists left/right Noetherian, and 
 \begin{enumerate}
     \item If $\mathfrak{a}$ is an ideal of $R$, then $R/\mathfrak{a}$ is Noetherian if $R$ is Noetherian.
     \item If $\Sigma\subset R$ is a multiplicative system, then $R_{\Sigma}$ is Noetherian. 
-    \item The nilradical of an ideals $\mathfrak{a}$, $nil(\mathfrak{a})$, has a power contained in $\mathfrak{a}$.
-    \item  Let $Spec_{min}(\mathfrak{a}):=\{ p\in Spec(R): \mathfrak{a}\subset p, \ p \textrm{minimal}  \}$ is finite.
+    \item The radical of an ideals $\mathfrak{a}$, $rad(\mathfrak{a})$, has a power contained in $\mathfrak{a}$.
+    \item  Let $Spec_{min}(\mathfrak{a}):=\{ p\in Spec(R): \mathfrak{a}\subseteq p, \ p \ \textrm{minimal}  \}$ is finite.
 \end{enumerate}
 \end{proposition}
 \end{tcolorbox}
 \begin{proof}
-    To $1$. $Spec(R_{\Sigma})$ corresponds bijectively to primes in $Spec(R)$ with empty intersection with $\Sigma$. We also have $p$ finite generated implies $p^e$ f.g.
+    To $1$. Ideals in $R/\mathfrak{a}$ corresponds bijectively to ideals in $R$ that contains $\mathfrak{a}$. Finite generation of ideals in $R$ clearly implies the finite generation of ideals in the quotient. 
 
-    To $2$. $nil(\mathfrak{a})=(r_1,.,,,r_n)$ f.g. For every $i$, we have $r_i^{n_i}\in \mathfrak{a}$ for some $n_i$. Take $n=\sum_{n_i}$ and $nil(\mathfrak{a})^{n}\subset \mathfrak{a}$. 
+    To $2$. $Spec(R_{\Sigma})$ corresponds bijectively to primes in $Spec(R)$ with empty intersection with $\Sigma$. We also have $p$ finite generated implies $p^e$ f.g.
+
+    To $3$. Suppose $rad(\mathfrak{a})=(r_1,.,,,r_n)$ f.g. For every $i$, we have $r_i^{n_i}\in \mathfrak{a}$ for some $n_i$. Take $n=\sum n_i$ and $nil(\mathfrak{a})^{n}\subset \mathfrak{a}$. 
     
-    To $3$. The first method to prove this is by contradiction: let $A=\{ \mathfrak{a}: Spec_{min}(\mathfrak{a}) \textrm{infinite} \}$. Then $A$ has maximal elements. Let $\mathfrak{a_0}$ be maximal. Note that $\mathfrak{a_0}$ cannot be prime for it is over itself. Suppose it is not prime, then there exists $xy\in \mathfrak{a}$ WLOG $x\not \in \mathfrak{a}$. Then, $\mathfrak{a}+(x)$ contradicts maximality.
+    To $4$. The first method to prove this is by contradiction: let $A=\{ \mathfrak{a}: Spec_{min}(\mathfrak{a}) \ \textrm{is infinite} \}$. Then $A$ has maximal elements. Let $\mathfrak{a_0}$ be maximal. Note that $\mathfrak{a_0}$ cannot be prime for it is over itself. Suppose it is not prime, then there exists $xy\in \mathfrak{a}$ with both $x$ and $y$ not in $\mathfrak{a}$; for every prime ideal $P$ containing $\mathfrak{a}$, $P$ contains either $x$ or $y$. By pigeonhole, there must be infinite such primes containing either $\mathfrak{a}+(x)$ or $\mathfrak{a}+(y)$, which contradicts maximality. 
 
     The second method is using the fact that $Spec(R)$ is a Noetherian topological space, which has finitely many irreducible components.
 
@@ -436,13 +484,20 @@ $\mathbb{Z}_{(p)}$ is a valuation ring.
 \end{proof}
 Note $R$ is the set $\{ x\in K:v_R(x)\geq 0 \}$; $\mathfrak{m}$ is the set $\{ x\in K:v_R(x)> 0 \}$;
 
-Let $R$ be a domain, and $K$ be a field, $(\Gamma,+,\leq )$ be a totally orderedd abelian group. Let $v: K\to \Gamma\cup \{\infty\}$ be a map satisfying 
-\begin{enumerate}
-    \item $v(x)=\infty$ iff $x=0$
-    \item $v(xy)=v(x)+v(y)$
-    \item $v(x+y)\geq min(v(x),v(y))$
-\end{enumerate}
-Then, the map $v$ is called a valuation of $K$.
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+    Let $R$ be a domain, and $K$ be a field, $(\Gamma,+,\leq )$ be a totally orderedd abelian group. Let $v: K\to \Gamma\cup \{\infty\}$ be a map satisfying 
+    \begin{enumerate}
+        \item $v(x)=\infty$ iff $x=0$
+        \item $v(xy)=v(x)+v(y)$
+        \item $v(x+y)\geq min(v(x),v(y))$
+    \end{enumerate}
+    Then, the map $v$ is called a \underline{\textbf{valuation}} of $K$.
+\end{definition}
+\end{tcolorbox}
+
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
 \begin{proposition}
 $R_v=\{ x\in K:v(x)\geq 0 \}$ is a valuation ring. The map $\tau: \Gamma_{R_v}\to \Gamma$, given by $xR_v^{\times}\mapsto v(x)$ is an order preserving embedding. Moreover, $v=\tau \circ v_{R_v}: K\to \Gamma\cup \{\infty\}$.
