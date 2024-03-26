@@ -29,7 +29,7 @@
 \newtheorem{corollary}{Corollary}[theorem]
 \theoremstyle{definition}
 \newtheorem{example}{Example}[section]
-\title{How to Compute $\pi_4(S^3)$}
+\title{Computing $\pi_4(S^3)$}
 \author{David Zhu}
 
 \begin{document}
@@ -43,13 +43,13 @@ In this exposition, we compute the first not-easily-computable homotopy group of
 For $n>0$, the  $n$th homotopy group of a pointed topological space $(X,x_0)$, denoted by $\pi_n(X,x_0)$, is the group of homotopy classes of maps from $(I^n,\partial I^n)\to (X,x_0)$. Equivalently, it is also the group of homotopy classes of maps from $(S^n,s_0)\to (X,x_0)$. 
 \end{definition}
 \end{tcolorbox}
-Note that when $n=0$, the homotopy classes of maps no longer form a group, but it is still well-defined as a set. Based on this definition, one might be tempted to think that $\pi_n(S^k)$ is trivial when $n>k$. However, the Hopf fibration $S^1\hookrightarrow S^3\to S^2$ gives us a non-trivial element of $\pi_3(S^2)$. It is generally very hard to compute higher homotopy groups, even for spheres except for a certain number of cases.
+Note that when $n=0$, the homotopy classes of maps no longer form a group, but it is still well-defined as a set. Based on this definition, one might be tempted to think that $\pi_n(S^k)$ is trivial when $n>k$, similar to singular homology/cohomology. However, the famous Hopf fibration $S^1\hookrightarrow S^3\to S^2$ gives us a non-trivial element of $\pi_3(S^2)$. It is generally very hard to compute higher homotopy groups, even for spheres except for a certain number of cases.
 
 Without introducing any new tools, we can do at least one case: recall that a covering space $(\tilde{X},\tilde{x}_0)\to (X,x_0)$ satisfies the homotopy lifting property. In particular, the induced map $\pi_n(\tilde{X},\tilde{x}_0)\to \pi_n(X,x_0)$ is injective. On the other hand, the lifting criterion states that every map $S^n\to X$ can be lifted to $\Tilde{X}$ as $S^n$ is simply-connected for $n\geq 2$. Therefore, we have
 
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}
-A covering space projection $\tilde{X}\to X$ induces isomorphism on nth homotopy groups for $n\geq 2$.
+A covering space projection $\tilde{X}\to X$ induces isomorphism on $n$th homotopy groups for $n\geq 2$.
 \end{theorem}
 \end{tcolorbox}
 
@@ -96,7 +96,9 @@ $\pi_n(S^n)\cong \mathbb{Z}$
     Combine the fact that $S^n$ is $n-1$-connected by Corollary $1.1.1$ and the fact that $H_n(S^n)=\mathbb{Z}$.
 \end{proof}
 
-Recall that a cofibration is a map $A\hookrightarrow X$ satisfying the homotopy extension property. Cofibration plays well with homology/cohomology as it gives us a long exact sequence, and we can then extract homological information from one space from the other. The dual notion is a fibration, which satisfies the homotopy lifiting property.
+
+\section{Serre Fibrations}
+Recall that a cofibration is a map $A\hookrightarrow X$ satisfying the homotopy extension property. Cofibration plays well with homology/cohomology as it gives us a long exact sequence, and we can then extract homological information of one of $A\to X\to X/A$ from the other two. The dual notion is a fibration, which satisfies the homotopy lifiting property.
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
@@ -113,13 +115,20 @@ In other words, given a homotopy in $H_t: X\to B$ and a initial lift $\tilde{H}_
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
-A map $p:E\to B$ satisfying the HLP with respect to arbitrary $X$ is called a (Hurewicz)  \underline{\textbf{fibration}}. A map satisfying the HLP with respect to CW-complexes is called a \underline{\textbf{Serre fibration}}. Assume $B$ is path-connected and based at $b_0$, the \underline{\textbf{fiber}} of the fibration is $F=p^{-1}(b_0)\subseteq E$. We organize the data of a fibration into the following \underline{\textbf{Fiber Sequence}}
+A map $p:E\to B$ satisfying the HLP with respect to arbitrary $X$ is called a (Hurewicz)  \underline{\textbf{fibration}}. A map satisfying the HLP with respect to CW-complexes is called a \underline{\textbf{Serre fibration}}. Assume $B$ is path-connected and based at $b_0$, the \underline{\textbf{fiber}} of the fibration is $F=p^{-1}(b_0)\subseteq E$. We organize the data of a fibration into the following \underline{\textbf{fiber sequence}}
 \[F\to E\to B\]
 \end{definition}
 \end{tcolorbox}
-Note that covering maps are fibrations with discrete fibers. In practice, Serre fibrations is good enough to give us most of the desired properties/tools. It is fun to know that pathological examples exists (even in CGWH) where a Serre fibration is not a fibration. 
 
-From now on we assume the base-space is path-connected.
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+	Covering maps are fibrations with discrete fibers; fiber bundles are Serre fibrations. In particular, the Hopf bundle $S^1\to S^3\to S^2$ is a Serre fibration. 
+\end{example}
+\end{tcolorbox}
+
+In practice, Serre fibrations is good enough to give us most of the desired properties/tools. It is fun to know that pathological examples exists (even in CGWH) where a Serre fibration is not a fibration. 
+
+From now on we assume the base-space is path-connected and based. The important property that a Serre fibration enjoys is that we have the long exact sequence of homotopy groups:
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}
 Given a Serre fibration $p:E\to B$ with fiber $F$ and a choice $x_0\in F$, we have the following LES:
@@ -130,14 +139,14 @@ Given a Serre fibration $p:E\to B$ with fiber $F$ and a choice $x_0\in F$, we ha
 \]
 \end{theorem}
 \end{tcolorbox}
-From this theorem, we can already calculated a not so obvious homotopy group
+From this theorem, we can already calculated a not so obvious homotopy group:
 \begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
 \begin{corollary}
 $\pi_3(S^2)\cong \mathbb{Z}$
 \end{corollary}
 \end{tcolorbox}
 \begin{proof}
-    We have the exact sequence from the hopf fibration
+    We have the exact sequence from the Hopf fibration
     \[
     \begin{tikzcd}
     \pi_3(S^1)=0\arrow[r]&\pi_3(S^3)\cong \mathbb{Z}\arrow[r]&\pi_3(S^2)\arrow[r]&\pi_2(S^1)=0
@@ -168,7 +177,7 @@ where continuing to the left is applying the loop space functor.
 
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}
-    (Universal Coefficient Theorem) Given a coefficient group $G$, We have a split short exact sequence
+    (Universal Coefficient Theorem) Given a coefficient group $G$, we have a split short exact sequence
     \[\begin{tikzcd}
     0\arrow[r]& \textbf{Ext}^1_{\mathbb{Z}}(H_{n-1}(X;\mathbb{Z}),G) \arrow[r]&H^n(X;G)\arrow[r]&\textbf{Hom}(H_n(X;\mathbb{Z}),G)\arrow[r]&0
     \end{tikzcd}\]
@@ -177,10 +186,66 @@ where continuing to the left is applying the loop space functor.
 
 \begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
 \begin{corollary}
-$\textrm{rank}(H_n)=\textrm{rank}(H^n)$ and $\textrm{Torsion}(H_{n-1})=\textrm{Torsion}(H^n)$
+If the relavant homologies and cohomologies are finitely generated, then $\textrm{rank}(H_n)=\textrm{rank}(H^n)$ and $\textrm{Torsion}(H_{n-1})=\textrm{Torsion}(H^n)$
 \end{corollary}
 \end{tcolorbox}
 
+From the Hopf fibration, we see that clearly fibrations does not produce the long exact sequences for homology/cohomology as cofibrations do. However, Serre spectral sequences will save the day by relating the homology/cohomology of the three components of a fibration. 
+\section{Spectral Sequences}
+
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A \underline{\textbf{cohomology spectral sequence}} in an abelian category $A$ is a family of objects $\{E_r^{p,q}: r\in \mathbb{N}; \ (p,q)\in \mathbb{Z}^2\}$, together with \underline{\textbf{differentials}} $d_r^{p,q}: E_r^{p,q}\to E_r^{p+r,q-r+1}$. Moreover, the object $E_{r+1}^{p,q}$ is isomorphic to the homology at $E_r^{p,q}$. Fixing an $r$, we collect the $\mathbb{Z}^2$ lattice of data of a spectral sequence into what we call the $\underline{ E_r \textbf{ page}}$.
+\end{definition}
+\end{tcolorbox}
+
+Here is an illustration of the $E_2$ page of a \underline{\textbf{first quadrant}} spectral sequence, by which we mean $E_r^{p,q}\neq 0$ only if $p,q\geq 0$
+
+
+\adjustbox{scale=0.7,center}{%
+\begin{tikzcd}
+	& \bullet & {...} \\
+	2 && {E_2^{0,2}} & {E_2^{1,2}} & {E_2^{2,2}} \\
+	1 && {E_2^{0,1}} & {E_2^{1,1}} & {E_2^{2,1}} & {...} \\
+	0 && {E_2^{0,0}} & {E_2^{1,0}} & {E_2^{2,0}} & {...} \\
+	& \bullet &&&&& \bullet
+	\arrow[from=3-3, to=4-5]
+	\arrow[from=2-3, to=3-5]
+	\arrow[from=5-2, to=1-2]
+	\arrow[from=5-2, to=5-7]
+	\arrow[from=3-4, to=4-6]
+	\arrow[from=2-4, to=3-6]
+\end{tikzcd}}
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+	For the first quadrant cohomological spectral sequence above, the differential into and out of $E_2^{0,0}$ are both zero maps, since $E_2^{-2,1}$ and $E_2^{2,-1}$ are both $0$. Thus, the homology at $E_2^{0,0}$, which is isomorphic to $E_3^{0,0}$, is still $E_2^{0,0}$. By the same argument, we have $E_r^{0,0}\cong E_2^{0,0}$ for $r\geq 2$. 
+\end{example}
+\end{tcolorbox}
+
+
+For a first quadrant (or more generally bounded) cohomological spectral sequence, here are a few important observations: First, it is not hard to see that $E_*^{p,q}$ will eventually stablize, for when $r>{p+q}$, we see that the differential going in and out of $E_r^{p,q}$ is going to be $0$; second, each $E_r^{p,q}$ is a quotient of $E_{r+1}^{p,q}$. It is natural to guess that a cohomology spectral sequence is a tool to "approximate" some cohomology. 
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+For a first quadrant cohomological spectral sequence, we denote the stable value at $E_*^{p,q}$ by $E_{\infty}^{p,q}$. We say a bounded spectral sequence \underline{\textbf{converges}} to $H^*$, written as $E_r^{p,q}\Longrightarrow H^{p+q}$, if we are given a family of objects $\{H^n: n\in \mathbb{Z}\}$, and each $H^n$ is equipped with a finite filtration
+\[
+0=F^tH^n\subseteq ...\subseteq F^{p+1}H^n\subseteq F^pH^n\subseteq ...\subseteq F^sH^n=H^n
+\] 
+with $E^{p,q}_{\infty}\cong F^pH^{p+q}/F^{p+1}H^{p+q}$. 
+\end{definition}
+\end{tcolorbox}
+More or less, the data of $H^n$, in terms of successive quotients of its filtration, is read off from the collection $\{E_{\infty}^{p,q}: p+q=n\}$ of the spectral sequence. If there is only one nonzero object in $\{E_{\infty}^{p,q}: p+q=n\}$, we must have $H^n$ isomorphic to that object. If the objects are all vector spaces, then $H^n\cong \oplus_{p+q=n} E_{\infty}^{p,q}$ by dimension reasons. However, often in general successive quotients of a filtration of an object does not complete determine the object. For example, if given a filtration $0\subseteq B\subseteq G$
+of abelian groups, the data of the quotients $B$ and $G/B$ gives rise to the short exact sequence 
+\[\begin{tikzcd}
+0\arrow[r]&B\arrow[r]&*\arrow[r]&G/B\arrow[r]&0
+\end{tikzcd}\]
+And we run into the good-ol group extension problem. 
+
+At this point, it would seem that there are several major problems with spectral sequences: the construction of a spectral sequence converging to a desired cohomology theory seems completely out of hand; the computations of the differentials can get arbitrarily complex; and even when we can compute all the differentials, the data of the spectral sequence does not fully determine the cohomology theory. It turns out that even with these inherent problems, spectral sequences will still serve as a very powerful computation tool.
 
 \section{Serre Spectral Sequence}
 For the following discussions, we will use the assumption that $B$ is simply connected and work over $R=\mathbb{Z}$ to simplify things. 
@@ -194,7 +259,9 @@ E_2^{p,q}=H ^{p}(B; H ^{q}(F; \mathbb{Z})) \Longrightarrow H ^{p+q}(X; \mathbb{Z
 \end{tcolorbox}
 If the space $B$ is not simply connected, then the coefficient group $H ^{q}(F)$ is actually the local system on $B$ given by the fibers. This reduces to the integral cohomology when the action of $\pi_1(B)$ on the fibers are trivial.
 
+Note that we are explicitly only given the data of the $E_2$ page of the spectral sequence. It turned out that the data of the $E_2$ page often is enough to determine the cohomology of $X$, as the spectral sequence will often collapse very quickly. 
 
+The major difference between homology and cohomology is the additional product structure:
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}
 (Product Structure) The Serre cohomological spectral sequence has a bigraded $\mathbb{Z}$-algebra structure, given by the product 
@@ -260,7 +327,7 @@ Recall that the cohomology ring of $\mathbb{CP}^{\infty}$ is $\mathbb{Z}[v]$, wi
 \end{tikzcd}
 }
 
-Note that the coefficients $H^n(\mathbb{CP}^{\infty})\cong \mathbb{Z}$ in all degrees, so all the non-trivial cohomologies in the $E_2$ page are all in fact $\mathbb{Z}$; Let $1$ denote the generator for $E_2^{0,0}$ and $k$ denote the generator for $E_2^{3,0}$; the generator for $E_2^{0,2n}$ is $v^n$ as the generator for the coefficient group $H^4(\mathbb{CP}^{\infty})$. By the product structure, the generator for $E_2^{3,2}$ is simply $vk$, for the multiplication map is just multiplication of coefficients.
+Note that the coefficients $H^n(\mathbb{CP}^{\infty})\cong \mathbb{Z}$ in all degrees, so all the non-trivial cohomologies in the $E_2$ page are all in fact $\mathbb{Z}$; Let $1$ denote the generator for $E_2^{0,0}$ and $k$ denote the generator for $E_2^{3,0}$; the generator for $E_2^{0,2n}$ is $v^n$ as the generator for the coefficient group $H^2n(\mathbb{CP}^{\infty})$. By the product structure, the generator for $E_2^{3,2}$ is simply $vk$, for the multiplication map is just multiplication of coefficients.
 \adjustbox{scale=0.8,center}{%
 \begin{tikzcd}
 	4 & \bullet & {\mathbb{Z}v^2} \\
@@ -276,9 +343,9 @@ Note that the coefficients $H^n(\mathbb{CP}^{\infty})\cong \mathbb{Z}$ in all de
 	\arrow[from=1-3, to=3-6]
 \end{tikzcd}
 }
-A quick examination of the spectral seqeunce above shows that the $d_2$ differentials are all trivial by degree reasons. Therefore, all cohomologies survive to $E_3$ page.
+A quick examination of the spectral sequence above shows that the $d_2$ differentials are all trivial by degree reasons. Therefore, all cohomologies survive to $E_3$ page.
 
-Note that a quick application of UCT and Proposition $3.1$ shows that $H^3(F_f)=0$. In particular, we see that $d_3: E_3^{0,2}\to E_3^{3,0}$ must be an isomorphism since both cohomology cannot survive to the next page. WLOG, we may assume $d_3(v)=k$. Then by the derivation law, we see that $d_3: E_3^{0,4}\to E_3^{3,2}$ is given by $d_3(v^2)=d_3(v)v+vd_3(v)=2vk$, so $H^4(F_f)=E_4^{0,4}=0$. Since there is nothing on $E_3^{6,0}$, we see that $H^5(F_f)=E_4^{3,2}=\mathbb{Z}vk/(2vk)\cong \mathbb{Z}/2 \mathbb{Z}$. An application of Corollary $1.6.1$ finishes.
+Note that a quick application of UCT and Proposition $3.1$ shows that $H^3(F_f)=0$. In particular, we see that $d_3: E_3^{0,2}\to E_3^{3,0}$ must be an isomorphism since both cohomologies cannot survive to the next page. WLOG, we may assume $d_3(v)=k$. Then by the derivation law, we see that $d_3: E_3^{0,4}\to E_3^{3,2}$ is given by $d_3(v^2)=d_3(v)v+vd_3(v)=2vk$, so $H^4(F_f)=E_4^{0,4}=0$. Since there is nothing on $E_3^{6,0}$, we see that $H^5(F_f)=E_4^{3,2}=\mathbb{Z}vk/(2vk)\cong \mathbb{Z}/2 \mathbb{Z}$. An application of Corollary $1.6.1$ finishes.
 
 
 \end{document}
