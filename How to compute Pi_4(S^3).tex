@@ -96,7 +96,9 @@ $\pi_n(S^n)\cong \mathbb{Z}$
     Combine the fact that $S^n$ is $n-1$-connected by Corollary $1.1.1$ and the fact that $H_n(S^n)=\mathbb{Z}$.
 \end{proof}
 
-Recall that a cofibration is a map $A\hookrightarrow X$ satisfying the homotopy extension property. Cofibration plays well with homology/cohomology as it gives us a long exact sequence, and we can then extract homological information from one space from the other. The dual notion is a fibration, which satisfies the homotopy lifiting property.
+
+\section{Serre Fibrations}
+Recall that a cofibration is a map $A\hookrightarrow X$ satisfying the homotopy extension property. Cofibration plays well with homology/cohomology as it gives us a long exact sequence, and we can then extract homological information of one of $A\to X\to X/A$ from the other two. The dual notion is a fibration, which satisfies the homotopy lifiting property.
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
@@ -126,7 +128,7 @@ A map $p:E\to B$ satisfying the HLP with respect to arbitrary $X$ is called a (H
 
 In practice, Serre fibrations is good enough to give us most of the desired properties/tools. It is fun to know that pathological examples exists (even in CGWH) where a Serre fibration is not a fibration. 
 
-From now on we assume the base-space is path-connected. The important property that a Serre fibration enjoys is that we have the long exact sequence of homotopy groups:
+From now on we assume the base-space is path-connected and based. The important property that a Serre fibration enjoys is that we have the long exact sequence of homotopy groups:
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}
 Given a Serre fibration $p:E\to B$ with fiber $F$ and a choice $x_0\in F$, we have the following LES:
