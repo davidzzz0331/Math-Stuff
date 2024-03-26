@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.10)  21 MAR 2024 23:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.3.10)  25 MAR 2024 23:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -645,29 +645,39 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/Users/David/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3]
-Overfull \hbox (30.0pt too wide) in paragraph at lines 261--262
+{C:/Users/David/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
+Underfull \hbox (badness 1087) in paragraph at lines 187--188
+[]\OT1/cmr/bx/n/10 Corollary 1.6.1. []\OT1/cmr/m/n/10 If the rela-vant ho-molo-gies and co-ho-molo-gies are finitely gen-er-ated, then
+ []
+
+[3]
+Overfull \hbox (30.0pt too wide) in paragraph at lines 218--219
 [][] 
  []
 
-[4] Total classes: 0 [5] (How to compute Pi_4(S^3).aux)
+[4] [5]
+Overfull \hbox (30.0pt too wide) in paragraph at lines 326--327
+[][] 
+ []
+
+[6] Total classes: 0 [7] (How to compute Pi_4(S^3).aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 26312 strings out of 474435
- 645865 string characters out of 5741933
- 1956190 words of memory out of 5000000
- 48230 multiletter control sequences out of 15000+600000
+ 26541 strings out of 474435
+ 651622 string characters out of 5741933
+ 1959190 words of memory out of 5000000
+ 48459 multiletter control sequences out of 15000+600000
  567837 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,20n,107p,5064b,1259s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on "How to compute Pi_4(S^3).pdf" (5 pages, 194209 bytes).
+Output written on "How to compute Pi_4(S^3).pdf" (7 pages, 205430 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
+ 104 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
