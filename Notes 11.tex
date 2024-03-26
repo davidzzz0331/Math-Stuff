@@ -603,6 +603,135 @@ Let $R$ be an Artinian ring. Then the following hold:
 \end{proof}
 
 
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Relations of Artin Rings and Noether Rings) Let $R$ be a commutative ring. The the following are equivalent: 
+\begin{enumerate}
+    \item $R$ is an Artin ring
+    \item $R$ is Noether and Krull dimension of $R$ is $0$. 
+\end{enumerate}
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+    Step one is reduce to $R$ local as follows: $R$ Artin ring implies $R=\prod R_i$, where $R_i$ are local Artin rings. In particular, the product is Noetherian iff each $R_i$ is Noetherian. $R$ is Noetherian and Krull dimension $0$ implies $Max(R)=Spec(R)$, hence $rad(R)=Jac(R)$. Thus, $R$ has only finitely many prime ideals. Hence, $Max(R)$ is finite and we reduce to the finite case. 
+
+    Step two: now assume $R$ is local. Assume $(R,\mathfrak{m})$ is a local Artin ring. To prove $R$ is Noetherian, it suffices to show $\mathfrak{m}$ is finitely generated. For $k>0$, we have the exact spectralsequences
+    \[\begin{tikzcd}
+    0\arrow[r]&\mathfrak{m}^k/\frak{m}^{k+1}\arrow[r,"f"]&R/\mathfrak{m}^{k+1}\arrow[r,"g"]&R/\mathfrak{m}^k\arrow[r]&0
+    \end{tikzcd}\]
+    Note $\kappa:= R/\mathfrak{m}$ is a field, $R$ acts on $\mathfrak{m}^k/\mathfrak{m}^{k+1}$ through the projection $R\to \kappa$. In particular, there is a bijection 
+    \[
+        \{ \kappa -\textrm{vector subspaces of }\ \mathfrak{m}^k/\mathfrak{m}^{k+11} : \} \iff \{ R-\textrm{ideals} \mathfrak{n} \ : \mathfrak{m}^{k+1}\subset \mathfrak{n}\subset \mathfrak{m}^k \}=\epsilon
+    \]
+    Note $R$ Artinian implies $R/\mathfrak{m}^{k+1}$ is Artinian. Thus, the set $\epsilon$ is finite, and $\mathfrak{m}^{k}/\mathfrak{m}^{k+1}$ is finite dimensional. Then induction on $k$: suppose $R/\mathfrak{m}^k$ is Noetherian. Then, $\mathfrak{m}^k/\mathfrak{m}^{k+1}$ is finite $R$-module. 
+    
+    
+    For the reverse implication: Given $(R,\mathfrak{m})$ Noetherian and $\frak{m}^k=0$ for $k$ sufficiently large. If $k=0$ then the statement holds; suppose it holds for $k$; consider the exact sequence above and $R/\mathfrak{m}^k$ is Artin. Let $(\mathfrak{a}_i)$ be a descending sequence of $Id(R/\mathfrak{m}^{k+1})$. Hence, there exists $i_0$ such that $\pi_k(\frak{a}_i)\pi_k(\mathfrak{a_{i_0}})$ for all $i>i_0$. Then, look at 
+    \[\begin{tikzcd}
+        0\arrow[r]&\mathfrak{a}_i\cap\mathfrak{m}^k/\frak{m}^{k+1}\arrow[r,"f"]&\mathfrak{a}_i/\mathfrak{m}^{k+1}\arrow[r,"g"]&\mathfrak{a}_i/\mathfrak{m}^k\arrow[r]&0
+        \end{tikzcd}\]
+\end{proof}
+
+\section{Krull's Theorem on Noetherian Rings}
+
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+    Let $R$ be a commutative ring; $\mathfrak{a}\subset R$ a proper ideal. Consider $\mathfrak{a}^n$ and the projection $p_n: R/\mathfrak{a}^{n+1}\to R/\mathfrak{a}^n$. Then, $(R/\mathfrak{a}^n, p_n)$ is a projective system. The limit $\widehat{R}:=\varprojlim R/\mathfrak{a}^n$, together with $i: R\to \widehat{R}$ is called $\frak{a}$-adic completion of $R$. 
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+    The kernel of the inclusion $i: R\to \widehat{R}$ is the intersection of all $\mathfrak{a}^n$.
+
+\end{proposition}
+\end{tcolorbox}
+
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(The Intersection Theorem) Let $R$ be a Noetherian ring that is local or integral. Let $\mathfrak{a}\subset R$ be a proper ideal. Then, $\cap \mathfrak{a}^n=0$. In particular, the inclusion map in the $\mathfrak{a}$-adic completion is injection.
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+ Suppose $R$ is local with maximal ideal $\mathfrak{m}$. Let $\mathfrak{a}_0=\cap \mathfrak{a}^k$ is a finitely generated ideal. Let $\mathfrak{m}_0=\cap \mathfrak{m}^k$ is f.g with $\mathfrak{a}_0\subset \mathfrak{m}_0$. We then have $\mathfrak{m}\cdot \mathfrak{m}_0=\frak{m}_0$, and apply Nakayama's lemma, we get $\mathfrak{m}_0=(0)$. 
+ 
+ Now suppose $\mathfrak{m}$ be a maximal ideal over $\mathfrak{a}$, and let $\phi: R\to R_{\mathfrak{m}}$ be the localization is injective. 
+\end{proof}
+
+Much more is true.
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Artin-Reese Lemma) Let $R$ be a Noetherian ring. Given ideals $\mathfrak{a,b}, I$, there exists $k$ such that for $k'>k$, we have $\mathfrak{a}^k \mathfrak{b}\cap I=(\mathfrak{a}^{k'-k})$. 
+\end{theorem}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+If $R$ is Noetherian, then all $\mathfrak{a}$-adic completions of $R$ is Noetherian. 
+\end{theorem}
+\end{tcolorbox}
+
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $R$ be a ring. For $r\in R$, let $Spec_{min}(r)=\{p\in Spec(R) : (r)\subset p \ \textrm{minimal}\}$. Definition goes similarly for a set of elements. 
+\end{definition}
+\end{tcolorbox}
+
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+    For $p\in Spec(R)$, the \underline{\textbf{height}} of $p$ is the krull dimension of $R_{p}$. The \underline{\textbf{coheight}} is the krull dimension is the krull dimension of $R/p$. 
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+$height(p)+coheight(p)\leq$ Krull dimension of $p$.
+\end{proposition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Krull's Principal Ideal Theorem/ Hauptideasatz) Let $R$ be a Noetherian ring. Then, for all non-units $r\in R$, one has $height(p)\leq 1$ for all $p\in Spec_{min}(r)$, with equality when $r$ is not a zero-divisor.
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+    Suppose by contradction that $height(p)>1$. Equivalently, there exists a chain $q_0\subset q$ prime ideals. Reduction step: can replace $R$ by $R/p_0$, and $q/q_0$ and $p/q_0$. Can replace $R,q,p$ by $R_p, p_p, q_p$. So WLOG, $R$ is local, and $p$ is maximal. Hence, $(r)\subset p$, and $rad(r)=p$. Conclude $\overline{R}:= R/(r)$ is Artin. Hence, $q^{(n)}$ gives $(\overline{q ^{(n)}})_n$ a descending sequence, so it must stablize. 
+\end{proof}
+
+
+
+\begin{tcolorbox}
+\begin{lemma}
+For $q\in Spec(R)$, let $q^{(n)}:=(q^nR_{q})^c$. Then, $(q^{(n)})^e=q^nR_q=(qR_q)^n$. $q^{(n)}$ is called the symbolic $n$-th power of $q$.
+\end{lemma}
+\end{tcolorbox}
+\begin{proof}
+    exercise
+\end{proof}
+
+
+\begin{tcolorbox}
+\begin{lemma}
+$q^{(n)}$ is primary if $ax\in q^{(n)}$, and $x\not \in q$, then $a\in q ^{(n)}$. 
+\end{lemma}
+\end{tcolorbox}
+\begin{proof}
+    exercise
+\end{proof}
+
 
 
 \end{document}
