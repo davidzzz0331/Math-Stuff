@@ -733,5 +733,92 @@ $q^{(n)}$ is primary if $ax\in q^{(n)}$, and $x\not \in q$, then $a\in q ^{(n)}$
 \end{proof}
 
 
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $r=(r_1,..,r_n)$ be given. It is called a \underline{\textbf{regular }} sequence if $r_i$ is not a zerodivisor in $R/(r_1,...,r_{i-1})$. 
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Krull's Dimension Theorem) Let $R$ be a Noether ring, and $r=(r_1,...,r_m)$ a system. Then $Spec_{min}(r)$ contains prime ideals of height $\leq m$, with equality when $r$ is regular.
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+
+
+    Induction: $n=1$ is PIT; Given $r=(r_1,...,r_{m+1})$, and $p\in Spec_{min}(r)$. Let $q\subset p$ be a maximal with this property. Claim: $ht(q)=m$. Hence $ht(p)=m+1$,
+   By contradiction, let $ht(q)>m$ and consider $q_0\subset q_1\subset ...\subset q_m=q$. Reduction step $1$: replace $R,p,q$ by $\overline{R}:=R/q_0$,$\overline{P}:=p/q_0$, $\overline{q}:=q/q_0$. WLOG, $R=\overline{R}$ is a Noetherian domain. Reduction step $2$ Replace $R,p,q$ with their localization at $p$. Then, $R$ is local with $max(R)=p$.
+    
+    Since $q$ is properly contained in $p$, there exists $r_i\not\in q$ by minimality. WLOG, $r=m+1$. Consider $\mathfrak{a}=q+(r_{m+1})$, which implies $q\subset \mathfrak{a}\subseteq p$. Then, $nil(\mathfrak{a})=p$ since $p$ is the only prime ideal containing $a$. Conclude that $r_i\in p$ implies $r_i\in nil(\mathfrak{a})$, hence for every $i=1,...,m$, there exists $a_i\in R$ and $s_i\in q$ such that $r_i^{n_i}=s_i+a_ir_{m+1}$. Conclude that $s=(s_1,...,s_m)$ and $nil(s)=q$. In particular, $q$ is a minimal prime ideal containing elements $s_1,...,s_m$. Look at $R\to R/s$, and $\overline{p}=p/s$. Hence, $ht(\overline{p})$ is at most $1$, and $1$ $\overline{r}_{m+1}$ is not a zero divisor. 
+    
+\end{proof}
+
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{corollary}
+Let $R$ be Noether. Then, the following hold:
+\begin{enumerate}
+    \item Every descending sequence of prime ideals is staionary. 
+    \item if $ht(p)=m$, then there exists a regular system of length $m$ with $p$ a minimal prime over it.
+\end{enumerate}
+\end{corollary}
+\end{tcolorbox}
+
+\begin{proof}
+    exercise
+\end{proof}
+
+\section{Modules over special classes of rings}
+\subsection{Modules over PIDs}
+
+
+\begin{tcolorbox}
+\begin{lemma}
+Let $C=(\gamma_1,..,\gamma_n)$ be an $R$-basis of a free $R$-module $P$, and $\gamma'_1= \sum_{i=1}^{m}r_i\gamma_i$ such that $gcd(r_1,...,r_m)=1$. Then there exists a basis $C'=(\gamma_1',...,\gamma_m')$
+\end{lemma}
+\end{tcolorbox}
+\begin{proof}
+    Induction: $n=1$ trivial; let $x=\sum_{i=1}^{m+1}r_i\gamma_i=\sum_{i=1}^{m}r_i\gamma_i+r_{m+1}\gamma_{m+1}$. We can write $\sum_{i=1}^{m}r_i\gamma_i$ with respect to the new basis by induction step. since the gcd of the sequence is $gcd(d,r_{m+1})$, which must be $1$. 
+\end{proof}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+Let $R$ be a PID. Then, the following hold:
+\begin{enumerate}
+    \item If $M$ is a free $R$ module, every $R$-submodule of $M$ is $R$-free. 
+    \item  A finite torsion free $R$-module is $R$-free
+\end{enumerate}
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+    To $1$: let $A=(\alpha_i)$ be a basis for $M$. Suppose $I$ is well-ordered(otherwise use Zorn's lemma), we make transfinite induction: let $i_0$ be the minimal element of $I$, $M_{i_0}=\langle \alpha_{i_0} \rangle$ be the cyclic submodule. Let$M_{i'}=\langle \alpha_{i'}: i\leq i'  \rangle$ and $N_{i'}=N\cap M_i'$. Note that $N_{i_0}=N\cap R_{\alpha_{i_0}}$, and the submodules of a PID is precisely the principal ideals, which are free. 
+
+    To $2$: let $(x_1,...,x_m)$ be a system of generators and let $R^m\to M$ be the natural surjection. If the system is linearly independent, we are done. Let $\sum_{i=1}^{k}r_1x_i=0$. Divide out the $gcd$, and if there is no torsion, we can apply the lemma. 
+\end{proof}
+
+
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Invariant Factors Theorem) Let $R$ be a principal ideal domain and $M$ a free $R$-module, $N\subset M$ a submodule. Then, there exists $R$-basis $A=(\alpha_1,...,\alpha_m)$ of $M$ and $\delta_1|\delta_2|...|\delta_n$ in $R$ such that $\delta_1\alpha_1...,\delta_n\alpha_n$ is an $R$-basis for $n$.
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+    Let $D=\{ d\in R: \exists y\in N, \textrm{basis} (\beta_1,...,\beta_m) \textrm{of} M st d\beta_1=y \}=\{ d\in R:\exists y=d \sum_{i=1}^{k}r_i'\alpha_i'\in N, gcd(r_i)=1 \}$.
+\end{proof}
+
+\begin{tcolorbox}
+    \begin{lemma}
+    $d_1=inf D$ exists, where the ordering is by divisibility. 
+    \end{lemma}
+    \end{tcolorbox}
+
+    \begin{proof}
+        Obviously, $D$ has minimal elements. Let $d',d''$ be minimal elements, and $d=gcd(d',d'')$, and show $d\in D$. 
+    \end{proof}
+
 
 \end{document}
