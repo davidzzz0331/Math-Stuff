@@ -437,8 +437,10 @@ Let $R$ be a Noetherian ring. Then the following hold:
 \end{theorem}
 \end{tcolorbox}
 \begin{proof}
-    Note that $1\implies 2$ since every finitely generated algebra is a quotient of polynomial rings over finitely many variable. To prove $1$, by induction it suffices to show for $i=1$. Let $\mathfrak{a}\in R[t]$ be an ideal. Claim: $\mathfrak{a}$ is f.g. For every $n\geq 0$, let $\{\mathfrak{a}_n\}$ be the set of leading coefficients of polynomials of degree $n$ in $\mathfrak{a}$. We note that $(\mathfrak{a_n})$ is a chain of ideals in $R$. Thus, there exists an index $m$ at which the chain stablizes. For $r\leq m$, let $\mathfrak{a_r}=(a_{r_1},...,a_{r_n})$.  Do induction on $m$. Idea is to deduct something to drop the degree by $1$. 
- 
+    Note that $1\implies 2$ since every finitely generated algebra is a quotient of polynomial rings over finitely many variable. To prove $1$, by induction it suffices to show for $i=1$. Let $\mathfrak{a}\in R[t]$ be an ideal. Claim: $\mathfrak{a}$ is f.g. Inductively, we may choose elements $f_i\in I$ with $deg(f_{i+1})$ being minimal in $I\setminus (f_1,...,f_{i-1})$. If the process terminates, then we are done; otherwise, let $a_i$ be the leading coefficient of $f_i$, and the chain of ideals $(I_i:=(a_1,...,a_i))$ must stablizes by Noetherian assumption on $R$. Suppose it stablizes at step $N$, and moreover suppose by contradction that $f_1,...,f_N$ does not generate $\mathfrak{a}$. Then, consider the elment $f_{N+1}$, which by our argument is not contained in $(f_1,...,f_N)$ and of minimal degree. The leading coefficient of $f_{N+1}$ is expressed as $a_{N+1}=\sum_{i=1}^{N}\mu_ia_i$. Then, we cook up 
+
+    \[g=\sum_{i=1}^{N}\mu_if_ix^{deg(f_{N+1})-deg(f_i)}\]
+    where $g\in (f_1,...,f_N)$ by construction, and $f_{N+1}-g\not\in (f_1,...,f_N)$. However, $f_{N+1}-g$ has degree strictly less than $f_{N}$ since we cancelled the leading term, which is impossible. 
 \end{proof}
 
 \section{Valuation Rings}
@@ -448,12 +450,15 @@ Let $R$ be a Noetherian ring. Then the following hold:
 \begin{proposition}
     Let $R$ be a domain. Then the following are equivalent:
     \begin{enumerate}
-        \item Every ideal in $R$ is comparable, i.e $id(R)$ is a chain
+        \item The ideals in $R$ are totally ordered by inclusion.
+        \item The principal ideals in $R$ is totally ordered by inclusion, i.e $id(R)$ is a chain
         \item For every $x\in \textrm{Quot}(R)$, if $x\not \in R$ then $x^{-1}\in R$. 
     \end{enumerate}
 \end{proposition}
 \end{tcolorbox}
-
+\begin{proof}
+    $1\implies 2$ is trivial; $$
+\end{proof}
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
@@ -464,7 +469,7 @@ A ring $R$ satisfy one of the conditions above is called a (Krull) \underline{\t
 
 \begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
 \begin{example}
-$\mathbb{Z}_{(p)}$ is a valuation ring. 
+$\mathbb{Z}_{(p)}=\{ \frac{q}{l}\in \mathbb{Q}: gcd(l,p)=1 \}$ is a valuation ring with maximal ideal $(p)$. The valuation on $v_p$ is defined by $v(\frac{q}{l})=r$ where $r$ is the maximal natural number such that $p^r|q$. 
 \end{example}
 \end{tcolorbox}
 
