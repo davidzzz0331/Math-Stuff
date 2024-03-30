@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1711661804 "/Users/davidzhu/Documents/GitHub/Math-Stuff/Notes 11.tex" "Notes 11.pdf" "Notes 11" 1711661806 2
-  "/Users/davidzhu/Documents/GitHub/Math-Stuff/Notes 11.tex" 1711661803 44725 ccd7d2bcf366884705548bb17aee9352 ""
+["pdflatex"] 1711753580 "/Users/davidzhu/Documents/GitHub/Math-Stuff/Notes 11.tex" "Notes 11.pdf" "Notes 11" 1711753581 0
+  "/Users/davidzhu/Documents/GitHub/Math-Stuff/Notes 11.tex" 1711753580 50692 c741eddeafd76d33813fab6eaee54491 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -46,6 +46,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm5.pfb" 1336858727 21550 c590a95c9fd1ed49857642cece9cb269 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb" 1336858727 21251 56705123063d7b34002d6b6e7142345e ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1248133631 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
   "/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty" 1600895880 17859 4409f8f50cd365c68e684407e5350b1b ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex" 1673816307 1016 1c2b89187d12a2768764b83b4945667c ""
@@ -199,8 +200,8 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1710130202 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1710130178 7883461 5901c145d91f673e1f689bc83c44d735 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "Notes 11.aux" 1711661806 1181 9a49953a483895176ceef3ee7ff430d3 "pdflatex"
-  "Notes 11.tex" 1711661803 44725 ccd7d2bcf366884705548bb17aee9352 ""
+  "Notes 11.aux" 1711753581 1181 acdd4f68bc2d65065c319c1ed7be4905 "pdflatex"
+  "Notes 11.tex" 1711753580 50692 c741eddeafd76d33813fab6eaee54491 ""
   (generated)
   "Notes 11.aux"
   "Notes 11.log"
