@@ -658,6 +658,8 @@ Let $R$ be Artinian. Then the following hold:
 \end{tcolorbox}
 \begin{proof}
     We know the $J(R)^n=(\cap_{i=1}^k \mathfrak{m}_i)^n=0$ for some $n$ by Lemma $7.1$. The goal is to use the Chinese Remainder Theorem and shwo that $R\cong R/(0)=R/J(R)$ has the desired form. First, we note that $\mathfrak{m}_i+\mathfrak{m}_j=1$ by maximality, so $(\mathfrak{m}_i)$ are pairwise coprime. Furthermore, this implies that $\mathfrak{m}_i^n+\mathfrak{m}^n_j=1$ for all $i,j$: if not, then there exists minimal prime $p$ over $\mathfrak{m}_i^n+\mathfrak{m}_j^n$, which implies $\mathfrak{m}_i^n\subseteq p$ and $\mathfrak{m}_i^n\subseteq p$, which in turn implies $\mathfrak{m}_i\subseteq p$ and $\mathfrak{m}_j\subseteq p$, which is impossible. Thus, $(\mathfrak{m}_i^n)$ are also pairwise coprime. It follows that $0=(J(R))^n=\prod \mathfrak{m}_i^n$, since intersection of ideals is product of ideals when the ideals are coprime. It is then a straight application of Chinese Remainder Theorem that $R\cong R/(m_1)^n\times...\times R/m_r^n$. 
+    
+    Lastly, note that each ring of the form $R/(\mathfrak{m}^k)$ is local: any suppose $\mathfrak{m}^k\subset p$ for $p$ prime, then for every $m\in \mathfrak{m}$, we have $m^k\in p$, so by primeness we have $m\in p$, and $\mathfrak{m}\subseteq p$. Thus, the only prime ideal is the image of $\mathfrak{m}$.
 \end{proof}
 
 
@@ -671,20 +673,32 @@ Let $R$ be Artinian. Then the following hold:
 \end{theorem}
 \end{tcolorbox}
 \begin{proof}
-    Step one is reduce to $R$ local as follows: $R$ Artin ring implies $R=\prod R_i$, where $R_i$ are local Artin rings. In particular, the product is Noetherian iff each $R_i$ is Noetherian. $R$ is Noetherian and Krull dimension $0$ implies $Max(R)=Spec(R)$, hence $rad(R)=Jac(R)$. Thus, $R$ has only finitely many prime ideals. Hence, $Max(R)$ is finite and we reduce to the finite case. 
 
-    Step two: now assume $R$ is local. Assume $(R,\mathfrak{m})$ is a local Artin ring. To prove $R$ is Noetherian, it suffices to show $\mathfrak{m}$ is finitely generated. For $k>0$, we have the exact spectralsequences
+    $R$ is Noetherian and Krull dimension $0$ implies $Max(R)=Spec(R)$, hence $rad(R)=Jac(R)$. Thus, $R$ has only finitely many prime ideals. Hence, $Max(R)$ is finite and we reduce to the finite case. 
+
+
+    Suppose $R$ is Artinian. Step one is reduce to $R$ local as follows: by structure theorem, we decompose $R$ as a product of Artinian local rings $R=\prod_{i=1}^k R_i$. In particular, a product of Noetherian rings is Noetherian iff each $R_i$ is Noetherian. Moreover, the krull dimension of the product is the maximum of the krull dimension of the $R_i$. Thus, we may reduce to the case where $R$ is a local Artin ring, and we want to show that it is Noetherian and of dimension $0$.
+    
+    
+    Now assume $(R,\mathfrak{m})$ is a local Artin ring. To prove $R$ is Noetherian, it suffices to show $\mathfrak{m}$ is finitely generated. For $k>0$, we have the exact sequence
     \[\begin{tikzcd}
-    0\arrow[r]&\mathfrak{m}^k/\frak{m}^{k+1}\arrow[r,"f"]&R/\mathfrak{m}^{k+1}\arrow[r,"g"]&R/\mathfrak{m}^k\arrow[r]&0
+    0\arrow[r]&\mathfrak{m}^k/\mathfrak{m}^{k+1}\arrow[r,"i"]&R/\mathfrak{m}^{k+1}\arrow[r,"p"]&R/\mathfrak{m}^k\arrow[r]&0
     \end{tikzcd}\]
-    Note $\kappa:= R/\mathfrak{m}$ is a field, $R$ acts on $\mathfrak{m}^k/\mathfrak{m}^{k+1}$ through the projection $R\to \kappa$. In particular, there is a bijection 
+    where $i$ is the inclusion map and $p$ is the canonical projection. 
+
+    Note $\kappa:= R/\mathfrak{m}$ is a field, $R$ acts on $\mathfrak{m}^k/\mathfrak{m}^{k+1}$ in the following way: $\overline{r}\cdot \overline{m} :=\overline{rm}$, So, $\mathfrak{m}^k/\mathfrak{m}^{k+1}$ has a canonical $\kappa$-vector space structure. 
+    
+    
+    In particular, there is a bijection 
     \[
-        \{ \kappa -\textrm{vector subspaces of }\ \mathfrak{m}^k/\mathfrak{m}^{k+11} : \} \iff \{ R-\textrm{ideals} \mathfrak{n} \ : \mathfrak{m}^{k+1}\subset \mathfrak{n}\subset \mathfrak{m}^k \}=\epsilon
+        \{ \kappa -\textrm{vector subspaces of }\ \mathfrak{m}^k/\mathfrak{m}^{k+1} : \} \iff \{ R-\textrm{ideals} \ \mathfrak{n} \ : \mathfrak{m}^{k+1}\subset \mathfrak{n}\subset \mathfrak{m}^k \}=\epsilon
     \]
+
+
     Note $R$ Artinian implies $R/\mathfrak{m}^{k+1}$ is Artinian. Thus, the set $\epsilon$ is finite, and $\mathfrak{m}^{k}/\mathfrak{m}^{k+1}$ is finite dimensional. Then induction on $k$: suppose $R/\mathfrak{m}^k$ is Noetherian. Then, $\mathfrak{m}^k/\mathfrak{m}^{k+1}$ is finite $R$-module. 
     
     
-    For the reverse implication: Given $(R,\mathfrak{m})$ Noetherian and $\frak{m}^k=0$ for $k$ sufficiently large. If $k=0$ then the statement holds; suppose it holds for $k$; consider the exact sequence above and $R/\mathfrak{m}^k$ is Artin. Let $(\mathfrak{a}_i)$ be a descending sequence of $Id(R/\mathfrak{m}^{k+1})$. Hence, there exists $i_0$ such that $\pi_k(\frak{a}_i)\pi_k(\mathfrak{a_{i_0}})$ for all $i>i_0$. Then, look at 
+    For the reverse implication: Given $(R,\mathfrak{m})$ Noetherian and $\mathfrak{m}^k=0$ for $k$ sufficiently large. If $k=0$ then the statement holds; suppose it holds for $k$; consider the exact sequence above and $R \mathfrak{m}^k$ is Artin. Let $(\mathfrak{a}_i)$ be a descending sequence of $Id(R/\mathfrak{m}^{k+1})$. Hence, there exists $i_0$ such that $\pi_k(\frak{a}_i)\pi_k(\mathfrak{a_{i_0}})$ for all $i>i_0$. Then, look at 
     \[\begin{tikzcd}
         0\arrow[r]&\mathfrak{a}_i\cap\mathfrak{m}^k/\frak{m}^{k+1}\arrow[r,"f"]&\mathfrak{a}_i/\mathfrak{m}^{k+1}\arrow[r,"g"]&\mathfrak{a}_i/\mathfrak{m}^k\arrow[r]&0
         \end{tikzcd}\]
@@ -861,15 +875,16 @@ Let $R$ be a PID. Then, the following hold:
 
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}
-(Invariant Factors Theorem) Let $R$ be a principal ideal domain and $M$ a free $R$-module, $N\subset M$ a submodule. Then, there exists $R$-basis $A=(\alpha_1,...,\alpha_m)$ of $M$ and $\delta_1|\delta_2|...|\delta_n$ in $R$ such that $\delta_1\alpha_1...,\delta_n\alpha_n$ is an $R$-basis for $n$.
+(Invariant Factors Theorem) Let $R$ be a principal ideal domain and $M$ a free $R$-module, $N\subset M$ a submodule. Then, there exists $R$-basis $A=(\alpha_1,...,\alpha_m)$ of $M$ and $\delta_1|\delta_2|...|\delta_n$ in $R$ such that $\delta_1\alpha_1...,\delta_n\alpha_n$ is an $R$-basis for $N$, unique up to association. 
 \end{theorem}
 \end{tcolorbox}
 \begin{proof}
-    Let $D=\{ d\in R: \exists y\in N, \textrm{basis} (\beta_1,...,\beta_m) \textrm{of} M st d\beta_1=y \}=\{ d\in R:\exists y=d \sum_{i=1}^{k}r_i'\alpha_i'\in N, gcd(r_i)=1 \}$.
+    Let $D=\{ d\in R: \exists y\in N, \textrm{basis} (\beta_1,...,\beta_m) \textrm{of} \  M \ \textrm{st} \  d\beta_1=y \}=\{ d\in R:\exists y=d \sum_{i=1}^{k}r_i'\alpha_i'\in N, gcd(r_i)=1 \}$.
 \end{proof}
 
 \begin{tcolorbox}
     \begin{lemma}
+        Given $d_1,d_2\in D$, which implies $y_1=dx_1,$ $y_2=dx_2$, and $d=gcd(x_1,x_2)$. Then, there exists $y,x$ such that $y=dx$.
     $d_1=inf D$ exists, where the ordering is by divisibility. 
     \end{lemma}
     \end{tcolorbox}
@@ -878,5 +893,202 @@ Let $R$ be a PID. Then, the following hold:
         Obviously, $D$ has minimal elements. Let $d',d''$ be minimal elements, and $d=gcd(d',d'')$, and show $d\in D$. 
     \end{proof}
 
+    What if the modules is countably infinitely generated or uncountably generated
 
+    
+    \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+    \begin{theorem}
+    (Structure Theorem) Let $R$ be a PID, and $M$ a finite $R$-module, then the following hold:
+    \begin{enumerate}
+        \item There exists $\delta_1|...|\delta_n$ unique up to association such that $M\cong \oplus R/(\delta_i)\oplus R^f$
+        \item $M_{tors}=\{ x\in M:rx=0 \textrm{for some} r\in R  \}$ is finite
+    \end{enumerate}
+    \end{theorem}
+    \end{tcolorbox}
+\begin{proof}
+    Let $(x_i)_{I}$ be a system of generators, $I$ a finite indexing set. Let $f:R^I\to M$ be the morphism given by $e_i\mapsto x_i$. Then, the kernel is a submodule of $R^I$, and apply invariant factors theorem. For uniqueness, given $M\cong \oplus R/(\delta_i)\oplus R^f$, and the projection $R^I\to M$. We get $
+    N=ker$ has the structure equivalent to the invariant factors theorem.  
+\end{proof}
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+For a finitely generated abelian group $A$, $A\cong \mathbb{Z}/(d_1)\oplus...\oplus \mathbb{Z}/(d^r)\oplus \mathbb{Z}^f$
+\end{example}
+\end{tcolorbox}
+
+An application is the Jordan Canonical form and endormorphisms: let $k$ be a field and $V$ a finite dimensional vector space over $k$. Then, $\varphi\in End(V)$. Then, $V$ becomes a $k[t]$-module by $p(t)\cdot v=p(\varphi)(v)$. Note $V$ is a finite-torsion $F[t]$ module. (Cayley-Hamilton). Hence, $V\cong F[t]/(\delta_1)\oplus...\oplus F[t]/(\delta_n)$, with $\delta_1|...|\delta_n$. Let $\delta_1=t^{n_i}+...+e_{n}$. Then $R/\delta_i$ has basis $R_i=\langle I,t,...,t^{n_i-1}\rangle $, and $V=R_1\oplus ...\oplus R_n$. In matrix form, we recover the jordan decomposition of $\varphi$. 
+
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+Let $A=(f_{i,j}(t))\in F[t]^N$. Gaussian Elimination. 
+\end{example}
+\end{tcolorbox}
+
+\subsection{Noetherian/Artinian Modules}
+Let $R$ be a (not necessarily commutative) ring, and $M$ be a (left/right/bi) module. We say that $M$ satisfies ACC/DCC iff thet set of submodules satisfies ACC/BCC with respect to inclusion.
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+If $R$ is a Noetherian/artinian ring. Then it is a Noetherian/Artinian module over itself. 
+\end{example}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+(Characterization) Let $M$ be an $R$-module. Then the following hold: 
+\begin{enumerate}
+    \item $M_{\cdot}$ satisfies ACC/DCC if every subset $X\subset M_{\cdot}$ has maximal/minimal elements with respect to inclusions.
+    \item $M_{\cdot}$ satisfies ACC iff every submodule is finitely generated. 
+\end{enumerate}
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    Exercise. 
+\end{proof}
+
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+(Properties) The following hold:
+\begin{enumerate}
+    \item If $M$ satisfies ACC/DCC, then every submodule and every quotient module satisfies ACC/DCC.
+    \item Let \[\begin{tikzcd}
+    0\arrow[r]&M_0\arrow[r]&M_1\arrow[r]&...\arrow[r]&M_n\arrow[r]&0
+    \end{tikzcd}\]
+   $(M_{2k})$ satisfies ACC/DCC iff $(M_{2k+1})$ does so.
+    \item The category is $R$-modules satisfiying ACC/DCC has finite products and coproducts. 
+    \item If $M$ satisfies ACC/DCC, $I$ an ideal of $R$, then $IM, M/IM$ does so.
+    \item Localization preserves ACC/DCC. 
+ \end{enumerate}
+\end{proposition}
+\end{tcolorbox}
+
+Recall the discussion on composition series of $R$-modules. If a composition series exist, then all such have the same length and the same simple factors up to permutation. $0\subseteq M_1\subseteq M_2\subseteq ...\subseteq M_n=M$ such that $\overline{M_i}=M_i/M_{i-1}$ is simple. 
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Let $M$ be a (left) modules. Then, $M$ has a (left) composition series iff $M$ satisfies ACC and DCC. 
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    Let $0\subseteq M_1\subseteq M_2\subseteq ...\subseteq M_n=M$ be a composition series, and make induction on $n$. For $n=1$, nothing to prove. For inductive step, suppose $0\subseteq M_1\subseteq M_2\subseteq ...\subseteq M_n$ is a composition series, so $M_n$ satisfies ACC and DCC. Then, there exists the exact sequence 
+    \[\begin{tikzcd}
+    0\arrow[r]&M_n\arrow[r,"f"]&M_{n+1}\arrow[r,"g"]&M_{n+1}/M_n\arrow[r]&0
+    \end{tikzcd}\]
+    and by proposition $9.2$, $M_{n+1}$ satisfies ACC and DCC. 
+
+
+    Suppose $M$ satisfies ACC and DCC. In particular, $M$ has minimal submodules $M_1$, which must be simple. Proceed inductively, consider the set $M'=\{N|M_1\subset N\}$, which also has minimal elements, say $M_2$. We can show that $M_2/M_1$ is simple. Inductively, we get a finite sequence by Noetherian. 
+\end{proof}
+
+\section{Integral extensions}
+
+\subsection{Basic Facts}
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A commutative ring extension is any injective ring homomorphism $R\hookrightarrow S$. Notation $S|R$. $x\in S$ is called \underline{\textbf{integral}} or \underline{\textbf{algebraic}} if it is a root of a monic polynomial in $R[t]$. 
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+$\mathbb{Z}\hookrightarrow \mathbb{Q}$. The only integral elements are elements in $\mathbb{Z}$. In general, if $R$ is a UFD, then $x\in S$ integral over $R$ iff $x\in R$. For example, $\mathbb{Z}[t]\hookrightarrow \mathbb{Q}[t]$. 
+\end{example}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Let $S|R$ be a ring extension. Then, the following are equivalent:
+\begin{enumerate}
+    \item $x$ is integral over $R$.
+    \item $R[x]$ is a finite $R$-module
+    \item There exists $M$ finite $R$-module such that $xM\subset M$. 
+\end{enumerate}
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    $1\implies 2\implies 3$ is exercise. For $3\implies 1$, let $M=\sum_{i=1}^{N}Rx_i$, and $\Pi=(x_1,...,x_N)$ a system of generators. Then, $x\Pi=(x_1,...,x_N)\cdot A_x$ for some matrix $A_x=(a_{i,j})\in R^{N\times N}$. Hence, $\Pi\cdot (xI_n-A_x)=0$. We get $\Pi\cdot det(\tilde{A})I_n=0$, i.e $det(\tilde{A})\cdot x_i=0$. Then, $det(\tilde{A})=0$. Hence, $det(\tilde{A})=x^N-tr(A)x^{N-1}+...+(-1)^{N}det(A)$. 
+\end{proof}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Let $S|R$ be a ring extension. 
+\begin{enumerate}
+    \item If $x_1,...,x_n\in S$ are integral over $R$. Then, $R[x_1,...,x_n]$ is a finite $R$-module. 
+    \item $\tilde{R}:=\{ x\in S: x \ \textrm{integral over } \ R \}$ is a subring containing $R$. 
+    \item If $I\in Id(R)$, and $\tilde{I}=\{ x\in S: x \  \textrm{integral over} \ I \}$ is an ideal containing $I$. In particular, it is $N(I\tilde{R})$. 
+\end{enumerate}
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    To $1$: exercise. To $2$. exercise. To $3$: For the $\tilde{I}\subseteq N(i\Tilde{R})$ direction, let $x\in \tilde{R}$ be integral over $I$, i.e $x^n+a_{n-1}x^{n-1}+....=0$. $x^n=(-a_{n-1}x^{n-1}+....)\in I\tilde{R}$, hence $x\in n(I\Tilde{R})$. 
+\end{proof}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $S|R$ be a ring extension. Define $\tilde{R}=\{ x\in S: x algebraic over $R$ \}$ is called integral closure of $R$. $S|R$ is called integral if $\tilde{R}=S$. R is called integrally closed in $S$ if $\tilde{R}=R$.
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $R$ be a domain and $K$ its quotient field. $R$ is called inetgral closed if $R$ is integrally closed in $K$.
+\end{definition}
+\end{tcolorbox}
+
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+$\mathbb{Z}$ is closed. $\mathbb{Z}(\sqrt{-3})$is not closed.  UFD are integrally closed. 
+\end{example}
+\end{tcolorbox}
 \end{document}
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+Let $R$ be a domain. Then, $R$ is integrally closed iff $R=\cap R_v$ where $R_v$ is a valuation ring over $R$ in the quotient field.  
+\end{theorem}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+The following hold
+\begin{enumerate}
+    \item (Transitivity) Let $S_2|S_1|R$ be ring extensions. Then, $S_2|R$ is inetgral iff $S_2|S_1$ is integral and $S_1|R$ is integral as well.
+    \item (Functoriality) If $b\in Id(S)$, $b\neq S$, and $a=b\cap R$, $\tilde{a}=b\cap \tilde{R}$. $\overline{S}/b|\tilde{R}/\tilde{a}|R/a$ is integral. But usually, $\tilde{R}/\tilde{a}\not \subset R/\tilde{a}$
+    \item Let $\Sigma$ be a multiplicative system. Then, $\tilde{R}_{\Sigma}$ is integral closed of $R_{\Sigma}$, and $(\tilde{R})_{\Sigma}=\tilde{R_{\Sigma}}$.
+\end{enumerate}
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    Exercise. 
+\end{proof}
+
+
+\subsection{Going-Up Theorem}
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Going-Up) Let $S|R$ be a integral ring extension. Then, the following hold: 
+\begin{enumerate}
+    \item For every $p\in Spec(R)$, there exists $q\in Spec(S)$ such that $q\cap R=p$. Moreove, if $q_1\subset q_2$ and $q_1\cap R=q_2\cap R=p$, then $q_1=\q_2$.
+    \item (Going-up) Let $p_1\subseteq p_2\subseteq ....\subseteq p_n$ be a chain in $Spec(R)$, resp $Spec(S)$, such that $m<n$ and $q_m\cap R=p_m$, then the chain in $Spec(S)$ can be extened to length $m$. In particular, Krull dimension of $R$ equals the Krull dimension of $S$. 
+\end{enumerate}
+\end{theorem}
+\end{tcolorbox}
