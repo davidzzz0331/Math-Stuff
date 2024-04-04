@@ -634,26 +634,30 @@ Let $R$ be Artinian. Then the following hold:
     To $4$, let $p\in Spec(R)$. Then, $R/p$ is an Artinian domain. Then, $R/p$ must be a field. Thus, all primes are maximal.
     
 
-    If $\mathfrak{m_1},\mathfrak{m_2}...$ is infinite, then we claim $\mathfrak{m}_1\subset \mathfrak{m}_1\mathfrak{m}_2\subset ...\subset \mathfrak{m_1}\mathfrak{m}_2\mathfrak{m}_3....$ does not stabilize: suppose otherwise $\mathfrak{m}_1 \mathfrak{m}_2...\mathfrak{m}_k=\mathfrak{m_1}...\mathfrak{m}_{k+1}\subseteq \mathfrak{m}_{k+1}$ for some $k$. By primeness, this implies $\mathfrak{m}_j\subseteq \mathfrak{m}_{k+1}$ for some $1\leq j\leq k $, which contradicts maximality. 
+    If $\mathfrak{m_1},\mathfrak{m_2}...$ is infinite, then we claim $\mathfrak{m}_1\supset \mathfrak{m}_1\mathfrak{m}_2\supset ...\supset \mathfrak{m_1}\mathfrak{m}_2\mathfrak{m}_3....$ does not stabilize: suppose otherwise $\mathfrak{m}_1 \mathfrak{m}_2...\mathfrak{m}_k=\mathfrak{m_1}...\mathfrak{m}_{k+1}\subseteq \mathfrak{m}_{k+1}$ for some $k$. By primeness, this implies $\mathfrak{m}_j\subseteq \mathfrak{m}_{k+1}$ for some $1\leq j\leq k $, which contradicts maximality. 
 \end{proof}
 
 
 
 \begin{tcolorbox}
 \begin{lemma}
-    \item J(R)=N(R) is nilpotent.
+    If $R$ is Artin or Noetherian of Krull dimension $0$, then $J(R)=N(R)$ is nilpotent.
 \end{lemma}
 \end{tcolorbox}
 \begin{proof}
-    In Artinian rings, all prime ideals are maximal, and we get the equality $J(R)=N(R)$. By DCC, $(N^n(R))_{n\in \mathbb{N}}$ stablizes at an ideal $I$ where $I\subseteq N(R) $. Suppose $I\neq 0$. Then, let $H$ be the set of all ideals of $R$ whose product with $I$ is not $0$. The set is non-empty since $I$ is in $H$; by artinian assumption, the set has a minimal element, call it $\mathfrak{a}$. By construction, there exists $x\in a$ such that $(x)I\neq 0$, so we must have $(x)=\mathfrak{a}$ by minimality. However, $((x)I)I=(x)I$, so $(x)I=(x)$. In particular, this implies $xi=x$ and consequently $xi^n=x$ for some $i\in N(R)$ and $n\in \mathbb{N}$. However, $i$ is nilpotent, which contradicts the assumption that $x\neq 0$. 
+    In Artinian rings or any ring of Krull dimension $0$, all prime ideals are maximal, and we get the equality $J(R)=N(R)$.
+    
+    In the case of $R$ is Artin, by DCC, $(N^n(R))_{n\in \mathbb{N}}$ stablizes at an ideal $I$ where $I\subseteq N(R) $. Suppose $I\neq 0$. Then, let $H$ be the set of all ideals of $R$ whose product with $I$ is not $0$. The set is non-empty since $I$ is in $H$; by artinian assumption, the set has a minimal element, call it $\mathfrak{a}$. By construction, there exists $x\in a$ such that $(x)I\neq 0$, so we must have $(x)=\mathfrak{a}$ by minimality. However, $((x)I)I=(x)I$, so $(x)I=(x)$. In particular, this implies $xi=x$ and consequently $xi^n=x$ for some $i\in N(R)$ and $n\in \mathbb{N}$. However, $i$ is nilpotent, which contradicts the assumption that $x\neq 0$. 
+
+    In the case where $R$ is Noetherian, we simply note that $N(R)=rad((0))$, and $nil((0))^k\subseteq (0)$ for $k$ large enough by proposition $5.2.3$,
 \end{proof}
 
 
 
-
+If $R$ is Artin or Noetherian of dimension $0$, then every prime is both maximal and minimal, which means $Max(R)$ is finite. We now present a proof of structure theorem for Artin rings, with an arguement that also applies for Noetherian rings of dimension $0$ without knowing a priori that they are in fact equivalent. 
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}
-    (Structure Theorem) Let $Max(R)=\{m_1,...,m_r\}$. Then, $R\cong R/(m_1)^n\times...\times R/m_r^n$. Hence, $R$ is a product of local Artinian rings. 
+    (Structure Theorem) If $R$ is Artin or Noetherian of dimension $0$ with $Max(R)=\{m_1,...,m_r\}$ is finite. Moreover, $R\cong R/(m_1)^n\times...\times R/m_r^n$. Hence, $R$ is a product of local Artinian rings. 
 \end{theorem}
 \end{tcolorbox}
 \begin{proof}
@@ -674,34 +678,33 @@ Let $R$ be Artinian. Then the following hold:
 \end{tcolorbox}
 \begin{proof}
 
-    $R$ is Noetherian and Krull dimension $0$ implies $Max(R)=Spec(R)$, hence $rad(R)=Jac(R)$. Thus, $R$ has only finitely many prime ideals. Hence, $Max(R)$ is finite and we reduce to the finite case. 
 
-
-    Suppose $R$ is Artinian. Step one is reduce to $R$ local as follows: by structure theorem, we decompose $R$ as a product of Artinian local rings $R=\prod_{i=1}^k R_i$. In particular, a product of Noetherian rings is Noetherian iff each $R_i$ is Noetherian. Moreover, the krull dimension of the product is the maximum of the krull dimension of the $R_i$. Thus, we may reduce to the case where $R$ is a local Artin ring, and we want to show that it is Noetherian and of dimension $0$.
+Step one is reduce to the case where $R$ is local by structure theorem, since product of Noetherian rings is Noetherian and product of Artin rings is Artin. 
     
     
-    Now assume $(R,\mathfrak{m})$ is a local Artin ring. To prove $R$ is Noetherian, it suffices to show $\mathfrak{m}$ is finitely generated. For $k>0$, we have the exact sequence
+ Now assume $(R,\mathfrak{m})$ is a local Artin ring. For $k>0$, we have the exact sequence of $R$-modules
     \[\begin{tikzcd}
     0\arrow[r]&\mathfrak{m}^k/\mathfrak{m}^{k+1}\arrow[r,"i"]&R/\mathfrak{m}^{k+1}\arrow[r,"p"]&R/\mathfrak{m}^k\arrow[r]&0
     \end{tikzcd}\]
-    where $i$ is the inclusion map and $p$ is the canonical projection. 
+    where $i$ is the inclusion map and $p$ is the canonical projection. By proposition $9.2$, which we will prove latter, $R/ \mathfrak{m}^{k+1}$ is Noetherian provided both $R/ \mathfrak{m}^k$ and $\mathfrak{m}^k/\mathfrak{m}^{k+1}$ are Noetherian. Moreover, $R$ being Artinian implies $\mathfrak{m}^k=0$ for $k$ large enough, and we have $R/\mathfrak{m}^k\cong R$ for $k$ large enough. Our goal is to inductively show $R/\mathfrak{m}^{k}$ Noetherian for all $k$:  when $k=1$, $R/m$ is a field and thus Noetherian; now suppose $R/\mathfrak{m}^n$ is Noetherian. 
 
-    Note $\kappa:= R/\mathfrak{m}$ is a field, $R$ acts on $\mathfrak{m}^k/\mathfrak{m}^{k+1}$ in the following way: $\overline{r}\cdot \overline{m} :=\overline{rm}$, So, $\mathfrak{m}^k/\mathfrak{m}^{k+1}$ has a canonical $\kappa$-vector space structure. 
+    Note $\kappa:= R/\mathfrak{m}$ is a field, and $\kappa$ acts on $\mathfrak{m}^n/\mathfrak{m}^{n+1}$ in the following way: $\overline{r}\cdot \overline{m} :=\overline{rm}$, So, $\mathfrak{m}^n/\mathfrak{m}^{n+1}$ has a canonical $\kappa$-vector space structure. 
     
     
-    In particular, there is a bijection 
+    In particular, there is an inclusion preserving bijection 
     \[
-        \{ \kappa -\textrm{vector subspaces of }\ \mathfrak{m}^k/\mathfrak{m}^{k+1} : \} \iff \{ R-\textrm{ideals} \ \mathfrak{n} \ : \mathfrak{m}^{k+1}\subset \mathfrak{n}\subset \mathfrak{m}^k \}=\epsilon
+        \{ \kappa -\textrm{vector subspaces of }\ \mathfrak{m}^n/\mathfrak{m}^{n+1} \} \iff \{ R-\textrm{ideals} \ \mathfrak{n} \ : \mathfrak{m}^{n+1}\subseteq \mathfrak{n}\subseteq \mathfrak{m}^n \}=\epsilon
     \]
+    
+
+    Note $R$ Artinian implies $R/\mathfrak{m}^{n+1}$ is Artinian. Thus, the set $\epsilon$ is finite, and $\mathfrak{m}^{n}/\mathfrak{m}^{n+1}$ is a finite dimensional vector space. This condition forces $\epsilon$ to satisfy both ACC and DCC, and by ideal correspondence, $\mathfrak{m}^k/\mathfrak{m}^{k+1}$ as an $R$-module satisfies ACC and is thus Noetherian. 
 
 
-    Note $R$ Artinian implies $R/\mathfrak{m}^{k+1}$ is Artinian. Thus, the set $\epsilon$ is finite, and $\mathfrak{m}^{k}/\mathfrak{m}^{k+1}$ is finite dimensional. Then induction on $k$: suppose $R/\mathfrak{m}^k$ is Noetherian. Then, $\mathfrak{m}^k/\mathfrak{m}^{k+1}$ is finite $R$-module. 
     
     
-    For the reverse implication: Given $(R,\mathfrak{m})$ Noetherian and $\mathfrak{m}^k=0$ for $k$ sufficiently large. If $k=0$ then the statement holds; suppose it holds for $k$; consider the exact sequence above and $R \mathfrak{m}^k$ is Artin. Let $(\mathfrak{a}_i)$ be a descending sequence of $Id(R/\mathfrak{m}^{k+1})$. Hence, there exists $i_0$ such that $\pi_k(\frak{a}_i)\pi_k(\mathfrak{a_{i_0}})$ for all $i>i_0$. Then, look at 
-    \[\begin{tikzcd}
-        0\arrow[r]&\mathfrak{a}_i\cap\mathfrak{m}^k/\frak{m}^{k+1}\arrow[r,"f"]&\mathfrak{a}_i/\mathfrak{m}^{k+1}\arrow[r,"g"]&\mathfrak{a}_i/\mathfrak{m}^k\arrow[r]&0
-        \end{tikzcd}\]
+   For the converse, let $(R,\mathfrak{m})$ be a Noetherian local ring of dimension $0$. Note we also have $\mathfrak{m}^k=0$ for $k$ large enough, since $\mathfrak{m}=N(R)$, which is nilpotent by proposition $7.1$. 
+    
+    We proceed inductively as before: if $k=0,1$ then $R/\mathfrak{m}^k$ is clealy Artin. Now suppose it holds for $k=n$ such that $R/ \mathfrak{m}^n$ is Artin. By using the same arguemnt as before, $R/\mathfrak{m}^{n+1}$ is Noetherian and satisfies ACC, so $\mathfrak{m}^n/\mathfrak{m}^{n+1}$ is again finite dimensional, which forces $\mathfrak{m}^n/\mathfrak{m}^{n+1}$ satisfying DCC as well. 
 \end{proof}
 
 \section{Krull's Theorem on Noetherian Rings}
@@ -710,38 +713,90 @@ Let $R$ be Artinian. Then the following hold:
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
-    Let $R$ be a commutative ring; $\mathfrak{a}\subset R$ a proper ideal. Consider $\mathfrak{a}^n$ and the projection $p_n: R/\mathfrak{a}^{n+1}\to R/\mathfrak{a}^n$. Then, $(R/\mathfrak{a}^n, p_n)$ is a projective system. The limit $\widehat{R}:=\varprojlim R/\mathfrak{a}^n$, together with $i: R\to \widehat{R}$ is called $\frak{a}$-adic completion of $R$. 
+    Let $R$ be a commutative ring; $\mathfrak{a}\subset R$ a proper ideal. Consider $\mathfrak{a}^n$ and the projection $p_n: R/\mathfrak{a}^{n+1}\to R/\mathfrak{a}^n$. Then, $(R/\mathfrak{a}^n, p_n)_{n\in \mathbb{N}}$ is a projective system. The limit $\widehat{R}:=\varprojlim R/\mathfrak{a}^n$, together with $i: R\to \widehat{R}$ is called $\mathfrak{a}$\underline{\textbf{-adic completion}} of $R$. 
 \end{definition}
 \end{tcolorbox}
 
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
 \begin{proposition}
-    The kernel of the inclusion $i: R\to \widehat{R}$ is the intersection of all $\mathfrak{a}^n$.
+    The kernel of the inclusion $\pi: R\to \widehat{R}$ is the intersection of all $\mathfrak{a}^n$.
 
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    We note $a\in ker(\pi)$ iff $\pi(a)=0$ iff $pr_n(a)=0$ for all $n$ iff $a\in \cap_{i=0}^{\infty}\mathfrak{a}^n$. 
+\end{proof}
+The reason we refer $i$ as the inclusion map is because when $R$ is Noetherian and local/integral, the kernel of $i$ is trivial by the following theorem by Krull.
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(The Intersection Theorem) Let $R$ be a Noetherian ring that is local or integral. Let $\mathfrak{a}\subset R$ be a proper ideal. Then, $\cap_{n=0}^{\infty} \mathfrak{a}^n=0$. In particular, the inclusion map in the $\mathfrak{a}$-adic completion is injection.
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+ Suppose $R$ is Notherian and local with maximal ideal $\mathfrak{m}$. By Noetherian assumption, the ideal $\mathfrak{a}_0:=\cap \mathfrak{a}^k$ is finitely generated. Moreover, $\mathfrak{m}_0:=\cap \mathfrak{m}^k$ is f.g with $\mathfrak{a}_0\subseteq \mathfrak{m}_0$. We then have $\mathfrak{m}\cdot \mathfrak{m}_0=\mathfrak{m}_0$, and apply Nakayama's lemma, we get $\mathfrak{m}_0=(0)$. 
+ 
+ Now suppose $R$ is Noetherian and integral, and choose $\mathfrak{m}$ be a maximal ideal over $\mathfrak{a}$. The integral assumption implies $\phi: R\to R_{\mathfrak{m}}$ is injective, and we reduce to the local case.
+\end{proof}
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+The intersection theorem does not hold for generic Noetherian Rings. For example, in $\mathbb{Z}/6$, which is not a domain nor local, and the ideal $I=(2)$ is idempotent. Thus, $\cap_{i=0}^{\infty}=I$. 
+\end{example}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Given a ring $R$ and $I$ an ideal, we equip $R$ with $I$\underline{\textbf{-adic topology}} given by the following basis $\{x+I^n: x\in R, n\in \mathbb{N}\}$. Moreover, a sequence of points $(x_n)$ is called \underline{\textbf{Cauchy}} if for every $k>0$, there exists $N$ such that for $m,n>N$, we have $x_n-x_m\in I^k$. 
+\end{definition}
+\end{tcolorbox}
+It is standard to verify that this is well-defined basis. Heuristically, the larger $n$ the smaller the open neighborhood is. In particular, the intersection theorem says if $R$ is Noetherian and integral/local, then the $I$-adic topology is Hausdorff. (an element evetually lives outside of $I^n$ for $n$ large enough). Then, the $I$-adic completion $\widehat{R}_I$ is the topological completion of $R$. 
+
+It is easy to extend the whole package of definitions up to this point to $R$-modules. Given an $R$-modules $M$ equipped with a choice of $I$-adic topology and a submodule $N$, it is natural to ask whether the subspace topology and $I$-adic topology on $N$ agrees. The Artin-Rees lemma gives us a positive answer in the case when the ring is Noetherian and $M$ is finitely generated. 
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Artin-Rees Lemma) Let $R$ be a Noetherian ring and $I$ an ideal. Let $M$ be a finitely generated $R$-module and $N\subset M$ a submodule. Then, there exists an integer $k\geq 1$ such that for $n\geq k$, we have 
+\[I^nM\cap N=I^{n-k}(I^kM\cap N)\]
+\end{theorem}
+\end{tcolorbox}
+
+Before proving Theorem $8.2$, we first set up some necessary tools. 
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $R$ be a ring and $I\subset R$ an ideal. Then, the \underline{\textbf{blow-up algebra}} of $R$ is the graded $R$-algebra
+\[B_IR:=\oplus_{i=0} ^{\infty} I^i\]
+\end{definition}
+\end{tcolorbox}
+Note that when $R$ is Noetherian, $I$ is finitely generated as an $R$-module, and the generators generate $B_IR$ as an $R$-algebra, which implies $B_IR$ is a Noetherian ring as well. 
+
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $R$ be a ring and $I\subset R$ an ideal, and let $M$ be an $R$-module. A filtration $M=M_0\supset M_1\supset...$ is called an $I$\underline{\textbf{-filtration }} if $IM_n\subset M_{n+1}$ for all $n$. The filtration is called $I$-stable if $IM_n=M_{n+1}$ for $n$-large enough. Given an $I$-filtration $J$ of $M$, define the \underline{\textbf{blow-up}} module as $B_JR:=\oplus_{i=1}^{\infty}M_i$.
+\end{definition}
+\end{tcolorbox}
+Note that $B_JM$ has a natural $B_IR$-module structure. We now introduce a proposition that relates stability and finite generation of blow-up modules. 
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Let $R$ be a ring, $I\subset R$ an ideal, and let $M$ a finitely generated $R$-module with $I$-filtration $J: M=M_0\supset M_1\supset...$, where each $M_i$ is finitely generated. Then, the filtration $J$ is $I$-stable iff the $B_IR$-module $B_JM$ is finitely generated. 
 \end{proposition}
 \end{tcolorbox}
 
 
 
-\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
-\begin{theorem}
-(The Intersection Theorem) Let $R$ be a Noetherian ring that is local or integral. Let $\mathfrak{a}\subset R$ be a proper ideal. Then, $\cap \mathfrak{a}^n=0$. In particular, the inclusion map in the $\mathfrak{a}$-adic completion is injection.
-\end{theorem}
-\end{tcolorbox}
-\begin{proof}
- Suppose $R$ is local with maximal ideal $\mathfrak{m}$. Let $\mathfrak{a}_0=\cap \mathfrak{a}^k$ is a finitely generated ideal. Let $\mathfrak{m}_0=\cap \mathfrak{m}^k$ is f.g with $\mathfrak{a}_0\subset \mathfrak{m}_0$. We then have $\mathfrak{m}\cdot \mathfrak{m}_0=\frak{m}_0$, and apply Nakayama's lemma, we get $\mathfrak{m}_0=(0)$. 
- 
- Now suppose $\mathfrak{m}$ be a maximal ideal over $\mathfrak{a}$, and let $\phi: R\to R_{\mathfrak{m}}$ be the localization is injective. 
-\end{proof}
 
-Much more is true.
 
-\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
-\begin{theorem}
-(Artin-Reese Lemma) Let $R$ be a Noetherian ring. Given ideals $\mathfrak{a,b}, I$, there exists $k$ such that for $k'>k$, we have $\mathfrak{a}^k \mathfrak{b}\cap I=(\mathfrak{a}^{k'-k})$. 
-\end{theorem}
-\end{tcolorbox}
 
 
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
@@ -1055,7 +1110,7 @@ Let $R$ be a domain and $K$ its quotient field. $R$ is called inetgral closed if
 $\mathbb{Z}$ is closed. $\mathbb{Z}(\sqrt{-3})$is not closed.  UFD are integrally closed. 
 \end{example}
 \end{tcolorbox}
-\end{document}
+
 
 
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
@@ -1087,8 +1142,10 @@ The following hold
 \begin{theorem}
 (Going-Up) Let $S|R$ be a integral ring extension. Then, the following hold: 
 \begin{enumerate}
-    \item For every $p\in Spec(R)$, there exists $q\in Spec(S)$ such that $q\cap R=p$. Moreove, if $q_1\subset q_2$ and $q_1\cap R=q_2\cap R=p$, then $q_1=\q_2$.
+    \item For every $p\in Spec(R)$, there exists $q\in Spec(S)$ such that $q\cap R=p$. Moreove, if $q_1\subset q_2$ and $q_1\cap R=q_2\cap R=p$, then $q_1= q_2$.
     \item (Going-up) Let $p_1\subseteq p_2\subseteq ....\subseteq p_n$ be a chain in $Spec(R)$, resp $Spec(S)$, such that $m<n$ and $q_m\cap R=p_m$, then the chain in $Spec(S)$ can be extened to length $m$. In particular, Krull dimension of $R$ equals the Krull dimension of $S$. 
 \end{enumerate}
 \end{theorem}
 \end{tcolorbox}
+
+\end{document}
