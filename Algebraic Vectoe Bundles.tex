@@ -1,0 +1,153 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{fullpage}
+\usepackage{tikz-cd}
+\usepackage{spectralsequences}
+\usepackage{adjustbox}
+\usepackage{xfrac}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{ {D:/Chrome Downloads./} }
+\usepackage[parfill]{parskip}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[theorem]
+\theoremstyle{definition}
+\newtheorem{problem}{problem}[theorem]
+\theoremstyle{definition}
+\newtheorem{proposition}{Proposition}[theorem]
+\theoremstyle{definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{corollary}{Corollary}[theorem]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[theorem]
+\title{Algebraic Vector Bundles and Motivic Filtrations}
+\author{David Zhu}
+
+
+
+\begin{document}
+\maketitle
+
+All ring assumed to be commutative and Noetherian. 
+
+Serre in 1955 introduced the ideal of algebraic vector bundles on a Noetherian scheme $X$, which is a locally constant sheaf free of rank $1$; it has a correspondence to f.g projective $A$-modules. The map is given a sheaf $\mathfrak{F}$, we may send it to its global section. The inverse is sending a modules to the sheaf with global section corresponding to the module.
+
+The program on Serre conjecture: take the statements from topological $K$-theory and ask whether they are true in algebraic world. 
+
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+A vector bundle splits off a free rank $1$ summand if it admits a nowhere vanishing section. The corresponding statement in algebraic world is: an $A$ f.g projective module $M$ satisfies $M\cong A\oplus M'$ if there exists $x\in M$ such that $x_p\neq 0$ in $M_p$ for every $p\in Spec(R)$.  
+\end{example}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+    Topoloogical vector bundles on contractible spaces are trivial. For example, euclidean spaces. The corresponding statement: so f.g projective modules over affine spaces $A^n$ are free.
+\end{example}
+\end{tcolorbox} 
+
+Serre's problem: is every finitely generated projective module $K[x_1,...,x_n]$-module free? In other words, is the functor that sends a module $M$ to $M\otimes k[x_1,..,x_n]$ essentially surjective. This problem led to the development of algebraic $K$-theory. 
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Quillen-Suslin Theorem, $\sim$ 1975)Quillen used local-global methods and theory of flat descent. Suslin used unimodular rows. Both proved that the Serre problem was correct. 
+\end{theorem}
+\end{tcolorbox}
+
+The natural extension of Serre's problem is that for which $R$ does Serres problem hold? Bass-Quillen conjecture is that when $R$ is regular Noetherian. The ideal of why this might be true is from Fundamental theorem of $K$-theory, which says $K(R)\cong K(R[x_1,...,x_n])$. As of now, the conjectuere is still open.
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Lindel) Bass-Quillen holds for smooth $k$-algebras. 
+\end{theorem}
+\end{tcolorbox}
+The implication says that vector bundles are $A^1$ invariant on smooth affine schemes. Lindel proved this using Galois representation on Etale topology. 
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+If $R$ is a filtered colimit of $R_i$, then module category of finitely generated projective modules over $R$ is equivalent to the colimit of the categroy of finitely generated modules over $R_i$. 
+\end{proposition}
+\end{tcolorbox}
+The  implication is that the class of rings satisfies Bass-Quillen is closed under filterede colimits. 
+
+\section*{Pontraygin-Steenrod}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Pontraygin-Steenrod) Let $X$ be compact and Hausdorff. Then, there is a natural bijection between
+\[[X, BU(n)]\Longleftrightarrow Vevtor_{n,\mathbb{C}}^{\textrm{Top}}(X)/iso\]
+\end{theorem}
+\end{tcolorbox}
+The idea is that topologically vector bundles are characterized by some homotopy classes of maps.
+
+The algebraic analog: if $X\in Spec(A)$, then there exists a functor 
+\[\textrm{Affine}_k^{op}\longleftarrow Set\]
+by sending $X\in Spec(A)$ (Grassmannians $Gr(r,N)$) to the set of projective $A$ modules of rank $r$, equipped with an epimorphism $A ^{\oplus N}\longrightarrow P$. 
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Swan-Forster) If $A$ has krull dimension $d$, then every f.g projective rank $r$ module $P$ is represented by a map $Spec(A)\to Gr(r,d+r)$. 
+\end{theorem}
+\end{tcolorbox}
+The implication is that we only need finitely any generators ($d+r$ many). The motivation is a passage 
+to understand free cocompletion of $S_mk$. 
+
+Note that $BU(n)$ is the simplicial structure: 
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Segal, 68) Let $\{ U_i \}$ be an open cover of a compact space $X$. We have the Cech resolution $C(U_*)$ and $X\cong C(U_*)$
+\end{theorem}
+\end{tcolorbox}
+We have a correpondence between Cech cohomology and topological $G$-torsors. 
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Jardin) For a nice enough group scheme, and a toppology $\tau$, there is a natural bijection between $[C(U_*), BG]\longleftrightarrow H_*^1(X,G)$. 
+\end{theorem}
+\end{tcolorbox}
+
+The presheaves on smooth $k$-schemes sits insides $P_{A^1}(Sm_k)$, which has the shefification of $Sm_k$ sits inside. 
+
+\section*{Motivic obstruction theory}
+
+\[\begin{tikzcd}
+X\arrow[d,dashed]\arrow[r]& BU(n)\\
+BU(n-1)\arrow[ur]&
+\end{tikzcd}\]
+The existence of the lift correspondence of some obstruction class $H^2n(X, \pi_{2n+1}(S^{2n+1}))$. There exists a $A^1$ fiber sequencee $A^1\to BGL_{r-1}\to BGL_{r}$.
+
+\[\begin{tikzcd}
+    X=Spec(A)\arrow[d,dashed]\arrow[r]& BGL(r)\\
+    BGL(r-1)\arrow[ur]&
+    \end{tikzcd}\]
+
+so we ask what would be the appropriate obstruction theory here. 
+
+if $A$ is a dimension $d$ ring, $M$ a f.g projective rank $r$ module over $R$. WHen is $M\cong A\oplus M'$. Serre proved in $58$ that if $r>d$, then the module must split. Murphy-swan in $76$ showed when $r=d=2$, the only obstrcution is the second Chern class. In $82$, Mohan-Kumar-Murphy showed the same result for $r=d=3$. Murphy in $94$ finally showed the general case when $r=d$. The conjecture on $r=d-1$ is that the $d-1$ Chern class is the only obstrcuction. 
+
+
+In general, obstructions to lifting lives in $H_{\textrm{sheaf}}^*(X,\pi_{*-1}(A^r\setminus 0))$, where $\pi_{*-1}(A^r\setminus 0)$ is a motivic sphere. The reason why the understanding in this theory is hard is that there is no Freudenthal Suspension theorem in motivic world.(No way to go from unstable to stable), until $2023$ due to Asok-Bachmann-Hopkins. 
+
+Asok-fasel proved in 2014 that the murphy conjecture on $d=3,r=2$ and $d=4,r=3$. ABH in 2023 proved that for evrey $d$ over field of characteristic $0$ the Murphy conjecture is true. 
+
+
+\end{document}
