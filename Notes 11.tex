@@ -781,7 +781,7 @@ Note that when $R$ is Noetherian, $I$ is finitely generated as an $R$-module, an
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
-Let $R$ be a ring and $I\subset R$ an ideal, and let $M$ be an $R$-module. A filtration $M=M_0\supset M_1\supset...$ is called an $I$\underline{\textbf{-filtration }} if $IM_n\subset M_{n+1}$ for all $n$. The filtration is called $I$-stable if $IM_n=M_{n+1}$ for $n$-large enough. Given an $I$-filtration $J$ of $M$, define the \underline{\textbf{blow-up}} module as $B_JR:=\oplus_{i=1}^{\infty}M_i$.
+Let $R$ be a ring and $I\subset R$ an ideal, and let $M$ be an $R$-module. A filtration $M=M_0\supset M_1\supset...$ is called an $I$\underline{\textbf{-filtration }} if $IM_n\subset M_{n+1}$ for all $n$. The filtration is called $I$-stable if $IM_n=M_{n+1}$ for $n$-large enough. Given an $I$-filtration $J$ of $M$, define the \underline{\textbf{blow-up}} module as $B_JM:=\oplus_{i=1}^{\infty}M_i$.
 \end{definition}
 \end{tcolorbox}
 Note that $B_JM$ has a natural $B_IR$-module structure. We now introduce a proposition that relates stability and finite generation of blow-up modules. 
@@ -792,6 +792,14 @@ Note that $B_JM$ has a natural $B_IR$-module structure. We now introduce a propo
 Let $R$ be a ring, $I\subset R$ an ideal, and let $M$ a finitely generated $R$-module with $I$-filtration $J: M=M_0\supset M_1\supset...$, where each $M_i$ is finitely generated. Then, the filtration $J$ is $I$-stable iff the $B_IR$-module $B_JM$ is finitely generated. 
 \end{proposition}
 \end{tcolorbox}
+\begin{proof}
+    Easy Exercise. 
+\end{proof}
+
+We are now ready to prove Artin-Rees: 
+\begin{proof}[Proof of Theorem 8.2]
+    Note $ B_J M\cap N$ has a natural $B_I R$-module structure, which makes it a submodule of $B_JM$. In particular, if $J$ is an $I$-stable filtration of $M$, then $B_jM$ is finitely generated over a Noetherian ring $B_IR$, so the submodule $ B_J M\cap N$ is a finitely generated $B_I R$-module, which implies the desired equality. 
+\end{proof}
 
 
 
@@ -804,6 +812,10 @@ Let $R$ be a ring, $I\subset R$ an ideal, and let $M$ a finitely generated $R$-m
 If $R$ is Noetherian, then all $\mathfrak{a}$-adic completions of $R$ is Noetherian. 
 \end{theorem}
 \end{tcolorbox}
+
+
+
+
 
 
 
