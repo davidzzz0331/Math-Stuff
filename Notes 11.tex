@@ -849,38 +849,47 @@ $height(p)+coheight(p)\leq$ Krull dimension of $R$.
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
-    For $q\in Spec(R)$, the symbolic $n$-th power of $q$ is defined as $q^{(n)}:=q^nR_{q}\cap R$.
+    For $q\in Spec(R)$, the symbolic $n$-th power of $q$ is defined as $q^{(n)}:=q^nR_{q}\cap R$. In other words, $q^{(n)}=\{ r\in R: sr\in q^n \ \textrm{for some} \ s\in R\setminus q : \}$
 \end{definition}
 \end{tcolorbox}
 
 \begin{tcolorbox}
     \begin{lemma}
-    $q^nR_q=(qR_q)^{(n)}$. 
+    $q^{(n)}R_q=(qR_q)^{n}$. '
+
     \end{lemma}
     \end{tcolorbox}
     \begin{proof}
-        exercise
+        Suppose $x\in (qR_q)^{n}$, then $x=x_1...x_n$ where $x_i=\frac{r}{s}$, where $r_i\in q$ and $s_i\in R\setminus q$. It is clear that $(\prod s_i)x\in q^n$, so  
+        $x=\frac{\prod x_i}{\prod s_i}\in q^{(n)}R_q$; on the other hand, if $y\in q^{(n)}R_q$, then $y=\frac{m}{n}$ where $m\in q^{(n)}$ and $n\in R\setminus q$. By definition, there exists $s\in R/q$ such that $sm= q_1...q_n\in q^n$, where $q_i\in q$. Then, $y=\frac{m}{n}=\frac{q_1...q_n}{sn}=\prod \frac{q_i}{sn}\in (qRq)^n$.
     \end{proof}
     
     
     \begin{tcolorbox}
     \begin{lemma}
-    $q^{(n)}$ is primary if $ax\in q^{(n)}$, and $x\not \in q$, then $a\in q ^{(n)}$. 
+     For $q\in Spec(R)$, the $n$th symbolic power $q^{(n)}$ is primary. If $ax\in q^{(n)}$, and $x\not \in q$, then $a\in q ^{(n)}$. 
     \end{lemma}
     \end{tcolorbox}
     \begin{proof}
-        exercise
+        Note that $q^{(n)}$ is the contraction of the ideal $q^nR_q$, which is a power of maximal ideal and thus primary. Thus, $q^{(n)}$ is primary as well. By definition, if $ax\in q^{(n)}$, then $a(sx)\in q^n$ with $s,x\not \in q$, which implies $a\in  q^{(n)}$.
     \end{proof}
 
 
 
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}
-(Krull's Principal Ideal Theorem/ Hauptideasatz) Let $R$ be a Noetherian ring. Then, for all non-units $r\in R$, one has $height(p)\leq 1$ for all $p\in Spec_{min}(r)$, with equality when $r$ is not a zero-divisor.
+(Krull's Principal Ideal Theorem/ Hauptidealsatz) Let $R$ be a Noetherian ring. Then, for all non-units $r\in R$, one has $height(q)\leq 1$ for all $q\in Spec_{min}(r)$, with equality when $r$ is not a zero-divisor.
 \end{theorem}
 \end{tcolorbox}
 \begin{proof}
-    Suppose by contradction that $height(p)>1$. Equivalently, there exists a chain $q_0\subset q$ prime ideals. Reduction step: can replace $R$ by $R/p_0$, and $q/q_0$ and $p/q_0$. Can replace $R,q,p$ by $R_p, p_p, q_p$. So WLOG, $R$ is local, and $p$ is maximal. Hence, $(r)\subset p$, and $rad(r)=p$. Conclude $\overline{R}:= R/(r)$ is Artin. Hence, $q^{(n)}$ gives $(\overline{q ^{(n)}})_n$ a descending sequence, so it must stablize. 
+    Suppose there exists a chain $q_0\subset q$ of prime ideals, and we want to show that $height(q_0)=0$, so that $height(q)\leq 1$. We may localize at $q$ so that we may assume $R$ is local with maximal ideal $q$. By the assumption that $p$ is minimal over $r$, the ring $R/(x)$ is Noetherian and of dimension $0$, hence Artinian. Thus, the chain 
+    \[(r)+q_0^{(n)}\]
+    stablizes. Say we have $(r)+q_0^{(k)}=(r)+q_0^{(k+1)}$. It follows that $q_0^{(k)}\subset (r)+q_0^{(k+1)}$, so for any $f\in q_0^{(k)}$ we may write $f=ar+g$ with $g\in q_0^{(k+1)}$. It is immediate that $ar\in q_0^{(k)}$, but $r\not \in q_0$ by minimality, so $a\in q_0^{(k)}$
+    
+    From this we have $q_0^{(k)}=(x)q_0^{(k)}+q_0^{(k+1)}$. Taking things modulo $q_0^{(k+1)}$, we have $x\in J(R)$, and an application of Nakayama's lemma says $q_0^{(k)}=q_0^{(k+1)}$. We further localize to $R_{q_0}$, and Lemma $8.4$ and another application of  Nakayama's lemma gives us $(q_0R_{q_0})^k=0$. In other words, the maximal ideal $q_0R_{q_0}$ is nilpotent in the local ring $R_{q_0}$. It follows that $q_0R_{q_0}\subseteq N(R_{q_0})$, which forces $q_0R_{q_0}$ to be the unique prime ideal. We have $R_{q_0}$ is of dimension $0$, as desired. 
+
+    For the second part of the statement, if $height(q)=0$, then $q$ is nilpotent in $R_q$, and let $n$ be minimal such that $r^n=0\in R_q$, which implies $sr^n=0\in R$ for some $s\neq 0$. By minimality, $sr^{n-1}\neq 0$, so $r$ must be a zero divisor. 
+
 \end{proof}
 
 
@@ -890,11 +899,11 @@ $height(p)+coheight(p)\leq$ Krull dimension of $R$.
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
-Let $r=(r_1,..,r_n)$ be given. It is called a \underline{\textbf{regular }} sequence if $r_i$ is not a zerodivisor in $R/(r_1,...,r_{i-1})$. 
+A sequence of elements $r_1,...,r_n$ is called a \underline{\textbf{regular}} sequence if $(x_1,...,x_d)$ is a proper ideal for all $d\leq n$, and $r_i$ is not a zerodivisor in $R/(r_1,...,r_{i-1})$ for all $i\leq n$. 
 \end{definition}
 \end{tcolorbox}
 
-
+We have a generalization of the PIT for a system of elements:
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}
 (Krull's Dimension Theorem) Let $R$ be a Noether ring, and $r=(r_1,...,r_m)$ a system. Then $Spec_{min}(r)$ contains prime ideals of height $\leq m$, with equality when $r$ is regular.

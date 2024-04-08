@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1712289447.62604 "c:/Users/David/Downloads/Math-Stuff/Math-Stuff/Notes 11.tex" "Notes 11.pdf" "Notes 11" 1712289449.81397 0
+["pdflatex"] 1712550322.8811 "c:/Users/David/Downloads/Math-Stuff/Math-Stuff/Notes 11.tex" "Notes 11.pdf" "Notes 11" 1712550325.06751 0
   "C:/Users/David/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1710120574 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/David/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1710120061 24233144 933dbc06b183cad27cf7d97ddbdea483 ""
   "C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -42,6 +42,7 @@
   "C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1247596666 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1247596666 32716 08e384dc442464e7285e891af9f45947 ""
   "C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1247596667 37944 359e864bd06cde3b1cf57bb20757fb06 ""
+  "C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb" 1247596670 30457 bc0868ebece724ed7c3d37e3d9bff7bd ""
   "C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb" 1335366146 21098 d4aee7c0aac232caac5688b586b9363c ""
   "C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm7.pfb" 1335366146 21251 56705123063d7b34002d6b6e7142345e ""
   "C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1247596673 34694 870c211f62cb72718a00e353f14f254d ""
@@ -194,9 +195,9 @@
   "C:/Users/David/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/David/AppData/Local/Programs/MiKTeX/tex/latex/xfrac/xfrac.sty" 1708099996 14847 00e49ca86bcb9e60825f609034895f26 ""
   "C:/Users/David/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "Notes 11.aux" 1712289449 1628 2b2e4af3bcc91223e775c64a11b4b8ff "pdflatex"
-  "Notes 11.tex" 1712289445 68095 ff6434675dfe9ae722567ad4d8f57914 ""
-  "c:/Users/David/Downloads/Math-Stuff/Math-Stuff/Notes 11.tex" 1712289445 68095 ff6434675dfe9ae722567ad4d8f57914 ""
+  "Notes 11.aux" 1712550324 1628 f0e85943d0266d771a6753d34a76c605 "pdflatex"
+  "Notes 11.tex" 1712550320 70149 16dddd2e83544007b288b178c4292247 ""
+  "c:/Users/David/Downloads/Math-Stuff/Math-Stuff/Notes 11.tex" 1712550320 70149 16dddd2e83544007b288b178c4292247 ""
   (generated)
   "Notes 11.aux"
   "Notes 11.log"
