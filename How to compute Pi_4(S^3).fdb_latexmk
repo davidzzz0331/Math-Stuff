@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1712281141.25542 "c:/Users/David/Downloads/Math-Stuff/Math-Stuff/How to compute Pi_4(S^3).tex" "How to compute Pi_4(S^3).pdf" "How to compute Pi_4(S^3)" 1712281143.22598 0
+["pdflatex"] 1712534888.07849 "c:/Users/David/Downloads/Math-Stuff/Math-Stuff/How to compute Pi_4(S^3).tex" "How to compute Pi_4(S^3).pdf" "How to compute Pi_4(S^3)" 1712534890.1451 0
   "C:/Users/David/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1710120574 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/David/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1710120061 24233144 933dbc06b183cad27cf7d97ddbdea483 ""
   "C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -187,9 +187,9 @@
   "C:/Users/David/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/David/AppData/Local/Programs/MiKTeX/tex/latex/xfrac/xfrac.sty" 1708099996 14847 00e49ca86bcb9e60825f609034895f26 ""
   "C:/Users/David/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "How to compute Pi_4(S^3).aux" 1712281143 597 7b2fdc3eb3e912c21c841d0a20130f1d "pdflatex"
-  "How to compute Pi_4(S^3).tex" 1712281137 22134 302a581db80276f356ab6f8889c6cf90 ""
-  "c:/Users/David/Downloads/Math-Stuff/Math-Stuff/How to compute Pi_4(S^3).tex" 1712281137 22134 302a581db80276f356ab6f8889c6cf90 ""
+  "How to compute Pi_4(S^3).aux" 1712534889 597 7b2fdc3eb3e912c21c841d0a20130f1d "pdflatex"
+  "How to compute Pi_4(S^3).tex" 1712534888 22103 b7a59650f026fd15a05434850b97b277 ""
+  "c:/Users/David/Downloads/Math-Stuff/Math-Stuff/How to compute Pi_4(S^3).tex" 1712534888 22103 b7a59650f026fd15a05434850b97b277 ""
   (generated)
   "How to compute Pi_4(S^3).aux"
   "How to compute Pi_4(S^3).log"
