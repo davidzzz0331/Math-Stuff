@@ -912,7 +912,7 @@ We have a generalization of the PIT for a system of elements:
 \begin{proof}
 
 
-    Induction: $n=1$ is PIT; Given $r=(r_1,...,r_{m+1})$, and $p\in Spec_{min}(r)$. Let $q\subset p$ be a maximal with this property. Claim: $ht(q)=m$. Hence $ht(p)=m+1$,
+    We proceed by induction: $n=1$ is PIT; now assume the dimension theorem holds for $n=m$. Given $r=(r_1,...,r_{m+1})$, and $p\in Spec_{min}(r)$, let $q\subset p$ be a maximal prime ideal contained in $p$. Claim: $ht(q)=m$. Hence $ht(p)=m+1$,
    By contradiction, let $ht(q)>m$ and consider $q_0\subset q_1\subset ...\subset q_m=q$. Reduction step $1$: replace $R,p,q$ by $\overline{R}:=R/q_0$,$\overline{P}:=p/q_0$, $\overline{q}:=q/q_0$. WLOG, $R=\overline{R}$ is a Noetherian domain. Reduction step $2$ Replace $R,p,q$ with their localization at $p$. Then, $R$ is local with $max(R)=p$.
     
     Since $q$ is properly contained in $p$, there exists $r_i\not\in q$ by minimality. WLOG, $r=m+1$. Consider $\mathfrak{a}=q+(r_{m+1})$, which implies $q\subset \mathfrak{a}\subseteq p$. Then, $nil(\mathfrak{a})=p$ since $p$ is the only prime ideal containing $a$. Conclude that $r_i\in p$ implies $r_i\in nil(\mathfrak{a})$, hence for every $i=1,...,m$, there exists $a_i\in R$ and $s_i\in q$ such that $r_i^{n_i}=s_i+a_ir_{m+1}$. Conclude that $s=(s_1,...,s_m)$ and $nil(s)=q$. In particular, $q$ is a minimal prime ideal containing elements $s_1,...,s_m$. Look at $R\to R/s$, and $\overline{p}=p/s$. Hence, $ht(\overline{p})$ is at most $1$, and $1$ $\overline{r}_{m+1}$ is not a zero divisor. 
@@ -1184,5 +1184,62 @@ The following hold
 \end{enumerate}
 \end{theorem}
 \end{tcolorbox}
+
+
+\begin{tcolorbox}
+\begin{lemma}
+If $S$ is a domain, then $S$ is a field iff $R$ is a field. In particular, if $\mathfrak{m}$ is maximal in $S$, then $\mathfrak{m}\cap R$ is also maximal. 
+\end{lemma}
+\end{tcolorbox}
+\begin{proof}
+    First, assume $R$ is a field. Take $x\neq 0\in S$, there exists $a_0,...,a_{n-1}\in R$ such that $a_0+...+a_{n-1}x^{n-1}+x^n=0$. WLOG, $a_0\neq 0$. Then $x(x^{n-1}+...+a_{1})=-a_0$ is invertible, so $x\in S^{\times}$. 
+
+    Finally, if $\mathfrak{n}\in Max(S)$ and $\mathfrak{m}=\mathfrak{n}\cap R$. Then, $S/\mathfrak{n}$ is integral over $R/\mathfrak{m}$. 
+\end{proof}
+
+
+\begin{tcolorbox}
+\begin{lemma}
+Let $q_1\subset q_2$ satisfy $q_1\cap R=q_2\cap R$. Then, $q_1=q_2$. 
+\end{lemma}
+\end{tcolorbox}
+\begin{proof}
+    Let $R'=R/(q_1\cap R)$, and $S'=S/q_1$. Then $S'$ is a domain integral over $R'$. We may localize at $q$. 
+\end{proof}
+
+
+\begin{proof}{Proof of Theorem $10.2$}
+   To prove the lying over property: let $p\in Spec(R)$ be given. Consider $R_p\subset S_p$. Then, $S_p$ over $R_p$ is integral. In particular, $R_p$ is local and $p$ is maximal. Using Lemma $10.3$, we take any maximal ideal in $S_q$ finishes. 
+
+   To prove the Going-up, it suffices to show $n=2$ and $m=1$: suppose we have $p_1\subset p_2$ with $q_1$ such that $q_1\cap R=p_1$. Want ot find $q_2$ such that $q_2\cap R=q_1$ to extend the chain. $S_{p_2}| R_{p_2}$ is integral. 
+   
+   
+   
+
+\end{proof}
+
+
+
+The theorem is about behavior of $Spec(R)$ in its integral closure. 
+
+Recall that given an extension fo rings $i: R\to S$, we have a map $i^*: Spec(S)\to Spec(R)$ given by $q\mapsto q\cap R$; conversely, we also  have $i_*: Id(R)\to Id(S)$ given by $\mathfrak{a}\mapsto \mathfrak{a}S$. Then, Theorem $10.2.1$ basically says $i^*$ is surjective if $i$
+is an integral extension. 
+
+\section{Noether Normalization Theorem}
+Let $k$ be a field; $R|k$ be a algebra of finite type. 
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Noether Normalization Theorem) Let $R=k[x_1,...,x_n]$ be a $k$-algebra of finite type. Then, there exists $t_1,...,t_d\in R$, $d\leq n$ such that $\{t_i\}$ algebraically independent over $R$ and $R$ is integral over $R_0:=k[t_1,...,t_d]$, a polynomial ring over $d$ variables.  
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+ let $pr: k[t_1,...,t_n]\to k[x_1,...,x_n]$. If this injective, then we are done; suppose the projection is not injective, the we induct on the number of generators $n$. There exists $0\neq f(t_1,...,t_n)\in 
+ ker(pr)$. Then, write $f(t_1,...,t_n)=\sum_{i=1}^{n}a_it^i$, where $k$
+\end{proof}
+
+
+
 
 \end{document}
