@@ -912,10 +912,11 @@ We have a generalization of the PIT for a system of elements:
 \begin{proof}
 
 
-    We proceed by induction: $n=1$ is PIT; now assume the dimension theorem holds for $n=m$. Given $r=(r_1,...,r_{m+1})$, and $p\in Spec_{min}(r)$, let $q\subset p$ be a maximal prime ideal contained in $p$. Claim: $ht(q)=m$. Hence $ht(p)=m+1$,
-   By contradiction, let $ht(q)>m$ and consider $q_0\subset q_1\subset ...\subset q_m=q$. Reduction step $1$: replace $R,p,q$ by $\overline{R}:=R/q_0$,$\overline{P}:=p/q_0$, $\overline{q}:=q/q_0$. WLOG, $R=\overline{R}$ is a Noetherian domain. Reduction step $2$ Replace $R,p,q$ with their localization at $p$. Then, $R$ is local with $max(R)=p$.
+    We proceed by induction: $n=1$ is PIT; now assume the dimension theorem holds for $n=m$. Given $r=(r_1,...,r_{m+1})$, and $p\in Spec_{min}(r)$, let $q\subset p$ be a maximal prime ideal contained in $p$. Our goal is to show that $ht(q)=m$, which immediately implies that $ht(p)=m+1$. By localizing at $p$, we may assume that $R$ is local with maximal ideal $p$. 
+
+    Since $q$ is properly contained in $p$, we have WLOG that $r_{m+1}\not\in q$ by minimality.  Consider $\mathfrak{a}=q+(r_{m+1})$, $q\subset \mathfrak{a}\subseteq p$. Then, $nil(\mathfrak{a})=p$ since $p$ is the only prime ideal containing $a$. By definition, we have $r_i\in p$ for all $i=1,...,m+1$, and there exists $a_i\in R$ and $s_i\in q$ such that $r_i^{n_i}=s_i+a_ir_{m+1}$. Thus, we have $r_i^{n_i}\in (s_1,...s_m,r_{m+1})$, and a prime containing $(s_1,...s_m,r_{m+1})$ will contain all $r_i$ as well. It follows that $p$ is minimal over $(s_1,...s_m,r_{m+1})$. Let $s=(s_1,...,s_m)$. The image of $p$ under the quotient map $R\to R/s$ is minimal over $r_{m+1}$. Therefore by PIT, $\overline{p}$ has height at most $1$, which forces the image of $q$ having height $0$, which means $q$ is minimal over $(s_1,...,s_m)$. By induction hypothesis, we are done. 
     
-    Since $q$ is properly contained in $p$, there exists $r_i\not\in q$ by minimality. WLOG, $r=m+1$. Consider $\mathfrak{a}=q+(r_{m+1})$, which implies $q\subset \mathfrak{a}\subseteq p$. Then, $nil(\mathfrak{a})=p$ since $p$ is the only prime ideal containing $a$. Conclude that $r_i\in p$ implies $r_i\in nil(\mathfrak{a})$, hence for every $i=1,...,m$, there exists $a_i\in R$ and $s_i\in q$ such that $r_i^{n_i}=s_i+a_ir_{m+1}$. Conclude that $s=(s_1,...,s_m)$ and $nil(s)=q$. In particular, $q$ is a minimal prime ideal containing elements $s_1,...,s_m$. Look at $R\to R/s$, and $\overline{p}=p/s$. Hence, $ht(\overline{p})$ is at most $1$, and $1$ $\overline{r}_{m+1}$ is not a zero divisor. 
+    Note that in our proof, $\overline{p}$ has height $1$ when $r_{m+1}$ is not a zero-divisor under the quotient by PIT, which is equivalent to saying the system is regular. 
     
 \end{proof}
 
@@ -931,7 +932,10 @@ Let $R$ be Noether. Then, the following hold:
 \end{tcolorbox}
 
 \begin{proof}
-    exercise
+    To $1$: every prime ideal in a Noetherian ring is finitely generated. In particular, given $p$ we can find a system of generators $(r_1,...,r_m)$ for $p$ such that $p$ is minimal over the system by definition. Then, $ht(p)\leq m$ by dimension theorem.
+
+    To $2$: we proceed by induction: it is trivial if $m=1$ by taking the system $r=(0)$. Inductively suppose $m=k+1$. Let $p_1\subset...\subset p_k\subset p_{k+1}=p$ be a chain of length $k+1$. Then, $p_k$ is minimal over a regular system $(x_1,...,x_k)$. First, quotient out the bottom prime so the ring is assumed to be integral. By Noetherian assumption, there is only a finite set of primes $\{q_i\}$ minmial over $(x_1,...,x_k)$. Then by prime avoidance, $p$ cannot be contained in the union of $\{q_i\}$, otherwise contradicting minimality. Therefore, we may choose an element $x_{k+1}\not \in (x_1,...,x_k)$ such that $p$ is minimal over $(x_1,...,x_{k+1})$, and it is regular. 
+
 \end{proof}
 
 \section{Modules over special classes of rings}
@@ -1034,13 +1038,15 @@ If $R$ is a Noetherian/artinian ring. Then it is a Noetherian/Artinian module ov
 \begin{proposition}
 (Characterization) Let $M$ be an $R$-module. Then the following hold: 
 \begin{enumerate}
-    \item $M_{\cdot}$ satisfies ACC/DCC if every subset $X\subset M_{\cdot}$ has maximal/minimal elements with respect to inclusions.
+    \item $M_{\cdot}$ satisfies ACC/DCC if every subset of submodules has maximal/minimal elements with respect to inclusions.
     \item $M_{\cdot}$ satisfies ACC iff every submodule is finitely generated. 
 \end{enumerate}
 \end{proposition}
 \end{tcolorbox}
 \begin{proof}
-    Exercise. 
+    To $1$: Suppose $X$ is a subset of submodules. If the subset has no maximal/minimal elements, then there exists a non-stablizing ascending/descending chain of submodules, so $M$ cannot satisfy ACC/DCC. Conversely, if there is a infinite ascending/descending chain of submodules of $M$, then collection of the submodules in the chain is a subset with no maximal/minimal elements. 
+
+    To $2$: If $N\subseteq M$ is not finitely generated, we may inductivly choose elements in $x_i\in M\setminus M_{i-1}$, where $ M_{i-1}:=(x_1,...,x_{i-1})$ is the module generated by the elements in the parenthesis. Then, $(M_i)_{i\in \mathbb{N}}$ is a non-stablizing ascending chain. Conversely, if $(M_i)_{i\in \mathbb{N}}$ is a non-stablizing ascending chain of submodules, then $\cup_{i=0}^{\infty} M_i$ is a submodule that is not finitely generated. 
 \end{proof}
 
 
@@ -1049,17 +1055,42 @@ If $R$ is a Noetherian/artinian ring. Then it is a Noetherian/Artinian module ov
 \begin{proposition}
 (Properties) The following hold:
 \begin{enumerate}
-    \item If $M$ satisfies ACC/DCC, then every submodule and every quotient module satisfies ACC/DCC.
-    \item Let \[\begin{tikzcd}
-    0\arrow[r]&M_0\arrow[r]&M_1\arrow[r]&...\arrow[r]&M_n\arrow[r]&0
-    \end{tikzcd}\]
-   $(M_{2k})$ satisfies ACC/DCC iff $(M_{2k+1})$ does so.
-    \item The category is $R$-modules satisfiying ACC/DCC has finite products and coproducts. 
-    \item If $M$ satisfies ACC/DCC, $I$ an ideal of $R$, then $IM, M/IM$ does so.
+    \item If $M$ satisfies ACC/DCC, then every submodule of $M$ satisfies ACC/DCC.
+    \item If $M$ satisfies ACC/DCC, $I$ an ideal of $R$, then $M/IM, M/MI$ does so.
+    \item The category of $R$-modules satisfiying ACC/DCC has finite products and coproducts. 
     \item Localization preserves ACC/DCC. 
  \end{enumerate}
 \end{proposition}
 \end{tcolorbox}
+\begin{proof}
+    To $1$: Trivial.
+    To $2$: Consider the projection $p: M\to M/IM$. The inverse image $p^{-1}$ takes a submodule to a submodule, and it is (proper) inclusion preseving. Thus, every ascending/descending chain in $M/IM$, $M/IM$ lifts to an ascending/descending chain in $M$.  
+    To $3$: In $\textbf{R-Mod}$, finite product and coproducts agree, and it suffices to consider the direct product $M\times N$. If $M\times N$ has ascending/descending chain of submodules, then the projection map onto $M$ and $N$ takes the chain to ascending/descending chains as well. If both chains stablize after some finite degree $n$, then it is clear that the original chain stablize after degree $n$ as well.
+    To $4$: consider the inclusion $i: M\to \Sigma ^{-1}M$. The inverse image $i^{-1}$ takes a submodule to a submodule, and it is (proper) inclusion preseving(a submodule in $\Sigma ^{-1}M$ is equal to the localization of its contraction). Thus, every ascending/descending chain in $\Sigma ^{-1}M$ lifts to an ascending/descending chain in $M$. 
+\end{proof}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+    For $R$-module $M$, the following hold:
+\begin{enumerate}
+    \item Given a short exact sequence \[\begin{tikzcd}
+    0\arrow[r]&M_0\arrow[r]&M_1\arrow[r]&M_2\arrow[r]&0
+    \end{tikzcd}\]
+    We have $M_1$ satisfies ACC/DCC iff $M_0$ and $M_2$ satisfies ACC/DCC.
+    \item Let \[\begin{tikzcd}
+        0\arrow[r]&M_0\arrow[r]&M_1\arrow[r]&...\arrow[r]&M_n\arrow[r]&0
+        \end{tikzcd}\]
+       Then, $(M_{2k})$ satisfies ACC/DCC iff $(M_{2k+1})$ does so.
+\end{enumerate}
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    To $1$: assume $M_1$ satisfies ACC/DCC: then $M_0$ is canonically a submodule of $M_1$ and $M_2$ is a quotient $M_2$
+\end{proof}
+
+
+
 
 Recall the discussion on composition series of $R$-modules. If a composition series exist, then all such have the same length and the same simple factors up to permutation. $0\subseteq M_1\subseteq M_2\subseteq ...\subseteq M_n=M$ such that $\overline{M_i}=M_i/M_{i-1}$ is simple. 
 
