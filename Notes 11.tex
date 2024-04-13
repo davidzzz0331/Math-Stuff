@@ -1055,8 +1055,7 @@ If $R$ is a Noetherian/artinian ring. Then it is a Noetherian/Artinian module ov
 \begin{proposition}
 (Properties) The following hold:
 \begin{enumerate}
-    \item If $M$ satisfies ACC/DCC, then every submodule of $M$ satisfies ACC/DCC.
-    \item If $M$ satisfies ACC/DCC, $I$ an ideal of $R$, then $M/IM, M/MI$ does so.
+    \item If $M$ satisfies ACC/DCC, then every submodule of $M$ and quotient module of $M$ satisfies ACC/DCC.
     \item The category of $R$-modules satisfiying ACC/DCC has finite products and coproducts. 
     \item Localization preserves ACC/DCC. 
  \end{enumerate}
@@ -1075,7 +1074,7 @@ If $R$ is a Noetherian/artinian ring. Then it is a Noetherian/Artinian module ov
     For $R$-module $M$, the following hold:
 \begin{enumerate}
     \item Given a short exact sequence \[\begin{tikzcd}
-    0\arrow[r]&M_0\arrow[r]&M_1\arrow[r]&M_2\arrow[r]&0
+    0\arrow[r]&M_0\arrow[r]&M_1\arrow[r,"p"]&M_2\arrow[r]&0
     \end{tikzcd}\]
     We have $M_1$ satisfies ACC/DCC iff $M_0$ and $M_2$ satisfies ACC/DCC.
     \item Let \[\begin{tikzcd}
@@ -1086,7 +1085,9 @@ If $R$ is a Noetherian/artinian ring. Then it is a Noetherian/Artinian module ov
 \end{proposition}
 \end{tcolorbox}
 \begin{proof}
-    To $1$: assume $M_1$ satisfies ACC/DCC: then $M_0$ is canonically a submodule of $M_1$ and $M_2$ is a quotient $M_2$
+    To $1$: assume $M_1$ satisfies ACC/DCC: then $M_0$ is canonically a submodule of $M_1$ and $M_2$ is a quotient $M_1$, so they satisfy ACC/DCC by Proposition $9.2.1$; now supoose $M_1$ does not satisfy ACC/DCC, which means there is a non-stablizing ascending/descending chain $C=(C_n)$ of submodules. Now $C\cap M_1$ is naturally a chain of submodules of $M_0$, and $p(C)$ is an ascending/descending chain of submodules of $M_2$. Suppose by contradiction that both chain stabilizes, which means there exists $N$ such that $C_{N}+M_0=C_{N+1}+M_0$ and $C_{N}\cap M_0=C_{N+1}\cap M_0$. However, the first equality implies $C_{N+1}-C_{N}\subset M_0$ for ascending ($C_{N}-C_{N-1}$ for descending), and combined with the second equality we have $C_N=C_{N-1}$, a contraction. 
+
+    To $2$, we may break the long exact sequence to short exact sequences by adding in the kernel and cokerknel terms. The result is then a simple corollary of part $1$. 
 \end{proof}
 
 
@@ -1101,14 +1102,13 @@ Let $M$ be a (left) modules. Then, $M$ has a (left) composition series iff $M$ s
 \end{proposition}
 \end{tcolorbox}
 \begin{proof}
-    Let $0\subseteq M_1\subseteq M_2\subseteq ...\subseteq M_n=M$ be a composition series, and make induction on $n$. For $n=1$, nothing to prove. For inductive step, suppose $0\subseteq M_1\subseteq M_2\subseteq ...\subseteq M_n$ is a composition series, so $M_n$ satisfies ACC and DCC. Then, there exists the exact sequence 
+    Let $0\subseteq M_1\subseteq M_2\subseteq ...\subseteq M_n=M$ be a composition series, and make induction on $n$. For $n=1$, the module is simple and it automatically satisfies ACC and DCC. For inductive step, suppose $0\subseteq M_1\subseteq M_2\subseteq ...\subseteq M_n$ is a composition series, so $M_n$ satisfies ACC and DCC. Then, there exists the exact sequence 
     \[\begin{tikzcd}
     0\arrow[r]&M_n\arrow[r,"f"]&M_{n+1}\arrow[r,"g"]&M_{n+1}/M_n\arrow[r]&0
     \end{tikzcd}\]
-    and by proposition $9.2$, $M_{n+1}$ satisfies ACC and DCC. 
+    and by proposition $9.2$, $M_{n+1}$ satisfies ACC and DCC sicne $M_{n+1}/M_n$ is simple. 
 
-
-    Suppose $M$ satisfies ACC and DCC. In particular, $M$ has minimal submodules $M_1$, which must be simple. Proceed inductively, consider the set $M'=\{N|M_1\subset N\}$, which also has minimal elements, say $M_2$. We can show that $M_2/M_1$ is simple. Inductively, we get a finite sequence by Noetherian. 
+    Suppose $M$ satisfies ACC and DCC. In particular, $M$ has minimal submodules $M_1$ by DCC, which must be simple. Proceed inductively, and consider the set $M'=\{N|M_1\subset N\}$, which also has minimal elements, say $M_2$. Then, $M_2/M_1$ must be simple. By ACC, the sequence must terminate and we get a finite composition series. 
 \end{proof}
 
 \section{Integral extensions}
