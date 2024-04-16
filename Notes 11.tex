@@ -1021,17 +1021,99 @@ For a finitely generated abelian group $A$, $A\cong \mathbb{Z}/(d_1)\oplus...\op
 \end{tcolorbox}
 
 
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+(Smith Normal Form) Given an $n\times m$ matrix $A$ with entries in PID, there exists a decomposition $A=LDR$, where $L,R$ are invertible matrices representing row and column operations, and $D$ is a diagonal matrix of the form 
+\[
+\begin{bmatrix}
+\delta_1\\
+&\delta_2\\
+&&...\\
+&&&\delta_n
+\end{bmatrix}\]
+where $\delta_1|...|\delta_n$. The diagonal matrix is called the Smith Normal Form of $A$. In the context of Invariant factor theorem, the decomposition says that under the basis change to $y_1,...,y_m$ given by $R$, the vectors $\delta_1y_1,...\delta_ny_m$ spans the range, under the base change $L$.
+\end{example}
+\end{tcolorbox}
+The algorithm of reducing a matrix $A$ to the smith normal form is as follows: starting with the first column, we may use elementary row operations to reduce the $1,1$ entry to the $d=gcd(a_{1,1},a_{2,1})$: $R$ being a PID implies there exists $r_1,r_2\in R$ such that $r_1a_{1,1}+r_2a_{2,1}=d$ (note that having a Euclidean Algorithm will make this actually algorithmically computable instead of theoretically exists). The row operation corresponds to the matrix 
+\[
+\begin{bmatrix}
+r_1& r_2\\
+-a_{1,1}/d& a_{2,1}/d
+\end{bmatrix}\]
+which has determinant $1$ and thus invertible. Now we can subtract and get rid of all entries in the first column other than $a_{1,1}=d$. Do the same for the first row, which possibly adds new entries back to the first column, but the number of prime factors of $a_{1,1}$ reduces, therefore the algorithm must terminate.
+
+Now we have obtained a diagnonal matrix. To put it into the desired form, suppose $\delta_1 \not| \ \delta_2$. Then, we may add $\delta_2$ back to the first column, and perform the same operations to turn $\delta_1$ into $gcd(\delta_1,\delta_2)$. By the same reasoning, the process terminates. 
 
 \begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
 \begin{example}
-    (Jordan Canonical Form) Let $k$ be a field and $V$ a finite dimensional vector space over $k$. Fix some $\varphi\in End(V)$. Then, $V$ becomes a $k[t]$-module by 
+    (Rational Canonical Form) Let $k$ be a field and $V$ a finite dimensional vector space over $k$. Fix some $\varphi\in End(V)$. Then, $V$ becomes a $k[t]$-module by 
     \[p(t)\cdot v=p(\varphi)(v)\]
-     By Cayley-Hamilton, $V$ is a finite-torsion $F[t]$ module.  Hence, $V\cong F[t]/(\delta_1)\oplus...\oplus F[t]/(\delta_n)$, with $\delta_1|...|\delta_n$. Let $\delta_1=t^{n_i}+...+e_{n}$. Then $R/\delta_i$ has basis $R_i=\langle I,t,...,t^{n_i-1}\rangle $, and $V=R_1\oplus ...\oplus R_n$. In matrix form, we recover the jordan decomposition of $\varphi$.
+     By Cayley-Hamilton, $V$ is a finite-torsion $F[t]$ module.  Hence, $V\cong F[t]/(\delta_1)\oplus...\oplus F[t]/(\delta_n)$, with $\delta_1|...|\delta_n$. Let $\delta_i=t^{n_i}+a_{n_i-1}t^{n_i-1}...+a_0$. Then $R_i:=R/(\delta_i)$ has basis $(1,t,...,t^{n_i-1}) $, The action of $t$ on the basis vectors is $t\cdot x^k= x^{k+1}$ for $k<n_i$ and $t\cdot x^{n_i}= -(a_{n_i-1}t^{n_i-1}...+a_0)$. Thus, each $R_i$ has the matrix form
+     \[
+     \begin{bmatrix}
+     &&&&&&-a_0\\
+     1&&&&&&-a_1\\
+    &1&&&&& -a_2\\
+    &&1&&&& -a_3\\
+    &&&...\\
+    &&&&&1& -a_{n_i-1}
+     \end{bmatrix}\]
+     and $V=R_1\oplus ...\oplus R_n$.
 \end{example}
 \end{tcolorbox}
  
 
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Given a $n\times n$ matrix $A$, the invariant factors $\delta_1,...,\delta_n\in k[t]$ can be determined by reducing the matrix $A-tI$ to the smith normal form.   
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    It is easy to prove the lemma that each block $R_i-tI$ has a smith normal form \[
+    \begin{bmatrix}
+    \delta_i\\
+    &1\\
+    &&1\\
+    &&&\dots \\
+    &&&&1
+    \end{bmatrix}\]
+    The proposition follows from the fact that two matrices $A,B$ are similar iff their characteristic matrices are equivalent (i.e you can get from the other through elementary matrix operations). In particuar, the minimal polynomial of $\phi$ is $\delta_n$, and the characteristic polynomial is the product $\prod_{i=1}^{n}\delta_i$.
+\end{proof}
 
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+We find the invariant factors of the matrix 
+\[
+    A=
+    \begin{bmatrix}
+    1&0&0&0\\
+    0&1&1&0\\
+    0&0&1&0\\
+    -1&0&0&0
+    \end{bmatrix}
+\]
+It is easy to calculate the characteristic polynomial to be $t(t-1)^3$, and the minimal polynomial is $t(t-1)^2$. We see that this forces the invariant factors to be $t-1$ and $t(t-1)^2$. The may sanity check by reducing the characteristic matrix to the smith normal form
+\[
+    A-tI \Longrightarrow
+    \begin{bmatrix}
+    1&0&0&0\\
+    0&1&1&0\\
+    0&0&t-1&0\\
+    0&0&0&t(t-1)^2
+    \end{bmatrix}
+\]
+This means the rational canonical form of $A$ is 
+\[
+ \begin{bmatrix}
+ 1&0&0&0\\
+ 0&0&0&0\\
+ 0&1&0&-1\\
+ 0&0&1&2\\
+ \end{bmatrix}  
+\]
+\end{example}
+\end{tcolorbox}
 
 
 
