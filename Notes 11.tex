@@ -1488,33 +1488,155 @@ Let $S|R$ be an integral extension where $R$ is integral domain. Let $K$ be the 
 \end{proof}
 
 \section{Introduction to Hilbert Decomposition Theory}
-Let $R$ be an integrally closed domain. $K$ the quotient field. $L|K$ the algebraic separable extension. $S$ the integral closure of $R$ in $L$. The question is describe the behaviour of $Spec(R)$ under the integral ring extension $S|R$. Especially when $L|K$ is Galois. 
-
-Fact: Let $L|K$ be Galois; let $G$ be the galois group. Then, $\sigma\in G$ implies $\sigma(S)=S$. Let $G$ be a profinite group, acting continuously on a discrete ring. stabilizer is open subgroup and orbit is finite. 
+Let $R$ be an integrally closed domain. $K$ the quotient field. $L|K$ the algebraic separable extension. $S$ the integral closure of $R$ in $L$. The question is describe the behaviour of $Spec(R)$ under the integral ring extension $S|R$. Especially when $L|K$ is Galois. In some sense, this extends the usual Galois theory for field extension to ring extensions. 
 
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
 \begin{proposition}
-The following hold: 
+    Let $G$ be a profinite group, acting continuously on a discrete ring $S$.  Then, the oribit for every $x\in S$ is finite under $G$. 
+\end{proposition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Let $G_i=g/N_i$. Then, $S_i=S^{G_i}:= \{ x\in S: G_ix=x \}$. 
 \begin{enumerate}
-    \item Let $R=S^G$ that is the invariant subgroup of $S$. Then, $S|R$ is an integral ring extension. 
-    \item Suppose that $G$ is finite, and for $p\in Spec(R)$, let $X_q=\{ q\in Spec(S):q\cap R=p \}$. Then, $G$ acts Transitively on $X_p$.
-    \item $D_p=\{ \sigma\in G:\sigma p =p  \}$ is the decomposition group of $p$. 
+    \item Then, $\cup S_i=S$
+\item Let $R=S^G$. Then, $S_i|G$ is integral. Moreover, $G_i\subset Aut_R(S_i)$, with $S_i^{G_i}=R$.
 \end{enumerate}
 \end{proposition}
 \end{tcolorbox}
-\begin{proof}
-    To $1$: symmetric functions. To $2$: 
-\end{proof}
 
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
 \begin{proposition}
-(Functoriality) In the above context, let $G$ be finite. Then the following hold:
+    Let $R=S^G$. Then, $S_i|R$ and $S|R$ are integral ring extensions. Hence, $S_j|S_i$ for $N_j\subset N_i$ is integral extension.
+\end{proposition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Let $p\in Spec(R)$, and denote $X^i_p=\{ q\in Spec(S_i):q_i\cap R=p \}$ and $X_p=\{ q\in Spec(S):q\cap R=p \}$. Then, $G$ acts Transitivity on $X_p$, and $G_i$ acts transitively on $X^i_p$.
+ \end{proposition}
+\end{tcolorbox}
+
+Fact: Let $L|K$ be Galois; let $G$ be the galois group. Then, $\sigma\in G$ implies $\sigma(S)=S$. 
+
+
+
+The ring extensions $S_j|R$ satisfies $Spec S_i\to Spec(R)$ given by $q_i\mapsto q_i\cap R$ is surjective. Then, $Spec(R)=G_i\ Spec(S_i)$ is the $G_i$ orbits of $Spec(S_i)$. Finally, $Spec(S)$ is the projective limit of $Spec(S_i)$ as $G$-spaces. 
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Given $q\in Spec(X_p)$, the \underline{\textbf{q-decomposition group}} $D_{q|p}=st_G(q)=\{ \sigma\in G:\sigma q=q \}$. 
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Let $\Sigma\subset R$ be a multiplicative system. Then, $G$ acts on $S_{\Sigma}$ $\sigma(\frac{q}{r})=\frac{\sigma(q)}{r}$. And, $S^G_{\Sigma}=R_{\Sigma}$ Moreover, $p\cap \Sigma=\emptyset$. Then, $X_{P_{\Sigma}}=\{ q_{\Sigma}: q\in X_p \}$. And $D_{q_{\Sigma}|p_{\Sigma}}=D_{q|p}$. 
+
+\end{proposition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Let $H\subset G$ be an open subgroup. Define $q^H=q\cap S^H$. 
+
 \begin{enumerate}
-    \item Let $H\subset G$ be a subgroup. $S^H$ be the invariant subgroup under $H$. Set $q^H=q\cap H$. Then the decomposition group of $D_{q|q^H}=D_q\cap H$. Moreover, if $H$ is normal in $G$, then there is a galois correspondence of the decomposition group.
-    \item the statement holds under localozation. 
-\end{enumerate} 
+    \item  $q^H\cap R=p$ and  $D_{q|q^H}=D_{q|p}\cap H$.
+    \item If H is normal, let $\overline{G}: G/H$. Then, $\overline{G}$ acts on $S^H$ by $\overline{\sigma}(h)=\sigma(h)$.  Then, $(S^H)^{\overline{G}}=R$, and $D_{q^H|p}=\overline{D_{q|p}}:=D_{q|p}/H$.
+\end{enumerate}
+\end{proposition}
+\end{tcolorbox}
+
+
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{corollary}
+Let $G$, $S|R$ be as usual. Then,
+\begin{enumerate}
+    \item The going-down for $S|R$ holds. Given $p_1\subset ...\subset p_n$ a chain in $Spec(R)$, and $q_m\subset ...q_n$ with $m\leq n$, then there exists $q_1\subset ... \subset q_m$ in $Spec(S)$ that prolongs the sequence. 
+\end{enumerate}
+\end{corollary}
+\end{tcolorbox}
+\begin{proof}
+    By induction, it suffice to consider $n=2$ and $m=1$. Hence $p_1\subset p_2$ and $q_2\cap R=p_2$. Recall there exists $q_1'\in Spec(S)$ such that $q_1'\cap R=p_1$. By going-up, there exists $q_2'\in Spec(S)$ such that $q_2'\cap R=p_2$. Since $G$ acts transitively  on $X_{p_1}$ and $X_{p_2}$ such that $\exists \sigma\in G$ such that $\sigma'q_2=q_2'$. Take $\sigma ^{-1}$ finishes. 
+\end{proof}
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+The restriction map $Spec(S)\to Spec(R)$ by $q\mapsto q\cap R$ defines a bijection between the maximal chain of prime ideals in the two rings. 
+\end{theorem}
+\end{tcolorbox}
+
+Let $H\subset G$ be a closed subgroup. $S^H$ be the fixed ring. $Spec(S^H)\to Spec(R)$ be the restriction map. Then, the previous theorem also holds. 
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+Main example of the theory is: Let $R$ be an integrally closed domain. $K$ be the quotient field of $R$ and $L|K$ galois extensions. Take $S$ be the integral closure of $R$ in $L$. Recall $G$ acts on $S$ via $L$ (check $\sigma s\in S$). Then, $S|R$ is quasi-galois extension with $G=Aut_R(S)$. Hence, the Hilbert Decomposition Theory works for $S|R$, the going down. 
+\end{example}
+\end{tcolorbox}
+
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+Let $R=\mathbb{Z}$, $K=\mathbb{Q}$ and $L=\mathbb{Q}[\sqrt{d}]$. Then, $S=\mathbb{\sqrt{d}}$ iff $d\neq 1$ mod $4$. Otherwise $S=\mathbb{Z}[\frac{1+\sqrt{d}}{2}]$.
+Then $G=\mathbb{Z}/2$. Let $\mathfrak{P}\in X_p\in Spec(S)$. Then the decomposition group is either $1$ or the entire $G$. Look at $x^2-d(mod p)$. If reducible, then $p$ cannot be prime.
+
+\end{example}
+\end{tcolorbox}
+
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+$R=k[t]$ and $K=k(t)$, $L=k(\sqrt{f})$.
+\end{example}
+\end{tcolorbox}
+
+\section{Dedekind domains}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A domain $R$ is called a \underline{\textbf{Dedekind}} domain if every proper ideal can be written as a product of prime ideals.
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $R$ be a commutative ring and $K$ be its total ring of fractions. If $R$ is a domain, then $K$ is a field. A fractional ideal of $R$ is any $R$-submodule $M\subset K$ such that there exists non-zero divisor $r$ such that $rM\subset R$. 
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Given $M\subset K$ a fractional ideal, it is called \underline{\textbf{invertible}} if there exists $N\subset K$ fractional ideal such that $MN=R$.
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Let $I'_R$ be the set of fractional ideals of $R$. Then, the set is closed under addition and multiplication. 
+\end{proposition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Every invertibe ideal $M$ is finitely generated. 
 \end{proposition}
 \end{tcolorbox}
 
