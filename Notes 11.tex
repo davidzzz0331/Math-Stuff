@@ -1389,8 +1389,43 @@ Given a integral extension $i: R\to S$, the induced map $i^*: Spec(S)\to Spec(R)
 \end{corollary}
 \end{tcolorbox}
 
+
 \section{Noether Normalization Theorem}
-Let $k$ be a field; $R|k$ be a algebra of finite type. 
+Let $k$ be a field; $R|k$ be a algebra of finite type. We first prove two lemma regarding change of variables. The first one applies when normalizing $k$-algebras when $k$ is infinite.
+
+
+\begin{tcolorbox}
+\begin{lemma}
+Suppose $k$ is an infinite field. Given $q\in k[x_1,...,x_n]$, there is a choice of $a_1,...,a_n\in k$ such that the change of variables $x_i\mapsto x_i+a_ix_n$ for $i<n$ and $x_n\mapsto a_nx_n$ take $q$ to the form 
+\[q=cx_n^{d}+(\textrm{terms in which }x_n\textrm{ has exponent less than }d)\]
+\end{lemma}
+\end{tcolorbox}
+\begin{proof}
+    It suffices to consider the homogeneous part of highest total degree $d$, denoted by $q_d$, since the linear change of variables does not change the total degree. The coefficients of $x_n^d$ is precisely $q_d(a_1,...,a_n)$. Thus, the lemma reduces to whether a homogeneous polynomial $q_d$ does not vanish everywhere on $k^n$. When $k$ is infinite, this is standard to prove by induction on number of variables, and the fact that a polynomial over $R[x]$ has only finitely many roots.
+
+    Note that since $k$ is a field and the polynomial is homogeneous, we can divide out an appropriate constant so that $c=q_d(a_1,...,a_n)=1$.
+\end{proof}
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+This argument fails when $k$ is finite. For example, the polynomial $x^3+2x=x(x-1)(x-2)$ vanishes everywhere on $F_3$. 
+\end{example}
+\end{tcolorbox}
+
+Now we prove a more generalized change of variables that applies without the assumption of the infinitude of $k$.
+\begin{tcolorbox}
+\begin{lemma}
+    Suppose $D$ is a integral domain. Given $q\in D[x_1,...,x_n]$, there is a choice of $m_1,...,m_n\in k$ such that the change of variables $x_i\mapsto x_i+x_n^{m_i}$ for $i<n$ and $x_n\mapsto x_n^{m_n}$ take $q$ to the form 
+    \[q=cx_n^{m}+(\textrm{terms in which }x_n\textrm{ has exponent less than }d)\]
+\end{lemma}
+\end{tcolorbox}
+\begin{proof}
+    Let $N$ be a natural number larger than the highest exponent of $x_i$ anywhere in $q$, and take $m_i=N^i$. Then, let $c\underline{X}$ be a term in $q$, where the exponents of $\underline{X}$ is given by the multindices $\alpha:=(\alpha_0,...,\alpha_n)$. Then, the term having the highest exponent of $x_n$ is the monomial $x_n^{T_{\alpha}}$, where $T_{\alpha}=\sum_{i=0}^{n}\alpha_iN^i$. Note that given a different set of multindices $\alpha'$, we have $T_{\alpha}\neq T_{\alpha'}$ by uniqueness of $N$-ary representation. Therefore, we obtain a monomial $cx_n^{m}$, with $m$ being the unique largest exponent after the change of variables. 
+
+    Again, if $D$ is a field, we may take $c=1$ by dividing out an appropriate constant. 
+\end{proof}
+
 
 
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
@@ -1399,30 +1434,26 @@ Let $k$ be a field; $R|k$ be a algebra of finite type.
 \end{theorem}
 \end{tcolorbox}
 \begin{proof}
-If all variables are algebraic over $k$, then $R=k[x_1,...,x_n]$ is a finite dimensional vector space. Suppose $R$ is not algebraic over $k$, so there exists $t\in R$ such that $p(t)\neq 0$ for every $p\in k[x]$. Make inductions on on all $k$-algebras of finite type, $S=k[x_1,...,x_m]$, with $m<n$. If the variables are all algebraically independent, then we are done; suppose otherwise, The key technical point is special changes of variables: let $x=(x_1,...,x_n)$. We can do the change of variables such that we may single out a $x_n'$ with the total degree as the leading monomial. The reduction is that one variable become algebraic over extension of $k$ adjoining the rest. 
+We induct on $n$. If $n=1$, and $x_1$ is algebraic over $k$, then $k[x]$ is a vector space and thus we take $R_0=k$ as well; if $x_1$ is not algebraic over $k$, then take $t$ be a transcendental variable and $k[x]=k[t]$. Now suppose the theorem holds for $n=m$. For $n=m+1$, if all elements $x_1,...,x_m$ again are algebraically independent, we may just take $t_i=x_i$. Otherwise, there exists a non-zero polynomial $p$ such that $p(x_1,...,x_n)=0$. Using Lemma $11.2$, we may let $x'_i=x_i-x_n^{m_i}$ for $i<n$, and $x_n$ is integral over $R_0:=k[x'_1,...,x'_{n-1}]$. Then, $x_n^{m_i}$ are integral over $R_0$, and the sum of integral elements $x_i+x_n^{m_i}=x'_i$ are integral as well. Therefore, $R|R_0$ is integral. By transitivity of integrality and the inductive hypothesis, we are done. 
 \end{proof}
 
-Let $k$ be a base field, $R=[x_1,...,x_n]$ a finitely generated $k$-algebra. The Noether Normalization theorem says that $R$ is a finite module over a polynomial ring with variables less or equal to $n$. The new set of variables is called a Noether Basis of $R$ over $k$. 
 
 
-
-\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
-\begin{theorem}
-Let $R=k[x_1,...,x_n]$ be a finitely generated $k$-algebra, and $K$ be the quotient field. Then the following hold:
-\begin{enumerate}
-    \item If $T=(t_1,...,t_d)$ is a Noether Basis, then $T$ is a transcendence basis for $K|k$
-    \item $R$ is strongly catenary, i.e every maximal sequence of prime ideals has length $n=d$. 
-\end{enumerate}
-\end{theorem}
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+The new set of variables $t_1,...,t_n$ is called a \underline{\textbf{Noether Basis}} of $R$ over $k$. 
+\end{definition}
 \end{tcolorbox}
+
+
 \begin{proof}
-    induction to 2: if $d=1$, then the ring is a PID and every non-zero prime ideal is maximal. Take the quotient of the top prime and use going up. 
+    We proceed by induction: if $n=1$, then the ring is a field or a PID and every non-zero prime ideal is maximal. Thus, every chain is of length $0$ or $1$, respectively.  
 \end{proof}
 
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
-Let $R$ be a commutative ring, and $f\in R$. Then, $V(f):=\{\mathfrak{m}\in Max(R), f\in \mathfrak{m}\}$. This is called the set of zeros of $f$ in $R$. More general, given $I\in Id(R)$, we denote $V(I)\{\mathfrak{m}\in Max(R), I\subset \mathfrak{m}\}$
+Let $R$ be a commutative ring, and $f\in R$. Then, $V(f):=\{\mathfrak{m}\in Max(R), f\in \mathfrak{m}\}$. This is called the \underline{\textbf{zero set}} of $f$ in $R$. More generally, given $I\in Id(R)$, we denote $V(I):=\{\mathfrak{m}\in Max(R), I\subset \mathfrak{m}\}$
 \end{definition}
 \end{tcolorbox}
 
@@ -1486,6 +1517,13 @@ Let $S|R$ be an integral extension where $R$ is integral domain. Let $K$ be the 
 \begin{proof}
     By induction, reduce to the case where $R$ is local. 
 \end{proof}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+    \begin{corollary}
+        Let $R:=k[x_1,...,x_n]$ be a finitely generated $k$-algebra. \\
+        Then, $R$ is \underline{\textbf{strongly catenary}}, i.e every maximal sequence of prime ideals has length $n=d$. 
+    \end{corollary}
+    \end{tcolorbox}
 
 \section{Introduction to Hilbert Decomposition Theory}
 Let $R$ be an integrally closed domain. $K$ the quotient field. $L|K$ the algebraic separable extension. $S$ the integral closure of $R$ in $L$. The question is describe the behaviour of $Spec(R)$ under the integral ring extension $S|R$. Especially when $L|K$ is Galois. In some sense, this extends the usual Galois theory for field extension to ring extensions. 
