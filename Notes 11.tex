@@ -1451,6 +1451,18 @@ The new set of variables $t_1,...,t_n$ is called a \underline{\textbf{Noether Ba
 \end{proof}
 
 
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+Let $R=k[x_1,..,x_n]$ be a finitely generated domain. Let $K$ be the quotient field of $R$ and $L|K$ a finite field extension, $S$ the integral closure of $R$ in $L$. Then, $S$ is a finite $R$-module.
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+    Let $T=(t_1,...,t_d)$ be a Noether basis of $R|k$. 
+\end{proof}
+
+
+
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
 Let $R$ be a commutative ring, and $f\in R$. Then, $V(f):=\{\mathfrak{m}\in Max(R), f\in \mathfrak{m}\}$. This is called the \underline{\textbf{zero set}} of $f$ in $R$. More generally, given $I\in Id(R)$, we denote $V(I):=\{\mathfrak{m}\in Max(R), I\subset \mathfrak{m}\}$
@@ -1773,8 +1785,16 @@ Let $R$ be a local domain. Then the following are equivalent:
 \end{theorem}
 \end{tcolorbox}
 \begin{proof}
-     To $1$: Exercise. To $2$: suppose $L|K$ is separable, then $S$ is a finite $R$ module hence noetherian and has the same krull dimension 1. Therefore, the $S$ is Dedekind. Suppose $L|K$ is purely inseperable, then it following from a theorem by Krull-Akizuki. 
+     To $1$: Exercise. To $2$: it suffices to prove for $n\in Max(S)$, then $S_n$ is a DVR. Given $n$, let $m=n\cap R$, so $m\in Max(R)$. Then, $R_m$ is a DVR and $R_n$ lies over $R_m$ by the fundamental inequality.
 \end{proof}
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Fundamental Inequality) Let $R_v$ be a valuation ring of $K$, and $L|K$ a finite extension. Let $X_v=\{ w\in Val(L): L \textrm{ w|k=v} \}$. Then 
+\[\sum_{w\in X_v}(wL:vK)[k_w:k_v]\leq [L:K]\] 
+\end{theorem}
+\end{tcolorbox}
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
 \begin{proposition}
@@ -1791,9 +1811,36 @@ Some remarks: Let $R$ be Dedekind domain.
 \end{proof}
 
 
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{corollary}
+Let $R$ be a Notherian ring. $p\in Spec(R)\cap I_R$ then, $R_p$ is a DVR.
+\end{corollary}
+\end{tcolorbox}
+
+Let $R$ be a Dedekind domain, $p$ a maximal ideal, and $R_p$ is a valuation ring. Let $v_p: K\to \mathbb{Z}$ be the canonical valuation. Given $M\in I_R$, $M=p_1^{e_1}...p_n^{e_n}$. Define $v_p(M)=e_{p_i}$. In particular, if $M,N\in I_R$, then $v_p(M+N)=min(v_p(M)+v_p(N))$ Suppose $\pi_n(R_p)$. 
+
+Remark: taking integral closure does not preserve Noetherian property in general. The integral closure is usually not a finitely generated $R$-modules other than know special cases: $R=k[x_1,...,x_n]$, and when $dim(R)=1$.
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Pronlongation of valuation)Let $(R,m)$ be a valuation ring, $K$ be the quotient field of $R$, and $L|K$ an algebraic extension, $S$ the integral closure of $R$ in $L$. Then, let $X_m$ be the set of maximal ideals in $S$ lying over $m$. In fact $X_m=Max(S)$. Then, the following hold:
+\begin{enumerate}
+    \item $S_n$ is a valuation ring such that $S_m\cap K=R$ for $n\in Max(S)$.  
+    \item $S_w$ is a valuation ring of $S$ such that $S_w\cap K=R$, then $S_w=S_n$ for a unique $n\in Max(S)$.
+\end{enumerate}
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+    HW. 
+\end{proof}
+
+
+
+
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
-The set of invertible ideals of $R$ is callled the \underline{\textbf{Cartier divisors}} of $R$. If $R$ is Dedekind, then the group is called the divisor group of $R$. The group $H_R$ is the subgroup of divisor group of $R$ that are principally generated.
+The set of invertible ideals of $R$ is callled the \underline{\textbf{Cartier divisors}} of $R$. The group of fractional ideals is called the \underline{\textbf{divisor group}}; If $R$ is Dedekind, then the group is also the group of invertible idals. The group $H_R$ is the subgroup of divisor group of $R$ that consists of principal ideals. 
 \end{definition}
 \end{tcolorbox}
 
