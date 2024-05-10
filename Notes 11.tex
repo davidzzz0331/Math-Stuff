@@ -1453,6 +1453,29 @@ Let $R$ be a commutative ring, and $f\in R$. Then, $V(f):=\{\mathfrak{m}\in Max(
 \end{definition}
 \end{tcolorbox}
 
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A commutative ring $R$ is called \underline{\textbf{Jacobson}} if for every $p\in Spec(R)$, we have $p=J(p)$. In other words, every prime is the intersection of maximal ideals lying above it.  
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+The following are equivalent:
+\begin{enumerate}
+    \item $R$ is Jacobson
+    \item For every $\mathfrak{a}\in Id(R)$, we have $N(\mathfrak{a})=J(\mathfrak{a})$;
+    \item For every surjective ring homomorphism $R\to S$, we have $N(S)=J(S)$.
+\end{enumerate}
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    Easy exercise.
+\end{proof}
+
+
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}
 (Hilbert Nullstellensatz) Let $R=k[x_1,.,x_n]$ be a $k$-algebra of finite type. 
@@ -1466,7 +1489,7 @@ Let $R$ be a commutative ring, and $f\in R$. Then, $V(f):=\{\mathfrak{m}\in Max(
 \begin{proof}
     To $1$: By Noether Normalization, $R$ is an integral extension over a polynomial ring over $k$. Since $R$ is a field and integral extension preserves krull dimension, the polynomial ring must in fact be $k$, and the result follows.
 
-    To $2$, Let $f\in J(\mathfrak{a})$, and suppose by contradiction that $f\not\in N(\mathfrak{a})$. Then, $\Sigma=\{1,f^1,f^2,...\}$ is a multiplicative system, and $R_{\Sigma}=R[\frac{1}{f}]$ is an $R$-algebra of finite type. let $\mathfrak{m}_{\Sigma}$ be a maxmimal ideal. Let $\mathfrak{m}=(\mathfrak{m}_{\Sigma})^{c}$ is maximal in $R$. Then, $f\not \in \mathfrak{m}$. 
+    To $2$: let $f\in J(\mathfrak{a})$, and suppose by contradiction that $f\not\in N(\mathfrak{a})$. Then, $\Sigma=\{1,f^1,f^2,...\}$ is a multiplicative system, and $R_{\Sigma}=R[\frac{1}{f}]$ is an $R$-algebra of finite type. Let $\mathfrak{m}_{\Sigma}$ be a maxmimal ideal. Let $\mathfrak{m}=(\mathfrak{m}_{\Sigma})^{c}$ is maximal in $R$. Then, $f\not \in \mathfrak{m}$. 
 
     To $2$: setg $\mathfrak{a}=(f_1,..,f_m)$. Then, $V(\mathfrak{a})\subset V(g)$. Show $g\in N(\mathfrak{a})$. 
 \end{proof}
