@@ -1509,11 +1509,19 @@ The following are equivalent:
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
 \begin{proposition}
-Let $S|R$ be an integral extension where $R$ is integral domain. Let $K$ be the quotient field of $R$, $L$ be the quotient field of $S$. Then, $L|K$ is an algebraic field extension and there exists a basis in $S$. 
+Let $S|R$ be an integral extension where $R$ is integral domain. Let $K$ be the quotient field of $R$, $L$ be the quotient field of $S$. Then, the following hold:
+\begin{enumerate}
+    \item If $R$ is integrally closed, then the minimal polynomial of $s\in S$ over $K[x]$ is contained in $R[x]$.
+    \item $L|K$ is an algebraic field extension and there exists a basis in $S$.
+\end{enumerate}
+
 \end{proposition}
 \end{tcolorbox}
 \begin{proof}
-    To $1$: For the first part, it suffices to show if $s\in S$, then $\frac{1}{s}$ is algebraic over $K$. By definition, $s$ satisfies a monic polynomial such that $s^n+a_{n-1}s^{n-1}+...+a_0=0$. Divide both sides by $s^n$ and we get $\frac{1}{s}$ satisfiying an algebraic equation over $K$. For the second part, suppose $\beta=\frac{r}{s}$ is a given basis vector, we know $s$ satisfies a algebraic equation over $K$. WLOG we can assume the constant term is $0$ since we are in a domain, and we have $s^n+a_{n-1}s^{n-1}+...+a_1s=-a_0$. Divide both sides by $-\frac{a_0}{s}$ and we express $\frac{1}{s}$ as a $K$-linear combination of $1,s,...,s^{n-1}$. Thus, we can turn an arbitrary basis into a set contained in $S$ that span $L$, and we may reduce it to a basis if needed. 
+
+    To $1$: Fix an algebraic closure of $L$, and the minimal polynomial factors into linear factors $\prod (x-s_i)$. Clearly, the minimal polymial over $K[x]$ divides the monic minimal polynmoial over $R[x]$, so each $s_i$ satisfies the monic minimal polymial over $R[x]$ and are in fact integral and contained in $R$ by integrally closed assumption. Expand the product and we see $\prod (x-s_i)$ is a monic polynomial in $R[x]$. 
+
+    To $2$: For the first part, it suffices to show if $s\in S$, then $\frac{1}{s}$ is algebraic over $K$. By definition, $s$ satisfies a monic polynomial such that $s^n+a_{n-1}s^{n-1}+...+a_0=0$. Divide both sides by $s^n$ and we get $\frac{1}{s}$ satisfiying an algebraic equation over $K$. For the second part, suppose $\beta=\frac{r}{s}$ is a given basis vector, we know $s$ satisfies a algebraic equation over $K$. WLOG we can assume the constant term is $0$ since we are in a domain, and we have $s^n+a_{n-1}s^{n-1}+...+a_1s=-a_0$. Divide both sides by $-\frac{a_0}{s}$ and we express $\frac{1}{s}$ as a $K$-linear combination of $1,s,...,s^{n-1}$. Thus, we can turn an arbitrary basis into a set contained in $S$ that span $L$, and we may reduce it to a basis if needed. 
 
 \end{proof}
 
@@ -1550,7 +1558,7 @@ By cofactor formula, we have $da_i\in \tilde{R}$ as well. On the other hand, $\s
 \end{theorem}
 \end{tcolorbox}
 \begin{proof}
-    By induction, reduce to the case where $R$ is local. 
+    By induction, we reduce the case where we have a chain $p_1\supseteq p_2$ in $R$ and $q_1$ in $S$, and we try to find a prime $q_2\cap R=p_2$. This boils down to showing that $p_2S_{q_1}\cap R=p_2$. The inclusion $p_2S_{q_1}\cap R\supseteq p_2$ is clear; for the reverse inclusion, let $x=\frac{y}{s}\in p_2S_{q_1}\cap R$, where $y\in p_2S$ and $s\in S\setminus q_1$. Then, $y$ satisfies a monic polynomial with coefficeints in $p_2$ by Cayley-Hamilton, say $y^n+a_{n-1}y^{n-1}+...+a_0=0$. Then, $s=\frac{y}{x}$ satisfies $\frac{y}{x}^n+\frac{a_{n-1}}{x}{\frac{y}{x}}^{n-1}+...+\frac{a_0}{x^n}=0$, so $\frac{a_{n-i}}{x^i}\in R$ since $R$ is integrally closed by Proposition $12.1.1$. If $x\not \in p_2$, then we get we $\frac{a_{n-i}}{x^i}\in p_2$ and as a result $s^n\in p_2\subseteq Bp_1\subseteq q_1$, a contradiction.
 \end{proof}
 
 \begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
@@ -1559,7 +1567,9 @@ By cofactor formula, we have $da_i\in \tilde{R}$ as well. On the other hand, $\s
         Then, $R$ is \underline{\textbf{strongly catenary}}, i.e every maximal sequence of prime ideals has length $n=d$. 
     \end{corollary}
     \end{tcolorbox}
-
+\begin{proof}
+   It is Cohen-Macaulay. 
+\end{proof}
 
 
 
@@ -1570,20 +1580,26 @@ Let $R$ be an integrally closed domain. $K$ the quotient field. $L|K$ the algebr
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
 \begin{proposition}
-    Let $G$ be a profinite group, acting continuously on a discrete ring $S$.  Then, the oribit for every $x\in S$ is finite under $G$. 
+    Let $G$ be a profinite group, acting continuously on a discrete set $S$.  Then, the oribit for every $x\in S$ is finite under $G$. 
 \end{proposition}
 \end{tcolorbox}
-
+\begin{proof}
+    Note that the stabilzer of each point in $S$ is open by the continuity of $G\times S\to S$ and the discreteness of $S$. Then, the orbit of $s\in S$ under $G$ corresponds to the set of cosets of $\textrm{Stab}_G(s)$, which is finite since open sets have finite index in $G$ by compactness.
+\end{proof}
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
 \begin{proposition}
-Let $G_i=g/N_i$. Then, $S_i=S^{G_i}:= \{ x\in S: G_ix=x \}$. 
+Suppose $G$ is a profinite group acting continuously on a discrete ring $S$. Let $G_i:=G/N_i$ be its finite quotients; let $S_i:=S^{G_i}$ be the subring of $S$ invariant under $G_i$. Then the following hold:
 \begin{enumerate}
-    \item Then, $\cup S_i=S$
-\item Let $R=S^G$. Then, $S_i|G$ is integral. Moreover, $G_i\subset Aut_R(S_i)$, with $S_i^{G_i}=R$.
+    \item $S=\cup S_i$
+\item Let $R:=S^G$. Then, $S_i|G$ is integral. Moreover, $G_i\subset Aut_R(S_i)$, with $S_i^{G_i}=R$.
 \end{enumerate}
 \end{proposition}
 \end{tcolorbox}
+\begin{proof}
+    To $1$: 
+\end{proof}
+
 
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
