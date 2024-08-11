@@ -1,0 +1,185 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{fullpage}
+\usepackage{tikz-cd}
+\usepackage{spectralsequences}
+\usepackage{adjustbox}
+\usepackage{xfrac}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{ {D:/Chrome Downloads./} }
+\usepackage[parfill]{parskip}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[theorem]
+\theoremstyle{definition}
+\newtheorem{remark}{Remark}[theorem]
+\theoremstyle{definition}
+\newtheorem{proposition}{Proposition}[theorem]
+\theoremstyle{definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{corollary}{Corollary}[theorem]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[theorem]
+\title{The Classifying Space of a Small Category}
+\author{David Zhu}
+
+\begin{document}
+\maketitle
+
+\section{The Simplex Category $\Delta$}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+    Let $\Delta$ be the category of finite, totally ordred sets, where each object is represented by a class $[n]:=(0<1<...<n)$, and the morphisms are non-decreasing functions. The category $\Delta$ is also called the \underline{\textbf{simplex category}}.
+    
+\end{definition}
+\end{tcolorbox}
+
+By elementary combinatorics, we have the following fact:
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+   Given $i,n\geq 0$, there are $\binom{n+1+i}{i+1}$ morphisms from $[i]$ to $[n]$. 
+\end{proposition}
+\end{tcolorbox}
+
+
+Similar to cycles in symmetric groups, we can break down each morphism in $\Delta$ into compositions of building blocks called face/degeneracy maps.
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+    Fix $n\geq 0$. There are $n+1$ injective maps of the form $\epsilon^k:[n-1]\to [n]$,  whose image miss $k$ in $[n]$. Similarly, there are  $n+1$ surjective maps of the form $\eta^k:[n+1]\to [n]$, with two elements mapping to $k$ in $[n]$. The explicit formular are given by:
+    \[
+    \epsilon^k(j)=
+    \begin{cases}
+        j & j< k\\
+        j+1 & j\geq k
+    \end{cases}\]
+    \[
+    \eta^k(j)=
+    \begin{cases}
+        j & j\leq k\\
+        j-1 & j> k
+    \end{cases}\]
+    
+    
+\end{proposition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+The maps $\epsilon^*$ are called \underline{\textbf{coface maps}} and $\eta^*$ are called \underline{\textbf{codegeneracy maps}}.
+\end{definition}
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\begin{lemma}
+Every morphism $[n]\to [m]$ can be uniquely decomposed as $\epsilon\circ \eta$, where $\eta$ and $\epsilon$ are compositions of degeneracy maps and face maps, respectively. 
+\end{lemma}
+\end{tcolorbox}
+\begin{proof}
+    Suppose the image of $[n]\to [m]$ consists of $k+1$ elements, such that $k\leq m,n$. Then, the map will factor as 
+    \[[n]\xrightarrow{\eta} [k]\xrightarrow{\epsilon} [m]\]
+    and the construction of $\eta$ and $\epsilon$ is obvious. 
+\end{proof}
+ It is easy to verify the following composition identities for face maps and degeneracy maps:
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+(Simplicial identities) The following hold: 
+\[\begin{cases}
+   \epsilon^i\epsilon^j=\epsilon^{j-1}\epsilon^i &  i<j\\
+    \eta^i\eta^j=\eta^{j+1}\eta^i &  i\leq j
+\end{cases}\]
+\[\eta^j\epsilon^i=\begin{cases}
+   \textrm{Id}  &  i=j,j+1\\
+   \epsilon^i\eta^{j-1} & i<j\\ 
+   \epsilon^{i-1}\eta^{j} & i>j+1\\ 
+\end{cases}\]
+\end{proposition}
+\end{tcolorbox}
+
+The lemma and the proposition shows that the data of the morphisms in $\Delta$ can be completely recovered from the face maps and degeneracy maps alone. 
+
+\section{Simplicial Sets}
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $\mathcal{C}$ be any category. A \underline{\textbf{simplicial object}} in $\mathcal{C}$ is a  functor $X: \Delta^{\textrm{op}}\to \mathcal{C}$. In particular, a functor $X: \Delta^{\textrm{op}}\to \textbf{Set}$ is called a \underline{\textbf{simplicial set}}. The elements in the set $X_n:=X[n]$ are called $n-$\underline{\textbf{simplices}}.
+\end{definition}
+\end{tcolorbox}
+If we dualize the above definition, we get the cosimpicial objects/sets, and here is an important example:
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+    \begin{example}
+    (Topological $n$-simplex) For each $[n]$, we associate the standard topological $n$-simplex
+    \[|\Delta^n|
+    :=\{ (x_0,...,x_{n})\in \mathbb{R}^{n+1}: \sum_{i=0}^{n}x_i=1, x_i\geq 0 \}\]
+    with vertices $\{v_i\}$ being points with $i$th coordinate $1$ and $0$ on all other coordinates. Each morphism $\alpha:[n]\to [m]$ induces a morphism $\alpha_*:|\Delta^n|\to |\Delta^m|$ by first sending vertices $v_i\mapsto v_{\alpha(i)}$, then extending linearly onto all $\Delta^n$. This defines a functor $\Delta\to \textbf{Top}$, which is a cosimplicial object.
+
+    Topological, the coface map $\epsilon_*$
+    \end{example}
+    \end{tcolorbox}
+    
+
+
+
+
+By the discussion of the previous section, we may package the data of a simplicial object in the following form:
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+The data of a simplicial object in $\mathcal{C}$ is equivalent to a collection of objects $X_n$ for $n\geq 0$, together with \underline{\textbf{degeneracy maps}} $d_i: X_n\to X_{n+1}$ and \underline{\textbf{face maps}} $s_i: X_{n}\to X_{n-1}$ for $0\leq i\leq n$ satisfying the composition laws dual to that of proposition $1.1.1$.
+\end{theorem}
+\end{tcolorbox}
+
+
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+(The standard $n$-simplex) We recognize the category of simplicial sets, denoted $\textbf{sSet}$, as the functor category $\textbf{Set}^{\Delta^{\textrm{op}}}$. By the Yoneda lemma, the contravariant functor $h: \Delta \to \textbf{sSet}$ given by $h([n]):=\textrm{Hom(-,[n])}$ is full and faithfull, and represents a simplicial set. The object $h([n])$ is called the \underline{\textbf{standard n-simplex}}.\\
+
+Combinatorially, the $k$-simplices in the standard $n$-simplicies are maps in $\textrm{Hom}([k],[n])$. Geometricially, each morphism $[k]\to [n]$ is understood as the inclusion of the $k$-dimensional faces into the geometric $n$-simplex. The face map is precisely taking a $k$-face to a $k-1$ face by deleting a vertex.
+\end{example}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+(The nerve of a category) Given a small catgeory $\mathcal{C}$, we define the nerve of $\mathcal{C}$, denoted $N\mathcal{C}$, as the simplicial set consisting of the following data: the objects are $$N\mathcal{C}_n:=\{\textrm{string of n-composable arrows in } \mathcal{C} \}$$, where $N\mathcal{C}_0=\textrm{Ob } \mathcal{C}$ and $N\mathcal{C}_1=\textrm{Mor } \mathcal{C}$. The face map $s_i: N\mathcal{C}_n\to N\mathcal{C}_{n-1}$ is given by composing the $i$th and $i+1$th morphism into one if $0<i<n$, and leaves out the first or last morphism when $i=0,n$; the degeneracy map $d_i: N\mathcal{C}_n\to N\mathcal{C}_{n+1}$ is inserting the identity map at the $i$th spot.
+\end{example}
+\end{tcolorbox}
+
+
+
+
+\section{Total Singular Complex and Geometric Realization}
+The goal of simplicial sets is to capture topological information categorically: the fundamental groupoid is able to capture $\pi_0$ and $\pi_1$, but fails to see any higher homotopy groups; the more powerful simplicial set is able to capture all homotopy groups and their interrelations (under mild assumptions). We now describe the two functors, $\textbf{Sing}$ and $|*|$ that bridges the topological side and simplicial side.
+\[
+\begin{tikzcd}
+\textbf{Top}\arrow[r,bend left,"\textbf{Sing}"]&\textbf{sSet}\arrow[l, bend left,"|*|"]
+\end{tikzcd}
+\]
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+We define the \underline{\textbf{total singular complex}} functor $\textbf{Sing}: \textbf{Top}\to \textbf{sSet}$ as follows: For $X$ a topological space, we associate the simplicial set $\textbf{Sing}_{\bullet}(X): \Delta\to \textbf{Set}$ defined by
+\[\textbf{Sing}_n(X):=\textrm{Hom}(|\Delta^n|,X)\]
+Given a morphism $\alpha: [n]\to [m]$, we have the induced morphism $\alpha^*: \textbf{Sing}_m(X)\to \textbf{Sing}_n(X)$ by precomosition with the map $\alpha_*$ defined in example $2.0.1$. 
+\end{definition}
+\end{tcolorbox}
+
+
+
+\end{document}

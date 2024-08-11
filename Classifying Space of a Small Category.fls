@@ -2,8 +2,8 @@ PWD c:/Users/David/Documents/Math-Stuff
 INPUT c:/texlive/2024/texmf.cnf
 INPUT c:/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/David/Documents/Math-Stuff/Mrch 22 Talk Notes.tex
-OUTPUT Mrch 22 Talk Notes.log
+INPUT c:/Users/David/Documents/Math-Stuff/Classifying Space of a Small Category.tex
+OUTPUT Classifying Space of a Small Category.log
 INPUT c:/texlive/2024/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2024/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2024/texmf-dist/tex/latex/base/size10.clo
@@ -259,10 +259,10 @@ INPUT c:/texlive/2024/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/amscls/amsthm.sty
 INPUT c:/texlive/2024/texmf-dist/tex/latex/amscls/amsthm.sty
-INPUT ./Mrch 22 Talk Notes.aux
-INPUT ./Mrch 22 Talk Notes.aux
-INPUT Mrch 22 Talk Notes.aux
-OUTPUT Mrch 22 Talk Notes.aux
+INPUT ./Classifying Space of a Small Category.aux
+INPUT ./Classifying Space of a Small Category.aux
+INPUT Classifying Space of a Small Category.aux
+OUTPUT Classifying Space of a Small Category.aux
 INPUT c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -297,25 +297,40 @@ INPUT c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
-OUTPUT Mrch 22 Talk Notes.pdf
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+OUTPUT Classifying Space of a Small Category.pdf
 INPUT c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT Mrch 22 Talk Notes.aux
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
+INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
+INPUT Classifying Space of a Small Category.aux
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb
+INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb

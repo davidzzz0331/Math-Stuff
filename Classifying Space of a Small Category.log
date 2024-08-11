@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.28)  6 JUL 2024 22:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.28)  13 JUL 2024 21:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/David/Documents/Math-Stuff/Mrch 22 Talk Notes.tex"
-(c:/Users/David/Documents/Math-Stuff/Mrch 22 Talk Notes.tex
+**"c:/Users/David/Documents/Math-Stuff/Classifying Space of a Small Category.tex"
+(c:/Users/David/Documents/Math-Stuff/Classifying Space of a Small Category.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-05-08>
 (c:/texlive/2024/texmf-dist/tex/latex/base/article.cls
@@ -596,12 +596,12 @@ Package: amsthm 2020/05/29 v2.20.6
 )
 \c@theorem=\count327
 \c@definition=\count328
-\c@problem=\count329
+\c@remark=\count329
 \c@proposition=\count330
 \c@corollary=\count331
 \c@example=\count332
- (./Mrch 22 Talk Notes.aux)
-\openout1 = `"Mrch 22 Talk Notes.aux"'.
+ (./Classifying Space of a Small Category.aux)
+\openout1 = `"Classifying Space of a Small Category.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
@@ -643,27 +643,32 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) Total classes: 0 [1
+) [1
 
-{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] (./Mrch 22 Talk Notes.aux)
+{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+
+ []
+
+[2] Total classes: 0 [3] (./Classifying Space of a Small Category.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-05-08>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 25524 strings out of 473993
- 620249 string characters out of 5745069
- 1937907 words of memory out of 5000000
- 47592 multiletter control sequences out of 15000+600000
- 565020 words of font info for 64 fonts, out of 8000000 for 9000
+ 25679 strings out of 473993
+ 623920 string characters out of 5745069
+ 1939907 words of memory out of 5000000
+ 47743 multiletter control sequences out of 15000+600000
+ 567837 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,6n,107p,5047b,595s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Mrch 22 Talk Notes.pdf" (2 pages, 116689 bytes).
+ 102i,16n,107p,5066b,994s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "Classifying Space of a Small Category.pdf" (3 pages, 173530 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
+ 92 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
