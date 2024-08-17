@@ -1,0 +1,18 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'HAK I&II.blg'
+[80] biber-MSWIN64:340> INFO - === 
+[104] Biber.pm:420> INFO - Reading 'HAK I&II.bcf'
+[186] Biber.pm:994> INFO - Found 2 citekeys in bib section 0
+[197] Biber.pm:4463> INFO - Processing section 0
+[206] Biber.pm:4654> INFO - Looking for bibtex file 'HAK.bib' for section 0
+[236] bibtex.pm:1713> INFO - LaTeX decoding ...
+[241] bibtex.pm:1519> INFO - Found BibTeX data source 'HAK.bib'
+[291] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[291] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[291] Biber.pm:4283> INFO - Sorting list 'anyt/global//global/global/global' of type 'entry' with template 'anyt' and locale 'en-US'
+[291] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[294] bbl.pm:676> INFO - Writing 'HAK I&II.bbl' with encoding 'UTF-8'
+[295] bbl.pm:779> INFO - Output to HAK I&II.bbl
+[295] Biber.pm:131> WARN - legacy year field '1994-01-01' in entry 'QGc' is not an integer - this will probably not sort properly.
+[295] Biber.pm:131> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[295] Biber.pm:133> INFO - WARNINGS: 2
