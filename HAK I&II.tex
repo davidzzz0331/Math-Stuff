@@ -38,7 +38,7 @@
 \maketitle
 $K$-Theory started with Grothendieck's $K_0$ and projective modules/vector bundles. In this note, we present the various constructions for higher $K$-groups.
 
-\section{Group Completion and  $S^{-1}S$-construction}
+\section{The Group Completion Theorem }
 First, we recall Grothendieck's definition of $K_0$ for an abelian monoid $M$
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
     \begin{definition}
@@ -103,8 +103,59 @@ Given a topological group $M$, we may construct the universal bundle $EM\to BM$ 
 By construction, $M$ acts on $M_{\infty}$ (which also induces an homology equivalence), and $(M_{\infty})_M$ is also contratible since it will be a filtered colimit of the contractible $M_M=EM$. Thus, we have a map $(M_{\infty})_{M} \to BM$ with fiber $M_{\infty}$ and homotopy fiber $\Omega BM$. The theorem then follows from proposition $1.2.1$ and more colimit nonsense on components for the general case. 
 
 
+We now define group completion for general homotopy commutative, homotopy associative $H$-spaces.
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $X$ be a homotopy commutative, homotopy associative $H$-space. A \underline{\textbf{group completion}} of $X$ is an $H$-space map $f: X\to Y$ such that $f$ induces the group completion on $\pi:=\pi_0$, and the isomorphism
+\[H_*(X)[\pi^{-1}]\cong H_*(Y)\] 
+
+\end{definition}
+\end{tcolorbox}
 
 
+\section{The $S^{-1}S$-construction}
+Given a symmetric monoidal category $S$, Quillen constructs the category $S^{-1}S$ such that $B(S^{-1}S)$ is the group completion of $BS$ in the sense of definition $1.2.1$. The group completion recovers the plus construction, and gives another more natural definition for higher $K$-theory. We shall note that the construction below is closely related to the group completion construction in chapter $1$.
+
+A left action of a monoidal category $S$ on a category $X$ is a functor $+: S\times X\to X$ with natural isomorphisms $A+(B+F)\cong (A+B)+F$ and $0+F\cong F$, where $A,B\in S$ and $F\in X$, satisfying the associativity coherence conditions. An action is call invertible if each translation $F\mapsto A+F$ is a homotopy equivalence. 
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+If $S$ acts on $X$ the category $\langle S,X \rangle$ has the same objects as $X$. A morphisms is represented by an isomorphisms class of the tuple $(s,sx\xrightarrow{\phi}t)$, where $\phi$ is a morphism in $X$. An isomorphism of tuples is given by an isomorphism $s\cong s'$, which induces the commutative diagram
+\[\begin{tikzcd}
+s+x\arrow[rr,"\cong"]\arrow[dr]&& s'+x\arrow[dl]\\
+&t
+\end{tikzcd}\]
+\end{definition}
+\end{tcolorbox}
+We let $S^{-1}S:= \langle S, S\times S \rangle$, where $S$ acts on both facts of $S\times S$ by the monoidal operation. We also define an action of $S$ on $S^{-1}S$ by $s+(s_1,s_2)=(s_1,s+s_2)$. Note that this action is invertible: the translation $(s_1,s_2)\mapsto (s_1,s+s_2)$ has homotopy inverse $(s_1,s_2)\mapsto (s+s_1,s_2)$, since there is the natural transformation $(s_1,s_2)\mapsto (s+s_1,s+s_2)$. Quillen then proves 
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+If every map in $S$ is an isomorphism, and the translations are faithful in $S$, then the functor $S\to S^{-1}S$ given by $x\mapsto (0,x)$ induces isomorphism
+\[H_*(S)[\pi^{-1}]\cong H_*(S^{-1}S)\]
+In particular, $BS^{-1}S$ is the group completion of $BS$.
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+    It is not hard to show that the projection functor $S^{-1}S\to \langle S,S \rangle$ onto the second factor is cofibered with fiber $S$. Then, there is a spectral sequence \cite{Grayson} 
+    \[E^2_{p,q}=H_p(\langle S,S \rangle, H_q(S))\Rightarrow H_{p+q}(S^{-1}S)\]
+    Localizating at $\pi_0(S)$ and noting the contractibility of $\langle S,S\rangle$ gives the desired degeneration. 
+\end{proof}
+
+We now show that the plus construction for $BGL(R)$ is a group completion.
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+Let $S=\coprod GL_n(R)$ be the category of free $R$-modules. Then, $BS^{-1}S$ is the group completion of $BS=\coprod BGL_n(R)$, and 
+\[BS^{-1}S\cong \mathbb{Z}\times BGL(R)^{+}\]
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+    We will construct a map $f:BGL(R)\to Y_S$, where $Y_S$ is the connected component of $BS^{-1}S$ containing the basepoint, such that $f$ induces isomorphism on integral homology. The universal property of the plus contruction then implies a homotopy equivalence $BGL(R)^{+}\to Y_S$.
+
+
+    
+\end{proof}
 
 
 \section{Exact Category}
