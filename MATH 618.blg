@@ -1,0 +1,4 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'MATH 618.blg'
+[37] biber-darwin:340> INFO - === Tue Aug 27, 2024, 10:18:16
+[46] Biber.pm:419> INFO - Reading 'MATH 618.bcf'
