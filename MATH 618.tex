@@ -30,15 +30,102 @@
 \newtheorem{corollary}{Corollary}[theorem]
 \theoremstyle{definition}
 \newtheorem{example}{Example}[theorem]
-\title{MATH 618}
+\title{MATH 618 Algebraic Topology}
 \author{David Zhu}
 
 \begin{document}
 \maketitle
 
+\section{The Correct Category}
+Let $T=$ compactly generated weakly Hausdorff. Let $T_2=$ pairs of spaces $(X,A), A\subseteq X$, and 
+\[T_2((X,A),(Y,B))=\{ f\in T(X,Y): f(A)\subseteq B\}\]
+We define $(X,A)\otimes (Y,B)=(X\times Y, X\times B\cup Y\times A)$. (Think about product of boundaries). We want tot understand the analogue of $T(X\times Y, Z)\cong T(X,T(Y,Z))$.
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+Let $(X,A),(Y,B),(Z,C)\in T_2$, then 
+\[T_2((X,A)\otimes (Y,B),(Z,C))\cong T_2((X,A), T_2(T_2((Y,B),(Z,C))), T(Y,C))\]
+\end{theorem}
+\end{tcolorbox}
+
+Let $T_*$ be the full subcategory of $T_2$ consisting of pairs $(X,*)$. There exists a pair of functors $T_2\to T_*$ defined by $(X,A)\mapsto (X/A, A/A=*)$. 
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+$q: X\to X/A$, we get 
+\[q*: T_*(X/A,Y)\to T_2((X,A),(Y,*))\]
+an isomorphism.
+\end{proposition}
+\end{tcolorbox}
+
+We want a producgt in $T_*$ which works well with function spaces: 
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Given $X,Y\in T_*$, defined $X\wedge Y=(X\times Y/X\vee Y, *=X\vee Y)$ called the \underline{\textbf{smash product}}.
+\end{definition}
+\end{tcolorbox}
+Note that the smash product is not the categorical product here.(The categorical product is simply the cartesian product carring the canonical basepoint). 
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+The \underline{\textbf{reduced suspension}} $\Sigma X:=S^1\wedge X$. 
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+The catgegory of based spaces $T_*$ has the following properties 
+\begin{enumerate}
+    \item $T_*(X,Y)\in T_*$, with basedpoint the constant map to basepoint.
+    \item $T_*(X,Y)\wedge X\to Y$ is continuous.
+    \item $T_*(X,Y)\wedge T_*(Y,Z)\to T_*(X,Z)$ is continuous.
+    \item $T_*(X\wedge Y,Z)\cong T_*(X,T_*(Y,Z))$
+    \item Small limits and colimits exists in $T_*$.
+    \item The forgetful functor $T_*\to T$ preserves limits. 
+\end{enumerate}
+\end{theorem}
+\end{tcolorbox}
 
 
 
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+The \underline{\textbf{reduced cone}} is a functor $C: T_*\to T_*$
+defined by $X\mapsto I\smash X$, with the basepoint of $I$ being $1$. 
+\end{definition}
+\end{tcolorbox}
 
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+There exists a pushout 
+\[\begin{tikzcd}
+X\arrow[r]\arrow[d]&CX\arrow[d]\\
+CX\arrow[r]&\Sigma X
+\end{tikzcd}\]
+\end{proposition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+The \underline{\textbf{loop space}} is defined to be $T_*(S^1,X)$.
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Eckmann-Hilton duality) 
+\[T_*(X,\Omega Y)\cong T_*(\Sigma X,Y)\] 
+\end{theorem}
+\end{tcolorbox}
+
+There exists a functor $T\to T_*$ given by $X\mapsto X\coprod \{x\}$, which is left adjoint to the forgetful functor. If $X\in T_*$, then $\Omega X\in T_*$, and note that $\pi_0(\Omega X)=[S^1,X]_*=\pi_1(X)$. 
 
 \end{document}
