@@ -102,6 +102,44 @@ Let $f: X\to Y$ be a weak equivalence of cofibrant-fibrant objects in a model ca
 \end{tcolorbox}
 
 \subsection{Elmendorf's Theorem}
+From the model structure given in Theorem $1.1$, we have a vague sense of the following "equivalence":
+\[\textrm{G-Homotopy Type of } X\Leftrightarrow \{ \textrm{ordinary homotopy type of } X^H:H\subset G \}\]
+And Elmendorf's Theorem will make the equivalence precise. We start by introducing the orbit category:
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+The \underline{\textbf{orbit category}} $\mathcal{O}_G$ is the full subcategory of $\textrm{GTop}$ on the objects $\{G/H: H\subset G\}$.
+\end{definition}
+\end{tcolorbox}
+The following lemma will make the structure of $\mathcal{O}_G$ clearer.
+
+\begin{tcolorbox}
+\begin{lemma}
+$\textrm{Map}^G(G/H,G/K)\cong (G/K)^H$
+\end{lemma}
+\end{tcolorbox}
+\begin{proof}
+    Note that there exists a $G$-equivariant maps $\varphi: G/H\to G/K$, determined by $\varphi(H)=gK$ iff $gHg^{-1}\subseteq K$ iff $h(gK)=gK$ for all $h\in H$. 
+\end{proof}
+
+Let $\textrm{Fun}(\mathcal{O}_G^op,\textrm{Top})$ be the functor category. We have the following fact on the model structure on functor categories:
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+Let $\mathcal{D}$ be a model category and $\mathcal{C}$ be a cofibrantly generated model category. Then, $\textrm{Fun}(\mathcal{C},\mathcal{D})$ admits a model structure. 
+\end{theorem}
+\end{tcolorbox}
+
+
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+There is a functor $\psi: \textrm{GTop}\to \textrm{Fun}(\mathcal{O}_G,\textrm{Top})$ given by 
+\[X\to (G/H\mapsto X^H)\]
+\end{definition}
+\end{tcolorbox}
+It is easy to check the functoriality 
 
 
 

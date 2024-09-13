@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber Equivariant Stable Homotopy Theory Notes"] 1726165359 "Equivariant Stable Homotopy Theory Notes.bcf" "Equivariant Stable Homotopy Theory Notes.bbl" "Equivariant Stable Homotopy Theory Notes" 1726166940 0
+["biber Equivariant Stable Homotopy Theory Notes"] 0 "Equivariant Stable Homotopy Theory Notes.bcf" "Equivariant Stable Homotopy Theory Notes.bbl" "Equivariant Stable Homotopy Theory Notes" 1726267048 -1
   "./EHT.bib" 1726162472 820 05cc6b4951050fbf50b6dc36b2e9bdf9 ""
-  "Equivariant Stable Homotopy Theory Notes.bcf" 1726166940 107506 f55335131301aeb7c41ca3208e4e8b10 "pdflatex"
+  "Equivariant Stable Homotopy Theory Notes.bcf" 1726267048 107506 f55335131301aeb7c41ca3208e4e8b10 "pdflatex"
   (generated)
   "Equivariant Stable Homotopy Theory Notes.bbl"
   "Equivariant Stable Homotopy Theory Notes.blg"
   (rewritten before read)
-["pdflatex"] 1726166938 "/Users/davidzhu/Documents/GitHub/Math-Stuff/Equivariant Stable Homotopy Theory Notes.tex" "Equivariant Stable Homotopy Theory Notes.pdf" "Equivariant Stable Homotopy Theory Notes" 1726166940 0
-  "/Users/davidzhu/Documents/GitHub/Math-Stuff/Equivariant Stable Homotopy Theory Notes.tex" 1726166938 4737 7586944b6d6d346d29922928c65d8486 ""
+["pdflatex"] 1726267047 "/Users/davidzhu/Documents/GitHub/Math-Stuff/Equivariant Stable Homotopy Theory Notes.tex" "Equivariant Stable Homotopy Theory Notes.pdf" "Equivariant Stable Homotopy Theory Notes" 1726267048 0
+  "/Users/davidzhu/Documents/GitHub/Math-Stuff/Equivariant Stable Homotopy Theory Notes.tex" 1726267047 6380 ad09ce4ee5112dd291759e6e177d6477 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -32,6 +32,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
@@ -43,6 +44,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/iftex.sty" 1644112042 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/infwarerr/infwarerr.sty" 1575499628 8356 7bbb2c2373aa810be568c29e333da8ed ""
@@ -212,10 +214,10 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1710130202 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1710130178 7883461 5901c145d91f673e1f689bc83c44d735 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "Equivariant Stable Homotopy Theory Notes.aux" 1726166940 579 a353608ca0c7e92baf7d50a7d7ffbacd "pdflatex"
-  "Equivariant Stable Homotopy Theory Notes.bbl" 1726165362 1492 1d56fc43218d783c4e5b07cb8f663c6b "biber Equivariant Stable Homotopy Theory Notes"
-  "Equivariant Stable Homotopy Theory Notes.run.xml" 1726166940 2570 e96ead207e2b344de88b0916912c10d5 "pdflatex"
-  "Equivariant Stable Homotopy Theory Notes.tex" 1726166938 4737 7586944b6d6d346d29922928c65d8486 ""
+  "Equivariant Stable Homotopy Theory Notes.aux" 1726267048 579 f08b54d17975dc38ac3692d26850bf34 "pdflatex"
+  "Equivariant Stable Homotopy Theory Notes.bbl" 1726265622 1492 1d56fc43218d783c4e5b07cb8f663c6b "biber Equivariant Stable Homotopy Theory Notes"
+  "Equivariant Stable Homotopy Theory Notes.run.xml" 1726267048 2570 e96ead207e2b344de88b0916912c10d5 "pdflatex"
+  "Equivariant Stable Homotopy Theory Notes.tex" 1726267047 6380 ad09ce4ee5112dd291759e6e177d6477 ""
   (generated)
   "Equivariant Stable Homotopy Theory Notes.aux"
   "Equivariant Stable Homotopy Theory Notes.bcf"
