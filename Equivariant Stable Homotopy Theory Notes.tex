@@ -1,0 +1,108 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{fullpage}
+\usepackage{tikz-cd}
+\usepackage{spectralsequences}
+\usepackage{adjustbox}
+\usepackage[backend=biber, style=alphabetic]{biblatex}
+\usepackage{xfrac}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{ {D:/Chrome Downloads./} }
+\usepackage[parfill]{parskip}
+\usepackage{amsthm}
+\addbibresource{EHT.bib}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[theorem]
+\theoremstyle{definition}
+\newtheorem{remark}{Remark}[theorem]
+\theoremstyle{definition}
+\newtheorem{proposition}{Proposition}[theorem]
+\theoremstyle{definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{corollary}{Corollary}[theorem]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[theorem]
+\title{Equivariant Stable Homotopy Notes}
+\author{David Zhu}
+
+\begin{document}
+\maketitle
+For the entire note, we will assume a group $G$ to be a compact Lie group, and subgroups $H\subset G$ are always closed. \cite{Blumberg}
+
+\section{Unstable Equivariant Homotopy Theory}
+\subsection{G-CW Complexes}
+Fix a compact Lie group $G$ acting on a space $X$. Similar to $CW$-complexes, we want to deconstruct $X$ into cells, but this time with the addditional data of the $G$-action along with each cell. The idea is that cells are of the form of a product $G/H\times D^{n}$, where $G$ acts trivially on $D^n$, and $G/H$ "represents" the orbits of $D^n$. To make this work, $H$ must be the isotropy group of $D^n$. 
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A \underline{\textbf{G-CW complex}} is the sequential colimit of spaces $X_n$, where $X_{n+1}$ is a pushout: 
+\[\begin{tikzcd}
+\coprod G/H\times S^n\arrow[r]\arrow[d]&X_n\arrow[d]\\
+\coprod G/H\times D^{n+1}\arrow[r]&X_{n+1}
+\end{tikzcd}\]
+We will denote  $G/H\times D^{n}$ as an \underline{\textbf{n-cell}}. 
+\end{definition}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{remark}
+Note that the topological dimension of an $n$-cell in a $G$-CW complex might be greater than $n$. For example, a $0$-cell $S^1/e\times *$ is one dimensional. 
+\end{remark}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+Let $G=C_2$ acting on $S^2$ by rotation by $\pi$ along the Z-axis. It has a $G$-CW structure given by the following cells: $2$ zero-cells $C_2/C_2\times *$, which are the poles corresponding to the fixed points of the $C_2$ action. $1$ one-cell $C_2/e\times D^1$, which are the two great circles joining the poles; $1$ two-cell $C_2/C_2\times D^2$, which are the two hemispheres.  
+\end{example}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+    Let $G=C_2$ acting on $S^2$ by the antipodal map. It has a $G$-CW structure given by the following cells: $1$ zero-cells $C_2/e\times *$, which are the poles; $1$ one-cell $C_2/e\times D^1$, which are the two great circles joining the poles; $1$ two-cell $C_2/C_2\times D^2$, which are the two hemispheres. 
+\end{example}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $H$ be a subgroup of $G$. Define $\pi_n^H(X):=\pi_n(X^H)$. A map $f: X\to Y$ of $G$-spaces is a \underline{\textbf{weak equivalence}} if for all subgroups $H\subset G$,
+\[f_*:\pi_n^H(X)\to \pi_n^H(Y)\]
+is an isomorphism. 
+\end{definition}
+\end{tcolorbox}
+
+Let $\textbf{GTop}$ be the category of $G$-spaces and $G$-maps. There is a cofibrantly-generated model structure that we can put on $\textbf{GTop}$:
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+    There is a cofibrantly-generated model structure on $\textbf{GTop}$, given by 
+    \begin{enumerate}
+        \item A $G$-map $f:X\to Y$ is a fibration iff for all $H\subset G$, $f^H: X^H\to Y^H$ is a fibration.
+        \item A $G$-map $f:X\to Y$ is a weak equivalence iff for all $H\subset G$, $f^H: X^H\to Y^H$ is a weak equivalence. 
+    \end{enumerate}
+\end{theorem}
+\end{tcolorbox}
+An immediate consequence of the model category structure is the equivariant Whitehead's Theorem
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{corollary}
+Let $f: X\to Y$ be a weak equivalence of cofibrant-fibrant objects in a model category. Then, $f$ is a homotopy equivalence. In particular, every object in $\textbf{GTop}$ is fibrant, and $G$-CW complexes are  cofibrant. 
+\end{corollary}
+\end{tcolorbox}
+
+\subsection{Elmendorf's Theorem}
+
+
+
+\end{document}
