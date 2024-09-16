@@ -278,11 +278,132 @@ Let $V\in \mathcal{A}_K$ and $\mathcal{V}\subset V$ be zariski dense. Then, a fu
 \begin{proposition}
 (rings of regular functions) We have the following:
 \begin{enumerate}
-    \item $k[V]\to \mathcal{O}(V)$ is an isomorphism of $k$-algebra.
+    \item $k[V]\to \mathcal{\tilde{O}}(V)$ is an isomorphism of $k$-algebra.
     \item $k[V]_f\to \tilde{O}(U_f)$ is an isomorphism of $k$-algebra. 
 \end{enumerate}
 \end{proposition}
 \end{tcolorbox}
+It is helpful to remember that Zariski open sets are dense. Thus, it suffices to show that a function is zero on a basic open $U_f$ to deduce it is globally zero. 
+
+\section{Presheaves and Sheaves}
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $\mathcal{C}$ be a concrete category such as $\textbf{Top, Set, Ab}$. Let $X$ be a topological space with topology $\tau_X$. Then, $\tau_X$ is naturally poset category where morphisms are inclusions. A \underline{\textbf{presheaf}} is a contravariant functor $\mathcal{P}: \tau_X\to \mathcal{C}$. 
+\end{definition}
+\end{tcolorbox}
+Explicitly, $\mathcal{P}$ is given by two data: $1. \mathcal{P}(U)\in Obj(\mathcal{C})$ for every $U\in \tau_X$. $2. \rho_{u',u''}: \mathcal{P}(U'')\to \mathcal{P}(U')$ for every $U'\subset U''$. The elements in the set $P(U)$ are called \underline{\textbf{sections}} above $U$. The image of a section under $\rho$ is called the \underline{\textbf{restriction}}. 
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A presheaf is a \underline{\textbf{sheaf}} if it has the covering preperty: given an open cover of an open set $U=\cup_i U_i$, with $U+{i,j}:=U_i\cap U_j$ with $s_i\in \mathcal{P}(U_i)$ such that $\rho_{U_i,U_{i,j}}(s_i)=\rho_{U_j,U_{i,j}}(s_i)$, then there exists $s\in \mathcal{P}(U)$ such that $s_i\in \rho_{U,U_i}(s)$ for every $U_i$. 
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Suppose that limits exists in $\mathcal{C}$. Then $\mathcal{P}_x:=\mathcal{P}(U_x)$ is called the \underline{\textbf{stalk}}
+of $\mathcal{P}$ at $x$. 
+
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+$\mathcal{P}$ is a sheaf iff for every $U\in \tau_X$, the map $\varphi_U: U\to \coprod_{x\in U}\mathcal{P}_x$ is injective. 
+\end{proposition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+For every presheaf $\mathcal{P}$, there is a sheafification functor $\mathcal{P}\to \mathcal{F}$ that induces isomorphism on stalks. 
+\end{proposition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $f:X\to Y$ be a continuous map of topological spaces. Then, 
+\begin{enumerate}
+    \item Given a (pre)sheaf $\mathcal{P}$ on $X$, then the \underline{\textbf{direct image}} (pre)sheaf $f_*\mathcal{P}$ on $Y$ is defined by $f_*\mathcal{V}:=\mathcal{P}(f^{-1}(V))$ for all $V\in \tau_Y$. In particular, the direct image sheaf is also a sheaf.
+    \item Given a presheaf $\mathcal{P}$ on $Y$. There is an \underline{\textbf{inverse image}} sheaf $f^{-1}\mathcal{P}$ on $X$ defined by the limit:
+    \[f^{-1}\mathcal{P}(U):=\varprojlim_{U\subset U'} \mathcal{P}(f(U')) \]
+    where $U\subset U'$ and $f(U')$ is open. 
+\end{enumerate}
+\end{definition}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{remark}
+Note that the preimage sheaf is always a preseeaf, but not necessarily a sheaf. 
+\end{remark}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A (locally) \underline{\textbf{ringed space}} is a pair $(X,\mathcal{F})$, where $X$ is a topological space and $\mathcal{F}$ a sheaf of rings on $X$ such that the stalks at each point is a local ring. 
+\end{definition} 
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Given locally ringed spaces $(X,\mathcal{F})$, $(Y,\mathcal{G})$, a morphism of locally ringed space is a pair $(f,f^{\sharp})$ such that $f: X\to Y$ is continuous and $f^{\sharp}: \mathcal{G}\to f_*\mathcal{F}$ a morphism of sheaves. 
+\end{definition}
+\end{tcolorbox}
+
+\section{Back to Varieties}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+    Let $V$ be an affine $k$-algebraic set, $U\subset V$ zariski open. 
+    \begin{enumerate}
+        \item The assignmenet $\tau_U$, $U'\mapsto \tilde{O}(U')$ defined a locally ringed space on $U$.
+        \item A morphism of quasi-affine algebraic set $T\to U$ is any morphism of locally ringed spaces $(f,f^{\sharp}):(T,\mathcal{O}_T)\to (U,\mathcal{O}_U)$
+    \end{enumerate}
+\end{proposition}
+\end{tcolorbox}
+The checks are fullfilled by proposition $2.0.1$. 
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Let $(T, \mathcal{O}_T), (U,\mathcal{O}_U)$, and $\Phi: T\to U$ continuous. Then,
+\begin{enumerate}
+    \item $\Phi$ defined a morphism of locally ringed spaces iff $\mathcal{O}_U\circ \varphi\subset \mathcal{O}_T$, i.e for every $U$ and $T'$ open such that $\Phi(T')\subset U'$ and $\varphi\in \mathcal{O}_U(U')$, then $\varphi\circ \Phi\in \mathcal{O}_T(T')$. 
+    \item Suppose $\Phi$ defines such a morphism, and let $U\subset \mathbb{A}_K$, $p: \mathbb{A}^n_K\to K$ the $i$th projection, then $p_i|_{U}\circ \Phi$ completely determines $\Phi$. 
+\end{enumerate}
+\end{proposition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{remark}
+Let $U_f:=\{ x\in V|f(x)\neq 0: \}$ be a basic open. Consider $W_f\subset \mathbb{A}^n_K$ defined by $W_f:=\{ (a,b)| a\in \mathbb{A}^n_K, b\in \mathbb{A}^1_K:f(a)b-1=0 \}$ is an algebraic set in $\mathbb{A}^{mn}_K$. Prove that $\Phi: W_f\to U_f$ given by $(a,b)\mapsto a$ is an isomorphism of quasi affine $k$-algebraic sets. Then inverse is given by $\psi: U_f\to W_f$ given by $a\mapsto (a,\frac{1}{f(a)})$.
+\end{remark}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A quasi-affine $k$-algebraic set is called \underline{\textbf{affine}} if it is isomorphic as a locally ringed space to an affine $k$-algebraic set. 
+
+\end{definition}
+\end{tcolorbox}
+
+
+
+
+
+
+
+
 
 
 

@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber MATH 624 Algebraic Geometry"] 1726070758 "MATH 624 Algebraic Geometry.bcf" "MATH 624 Algebraic Geometry.bbl" "MATH 624 Algebraic Geometry" 1726076025 0
+["biber MATH 624 Algebraic Geometry"] 1726070758 "MATH 624 Algebraic Geometry.bcf" "MATH 624 Algebraic Geometry.bbl" "MATH 624 Algebraic Geometry" 1726507939 0
   "/usr/local/texlive/2023/texmf-dist/bibtex/bib/gloss/sample.bib" 1136766823 2721 b88105703bd616b4f9867992219afb8a ""
-  "MATH 624 Algebraic Geometry.bcf" 1726076025 107446 b1703c238c462b0222a50098008a9b82 "pdflatex"
+  "MATH 624 Algebraic Geometry.bcf" 1726507939 107446 b1703c238c462b0222a50098008a9b82 "pdflatex"
   (generated)
   "MATH 624 Algebraic Geometry.bbl"
   "MATH 624 Algebraic Geometry.blg"
   (rewritten before read)
-["pdflatex"] 1726076023 "/Users/davidzhu/Documents/GitHub/Math-Stuff/MATH 624 Algebraic Geometry.tex" "MATH 624 Algebraic Geometry.pdf" "MATH 624 Algebraic Geometry" 1726076025 0
-  "/Users/davidzhu/Documents/GitHub/Math-Stuff/MATH 624 Algebraic Geometry.tex" 1726076023 12520 a1bb36fedaafba5afa89eae6961663ed ""
+["pdflatex"] 1726507938 "/Users/davidzhu/Documents/GitHub/Math-Stuff/MATH 624 Algebraic Geometry.tex" "MATH 624 Algebraic Geometry.pdf" "MATH 624 Algebraic Geometry" 1726507939 0
+  "/Users/davidzhu/Documents/GitHub/Math-Stuff/MATH 624 Algebraic Geometry.tex" 1726507938 18436 f44c7516f751786fccfad545a9ee56d1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -22,6 +22,8 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm" 1136768653 1332 f817c21a1ba54560425663374f1b651a ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm" 1136768653 1336 3125ccb448c1a09074e3aa4a9832f130 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1136768653 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1136768653 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -45,6 +47,8 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1248133631 32362 179c33bbf43f19adbb3825bb4e36e57a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1248133631 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb" 1336858727 21098 d4aee7c0aac232caac5688b586b9363c ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1248133631 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
@@ -219,10 +223,10 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1710130202 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1710130178 7883461 5901c145d91f673e1f689bc83c44d735 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "MATH 624 Algebraic Geometry.aux" 1726076025 666 f5ae0009d24ab550c05eb1f4a05137b2 "pdflatex"
+  "MATH 624 Algebraic Geometry.aux" 1726507939 881 21fb9bbfaf146c863d483da56728cc52 "pdflatex"
   "MATH 624 Algebraic Geometry.bbl" 1726070760 466 ee04f40f768daeed26442158e95aba61 "biber MATH 624 Algebraic Geometry"
-  "MATH 624 Algebraic Geometry.run.xml" 1726076025 2482 ad5a43a184915949286a23b5268a9b27 "pdflatex"
-  "MATH 624 Algebraic Geometry.tex" 1726076023 12520 a1bb36fedaafba5afa89eae6961663ed ""
+  "MATH 624 Algebraic Geometry.run.xml" 1726507939 2482 ad5a43a184915949286a23b5268a9b27 "pdflatex"
+  "MATH 624 Algebraic Geometry.tex" 1726507938 18436 f44c7516f751786fccfad545a9ee56d1 ""
   (generated)
   "MATH 624 Algebraic Geometry.aux"
   "MATH 624 Algebraic Geometry.bcf"
