@@ -130,16 +130,50 @@ Let $\mathcal{D}$ be a model category and $\mathcal{C}$ be a cofibrantly generat
 \end{theorem}
 \end{tcolorbox}
 
+It is useful to know that the weak equivalences in $\textrm{Fun}(\mathcal{O}^{op}_G,\textrm{Top})$ is given pointwise: a natural transformation $\eta: \mathcal{F}\to \mathcal{G}$ is a weak equivalence iff $\eta_{G/H}:\mathcal{F}(G/H)\to \mathcal{G}(G/H) $ is a weak equivalence. 
 
 
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
-There is a functor $\psi: \textrm{GTop}\to \textrm{Fun}(\mathcal{O}_G,\textrm{Top})$ given by 
+There is a functor $\psi: \textrm{GTop}\to \textrm{Fun}(\mathcal{O}^{op}_G,\textrm{Top})$ given by 
 \[X\to (G/H\mapsto X^H)\]
 \end{definition}
 \end{tcolorbox}
-It is easy to check the functoriality 
+It is easy to check the functoriality. Note that if we restrict $\psi$ to $\mathcal{O}_G$, the functor is just the Yoneda embedding: $\textrm{Map}^G(G/H,G/K)\cong (G/K)^H$.
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+    \begin{proposition}
+    There is a funcor $\theta: \textrm{Fun}(\mathcal{O}^{op}_G,\textrm{Top})\to \textrm{GTop}$ given by $X\mapsto X(G/e)$, where $X(G/e)$ is equipped with the following $G$-action: note that every $g\in G$ defines an $G$-map $G/e\to G/e$, which we denote by $R_g$.
+    \[g\cdot x=X(R_g)(x)\] 
+    \end{proposition}
+    \end{tcolorbox}
+    
+    It is easy to check that $(\theta,\psi)$ is an adjoint pair. In fact, more can be said:
+    
+    \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+        \begin{theorem}
+        (Elmendorf's Theorem) $\textrm{Fun}(\mathcal{O}^{op}_G,\textrm{Top})$ and $\textrm{GTop}$ have the same homotopy category. 
+        \end{theorem}
+        \end{tcolorbox}
+    The original proof due to Elmendorf constructs the equivalence explicitly using the Bar construction to obtain a homotopy inverse to the embedding $\psi$. The theorem can now be put into a more modern framework:
+
+    \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+    \begin{theorem}
+    $(\theta,\psi)$ is an Quillen equivalence. $\psi$ is an equivalence of $(\infty,1)$ categories. 
+    \end{theorem}
+    \end{tcolorbox}
+
+
+
+However, there is no hope that $\psi$ itself is an equivalence
+
+
+
+
+
+
+
 
 
 
