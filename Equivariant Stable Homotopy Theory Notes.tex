@@ -36,7 +36,7 @@
 
 \begin{document}
 \maketitle
-For the entire note, we will assume a group $G$ to be a compact Lie group, and subgroups $H\subset G$ are always closed. \cite{Blumberg}
+For the entire note, we will assume a group $G$ to be a compact Lie group, and subgroups $H\subset G$ are always closed. 
 
 \section{Unstable Equivariant Homotopy Theory}
 \subsection{G-CW Complexes}
@@ -164,10 +164,61 @@ It is easy to check the functoriality. Note that if we restrict $\psi$ to $\math
     \end{theorem}
     \end{tcolorbox}
 
+\subsection{Bredon Cohomology}  
+The goal is to construct a cohomology theory satisfying the Eilenberg-Steenrod axioms under the equivariant setting. 
+ \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+ \begin{definition}
+ (Equivariant reduced generalized cohomology) Let $G\textrm{CW}_*$ be the category of pointed $G$-CW complexes with equivariant maps. Then, a generalized cohomology theory on $G\textrm{CW}_*$ is a sequence of contravariant functors 
+ \[\tilde{H}^n:=G\textrm{CW}_*\to \textbf{Ab} \]
+ satisfying the following:
+ \begin{enumerate}
+    \item if $f,g$ are equivariantly homotopic, then $\tilde{H}^n(f)=\tilde{H}^n(g)$.
+    \item There exists a sequence of natural isomorphisms
+   \[\tilde{H}^n(X)\to \tilde{H}^{n+1}(S^1\wedge X)\]
+   where $G$ acts trivially on $S^1$ in the smash. 
+    \item The sequence 
+    \[\tilde{H}^n(X/A)\to \tilde{H}^n(X)\to \tilde{H}^n(A)\]
+    is exact.
+ \end{enumerate}
+ \end{definition}
+ \end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{remark}
+The above axioms is built upon pointed "single" spaces. It is in fact equivalent to the usual theory built upon pairs, and is justified in 
+\end{remark}
+\end{tcolorbox}
+For a non-equivariant reduced generalized cohomology theory $\tilde{h}^*$, the Atiyah-Hirzebruch spectral sequence tells us that knowing $\tilde{h}^*(pt)$ basically determines the cohomology theory on CW complexes. Heuristically, the cohomology is determined by the building blocks, which are contractible open cells. However, in the equivariant setting, the building blocks are more complicated: the building blocks have become orbits of the form $G/H$. We are lead to the following definitions:
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A \underline{\textbf{coefficient system}} is a contravariant functor $\mathcal{F}: \mathcal{O}_G\to \textrm{Ab}$.
+\end{definition}
+\end{tcolorbox}
+Recall that if a reduced cohomology theory is called \underline{\textbf{ordinary}} if it satisfies the dimension axiom, i.e the zeroth reduced cohomology group (a.k.a the coeffcient system) is trivial on a point. Our goal now is to construct such a theory in the equivariant setting, which is called Bredon cohomology. 
+
+Note that by the general theory of abelian categories, the functor category of coefficient systems $\mathcal{CS}:=\textrm{Fun}(\mathcal{O}_G, \textrm{Ab})$ is abelian. It is now possible to define Bredon cohomology on a $G$-CW complex by explicitly defining the cochain complexes on cells, for example see . However, we may package the cochains into the following form 
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+For each $n$, we may define a coefficient system $C_n(-)$, given by 
+\[G/H\mapsto H_n((X^H)_{n},(X^H)_{n-1}; \mathbb{Z})=C_n^{CW}(X^H)\]
+The differential of the CW chain complex induces a chain complex of coefficient systems $C_{\cdot}(-)$. 
+\end{definition}
+\end{tcolorbox}
+It is easy to check that $Hom_{\mathcal{CS}}(C_{\cdot}(-),M)$ is a cochain complex whose differentials is induced by those of $C_{\cdot}()$. 
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+The \underline{\textbf{Bredon cohomology}} of $X$ with coefficients in a system $M$ is defined by 
+\[H_G^n(X;M):=H^n(Hom_{\mathcal{CS}}(C_{\cdot}(X),M))\]
+\end{definition}
+\end{tcolorbox}
+
+proof of the axioms and computation of examples. 
 
 
-However, there is no hope that $\psi$ itself is an equivalence
 
+\section{Spectra and the Stable Category}
 
 
 

@@ -390,6 +390,12 @@ Let $U_f:=\{ x\in V|f(x)\neq 0: \}$ be a basic open. Consider $W_f\subset \mathb
 \end{tcolorbox}
 
 
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Every quasi-affine $k$-algebraic set contains a n zariski dense $k$-algebraic set. 
+\end{proposition}
+\end{tcolorbox}
+
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
 A quasi-affine $k$-algebraic set is called \underline{\textbf{affine}} if it is isomorphic as a locally ringed space to an affine $k$-algebraic set. 
@@ -398,13 +404,84 @@ A quasi-affine $k$-algebraic set is called \underline{\textbf{affine}} if it is 
 \end{tcolorbox}
 
 
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+The following hold:
+\begin{enumerate}
+    \item The catgeory of $K$-valued affine $k$-algebraic sets, $\mathcal{A}_k$, is anti-equivalent to the category of reduced $k$-algebras of finite type. In particular, a $k$-algebraic set $V\subset \mathcal{A}_K$ is mapped to $k[V]$. Note that the projection maps $V\to W\to \mathcal{A}_k$ defined a regular function on $V$, and by proposition $4.0.2$ determined the morphism of the algebraic set. There is a canonical map from the ring of regular functions on $V$ to the coordinate ring $k[V]$ by proposition $2.0.1$. 
+    \item Let $U$ be a quasi-affine $k$-algebraic set, $W$ and affine $k$-algebraic set. Then, a morphism $\Phi: U\to W$ is determined by a map $\Phi^*: k[W]\to \tilde{O}(U)$. 
+\end{enumerate}
+\end{theorem}
+\end{tcolorbox}
 
 
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+$\mathcal{A}^n_k:=(\mathcal{A}_K^n,\tilde{O}_{\mathcal{A}_K^n})$ is called the \underline{\textbf{n-dimensional affine sapce.}}
+\end{definition}
+\end{tcolorbox}
 
 
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+An \underline{\textbf{open immersion}} of quasi-affine $k$-algebriac setd $j: U\to T$ is any $k$-morphism which is a zariksi open immersion and $\tilde{O}_U=\tilde{O}_T\circ j$
+\end{definition}
+\end{tcolorbox}
 
 
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A \underline{\textbf{closed immersion}} of quasi-affine $k$-algebraic sets $i: U\to T$ is a topological closed immersion and $i_*O_U$ is a factor sheaf of $\mathcal{O}_T$. In other words, the map $\Phi*: \tilde{\mathcal{O}}_T(T')\to \tilde{\mathcal{O}}_U(U')$ is surjective. 
 
+
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A $k$-\underline{\textbf{prevariety}} is any quasi-compact locally ringed space $X$ that is locally isomorphic to $K$-valued affine $k$- algebraic sets. Locally isomorphic here means that there exists an finite open cover $X=\cup X_{\alpha}$ and isomorphism of locally ringed spaces $\varphi_{\alpha}: X_{\alpha}\to V_{\alpha}$, where $V_{\alpha}$ is affine $k$-algebraic set. Moreover, the transition maps are isomorphisms of quasi-affine $k$-algebraic sets. 
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{remark}
+A $k$\underline{\textbf{-morphism}} of $k$-prevarieties is a morphism of locally ringed spaces, such that there exists $X=\cup X_{\alpha}, Y=\cup Y_{\alpha}$ and $f(X_{\alpha})\subset Y_{\alpha}$, and the structure maps induce a map of affine $k$-algebraic sets.
+\end{remark}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $f: X\to Y$ be a $k$-morphism of $k$-prevarieties. Then, 
+\begin{enumerate}
+    \item $f$ is an open immersion iff $f$ induced structure maps is an open immersions of affine $k$-algebraic sets.
+    \item $f$ is an closed immersion iff $f$ induced structure maps is a closed immersions of affine $k$-algebraic sets.
+    \item $X$ is called affine if it is isomorphic as a $k$-prevariety to an affine $k$-algebraic set. 
+    \item $X$ is called quasi-affine if there is an open immersion into a affine $k$-prevariety. 
+\end{enumerate}
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+(Glueing datat for $k$-prevarieties and $k$-morphisms) 
+\begin{enumerate}
+    \item $(X_i)$ be a finite set of $k$-prevarieties. 
+    \item $X_{ij}\subset X_i$ open for every $i,j$
+    \item $\varphi_{ij}: X_{ij}\to X_{ji}$ a $k-$isomorphism such that $\varphi_{ii}=Id$, $\varphi_{ij}=\varphi_{ji}^{-1}$ and $\varphi_{ij}\circ \varphi_{jk}=\varphi_{ik}$. 
+    \item A solution is $X=\cup X_i'$ and $k$-isomorphisms $X_i'\to X_i$
+\end{enumerate}
+\end{proposition}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{remark}
+The solution is unique up to $k$-isomorphism. 
+\end{remark}
+\end{tcolorbox}
 
 
 \end{document}
