@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{fullpage}
+\usepackage{tikz-cd}
+\usepackage{spectralsequences}
+\usepackage{adjustbox}
+\usepackage[backend=biber, style=alphabetic]{biblatex}
+\usepackage{xfrac}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{ {D:/Chrome Downloads./} }
+\usepackage[parfill]{parskip}
+\usepackage{amsthm}
+\addbibresource{sample.bib}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[theorem]
+\theoremstyle{definition}
+\newtheorem{remark}{Remark}[theorem]
+\theoremstyle{definition}
+\newtheorem{proposition}{Proposition}[theorem]
+\theoremstyle{definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{corollary}{Corollary}[theorem]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[theorem]
+\title{MATH 624 HW2}
+\author{David Zhu}
+
+\begin{document}
+\maketitle
+
+\section*{Problem 2b}
+A representative of $\tilde{O}_a$ is given by a pair $(W_1, \frac{f_1}{g_1})$, with $g_1\neq 0$ on $W_1$, and $(W_1, \frac{f_1}{g_1})\sim (W_2, \frac{f_2}{g_2})$ iff there exists a open $U_{h'}\subset W_1\cap W_2$ such that $\frac{f_1}{g_1}=\frac{f_2}{g_2}$ on $U_{h'}$. On the other hand, a representative of $k[V]_{\mathfrak{p}_a}$ is given by some $\frac{f}{g}$, where $g(a)\neq 0$. By continuity, there exists a basic open $U_h$ containing $a$ on which $g$ does not vanish. We define the $k$-algebra homomorphism: 
+\[i: k[V]_{\mathfrak{p}_a}\to \tilde{O}_a  \ \ \ \frac{f}{g}\mapsto (U_h, \frac{f}{g})\]
+
+Surjectivity is obvious by construction, so there are two things to check: well-definedness (it is clearly that this will be a $k$-algebra morphism once we check well-definedness) and injectivity.
+
+Well-definedness: suppose $\frac{f}{g}\sim \frac{f'}{g'}$ in $k[V]_{\mathfrak{p}_a}$, which means there exists some $h'\in K[V]$ such that $h'(fg'-f'g)=0$, which implies $\frac{f}{g}=\frac{f'}{g'}$ on $U_{h'}$. Thus, both will be mapped to the equivalence class $(U_{h'},\frac{f}{g})$.
+
+Injectivity: suppose $i(\frac{f}{g})=(U_h,\frac{f}{g})$ represents the $0$ element. WLOG, we may assume that $f$ vanishes on $U_h$, for otherwise we may replace $U_h$ with a smaller basic open. Then, $\frac{f}{g}\sim \frac{0}{1}$ in $ k[V]_{\mathfrak{p}_a}$ since $h(f\cdot 1-g\cdot 0)$ is identically $0$ on $V$.
+
+
+
+\end{document}
