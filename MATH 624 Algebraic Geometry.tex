@@ -467,7 +467,7 @@ Let $f: X\to Y$ be a $k$-morphism of $k$-prevarieties. Then,
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
 \begin{proposition}
-(Glueing datat for $k$-prevarieties and $k$-morphisms) 
+(Gluing datat for $k$-prevarieties and $k$-morphisms) 
 \begin{enumerate}
     \item $(X_i)$ be a finite set of $k$-prevarieties. 
     \item $X_{ij}\subset X_i$ open for every $i,j$
@@ -482,6 +482,88 @@ Let $f: X\to Y$ be a $k$-morphism of $k$-prevarieties. Then,
 The solution is unique up to $k$-isomorphism. 
 \end{remark}
 \end{tcolorbox}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+(Gluing morphisms)Suppose $f_{\alpha}: X_{\alpha}\to Y_{\alpha}$ such that 
+\[\begin{tikzcd}
+	{X_{\alpha\beta}} & {Y_{\alpha\beta}} \\
+	{X_{\beta\alpha}} & {Y_{\beta\alpha}}
+	\arrow["{f_{\alpha}}", from=1-1, to=1-2]
+	\arrow["{\varphi_{\alpha\beta}}"', from=1-1, to=2-1]
+	\arrow["{\psi_{\beta\alpha}}", from=1-2, to=2-2]
+	\arrow["{f_{\beta}}"', from=2-1, to=2-2]
+\end{tikzcd}\]
+The there exists a unique $k$-morphism $X\to Y$ compactible with the gluing data. 
+\end{proposition}
+\end{tcolorbox}
+The idea of proof for $4.1.1$ and $4.1.2$ is to take the disjoint union of the topological spaces first and define an equivalence relation accordingly. Then, define the structure sheaf on the quotient as the unique sheaf of $k$-algebras such that $\mathcal{O}_X|_{i_{\alpha}(X_{\alpha})}=(i_{\alpha})_*\mathcal{O}_{X_{\alpha}}$. We can check that $\mathcal{O}_X$ is well-defined. The glued morphism is as expectedly induced by morphisms from the glued components. 
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+(Line with two origins)Let $X_1,X_2=\mathbb{A}^1$ , and $U_{12}=U_{21}=\mathbb{A}^1-\{0\}$, and let $\varphi: U_{12}\to U_{21}$ be the identity. 
+\end{example}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+    (The projective line)Let $X_1,X_2=\mathbb{A}^1$ , and $U_{12}=U_{21}=\mathbb{A}^1-\{0\}$, and let $\varphi: U_{12}\to U_{21}$ be $\varphi(x)=\frac{1}{x}$. 
+\end{example}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+Let $X$ be a $k$-prevariety, and $V$ be an affine $k$-prevariety. Then, one has a canonical bijection
+\[Hom_k(k[V], \mathcal{O}_X(X))\to Mor_K(X, V)\]
+\end{theorem}
+\end{tcolorbox}
+Proof uses Theorem $4.1$ part 2. Break up the morphisms by $X=\cup X_{\alpha}$, where each $X_{\alpha}$ is affine. Then use the gluing theorems to glue back. 
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+Finite products and coproducts exists in the catgeory of affine $k$-algebraic sets. The coproduct correspond to the product of the affine rings. The product correspond to the reduced tensor product of affine $k$-algebras.
+\end{theorem}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{remark}
+    Note that the $k$-tensor algebra of two reduced $k$-algebras might no longer be reduced. Therefore we need to take the quotient by the nilradical. 
+\end{remark}
+\end{tcolorbox}
+
+
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+    \begin{theorem}
+    The category of $k$-prevarieties has finite products and coproducts.
+    \end{theorem}
+    \end{tcolorbox}
+\begin{proof}
+    Let $T$ be the category of locally ringed spaces in $k$-algebras. Let $T_0$ be a subcategory that is 
+    \begin{enumerate}
+        \item closed under open immersions.
+        \item closed under finite products.
+        \item Every object in $T$ can be glued from thatof $T_0$.
+    \end{enumerate}
+    Then, products exists in $T$. Take $T$ to be category of $k$-prevarieties and $T_0$ be subcategory quasi-affine $k$-prevarieties. The hard part is to show that $T_0$ has all fintie products. 
+\end{proof}
+    
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}
