@@ -552,9 +552,17 @@ Finite products and coproducts exists in the catgeory of affine $k$-algebraic se
     Then, products exists in $T$. Take $T$ to be category of $k$-prevarieties and $T_0$ be subcategory quasi-affine $k$-prevarieties. The hard part is to show that $T_0$ has all fintie products. 
 \end{proof}
     
+\section*{Problem 5}
+\subsection*{(a)}
+$(a)\implies (b)$ Take a nullhomotopy $H: S^n\times I\to X$, where $H_0=f$ and $H_1$ is a constant map. Then, $H$ factors through a map $H':CS^n=D^{n+1}\to X$. The boundary of the cone is precisely $S^n\times \{0\}$, so $H'$ is the desired extension. 
 
+$(b)\implies (c)$
+Every representative $\varphi\in \pi_n(X,x_0)$ is a map $\varphi: (S^n,s_0)\to (X,x_0)$, which is nullhomotopic since it factors through $(D^{n+1},s_0)$ which deformation retracts onto $s_0$.
 
-
+$(c)\implies (a)$
+Obvious by definition. 
+\subsection*{(b)}
+Clearly $(a)\implies (b)$, $(b)\implies (c)$ is also obvious since $D^n$ is contractible, so we may first homotope the map $f:(D^n,\partial D^n)\to (X,A)$ to a map $D^n\to A$ through such maps, and then homotope it to a constant map by a deformation retraction of $D^n$. $(c)\implies (d)$ by definition of the relative homotopy groups; $(d)\implies (a)$ by the compression lemma. 
 
 
 
