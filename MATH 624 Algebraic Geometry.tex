@@ -552,26 +552,135 @@ Finite products and coproducts exists in the catgeory of affine $k$-algebraic se
     Then, products exists in $T$. Take $T$ to be category of $k$-prevarieties and $T_0$ be subcategory quasi-affine $k$-prevarieties. The hard part is to show that $T_0$ has all fintie products. 
 \end{proof}
     
-\section*{Problem 5}
-\subsection*{(a)}
-$(a)\implies (b)$ Take a nullhomotopy $H: S^n\times I\to X$, where $H_0=f$ and $H_1$ is a constant map. Then, $H$ factors through a map $H':CS^n=D^{n+1}\to X$. The boundary of the cone is precisely $S^n\times \{0\}$, so $H'$ is the desired extension. 
 
-$(b)\implies (c)$
-Every representative $\varphi\in \pi_n(X,x_0)$ is a map $\varphi: (S^n,s_0)\to (X,x_0)$, which is nullhomotopic since it factors through $(D^{n+1},s_0)$ which deformation retracts onto $s_0$.
-
-$(c)\implies (a)$
-Obvious by definition. 
-\subsection*{(b)}
-Clearly $(a)\implies (b)$, $(b)\implies (c)$ is also obvious since $D^n$ is contractible, so we may first homotope the map $f:(D^n,\partial D^n)\to (X,A)$ to a map $D^n\to A$ through such maps, and then homotope it to a constant map by a deformation retraction of $D^n$. $(c)\implies (d)$ by definition of the relative homotopy groups; $(d)\implies (a)$ by the compression lemma. 
-
-
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Let $f: X'\to X$. $g: Y'\to Y$ morphisms of $k$-prevarieties. Then, TFH
+\begin{enumerate}
+    \item There exists a canonical $k$-morphisms $f\times g: X'\times Y'\to X\times Y$
+    \item $f,g$ are open/closed immersions iff $f\times g$ is.
+    \item The diagonal morphism is a closed immersion of $k$-varities iff it is a topological closed immersion. 
+\end{enumerate}
+\end{proposition}
+\end{tcolorbox}
 
 
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $\mathcal{T}$ be a category of topological spaces in which finite products exist. Then, 
+\begin{enumerate}
+    \item an object $T$ is called \underline{\textbf{separated}} if the diagonal map is $T\to T\times T$ is a closed immersion.
+    \item A $k$-prevariety is called \underline{\textbf{k-variety}} if it is separated.
+\end{enumerate}
+\end{definition}
+\end{tcolorbox}
 
 
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Let $f: Y\to X$ be a morphism of $k$-prevarieties. Then,
+\begin{enumerate}
+    \item Suppose $X$ is a $k$-variety, and $f$ a closed/open immersion, then $Y$ is a $k$-variety.
+    \item $X\times Y$ is a $k$-variety iff $X,Y$ are $k$-varieties. 
+\end{enumerate}
+\end{proposition}
+\end{tcolorbox}
 
 
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+    The following hold:
+    \begin{enumerate}
+        \item Affine $k$-prevarieties are actually $k$-varieties.
+        \item Let $X$ be a $k$-prevariety such that for every $x,y\in X$, there is $V\subset X$ affine $k$-subprevariety such that $x,y\in V$. Then, $X$ is a $k$-variety.  
+    \end{enumerate}
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+    To $1$: $\mathbb{A}^n_K$ is separated. Then, $X$ is affine iff $\exists$ a closed immersion $X\to \mathbb{A}_K^n$. Deduce that the diagonal map is a closde immersion. 
+\end{proof}
 
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+The line with two origins is not separated. The diagonal morphism is not closed. 
+\end{example}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+The projective line is a $k$-variety. 
+\end{example}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $\mathcal{T}$ be a category of topological spaces in which finite product exists. Then,
+\begin{enumerate}
+    \item $T\in \mathcal{T}$ is called \underline{\textbf{universally closed}} if for every object $Y$ and $Y\times T$ if the projection of $T$ onto $Y$ is closed. 
+    \item $X$ is called proper if separated and universally closed. 
+\end{enumerate}
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+If $X$ is universally closed/proper, $Y\to X$ a closed immersion. Then, $Y$ is universally closed/proper. 
+
+$X\times Y$ is universally closed/proper if $X,Y$ are so.
+\end{proposition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+(Graded rings) $R=\oplus_{d\geq 0} R_d$ a ring such that 
+\begin{enumerate}
+    \item $R_d$ is a subgroup of $R$, and 
+    \item $R_d\cdot R_q\subset R_{d+q}$.
+\end{enumerate}
+$R_d$ is called the \underline{\textbf{graded piece of degree d}}. 
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+    $I$ is a \underline{\textbf{graded ideal}} if $I=\oplus I_d$ and $I_d=I\cap R_d$. If so, $R/I=\oplus R_d/I_d$. 
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+\underline{\textbf{Proj(R)}}$:= \{ p\in spec(R) :p \ \textrm{graded}, p\neq \oplus_{d>0}R_d \} $
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+$p\in Proj(R)$ iff for every $a,b$ homogeneous, $ab\in p$ implies $a$ or $b$ in $p$.
+\end{proposition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+For $a\in R$ homogeneous, $deg(a)>0$, $D_a^{+}=\{g\in Proj(R)| a\not\in g\}$ define the open basis for Zariski topology on $Proj$. 
+\end{proposition}
+\end{tcolorbox}
+
+Localization works the same way as in non-graded case. 
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $\Sigma\subset R$ be a multiplicatively closed set of homogeneous elements. Define $\Sigma^{-1}R:=\{\frac{f}{g}: g\in \Sigma, deg(g)=deg(f)\}$
+\end{definition}
+\end{tcolorbox}
 
 
 \end{document}
