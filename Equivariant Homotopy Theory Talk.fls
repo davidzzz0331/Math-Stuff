@@ -2,8 +2,8 @@ PWD /Users/davidzhu/Documents/GitHub/Math-Stuff
 INPUT /usr/local/texlive/2023/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/davidzhu/Documents/GitHub/Math-Stuff/Equivariant Stable Homotopy Theory Notes.tex
-OUTPUT Equivariant Stable Homotopy Theory Notes.log
+INPUT /Users/davidzhu/Documents/GitHub/Math-Stuff/Equivariant Homotopy Theory Talk.tex
+OUTPUT Equivariant Homotopy Theory Talk.log
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
@@ -889,10 +889,10 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/amscls/amsthm.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/amscls/amsthm.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/amscls/amsthm.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/amscls/amsthm.sty
-INPUT ./Equivariant Stable Homotopy Theory Notes.aux
-INPUT Equivariant Stable Homotopy Theory Notes.aux
-INPUT Equivariant Stable Homotopy Theory Notes.aux
-OUTPUT Equivariant Stable Homotopy Theory Notes.aux
+INPUT ./Equivariant Homotopy Theory Talk.aux
+INPUT Equivariant Homotopy Theory Talk.aux
+INPUT Equivariant Homotopy Theory Talk.aux
+OUTPUT Equivariant Homotopy Theory Talk.aux
 INPUT /usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -915,13 +915,13 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/english.lbx
-OUTPUT Equivariant Stable Homotopy Theory Notes.bcf
-INPUT Equivariant Stable Homotopy Theory Notes.bbl
-INPUT ./Equivariant Stable Homotopy Theory Notes.bbl
-INPUT Equivariant Stable Homotopy Theory Notes.bbl
-INPUT ./Equivariant Stable Homotopy Theory Notes.bbl
-INPUT ./Equivariant Stable Homotopy Theory Notes.bbl
-INPUT Equivariant Stable Homotopy Theory Notes.bbl
+OUTPUT Equivariant Homotopy Theory Talk.bcf
+INPUT Equivariant Homotopy Theory Talk.bbl
+INPUT ./Equivariant Homotopy Theory Talk.bbl
+INPUT Equivariant Homotopy Theory Talk.bbl
+INPUT ./Equivariant Homotopy Theory Talk.bbl
+INPUT ./Equivariant Homotopy Theory Talk.bbl
+INPUT Equivariant Homotopy Theory Talk.bbl
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
@@ -958,29 +958,38 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
-OUTPUT Equivariant Stable Homotopy Theory Notes.pdf
-INPUT /usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+OUTPUT Equivariant Homotopy Theory Talk.pdf
+INPUT /usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm5.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
-INPUT Equivariant Stable Homotopy Theory Notes.aux
-INPUT Equivariant Stable Homotopy Theory Notes.run.xml
-OUTPUT Equivariant Stable Homotopy Theory Notes.run.xml
+INPUT Equivariant Homotopy Theory Talk.aux
+INPUT Equivariant Homotopy Theory Talk.run.xml
+OUTPUT Equivariant Homotopy Theory Talk.run.xml
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb

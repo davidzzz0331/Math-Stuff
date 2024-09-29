@@ -1,0 +1,276 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{fullpage}
+\usepackage{tikz-cd}
+\usepackage{spectralsequences}
+\usepackage{adjustbox}
+\usepackage[backend=biber, style=alphabetic]{biblatex}
+\usepackage{xfrac}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{ {D:/Chrome Downloads./} }
+\usepackage[parfill]{parskip}
+\usepackage{amsthm}
+\addbibresource{sample.bib}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[theorem]
+\theoremstyle{definition}
+\newtheorem{remark}{Remark}[theorem]
+\theoremstyle{definition}
+\newtheorem{proposition}{Proposition}[theorem]
+\theoremstyle{definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{corollary}{Corollary}[theorem]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[theorem]
+\title{Equivariant Homotopy Theory and Fixed Points}
+\author{David Zhu}
+
+\begin{document}
+\maketitle
+
+For this talk, we will always assume $G$ to be a compact Lie group (although in some places it won't be necessary), and subgroups $H\subset G$ are always closed. A \underline{\textbf{$G$-space}} is a topological space with a $G$-action. A \underline{\textbf{$G$-equivariant map}} (or $G$-map) $f:X\to Y$ of $G$-spaces $X,Y$ is a continuous maps such that $f(g\cdot x)=g\cdot f(x)$. The category $\textbf{GTop}$ will have objects $G$-spaces and morphisms $G$-maps. 
+
+\section{The situation}
+Let $X$ be a $G$-space. There are two spaces associated to $X$ that encode the information of the $G$-action, which we care about: the fixed point space $X^G:=\{x\in X: g\cdot x=x \ \forall g\in G \}$, and the orbit space $X/G$. However, these two spaces are not ideal to play around with using homological/homotopical methods. Here are a few reasons why:
+
+\begin{enumerate}
+    \item The homotopy type of $X/G$ and $X^G$ are not invariant under homotopy equivalences. For example, consider $X=\mathbb{R}$ with $G=\mathbb{Z}$ acting by translation. Then, $X^G=\emptyset$, and $X/G\sim S^1$. Let $Y$ be the one-point space with trivial $G$-action. Then, there is an obvious $G$-map $f: X\to Y$, which is a homotopy equivalence, but clearly $Y^G=pt$ and $Y/G=pt$ are not homotopy equivalent to $X^G$ and $X/G$. 
+    \item When the $G$-action is not free or $G$ is not finite, the cohomology $H^*(X/G)$ is generally difficult to compute.
+
+\end{enumerate}
+There are two models to fix such issues: the first replacing the spaces $X^G$ and $X/G$ themselves with something homotopy invariant, and the second restricting ourselves to a "finer" homotopy theory, so to speak.
+
+\section{Homotopy Fixed Points and Borel Cohomology}
+It is an easy exercise to write $X^G=\textrm{lim}_G X$ and $X/G=\textrm{colim}_G X$ by viewing $G$ as the diagram category. However, the general issue observed is that categorical limits and colimits do not preserve homotopy equivalences. A quick fix for that is to replace them with homotopy limits and colimits. We are led to the following definitions:
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $G\to EG\to BG$ be the universal bundle. The \underline{\textbf{homotopy fixed points}}, denoted $X^{hG}$, is defined to be 
+\[X^{hG}:=\textrm{Maps}_G(EG,X)\]
+The \underline{\textbf{homotopy quotient}}, denoted $X_{hG}$, is defined to be 
+\[X^{hG}:=EG\times_G X\]
+where the $EG\times_G X$ is defined to be $EG\times X$ modulo the diagonal action of $G$.
+\end{definition}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{remark}
+    In the case where $G$ is discrete and viewed as a groupoid, the homotopy quotient is precisely the homotopy colimit and the homotopy fixed points is the homotopy limit. 
+\end{remark}
+\end{tcolorbox}
+Here are some nice properties that $X^{hG}$ and $X_{hG}$ enjoy
+\begin{enumerate}
+    \item Both constructios are functorial and homotopy invariant. 
+    \item Both constructions have computable cohomology: there is a canonical associated bundle $X\to X_{hG}\to BG$, and one has the Serre spectral sequence; for $X^{hG}$ we have Bousfield-Kan spectral sequences for homotopy limits (or homotopy fixed point spectral sequence specialized to our case). 
+    \item If $G$ acts freely on $X$, then $X_{hG}\to X/G$ is a homotopy equivalence.  
+\end{enumerate}
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+The \underline{\textbf{Borel cohomology}} is defined to be 
+\[H^*_{hG}(X;M):= H^*(X_{hG}; M)\]
+\end{definition}
+\end{tcolorbox}
+Here we are effectively replacing $X/G$ with $X_{hG}$, and we should convince ourselves that this cohomology theory should give more information about the $G$ action. For example, the Borel cohomology of a point with trivial $G$ action, is the cohomology of $EG/G=BG$. One may view this as the equivariant counterpart of ordinary cohomology in the continuous setting, for we can also set us an equivariant analog of De Rham cohomology in the smooth category. 
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+(Equivariant De Rham Cohomology) Let $M$ be a smooth manifold with an action of a compact Lie group $G$ and Lie algebra $\mathfrak{g}$. The equivariant De Rham cohomoology of a smooth manifold $M$ is given by 
+\[H^*_{DR}(M):=H^*((S(\mathfrak{g}^{\vee})\otimes \Omega(M))^{G})\]
+\end{definition}
+\end{tcolorbox}
+In the special case where $G=S^1$, one has $(S(\mathfrak{g}^{\vee})\otimes \Omega(X))^{G}=\Omega(M)^{S^1}[u]$, which is more easily seen to be analog to the equivariant De Rham complex. 
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Equivariant De Rham Theorem) We have the isomorphism
+\[H^*_{DR}(M)\cong H^*_{hG}(M; \mathbb{R})\]
+\end{theorem}
+\end{tcolorbox}
+One can also prove the Atiyah-Bott equivariant localization theorem, which roughly says that the integral of an equivariant form on a manifold can be written as a finite sum of integrals over the fixed point set.
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+(Atiyah-Bott localization) Let $M$ be a smooth manifold with a compact Lie group $G$ action. Let $i: X^G\to X$ be the inclusion of the fixed points, which are assumed to be isolated. Let $v_p$ be the associated normal bundle and $e(v_p)$ the Euler class. Then, 
+\[\int_M \phi=\sum_{p\in X^G}\int_{p}\frac{i*\phi}{e(v_p)}\]
+\end{theorem}
+\end{tcolorbox}
+
+This computation formula has simplified many calculations in enumerate geometry and mathematical physiscs.  We can't go into much details on this side of the story, but it is fascinating, and more can be found in Tu's book "Introductory lectures on equivariant cohomology". 
+
+\section{Fixed Points and Sullivan Conjecture}
+The problem of the model of section $2$, which we will now refer to as the Borel model, is that it only sees the homotopy fixed points, and sometimes we do want information about the ordinary fixed points. Sullivan originally considered the following situation: given a complex variety $X$ defined by real polynomials, there is a canonical $C_2$ action on the $\mathbb{C}$-rational points, and the $\mathbb{R}$-rational points $X(\mathbb{R})$ is precisely the fixed points of the $C_2$-action. Can we extra the \'etale homotopy type of $X(\mathbb{R})$ purely from the algebraic information we can extract from $X$? More generally, every contraction $EG\to pt$ induces a map 
+\[X^G=\textrm{Maps}_G(pt, X)\to \textrm{Maps}_G=X^{hG}\].  
+When will this be a homotopy equivalence? 
+
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+    \begin{theorem}
+    (Sullivan Conjecture)Let $G$ be a finite $p$-group, acting on a finite CW complex $X$. Then
+    \[X^G\to X^{hG}\]
+    becomes a homotopy equivalence after $p$-adic completion. 
+    \end{theorem}
+    \end{tcolorbox}
+    The theorem is resolved in 1991 by Carlsson, and is very complicated. This is pretty cool, but if we are taking $q$-adic completion where $q\neq p$, then this is no longer guaranteed to be an equivalence. In fact, this is one unexpected phenomenon where the homotopy fixed points actually reflects something about the homotopy type of the ordinary fixed points. In general, we can hope for nothing of such sort. 
+
+\section{The Bredon model}
+We want to overhaul our homotopy theory in order to capture the data of the fixed point sets. First, we shall be using a stronger, more restrictive form of equivalence:
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Given $G$-maps $f,g: X\to Y$, a \underline{\textbf{G-homotopy}} is a $G$-map $H: X\times I\to Y $, where $G$ acts trivially on $I$, and $H_0=f$ and $H_1=g$.
+\end{definition}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A $G$-map $f: X\to Y$ is called a \underline{\textbf{G-homotopy equivalence}} if there exists a $G$-map $g: Y\to X$ such that $fg$ and $gf$ are $G$-hoomotopic to the identity.
+\end{definition}
+\end{tcolorbox} 
+
+It turns out that $G$-equivalence is precisely what we need to capture the data of the fixed points. To further motivate, we will introduce $G$-CW complexes. 
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+    \begin{definition}
+    A \underline{\textbf{G-CW complex}} is the sequential colimit of spaces $X_n$, where $X_{n+1}$ is a pushout: 
+    \[\begin{tikzcd}
+    \coprod G/H\times S^n\arrow[r]\arrow[d]&X_n\arrow[d]\\
+    \coprod G/H\times D^{n+1}\arrow[r]&X_{n+1}
+    \end{tikzcd}\]
+    We will denote  $G/H\times D^{n}$ as an \underline{\textbf{n-cell}}. 
+    \end{definition}
+    \end{tcolorbox}
+    
+    \begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+    \begin{remark}
+    Note that the topological dimension of an $n$-cell in a $G$-CW complex might be greater than $n$. For example, a $0$-cell $S^1/e\times *$ is one dimensional. 
+    \end{remark}
+    \end{tcolorbox}
+    
+    \begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+    \begin{example}
+    Let $G=C_2$ acting on $S^2$ by rotation by $\pi$ along the Z-axis. It has a $G$-CW structure given by the following cells: $2$ zero-cells $C_2/C_2\times *$, which are the poles corresponding to the fixed points of the $C_2$ action. $1$ one-cell $C_2/e\times D^1$, which are the two great circles joining the poles; $1$ two-cell $C_2/C_2\times D^2$, which are the two hemispheres.  
+    \end{example}
+    \end{tcolorbox}
+    
+    
+    \begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+    \begin{example}
+        Let $G=C_2$ acting on $S^2$ by the antipodal map. It has a $G$-CW structure given by the following cells: $1$ zero-cells $C_2/e\times *$, which are the poles; $1$ one-cell $C_2/e\times D^1$, which are the two great circles joining the poles; $1$ two-cell $C_2/C_2\times D^2$, which are the two hemispheres. 
+    \end{example}
+    \end{tcolorbox}
+    
+    
+    \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+    \begin{definition}
+    Let $H$ be a subgroup of $G$. Define $\pi_n^H(X):=\pi_n(X^H)$. A map $f: X\to Y$ of $G$-spaces is a \underline{\textbf{weak equivalence}} if for all subgroups $H\subset G$,
+    \[f_*:\pi_n^H(X)\to \pi_n^H(Y)\]
+    is an isomorphism. 
+    \end{definition}
+    \end{tcolorbox}
+    
+    Let $\textbf{GTop}$ be the category of $G$-spaces and $G$-maps. There is a cofibrantly-generated model structure that we can put on $\textbf{GTop}$:
+    
+    \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+    \begin{theorem}
+        There is a cofibrantly-generated model structure on $\textbf{GTop}$, given by 
+        \begin{enumerate}
+            \item A $G$-map $f:X\to Y$ is a fibration iff for all $H\subset G$, $f^H: X^H\to Y^H$ is a fibration.
+            \item A $G$-map $f:X\to Y$ is a weak equivalence iff for all $H\subset G$, $f^H: X^H\to Y^H$ is a weak equivalence. 
+        \end{enumerate}
+    \end{theorem}
+    \end{tcolorbox}
+    An immediate consequence of the model category structure is the equivariant Whitehead's Theorem
+    
+    \begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+    \begin{corollary}
+    Let $f: X\to Y$ be a weak equivalence of cofibrant-fibrant objects in a model category. Then, $f$ is a homotopy equivalence. In particular, every object in $\textbf{GTop}$ is fibrant, and $G$-CW complexes are  cofibrant. 
+    \end{corollary}
+    \end{tcolorbox}
+    
+    \subsection{Elmendorf's Theorem}
+    From the model structure given in Theorem $1.1$, we have a vague sense of the following "equivalence":
+    \[\textrm{G-Homotopy Type of } X\Leftrightarrow \{ \textrm{ordinary homotopy type of } X^H:H\subset G \}\]
+    And Elmendorf's Theorem will make the equivalence precise. We start by introducing the orbit category:
+    
+    \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+    \begin{definition}
+    The \underline{\textbf{orbit category}} $\mathcal{O}_G$ is the full subcategory of $\textrm{GTop}$ on the objects $\{G/H: H\subset G\}$.
+    \end{definition}
+    \end{tcolorbox}
+    The following lemma will make the structure of $\mathcal{O}_G$ clearer.
+    
+    \begin{tcolorbox}
+    \begin{lemma}
+    $\textrm{Map}^G(G/H,G/K)\cong (G/K)^H$
+    \end{lemma}
+    \end{tcolorbox}
+    \begin{proof}
+        Note that there exists a $G$-equivariant maps $\varphi: G/H\to G/K$, determined by $\varphi(H)=gK$ iff $gHg^{-1}\subseteq K$ iff $h(gK)=gK$ for all $h\in H$. 
+    \end{proof}
+    
+    Let $\textrm{Fun}(\mathcal{O}_G^op,\textrm{Top})$ be the functor category. We have the following fact on the model structure on functor categories:
+    
+    \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+    \begin{theorem}
+    Let $\mathcal{D}$ be a model category and $\mathcal{C}$ be a cofibrantly generated model category. Then, $\textrm{Fun}(\mathcal{C},\mathcal{D})$ admits a model structure. 
+    \end{theorem}
+    \end{tcolorbox}
+    
+    It is useful to know that the weak equivalences in $\textrm{Fun}(\mathcal{O}^{op}_G,\textrm{Top})$ is given pointwise: a natural transformation $\eta: \mathcal{F}\to \mathcal{G}$ is a weak equivalence iff $\eta_{G/H}:\mathcal{F}(G/H)\to \mathcal{G}(G/H) $ is a weak equivalence. 
+    
+    
+    
+    \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+    \begin{definition}
+    There is a functor $\psi: \textrm{GTop}\to \textrm{Fun}(\mathcal{O}^{op}_G,\textrm{Top})$ given by 
+    \[X\to (G/H\mapsto X^H)\]
+    \end{definition}
+    \end{tcolorbox}
+    It is easy to check the functoriality. Note that if we restrict $\psi$ to $\mathcal{O}_G$, the functor is just the Yoneda embedding: $\textrm{Map}^G(G/H,G/K)\cong (G/K)^H$.
+    
+    \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+        \begin{proposition}
+        There is a funcor $\theta: \textrm{Fun}(\mathcal{O}^{op}_G,\textrm{Top})\to \textrm{GTop}$ given by $X\mapsto X(G/e)$, where $X(G/e)$ is equipped with the following $G$-action: note that every $g\in G$ defines an $G$-map $G/e\to G/e$, which we denote by $R_g$.
+        \[g\cdot x=X(R_g)(x)\] 
+        \end{proposition}
+        \end{tcolorbox}
+        
+        It is easy to check that $(\theta,\psi)$ is an adjoint pair. In fact, more can be said:
+        
+        \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+            \begin{theorem}
+            (Elmendorf's Theorem) $\textrm{Fun}(\mathcal{O}^{op}_G,\textrm{Top})$ and $\textrm{GTop}$ have the same homotopy category. 
+            \end{theorem}
+            \end{tcolorbox}
+        The original proof due to Elmendorf constructs the equivalence explicitly using the Bar construction to obtain a homotopy inverse to the embedding $\psi$. The theorem can now be put into a more modern framework:
+    
+        \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+        \begin{theorem}
+        $(\theta,\psi)$ is an Quillen equivalence. $\psi$ is an equivalence of $(\infty,1)$ categories. 
+        \end{theorem}
+        \end{tcolorbox}
+    
+
+
+
+
+
+
+
+
+
+\end{document}
