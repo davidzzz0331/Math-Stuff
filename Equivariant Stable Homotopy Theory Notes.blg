@@ -1,0 +1,9 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'Equivariant Stable Homotopy Theory Notes.blg'
+[37] biber-darwin:340> INFO - === Mon Sep 30, 2024, 17:37:03
+[45] Biber.pm:419> INFO - Reading 'Equivariant Stable Homotopy Theory Notes.bcf'
+[97] Biber.pm:979> INFO - Found 0 citekeys in bib section 0
+[105] bbl.pm:660> INFO - Writing 'Equivariant Stable Homotopy Theory Notes.bbl' with encoding 'UTF-8'
+[105] bbl.pm:763> INFO - Output to Equivariant Stable Homotopy Theory Notes.bbl
+[106] Biber.pm:131> WARN - The file 'Equivariant Stable Homotopy Theory Notes.bcf' does not contain any citations!
+[106] Biber.pm:133> INFO - WARNINGS: 1

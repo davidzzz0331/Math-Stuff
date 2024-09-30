@@ -370,10 +370,41 @@ which is trivial except $i=0$.
 Thus, we have seen that the singular homology is recovered from a spectrum; moreover, a spectrum gives a reduced homology theory by proposition $2.3.1$. 
 
 \subsection{The Desired Stable Homotopy Category}
-Building upon the motivations in the previous section, we want to build a category that captures the stable phenomena and cohomology theories/homology theories. In particular, we want it to satisfy the following properties (not necessarily axioms):
+Building upon the motivations in the previous section, we want to build a category $\mathcal{S}$ that captures the stable phenomena and cohomology theories/homology theories. In particular, we want it to satisfy the following properties (not necessarily axioms):
 \begin{enumerate}
-    \item 
+    \item There is a functor $\Sigma^{\infty}: \textrm{HoTop}_*\to \textrm{Sp}$, together with an adjoint $\Omega^{\infty}: \mathcal{S}\to \textrm{HoTop}_*$. \\
+    \textcolor{blue}{The motivation for this is the suspension spectrum}.
+    \item Let $A,B$ be CW complexes, where $A$ has finite dimension. Then, there is a natural isomorphism
+    \[[\Sigma^{\infty}A, \Sigma^{\infty}B]\cong [A,B]^s\]
+    \textcolor{blue}{The motivation for this is to capture stable morphisms}.
+    \item $\mathcal{S}$ has a closed symmetric monoidal structure, with $\wedge$ as the tensor product, and $F(-,-)$ as internal hom. $\Sigma^{\infty}S^0$ is the identity object.
+    \item The morphisms of $\mathcal{S}$ has the structure of graded abelian groups, with bilinear composition. We denote that graded components as $[-,-]_*$. Moreover, given a reduced cohomology theory $E^*$ there exists an object $K$ in \textrm{Sp} such that 
+    \[E^*(A)\cong [\Sigma^{\infty}A, K]_{-*}\]
+    \\
+    \textcolor{blue}{The motivation for this is to represent cohomology theories}.\\
+    \item For every object $K$ in $\mathcal{S}$, one defines a reduced homology theory via 
+    \[E_n(A):=\pi(K\wedge A)\]
+    \\
+    \textcolor{blue}{The motivation for this is to deterime homology theories}.
+    \\
+    \item $\mathcal{S}$ has a closed symmetric monoidal structure, with $\wedge$ as the tensor product and $F(-,-)$ as internal hom. The object $\Sigma^{\infty}S^0$ is the identity object.\\
+    \textcolor{blue}{The motivation for this is that smashing with the suspension funcor induces isomorphism of stable homotopy groups, so it should induce an equivalence of spectra. The tensor-hom adjunction is going to help set up duality statements similar to Spanier-Whitehead duality and Poincar\'e duality.}.
 \end{enumerate}
+In particular, property $6$ was the central one in the sense that the entire theory began with the work of Spanier and Whitehead with their search for a category where one has the desired dualities in homotopy theory. It is also the structure that seems to be the hardest to obtain.  
+
+
+
+\subsection{Attempts}
+
+\subsubsection{The Spanier-Whitehead Category}
+The first attempt to construct such a category is the Spanier-Whitehead category, where the objects are finite CW complexes, and the morphisms are stable maps. The catgeory was originally set up to perform Spanier-Whitehead duality (chronologically it was ), but the objects "almost" represents cohomology theories. We use the word almost because since the objects are only finite complexes, we do not have arbitrary products and coproduts, and the wedge axiom do not hold. 
+\subsubsection{An Attempt for \textrm{Sp}}
+By Brown representability, it should be natural to consider a category with objects spectra, and the natural choice for morphisms between spectra is a collection of level-wise maps that is compatible with the structure maps. A natural candidate for homotopies in this category is a map $H: X\wedge I_{+}\to Y$ However, it turns out there are not enough maps in this category, such that non-homotopy equivalent spectra might represent isomorphic cohomology theories. Adams then in his 74 paper resolves the issue by consider equivalences classes of "cofinal spectra," which turns out to be quite a complicated a construction. 
+
+\subsubsection{\textrm{Ho(Sp)} and Structured Spectra}
+The first construction in line with modern treatment of the subject is Bousfield and Friedlander's construction, which puts a model structure on the naive category of spectra, and considers its homotopy category. This category turns out satisfies all the properties that people wanted. However, people still searched for a point-set model that does so without going through the homotopy category. Lewis in 91 showed that it is impossible to put a symmetric monoidal structure on the naive category of spectra that also satifies a list of axioms. The problem laid in the missing of an appropriate commutative smash product. People later constructed more structured spectra, such as orthogonal spectra and symmetric spectra, whose additional structure then provided a fix to such a problem. 
+
+
 
 
 
