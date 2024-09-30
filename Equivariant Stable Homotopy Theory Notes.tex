@@ -250,11 +250,130 @@ One possible application is a quick proof of a theorem by Smith:
 
 
 \section{Spectra and the Stable Category}
+\subsection{Motivations}
+The first motivation is Brown Reresentability Theorem, which is about represeting reduced cohomology theories 
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}[Brown Representability Theorem]
+Let $\tilde{h}^*$ be a reduced cohomology theory on pointed CW-complexes. Then, for each $n\in \mathbb{Z}$, there exists a connected pointed CW complex $K_n$ such that 
+\[\tilde{h}^n(X)\cong [X,K_n]\]
+for all $n$. Moreover, the $K_n$ are determined up to homotopy equivalence. 
+\end{theorem}
+\end{tcolorbox}
+In fact, there are more structure to the set $\{K_n\}$: using the suspension axiom and loop-suspension adjunction, we see that there must be an isomorphism 
+\[[X,K_n]\cong \tilde{h}^n(X)\cong \tilde{h}^{n+1}(\Sigma X)\cong [\Sigma X,K_n]\cong [X,\Omega K_n]\]
+Taking $X$ to be $K_n$, we note that the indetitiy map from the LHS corresponds uniquely to a map $\alpha_n: K_n\to \Omega K_n$, which we will call the \underline{\textbf{structure map.}}. By naturality and taking $A=S^k$, the structure map induces a weak equivalence 
+\[K_n\cong  \Omega K_n\]
+. This motivates the definintion for $\Omega$-Spectra
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A \underline{\textbf{spectrum}} is a sequence of pointed topological spaces $\{X_n\}$ with \underline{\textbf{structure maps}} 
+\[\Sigma X_n\to X_{n+1}\]
+. An \underline{\textbf{$\Omega$ spectrum}} is a spectrum whose adjoint structure maps
+\[X_n\to \Omega X_{n+1}\]
+are weak equivalences. 
+\end{definition}
+\end{tcolorbox}
+So we see that a reduced cohomology theory corresponds to an $\Omega$-spectrum. In fact, it is not hard to show that an $\Omega$-spectrum defines a reduced cohomology theory as well. We can then present Brown Representability Theorem in the following way:
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}[Brown Representability Theorem]
+    Every reduced cohomology theory on the category of basepointed CW complexes  has the form $\tilde{h}^n(X) = [X,K_n]$ for some $\Omega$-spectrum $\{K_n\}$
+\end{theorem}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}[Eilenberg-Maclane Spectrum]
+The $\Omega$-spectrum that represents reduced ordinary cohomology with coefficients in $\mathbb{Z}$ is given by the $\Omega$-spectra that is the Eilenberg-Maclane spaces $HG:=\{K(G,n)\}$.
+\end{example}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+    The $\Omega$-spectrum that represents reduced complex topological $K$-theory is given by $\{KU_n\}$, where 
+    \[  KU_n=
+    \begin{cases}
+        BU\times \mathbb{Z}& $n$-\textrm{even}\\
+        \Omega BU & $n$-\textrm{odd}
+    \end{cases}\]
+  In particular, Bott-periodicity shows that the structure maps are weak-equivalences.
+\end{example}
+\end{tcolorbox}
+
+Here is a natural question: how do we design a category of spectra, such that an "equivalence" if spectra will give equivalent reduced cohomology theories?
+
+The second motivation is stable homotopy groups and stable maps: 
 
 
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $X$ and $Y$ be pointed CW-complexes. The set of \underline{\textbf{stable homotopy classes of maps}} from $X$ to $Y$ is defined to be 
+\[[X,Y]^s:= \varinjlim_{k}[\Sigma^k X, \Sigma^k Y] \]
+\end{definition}
+\end{tcolorbox}
+One form of the Freudenthal suspension theorem says that if $Y$ is $n$-connected and $X$ has dimension less than $2n+1$, then the suspension map $[X,Y]\to [\Sigma X,\Sigma Y]$ is bijective. In this case, we see that the colimit actual stablizes after at a finite stage. 
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+For a pointed CW-complex, the $n$-th \underline{\textbf{stable homotopy group}} is defined to be 
+\[\pi_n^{st}(X):=\varinjlim_{k}\pi_{n+k}(\Sigma^k X)=\varinjlim_{k}[\Sigma^k S^n, \Sigma^k X]=[S^n,X]^s\]
+\end{definition}
+\end{tcolorbox}
+By definition, we see that the stable homotopy group should be the homotopy group in some "stable category". Moreover, stable homotopy groups actually defines a reduced homology theory: the two axioms that are not trivial are the LES and the wedge axiom. The key point is that Blaker's Massey Theorem plus the LES of homotopy groups of a pair will give us the LES of stable homotopy groups of a pair; the wedge axiom follows from that $\Sigma^i X\wedge \Sigma^i Y$ is the $2i-1$ skeleton of  $\Sigma^i X\times \Sigma^i Y$. Generalizing this, we have 
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+    Let $K$ be a CW-complex. The sequence $h_i(X) = \pi^s_i(X \wedge K)$ forms a reduced homology theory on the category of basepointed CW-complexes and basepoint-preserving maps.
+\end{theorem}
+\end{tcolorbox}
+
+We can also define the homotopy groups of a spectrum as a generalization:
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}[Homotopy groups of a spectrum]
+Suppose $K=\{K_i\}$ is a spectrum. Then, 
+\[\pi_n(K):=\varinjlim \pi_{n+i}(K_i)\]
+where the inductive limit is induced by the suspension structure maps. 
+\end{definition}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+Given a topological space $X$, we have the associated \underline{\textbf{suspension spectrum}} $\Sigma^{\infty}X=\{\Sigma^kX\}$. Then, the stable homotopy groups of $X$ is given by the homotopy groups of its associated suspension spectrum. 
+\end{example}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Given a spectrum $K=\{K_n\}$ and a CW complex $X$, there is a associated smash spectrum $K\wedge X$, where $(K\wedge X)_n=K_n\wedge X$. The structure maps is given by 
+\[\Sigma (K\wedge X)_n =\Sigma K_n\wedge X\to K_{n+1}\wedge X=\Sigma (K\wedge X)_{n+1}\]
+\end{definition}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Let $K$ be a spectrum. Given a CW complex $X$, the sequence
+\[h_n:=\pi_n(X\wedge K)\]
+is a reduced homology theory.
+\end{proposition}
+\end{tcolorbox}
+The proof mostly follows from the same tactics in proving the stable homotopy groups being a reduced homology theory.
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}[Singular homology]
+If $K=HG$ is the Eilenberg-Maclane spectrum, then $h_i(X):=\pi_i(X\wedge K)$ is isomorphic to singular homology with coefficients in $G$. We only have to check the dimension axiom 
+\[h_i(S^0):=\varinjlim_n \pi_{n+i}(K(G,n))\]
+which is trivial except $i=0$. 
+\end{example}
+\end{tcolorbox}
 
 
+Thus, we have seen that the singular homology is recovered from a spectrum; moreover, a spectrum gives a reduced homology theory by proposition $2.3.1$. 
 
+\subsection{The Desired Stable Homotopy Category}
+Building upon the motivations in the previous section, we want to build a category that captures the stable phenomena and cohomology theories/homology theories. In particular, we want it to satisfy the following properties (not necessarily axioms):
+\begin{enumerate}
+    \item 
+\end{enumerate}
 
 
 
