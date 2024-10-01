@@ -404,6 +404,34 @@ By Brown representability, it should be natural to consider a category with obje
 \subsubsection{\textrm{Ho(Sp)} and Structured Spectra}
 The first construction in line with modern treatment of the subject is Bousfield and Friedlander's construction, which puts a model structure on the naive category of spectra, and considers its homotopy category. This category turns out satisfies all the properties that people wanted. However, people still searched for a point-set model that does so without going through the homotopy category. Lewis in 91 showed that it is impossible to put a symmetric monoidal structure on the naive category of spectra that also satifies a list of axioms. The problem laid in the missing of an appropriate commutative smash product. People later constructed more structured spectra, such as orthogonal spectra and symmetric spectra, whose additional structure then provided a fix to such a problem. 
 
+\subsection{Orthogonal Spectra}
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+An \underline{\textbf{orthogonal spectrum}} consists of the following data:
+\begin{enumerate}
+    \item A sequence of pointed topological spaces $X_n$
+    \item A basepoint-preserving left $O(n)$-action on $X_n$.
+    \item Structure maps $\sigma_n:X_n\wedge S^1\to X_{n+1}$
+    \item The interated structure maps
+    \[X_n\wedge S^m\to X_{n+m}\]
+    define by the composition 
+    \[X_{n}\wedge S^m=(X_n\wedge S^1)\wedge S^{m-1}\xrightarrow{\sigma_n\wedge Id_{S^{m-1}}}X_{n+1}\wedge S^{m-1}\to...\to X_{n+m}\]
+    is $O(n)\times O(m)$-equivariant. Specifically, $O(m)$-acts on $S^m$ canonically since $S^m$ is the one-point compactification of $\mathbb{R}^m$; $O(n)\times O(m)$, through orthogonal sum, is identified as a subgroup of $O(n+m)$ and acts by restriction on $X_{n+m}$.
+\end{enumerate}
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A morphism of orthogonal spectra $f: X\to Y$ is a sequences of maps $f_n: X_n\to Y_n$ that are $O(n)$-equivariant, and compatible with the structure maps such that 
+\[\begin{tikzcd}
+X_n \wedge S^1 \arrow[r,"f_n\wedge S^1"]\arrow[d,"\sigma_n"]& Y_n\wedge S^1\arrow[d,"\sigma_n"]\\
+X_{n+1}\arrow[r,"f_{n+1}"]& Y_{n+1}
+\end{tikzcd}\]
+\end{definition}
+\end{tcolorbox}
 
 
 
