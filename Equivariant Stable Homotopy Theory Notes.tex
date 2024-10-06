@@ -402,7 +402,7 @@ The first attempt to construct such a category is the Spanier-Whitehead category
 By Brown representability, it should be natural to consider a category with objects spectra, and the natural choice for morphisms between spectra is a collection of level-wise maps that is compatible with the structure maps. A natural candidate for homotopies in this category is a map $H: X\wedge I_{+}\to Y$ However, it turns out there are not enough maps in this category, such that non-homotopy equivalent spectra might represent isomorphic cohomology theories. Adams then in his 74 paper resolves the issue by consider equivalences classes of "cofinal spectra," which turns out to be quite a complicated a construction. 
 
 \subsubsection{\textrm{Ho(Sp)} and Structured Spectra}
-The first construction in line with modern treatment of the subject is Bousfield and Friedlander's construction, which puts a model structure on the naive category of spectra, and considers its homotopy category. This category turns out satisfies all the properties that people wanted. However, people still searched for a point-set model that does so without going through the homotopy category. Lewis in 91 showed that it is impossible to put a symmetric monoidal structure on the naive category of spectra that also satifies a list of axioms. The problem laid in the missing of an appropriate commutative smash product. People later constructed more structured spectra, such as orthogonal spectra and symmetric spectra, whose additional structure then provided a fix to such a problem. 
+The first construction in line with modern treatment of the subject is Bousfield and Friedlander's construction, which puts a model structure on the naive category of spectra, and considers its homotopy category. This category turns out satisfies almost all the properties that people wanted. (We say "almost" since Lewis in 91 showed that it is impossible to put a symmetric monoidal structure on the category of spectra that also satifies a list of desirable axioms). However, people still searched for a point-set model that does so without going through the homotopy category.  People later constructed more structured spectra, such as orthogonal spectra and symmetric spectra, whose additional structure then provided a fix to such a problem. 
 
 \subsection{Orthogonal Spectra}
 
@@ -432,8 +432,79 @@ X_{n+1}\arrow[r,"f_{n+1}"]& Y_{n+1}
 \end{tikzcd}\]
 \end{definition}
 \end{tcolorbox}
+Our goal now is to show that there exists a tensor product structure. We now recall a few constructions: 
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Given subgroup $H\subset G$ and a pointed $H$-space $X$, the \underline{\textbf{balanced smash product}} $G_+\wedge_{H} X$ is the quotient space of $G_+\wedge H$ by the relation $gh\wedge x\sim g\wedge hx$
+\end{definition}
+\end{tcolorbox}
+Note that $G_+\wedge_{H} X$ is canonically a $G$-space by the action on the $G_+$-coordinate. One can think of this as the base-change from $H$ to $G$. 
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+The funcor $\textrm{Htop}_*\to \textrm{GTop}_*$ given by the balanced smash product is left adjoint to the forgetful functor. Specifically, we have the natural isomorphism
+\[Hom_H(X,Y)\cong Hom_G(G\wedge_H X, Y)\]
+\end{proposition}
+\end{tcolorbox}
+Recall the universal property of the tensor product in $\textbf{RMod}$ is given by the universal object from which a $R$-balanced map from the product factors through. In our situation, the ring $R$ is more or less the sphere spectrum, and in order to define the tensor product, we should first give an appropriate definition of a balanced map.
 
 
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+    Given orthogonal spectra $X,Y, Z$, a \underline{\textbf{bimorphism}} from the pair $(X,Y)$ to $Z$ is given by a collection of $O(p)\times O(q)$-equivariant maps 
+    \[b_{p,q}: X_p\wedge Y_q\to Z_{p+q}\] 
+    subjected to the following commutative diagram
+    \[\begin{tikzcd}
+        {X_p\wedge Y_q\wedge S^1} && {X_{p}\wedge Y_{q+1}} \\
+        {Z_{p+q}\wedge S^1} & {} & {Z_{p+q+1}}
+        \arrow["{X_p\wedge \sigma_{Y}}", from=1-1, to=1-3]
+        \arrow["{b_{p,q}\wedge S^1}"', from=1-1, to=2-1]
+        \arrow["{b_{p,q+1}}", from=1-3, to=2-3]
+        \arrow["{\sigma_{Z}}"', from=2-1, to=2-3]
+    \end{tikzcd}\]
+    and 
+    \[\begin{tikzcd}
+        {X_p\wedge Y_q\wedge S^1} && {X_{p}\wedge Y_{q+1}} && {Z_{p+q+1}} \\
+        {X_p\wedge S^1\wedge Y_q} & {} & {X_{p+1}\wedge Y_{q}} && {Z_{p+1+q}}
+        \arrow["{X_p\wedge \sigma_{Y}}", from=1-1, to=1-3]
+        \arrow["{X_p\wedge twist}"', from=1-1, to=2-1]
+        \arrow["{b_{p,q+1}}", from=1-3, to=1-5]
+        \arrow["{\sigma_X\wedge Y_q}"', from=2-1, to=2-3]
+        \arrow["{b_{p+1,q}}"', from=2-3, to=2-5]
+        \arrow["{Id\times \chi_{1,q}}"', from=2-5, to=1-5]
+    \end{tikzcd}\]
+\end{definition}
+\end{tcolorbox}
+The map $\chi_{p,q}$ correspond to the element in $O(p+q)$ that swaps the first $q$ coordinates with the remaining $q$-coordinates. In analogy to \textrm{RMod}, the first diagram says that $(x\otimes y)\cdot r=x\otimes (y\cdot r)$, and the second diagram says that $x\otimes (y\cdot r)=(x\cdot r)\otimes y$. 
+
+Recall that the tensor product of two $R$-modules $A,B$ is the coequalizer of the diagram 
+\[\alpha_1,\alpha_2: A\otimes R\otimes B\to A\otimes B\]
+where the tensor is in $\textbf{Ab}$ and the two maps are given by the action on $A$ and $B$, respectively. We shall recreate this in our category $\textbf{Sp}$:
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Given orthogonal spectra $X,Y$, define $(X\wedge Y)_n$ to be the coequalizer of the maps
+\[\alpha_X,\alpha_Y: \bigvee_{p+1+q=n}O(n)_+\wedge_{O(p)\times Id\times O(q)}X_p\wedge S^1\wedge Y_q\to  \bigvee_{p+q=n}O(n)_+\wedge_{O(p)\times O(q)}X_p\wedge Y_q\]
+in the category of $O(n)$-spaces, where $\alpha_X$ is induced by the maps
+\[X_p\wedge S^1\wedge Y_q\xrightarrow{\sigma_X\wedge Y_q} X_{p+1}\wedge Y_q\] on each summand, and $\alpha_Y$ is induced by the maps 
+\[X_p\wedge S^1\wedge Y_q\xrightarrow{X_p\wedge twist}X_p\wedge Y_p\wedge S^1\to X_{p}\wedge Y_{q+1}\xrightarrow{X_p\wedge \chi_{q,1}} X_{p}\wedge Y_{1+q}\]
+\end{definition}
+\end{tcolorbox}
+Note that the coequalizer in $GTop$ is created by the coequalizer in the underlying $Top$, so in our case, $(X\wedge Y)_n$ is a quotient space of 
+$\bigvee_{p+q=n}O(n)_+\wedge_{O(p)\times O(n)}X_p\wedge Y_q$. Then, the maps 
+\[O(n)_+\wedge_{O(p)\times O(q)}X_p\wedge Y_q\wedge S^1\to O(n+1)_+\wedge_{O(p)\times O(q)}X_p\wedge Y_q\]
+given by $Id\wedge \sigma_Y$ induces a morphism $\varphi_n:(X\wedge Y)_n\wedge S^1\to (X\wedge Y)_{n+1}$. It follows that 
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+The collection $(X\wedge Y)_n$, with structure maps $\varphi_n$ forms an orthogonal spectra. 
+\end{proposition}
+\end{tcolorbox}
+
+As remarked before, the smash product is equipped with a universal bimorphism $i: (X,Y)\to X\wedge Y$ given by 
+\[X_p\wedge Y_q\xrightarrow{x\wedge y\mapsto e\wedge x\wedge y} \bigvee_{p+q=n}O(n)_+\wedge_{O(p)\times O(q)}X_p\wedge Y_q\xrightarrow{projection} (X\wedge Y)_{p+q}\]
 
 
 
