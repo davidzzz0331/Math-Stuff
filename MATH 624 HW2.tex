@@ -80,6 +80,35 @@ For $\mathbb{A}^1\to \mathbb{A}^2$ given by $a\mapsto (a,\frac{1}{a})$, the gene
 As in part $(a)$, we see that it is possible for the $k-$morphism to not be an isomorphism. However in the case $\mathbb{A}^1\mapsto \mathbb{A}^3$ given by $a\mapsto (a^1,a^2,a^3)$, the $k$-morphism is an isomorphism. 
 
 
+\section*{Problem 4c}
+Suppose $V$ is irreducible. Note that $k[V_{k^s}]\cong k[V]\otimes_k k^s$, so $k(V_{k^s})\cong k(V)\otimes_k k^s$ after taking the field of fractions. Thus, absolute irreducibility of $V$ is equivalent to the integrality of $k(V_{k^s})\cong k(V)\otimes_k k^s$. Suppose $\overline{k}\cap k(V)$ is not purely inseparable over $k$, so there exists $\alpha$ algebraic over $k$, and $k(\alpha)\otimes_k k(\alpha)$ is a subring of $k(V)\otimes_k k^s$, which is not integral. To see this, note, let $p(t)$ be a minimal polynomial of $\alpha$, then
+\[k(\alpha)\otimes_k k[t]/p(t)\cong k(\alpha)[t]/p(t)\]
+cleary has $(x-\alpha)$ as a zero-divisor. 
+
+Conversely, suppose $k(V)\cap \overline{k}$ is purely inseparable. It suffices to show that $k(V)\otimes_k k[t]/p(t)\cong  k(V)[t]/p(t)$ is integral for every irreducible $p(t)$. If there is $q(t)\in k(V)[t]$ that divides $p(t)$, then $q(t)$ is also contained in $k^s[t]$, so $q(t)\in (k^s\cap k(V))[t]=k[t]$,  which forces it to be $1$ or $p(t)$, and the ring is still integral. 
+
+
+\section*{Problem 5}
+\subsection*{(a)}
+The correct statement should be $\tilde{O}_x$ is a domain iff $x$ is contained in a unique irreducible component, and the proof is given in problem $3$.
+\subsection*{(b)}
+It is a standard point-set topology argument that finite intersection of open dense sets is still open and dense.
+
+\subsection*{(c)}
+The colimit is the function field of $V$. The detail proofs are given in HW3 problem $10$.
+
+\section*{Problem 8}
+\subsection*{(a)}
+Clearly the empty set and the whole line is open affine, so the only non-trivial case is the line minus a finite set of points. Let $a_1,...,a_n$ be a finite number of points, and $\mathbb{A}^n\setminus \{a_1,..,a_n\}$ is isomorphic to the affine algebraic set $V(y(x-a_1)...(x-a_n)-1)\subset \mathbb{A}^{n+1}$ given by the map 
+\[\varphi: \mathbb{A}^n\setminus \{a_1,..,a_n\}\to V(y(x-a_1)...(x-a_n)-1) \ \ \ \ t\mapsto (t,\frac{1}{(t_1-a_1)...(t_n-a_n)})\]
+with inverse $\psi: (x,y)\mapsto x$. Both functions are Zariski continuous since they are rational functions. Let $T$ be an open of $\mathbb{A}^n$ and $U$ be an open of $\mathbb{A}^{n+1}$ such that $f(T)\subset U$. Then, given any regular function $\frac{f(x,y)}{g(x,y)}$ on $U$, the pullback $\frac{f(x,\frac{1}{x})}{g(x,\frac{1}{x})}$ is a regular function on $T$ by multiplying large enough powers of $x$ to the numerator and denominator. The other direction is trivial since the pullback will be the same function on one variable. Thus, $\varphi$ and $\psi$ are $k$-isomorphisms. 
+\subsection*{(b)}
+The open $U:=\mathbb{A}^2\setminus \{(0,0)\}$ is not affine. Note that $U$ is covered by $U_1=D_{f(x,y)=x}$ and $U_2=D_{f(x,y)=y}$, whose ring of regular functions are $k[x,y]_x$ and $k[x,y]_y$. On the overlap, the ring of regular functions is $k[x,y]_{x,y}$. Let $f$ be a regular function on $U$, which restricts to a regular function of the form $p_1/x^m$ on $U_1$ and $p_2/y^n$ on $U_2$. The compatibility condition on $U_1\cap U_2$ implies that $p_1/x^m=p_2/y^n$, which implies $x^mp_2=y^np_1$. Since $k[x,y]$ is a UFD, $x_m| p_1$, and $f$ is in $k[x,y]$. Thus, $O(U)\cong k[x,y]\cong O(\mathbb{A}^2)$. Thus, if $U$ were affine, the inlusion map $i: U\to \mathbb{A}^2$ is an isomorphism, which is false. 
+
+\section*{Problem 10}
+\subsection*{(a)}
+\subsection*{(b)}
+
 \section*{Homework 3}
 \subsection*{Problem 1}
 \subsubsection*{(a)}
