@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber MATH 624 HW2"] 0 "MATH 624 HW2.bcf" "MATH 624 HW2.bbl" "MATH 624 HW2" 1727025743 -1
+["biber MATH 624 HW2"] 0 "MATH 624 HW2.bcf" "MATH 624 HW2.bbl" "MATH 624 HW2" 1728317163 -1
   "/usr/local/texlive/2023/texmf-dist/bibtex/bib/gloss/sample.bib" 1136766823 2721 b88105703bd616b4f9867992219afb8a ""
-  "MATH 624 HW2.bcf" 1727025743 107446 b1703c238c462b0222a50098008a9b82 "pdflatex"
+  "MATH 624 HW2.bcf" 1728317163 107446 b1703c238c462b0222a50098008a9b82 "pdflatex"
   (generated)
   "MATH 624 HW2.bbl"
   "MATH 624 HW2.blg"
   (rewritten before read)
-["pdflatex"] 1727025742 "/Users/davidzhu/Documents/GitHub/Math-Stuff/MATH 624 HW2.tex" "MATH 624 HW2.pdf" "MATH 624 HW2" 1727025743 0
-  "/Users/davidzhu/Documents/GitHub/Math-Stuff/MATH 624 HW2.tex" 1727025742 2473 a6784874f05fa3a83f9e002b36d735e0 ""
+["pdflatex"] 1728317162 "/Users/davidzhu/Documents/GitHub/Math-Stuff/MATH 624 HW2.tex" "MATH 624 HW2.pdf" "MATH 624 HW2" 1728317163 0
+  "/Users/davidzhu/Documents/GitHub/Math-Stuff/MATH 624 HW2.tex" 1728317160 2474 3c8c59101667c751b13cfc36095ffdb1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -215,10 +215,10 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1710130202 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1710130178 7883461 5901c145d91f673e1f689bc83c44d735 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "MATH 624 HW2.aux" 1727025743 179 f3b64a09d3daf056420dc9b954f881da "pdflatex"
+  "MATH 624 HW2.aux" 1728317163 179 f3b64a09d3daf056420dc9b954f881da "pdflatex"
   "MATH 624 HW2.bbl" 1727023823 466 ee04f40f768daeed26442158e95aba61 "biber MATH 624 HW2"
-  "MATH 624 HW2.run.xml" 1727025743 2377 4d257a4427245aba4aaf5b1d890fc9e5 "pdflatex"
-  "MATH 624 HW2.tex" 1727025742 2473 a6784874f05fa3a83f9e002b36d735e0 ""
+  "MATH 624 HW2.run.xml" 1728317163 2377 4d257a4427245aba4aaf5b1d890fc9e5 "pdflatex"
+  "MATH 624 HW2.tex" 1728317160 2474 3c8c59101667c751b13cfc36095ffdb1 ""
   (generated)
   "MATH 624 HW2.aux"
   "MATH 624 HW2.bcf"
