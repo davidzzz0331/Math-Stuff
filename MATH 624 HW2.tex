@@ -37,11 +37,13 @@
 \begin{document}
 \maketitle
 
-\section*{Problem 1b}
+\section*{Homework 2}
+
+\subsection*{Problem 1b}
 Suppose $U_f$ is not empty. Let $W=\{ a\in V: k(a)|k \textrm{ is a finite algebraic extension} \}$, which corresponds to the vanishing locus of maximal ideals of $k[V]$. Clearly $W\subset V(\overline{k})$, so it suffices to show that $W\cap U_f$ is dense in in $U_f$ for every $f$, which is equivalent to every open $U_f$ containing a point in $W$. To see this, consider a maximal ideal in $k[V]_f$, which must be the image of a maximal ideal in $k[V]$ under localization: suppose otherwise, then every maximal ideal of $k[V]$ contains $f$, which implies $f$ is in the Jacobson radical of $k[V]$. However, $k[V]$ has trivial Jacobson radical since $k[X]$ is Jacobson, which implies $f=0$ and $U_f$ is empty, and contradiction. Then, the locus of the maximal ideal is contyained in $U_f\cap W$.
 
 
-\section*{Problem 2b}
+\subsection*{Problem 2b}
 A representative of $\tilde{O}_a$ is given by a pair $(W_1, \frac{f_1}{g_1})$, with $g_1\neq 0$ on $W_1$, and $(W_1, \frac{f_1}{g_1})\sim (W_2, \frac{f_2}{g_2})$ iff there exists a open $U_{h'}\subset W_1\cap W_2$ such that $\frac{f_1}{g_1}=\frac{f_2}{g_2}$ on $U_{h'}$. On the other hand, a representative of $k[V]_{\mathfrak{p}_a}$ is given by some $\frac{f}{g}$, where $g(a)\neq 0$. By continuity, there exists a basic open $U_h$ containing $a$ on which $g$ does not vanish. We define the $k$-algebra homomorphism: 
 \[i: k[V]_{\mathfrak{p}_a}\to \tilde{O}_a  \ \ \ \frac{f}{g}\mapsto (U_h, \frac{f}{g})\]
 
@@ -51,24 +53,37 @@ Well-definedness: suppose $\frac{f}{g}\sim \frac{f'}{g'}$ in $k[V]_{\mathfrak{p}
 
 Injectivity: suppose $i(\frac{f}{g})=(U_h,\frac{f}{g})$ represents the $0$ element. WLOG, we may assume that $f$ vanishes on $U_h$, for otherwise we may replace $U_h$ with a smaller basic open. Then, $\frac{f}{g}\sim \frac{0}{1}$ in $ k[V]_{\mathfrak{p}_a}$ since $h(f\cdot 1-g\cdot 0)$ is identically $0$ on $V$.
 
-\section*{Problem 3b}
+\subsection*{Problem 3b}
 By problem 2b, the stalk is isomorphic to $k[V]_{p_a}$, which is always local. In regards to when $k[V]_{p_a}$ is a not a domain, it will be when there exists an $x\in p_a$ such that $\exists y\in p_a$ and $xy=0$, but $xz\neq 0$ for every non-zero $z\not \in p_a$. For example, let $V=V(xy)$. Then, $k[V]=k[x,y]/(xy)$. Take $a=(0,0)$, then $p_a=(x,y)$, and we have $xy=0$ but $xz\neq 0$ for every non-zero $z$ not in $(x,y)$. 
 
 Note that a reduced Noetherian ring is integral iff it has a unique minimal prime. Another method of detection for integrality is iff $p_a$ contains a unique minimal prime of $k[V]$ (because it is reduced Notherian), which corresponds to $a$ belonging to a unique irreducible component.
 
-\section*{Problem 4}
-\subsection*{(a)}
+\subsection*{Problem 4}
+\subsubsection*{(a)}
 $V$ is irreducible iff $I(V)$ is prime iff $k[V]$ is a domain iff $k(V)$ is a field. The Krull dimension of $k(V)$ and the trascendence degree are the same by Noether normalization.
-\subsection*{(b)}
+\subsubsection*{(b)}
 Take the finite set of minimal primes $\{p_1,...,p_n\}$ of $k[V]$, and recall that the union of the minimal primes is precisely the zero-divisors of $k[V]$, and the intersection is the trivial nilradical. Then, localize at $S=k[V]\setminus \cup p_i$, and $S^{-1}k[V]$ has unique maximal primes $S^{-1}p_1,...,S^{-1}p_n$, which are coprime. By chinese remainder, we have
 \[k(V)=S^{-1}k[V]/(0)=S^{-1}k[V]/\cap S^{-1}p_i\cong \prod k(V_i)  \]
-\subsection*{(c)}
+\subsubsection*{(c)}
 
-\subsection*{(d)}
+\subsubsection*{(d)}
 
-\section*{Problem 5}
+\subsection*{Problem 5}
 
 
+
+
+\subsection*{Problem 10}
+\subsubsection*{(a)}
+For $\mathbb{A}^1\to \mathbb{A}^2$ given by $a\mapsto (a,\frac{1}{a})$, the general situation is discussed in problem 8; for $a\mapsto (a^2,a^3)$, the domain in the entire $\mathbb{A}^1$, and the image is a affine algebraic set given by $V(x^3-y^2)$. The map is clearly a bijection and a homeomorphism. However, the $k$-morphism is not an isomorphism, as the coordinate rings $k[t^2,t^3]$ and $k[t]$ are not isomorphic.
+\subsubsection*{(b)}
+As in part $(a)$, we see that it is possible for the $k-$morphism to not be an isomorphism. However in the case $\mathbb{A}^1\mapsto \mathbb{A}^3$ given by $a\mapsto (a^1,a^2,a^3)$, the $k$-morphism is an isomorphism. 
+
+
+\section*{Homework 3}
+\subsection*{Problem 1}
+\subsubsection*{(a)}
+First, note that all closed/open immersions $i: Z\to X$ are separated morphisms: the diagonal map to the fiber product $Z\to Z\times_X Z\cong Z$ is an isomorphism. 
 
 
 

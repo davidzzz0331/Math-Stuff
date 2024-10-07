@@ -1,9 +1,0 @@
-[0] Config.pm:308> INFO - This is Biber 2.20
-[0] Config.pm:311> INFO - Logfile is 'MATH 624 HW2.blg'
-[119] biber-MSWIN64:340> INFO - === 
-[158] Biber.pm:420> INFO - Reading 'MATH 624 HW2.bcf'
-[284] Biber.pm:994> INFO - Found 0 citekeys in bib section 0
-[300] bbl.pm:676> INFO - Writing 'MATH 624 HW2.bbl' with encoding 'UTF-8'
-[300] bbl.pm:779> INFO - Output to MATH 624 HW2.bbl
-[300] Biber.pm:131> WARN - The file 'MATH 624 HW2.bcf' does not contain any citations!
-[300] Biber.pm:133> INFO - WARNINGS: 1
