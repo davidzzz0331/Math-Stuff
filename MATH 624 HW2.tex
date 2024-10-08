@@ -65,54 +65,99 @@ $V$ is irreducible iff $I(V)$ is prime iff $k[V]$ is a domain iff $k(V)$ is a fi
 Take the finite set of minimal primes $\{p_1,...,p_n\}$ of $k[V]$, and recall that the union of the minimal primes is precisely the zero-divisors of $k[V]$, and the intersection is the trivial nilradical. Then, localize at $S=k[V]\setminus \cup p_i$, and $S^{-1}k[V]$ has unique maximal primes $S^{-1}p_1,...,S^{-1}p_n$, which are coprime. By chinese remainder, we have
 \[k(V)=S^{-1}k[V]/(0)=S^{-1}k[V]/\cap S^{-1}p_i\cong \prod k(V_i)  \]
 \subsubsection*{(c)}
-
-\subsubsection*{(d)}
-
-\subsection*{Problem 5}
-
-
-
-
-\subsection*{Problem 10}
-\subsubsection*{(a)}
-For $\mathbb{A}^1\to \mathbb{A}^2$ given by $a\mapsto (a,\frac{1}{a})$, the general situation is discussed in problem 8; for $a\mapsto (a^2,a^3)$, the domain in the entire $\mathbb{A}^1$, and the image is a affine algebraic set given by $V(x^3-y^2)$. The map is clearly a bijection and a homeomorphism. However, the $k$-morphism is not an isomorphism, as the coordinate rings $k[t^2,t^3]$ and $k[t]$ are not isomorphic.
-\subsubsection*{(b)}
-As in part $(a)$, we see that it is possible for the $k-$morphism to not be an isomorphism. However in the case $\mathbb{A}^1\mapsto \mathbb{A}^3$ given by $a\mapsto (a^1,a^2,a^3)$, the $k$-morphism is an isomorphism. 
-
-
-\section*{Problem 4c}
 Suppose $V$ is irreducible. Note that $k[V_{k^s}]\cong k[V]\otimes_k k^s$, so $k(V_{k^s})\cong k(V)\otimes_k k^s$ after taking the field of fractions. Thus, absolute irreducibility of $V$ is equivalent to the integrality of $k(V_{k^s})\cong k(V)\otimes_k k^s$. Suppose $\overline{k}\cap k(V)$ is not purely inseparable over $k$, so there exists $\alpha$ algebraic over $k$, and $k(\alpha)\otimes_k k(\alpha)$ is a subring of $k(V)\otimes_k k^s$, which is not integral. To see this, note, let $p(t)$ be a minimal polynomial of $\alpha$, then
 \[k(\alpha)\otimes_k k[t]/p(t)\cong k(\alpha)[t]/p(t)\]
 cleary has $(x-\alpha)$ as a zero-divisor. 
 
 Conversely, suppose $k(V)\cap \overline{k}$ is purely inseparable. It suffices to show that $k(V)\otimes_k k[t]/p(t)\cong  k(V)[t]/p(t)$ is integral for every irreducible $p(t)$. If there is $q(t)\in k(V)[t]$ that divides $p(t)$, then $q(t)$ is also contained in $k^s[t]$, so $q(t)\in (k^s\cap k(V))[t]=k[t]$,  which forces it to be $1$ or $p(t)$, and the ring is still integral. 
 
+\subsubsection*{(d)}
 
-\section*{Problem 5}
-\subsection*{(a)}
+\subsection*{Problem 5}
+\subsubsection*{(a)}
 The correct statement should be $\tilde{O}_x$ is a domain iff $x$ is contained in a unique irreducible component, and the proof is given in problem $3$.
-\subsection*{(b)}
+\subsubsection*{(b)}
 It is a standard point-set topology argument that finite intersection of open dense sets is still open and dense.
 
-\subsection*{(c)}
+\subsubsection*{(c)}
 The colimit is the function field of $V$. The detail proofs are given in HW3 problem $10$.
 
-\section*{Problem 8}
-\subsection*{(a)}
+\subsection*{Problem 8}
+\subsubsection*{(a)}
 Clearly the empty set and the whole line is open affine, so the only non-trivial case is the line minus a finite set of points. Let $a_1,...,a_n$ be a finite number of points, and $\mathbb{A}^n\setminus \{a_1,..,a_n\}$ is isomorphic to the affine algebraic set $V(y(x-a_1)...(x-a_n)-1)\subset \mathbb{A}^{n+1}$ given by the map 
 \[\varphi: \mathbb{A}^n\setminus \{a_1,..,a_n\}\to V(y(x-a_1)...(x-a_n)-1) \ \ \ \ t\mapsto (t,\frac{1}{(t_1-a_1)...(t_n-a_n)})\]
 with inverse $\psi: (x,y)\mapsto x$. Both functions are Zariski continuous since they are rational functions. Let $T$ be an open of $\mathbb{A}^n$ and $U$ be an open of $\mathbb{A}^{n+1}$ such that $f(T)\subset U$. Then, given any regular function $\frac{f(x,y)}{g(x,y)}$ on $U$, the pullback $\frac{f(x,\frac{1}{x})}{g(x,\frac{1}{x})}$ is a regular function on $T$ by multiplying large enough powers of $x$ to the numerator and denominator. The other direction is trivial since the pullback will be the same function on one variable. Thus, $\varphi$ and $\psi$ are $k$-isomorphisms. 
-\subsection*{(b)}
+\subsubsection*{(b)}
 The open $U:=\mathbb{A}^2\setminus \{(0,0)\}$ is not affine. Note that $U$ is covered by $U_1=D_{f(x,y)=x}$ and $U_2=D_{f(x,y)=y}$, whose ring of regular functions are $k[x,y]_x$ and $k[x,y]_y$. On the overlap, the ring of regular functions is $k[x,y]_{x,y}$. Let $f$ be a regular function on $U$, which restricts to a regular function of the form $p_1/x^m$ on $U_1$ and $p_2/y^n$ on $U_2$. The compatibility condition on $U_1\cap U_2$ implies that $p_1/x^m=p_2/y^n$, which implies $x^mp_2=y^np_1$. Since $k[x,y]$ is a UFD, $x_m| p_1$, and $f$ is in $k[x,y]$. Thus, $O(U)\cong k[x,y]\cong O(\mathbb{A}^2)$. Thus, if $U$ were affine, the inlusion map $i: U\to \mathbb{A}^2$ is an isomorphism, which is false. 
 
-\section*{Problem 10}
-\subsection*{(a)}
-\subsection*{(b)}
+
 
 \section*{Homework 3}
 \subsection*{Problem 1}
 \subsubsection*{(a)}
-First, note that all closed/open immersions $i: Z\to X$ are separated morphisms: the diagonal map to the fiber product $Z\to Z\times_X Z\cong Z$ is an isomorphism. 
+Suppose $X$ is separated, and $Z$ is closed in $X$. Since $Z\to X$ is a closed immersion, $Z\times Y\to X\times Y$ is a closed immersion for all $Y$. In particular, this implies the composition $Z\times Z\to Z\times X\to X\times X$ is a closed immersion. We then have the commutative triangle
+\[\begin{tikzcd}
+Z\arrow[r,"\Delta_Z"]\arrow[d]& Z\times Z\arrow[d]\\
+X\arrow[r]& X\times X
+\end{tikzcd}
+\]
+where all arrows except $\Delta_Z$ is a closed immersion. It follows that $\Delta_Z$ is a closed immersion as well. Suppose now $X$ is proper. Let $T$ be the terminal object in our category (Spec(k) for the category of $k$-prevarieties ). We have the pullback squares
+\[\begin{tikzcd}
+	W\cong Z\times Y & {X\times Y} & Y \\
+	Z & X & T
+	\arrow["f", from=1-1, to=1-2]
+	\arrow[from=1-1, to=2-1]
+	\arrow["g", from=1-2, to=1-3]
+	\arrow[from=1-2, to=2-2]
+	\arrow[from=1-3, to=2-3]
+	\arrow["i"', from=2-1, to=2-2]
+	\arrow[from=2-2, to=2-3]
+\end{tikzcd}\]
+where the two smaller squares are pullbacks by definition, and the outer rectangle is also a pullback by general categorical nonsense. Note that closed immersions is stable under pullback, so $f$ is also a closed immersion, and $W\to Y$ is a closed map by composition. 
+
+\subsubsection*{(b)}
+Following the hint, we have canonical isomorphisms $(X\times X)\times (Y\times Y)\cong (X\times Y)\times (X\times Y)$, which induces an isomorphism $\Delta_X\times \Delta_Y\cong \Delta_{X\times Y}$. We see that $\Delta_{X\times Y}$ is closed iff both $\Delta_X$ and $\Delta_Y$ are closed, so $X\times Y$ is separated iff $X,Y$ are both separated. 
+
+Note that universally closed morphisms are stable under pullbacks by definition, so proper morphisms are stable under pullbacks. Moreover, composition of proper morphisms is also proper. In particular, the product of two proper morphisms is proper since it case be written as the composition of two proper morphisms from pullback.
+
+\subsection*{Problem 2}
+\subsubsection*{(c)}
+Checking $R_f^0$ is an $R_0$-algebra is trivial; for the second part, first recall the canonical homeomorphism $D_f\cong Spec(R_f)$. Then, $D_f^+$ is the subspace of homogeneous primes of $Spec(R_f)$, i.e $Proj(R_f)$. Thus, it suffices to show that $Proj(R_f)$ is homeomorphic to $Spec(R_f^0)$. Consider the map 
+$Proj(R_f)\to Spec(R_f^0)$ given by $\oplus_{d\geq 0}I_d\mapsto I_0$, which is easily see to be well-defined and continuous since it is induced by the inclusion $R_f^0\to R_f$. We will explicitly construct an inverse $f^{-1}: Spec(R_f^0)\to Proj(R_f)$, given by $p_0\mapsto \sqrt{\oplus_{d\geq 0} p_0S_d}$. It is standard to check the image is a homogeneous prime ideal. Let $g=\sum_i g_i$ be an element in $R_f$, and $W_g$ be a basic open in $Proj(R_f)$. Then, the inverse image of $W_g$ is the finite intersection of basic opens $\cap \tilde{W}_{g_i}$ in $Spec(R_f^0)$, which is open, and we have continuity. The composition $f\circ f^{-1}$ is clearly the identity, and we are left to show that $f^{-1}\circ f(\oplus_{d\geq 0} I_d)=\oplus_{d\geq 0} I_d$. For simplicity, assume $deg(f)=1$ so we don't have keep track of it. Take $s\in I_d$, then $\frac{s}{f^d}\in I_0$, and it follows that $s\in f^{-1}\circ f(\oplus_{d\geq 0} I_d)$; conversely, suppose $q\in  \sqrt{\oplus_{d\geq 0} p_0S_d}$ where $deg(q)=d$, then $\frac{q}{f^d}=\frac{q'}{f^{e}}$ for some $q'\in I_e$. We then have 
+\[f^k(f^eq-f^dq')=0\]
+which implies $q\in \sqrt{\oplus_{d\geq 0} p_0S_d}$ by primeness as $f^{k+e}$ is not in the prime ideal.
+
+\subsection*{Problem 3b}
+It is not the coproduct since there are no canonical graded morphism from $R\to R\otimes^{gr}_A S$. Given graded algebras $P,Q$, then correct coproduct is the graded-algebra 
+\[P\otimes_A Q:=\oplus_{m+n=d}P_m\otimes_A Q_n\]
+with coordinate-wise multiplication structure and bilinear $A$-action, together with canonical inclusions $P\to P\otimes_A Q$ and $Q\to P\otimes_A Q$.
+
+
+\subsection*{Problem 4}
+$Hom_k(\mathbb{A}_K^1,\mathbb{A}_K^1)$ is in bijection with $Hom_k(k[x],k[x])$, which is specified by the image of $x$. Thus, \[Hom_k(\mathbb{A}_K^1,\mathbb{A}_K^1)\cong k[x]\]. Automorphisms of $\mathbb{A}^1$ corresponds to automorphisms of $k[x]$, and which correponds to mapping $x$ to a linear polynomial $ax+b$ with $a\neq 0$. 
+
+\subsection*{Problem 5}
+
+
+\subsection*{Problem 6}
+\subsubsection*{(a)}
+Since the product of $k$-prevarieties is the categorical product, it is automatically associative and commutative up to isomorphism by general abstract nonsense.
+\subsubsection*{(b)}
+The finite product of affine variety $Spec(k[V])$ and $Spec(k[W])$ is isomorphic to $Spec(k[V]\otimes_k k[W])$, which is affine. Note that all affine varieties are separated, since the multiplication map $A\otimes A\to A$ is surjective, so the map $Spec(A)\to Spec(A\otimes A)$ is a closed immersion. The properness of the product follows from the fact that proper morphisms are stable under pullbacks. 
+\subsubsection*{(c)}
+The statement follows from the algebraic fact that 
+\[dim(k[V])+ dim(k[W])=dim(k[V]\otimes_k k[W])\]
+To see this, use Noether normalization so that the tensor product of coordinate rings is a finite module over tensor product of polynomial rings, which is again a polynoimal ring whose krull dimension is the sum of that of $k[V]$ and $k[W]$. 
+
+
+
+\subsection*{Problem 7}
+
+
+\subsection*{Problem 8}
+\subsection*{Problem 10}
+
+
 
 
 
