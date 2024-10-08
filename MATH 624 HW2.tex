@@ -156,10 +156,20 @@ Choose an affine covering $X=\cup V_i$. Then, the sets $\{\prod_{n}(V_{i})_n\}$ 
 
 \subsection*{Problem 8}
 \subsection*{(a,b)}
-We want separatedness for this question. If $X$ is separated, then $\Delta$ is closed in $X\times_k X$, and $\Delta\cap(U_1\times_k U_2)\subset X\times_k X$ is a closed subset of $(U_1\times U_2)$, and is also isomorphic to $U_1\cap U_2$
+We want separatedness for this question. If $X$ is separated, then $\Delta$ is closed in $X\times_k X$, and $\Delta\cap(U_1\times_k U_2)\subset X\times_k X\cong $ is a closed subset of $(U_1\times U_2)$, and is also isomorphic to $\Delta(U_1\cap_k U_2)$ and thus $U_1\cap U_2$ since it is an open immersion, which implies it is affine.
 
 
 \subsection*{Problem 10}
+\subsubsection*{(a)}
+The part is done in problem $5b$ HW2 and Problem $8$ HW3.
+\subsubsection*{(b)}
+This part simply follows from the definition of a colimit.
+\subsubsection*{(cd)}
+In general, if $U$ is an dense set, then the colimit taken over open subsets of $U$ coincides with the colimit taken over open susbets of $X$: for every open $W\subset X$, we have $W\cap U\neq \emptyset$ open in $U$, so the directed system is cofinal. Thus, $\kappa(X)\cong \kappa(U)$ in this case. If $U$ were affine, then $\kappa(U)\cong k(U)$, which is a field iff $U$ were irreducible. Moreover, the trascendence degree of $k(U)$ is precisely the dimension of the affine variety.
+
+Gnerally, each irreducible component of $X$ admits a dense open affine subset $U_i$ whose pairwise intersection is empty. The assertion $k(X)\cong \prod k(X_i)$ where $X_i$ are irreducible components follows. 
+
+
 
 
 
