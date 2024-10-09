@@ -847,17 +847,32 @@ The inclusion map $i: U\to V$ from a quasi-projective algebraic set to a project
 \end{tcolorbox}
 
 
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+    \begin{definition}
+    A $k$-prevariety is called \underline{\textbf{projective}} $k$-variety if $X$ is isomorphic as $k$-prevarieties to $(V, \Tilde{O}_V)$ for some projective algebraic set $V$. 
+    \end{definition}
+    \end{tcolorbox}
+    
+
+
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}
 The following hold: 
 \begin{enumerate}
     \item Every quasi-projective $k$-algebraic set $U\subset V$ is a $k$-variety. 
-    \item Every projective $k$-algebraic set $V$ is a proper $k$-variety. 
+    \item Every quasi-projective $k$-algebraic set $V$ is a proper $k$-variety. 
 \end{enumerate}
 \end{theorem}
 \end{tcolorbox}
+\begin{proof}
+    step 1: show that $\mathbb{P}^n_K$ endowed with the sheaf of regular functions is a $k$-prevariety. Moreover, the intersection of a projective $k$-algebraic set with any standard affine open is affine open, and the covering forms a $k$-subvariety. The situation is the same when we take $V$ a closed projective subset instead of $\mathbb{P}^n_K$. 
+
+    Step 2: show that $\mathbb{P}^n_K$ is separated, and so are all quasi-projective sub-prevarieties since there is an open-immersion into $\mathbb{P}^n_K$. Recall that a $k$-prevariety $X$ is separated if for every $x,y$, there exists an open affinne set $U\subset X$ such that $x,y\in U$. A useful fact here is that $GL(k)$ defines an automorphism of $\mathbb{P}^n_K$ and takes (separated, affine)$k$-prevarieties to (separated, affine) $k$-prevarieties. Then, $x,y$ both live in the affine open $D_{a_i+a_j}$, where $a_i,a_j$ are the two non-zero coordinates of the two points. 
+
+    Step 3: The reduction steps is assume $V$ is $\mathbb{P}^n$ by closed immersion reflects properness. To check universally closed property of $\mathbb{P}^n_K$, it suffices to show that the projection from $\mathbb{P}^n_K\times_k X\to X$ is closed for $X$ affine by choosing affine covers in the general case of $k$-prevarieties. The final reduction step reduces $X$ affine to $X=\mathbb{A}^n$, since $X\times_k \mathbb{P}^n\to \mathbb{A}^n\times_k \mathbb{P}^n$ is a closed immersion.
 
 
+\end{proof}
 
 
 
