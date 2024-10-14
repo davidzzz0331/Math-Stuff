@@ -871,8 +871,92 @@ The following hold:
 
     Step 3: The reduction steps is assume $V$ is $\mathbb{P}^n$ by closed immersion reflects properness. To check universally closed property of $\mathbb{P}^n_K$, it suffices to show that the projection from $\mathbb{P}^n_K\times_k X\to X$ is closed for $X$ affine by choosing affine covers in the general case of $k$-prevarieties. The final reduction step reduces $X$ affine to $X=\mathbb{A}^n$, since $X\times_k \mathbb{P}^n\to \mathbb{A}^n\times_k \mathbb{P}^n$ is a closed immersion.
 
-
 \end{proof}
+
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}[Fundamental Theorem of Elimination Theory]
+Let $V$ be  $V(I)\subset \mathbb{A}^n_K\times_k \mathbb{P}^n_K$ a closed subset. Then the projection $pr_{\mathbb{A}^n_K}(V)=V(J)$, where $J$ is the set of all polynomials $J:=\{ b(\underline{y}):\exists N>0 \textrm{with } x_i^Nb(\underline{y})\in I \ \textrm{for every } i \}$
+\end{theorem}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{remark}
+Apparently this is equivalent to the statement in Model theory, which roughly states that an algebraically-closed field has elimination of quantifiers. 
+\end{remark}
+\end{tcolorbox}
+
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $R=\oplus_d R_d$ and $S=\oplus_d S_d$ be graded $A$-algebras. Then, a \underline{\textbf{morphism of graded-A algebras of degree k}} is an $A$-algebra homomorphism $\phi: R\to S$ such that $\phi(R_d)\subset S_{kd}$. 
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+Let $V\subset \mathbb{P}^n_K$ be a projective $k$-variety. Then, $k[V]=k[\underbar{X}]/I(V)$. Then, the projection $p: k[\underbar{X}]\to k[V]$ is a graded morphism of degree $1$. 
+\end{example}
+\end{tcolorbox}
+
+Recall the category of affine $k$-varieties and $k$-morphisms is anti-equivalent to the category of reduced $k$-algebras of finite type and $k$-morphisms. We want a similar statement for projective $k$-varieties, but the answer is we do not really know what happens in general.
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+    \begin{remark}
+    Starting with $\phi^{\sharp}: k[V]\to k[W]$ surjective, we have a map $\phi: W\to V$ a $k$-morphism of projective $k$-varieties. However, different $\phi^{\sharp}, \phi'^{\sharp}$ may induce the same map on projective $k$-varieties; if $\phi^{\sharp}$ is not surjective, then more may go wrong. 
+    \end{remark}
+    \end{tcolorbox}
+    
+    
+    We do have the special case:
+
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Let $R$, $S$ be reduced graded $k$-algebras, and $\phi^{\sharp}: R\to S$ a graded morphisms of degree $>0$. Then, let $b=\phi^0(a)\neq 0$. Then, $\phi^{\sharp}$ gives rise to $\phi^{\sharp}_a: R_a^0\to S_b^0$, where $R_a$ and $S_b$ are dehomogenization are $R,S$ with respect to $a,b$. Let $I=ker(k[\underbar{X}]\to R)$ given by mapping $x_1,...,x_n$ to the generators of $R_1$ and  $J=ker(k[\underbar{Y}]\to R)$ given by mapping $y_1,...,y_m$ to the generators of $S_1$. Let $V=V(I)\subset \mathbb{P}^n_k$ and $W=V(J)$. Let $V_a^+:= V\cap D_a^+$ and $W_b^+=W\cap D_b^+$, then $\phi_a^{\sharp}: R_a^0\to S_b^0$ define $\phi_a: W^+_b\to V^+_a$ a $k$-morphism, hence $k[V^+_a]=R_a^0$ and $k[W^+_b]=S_b^0$. We may conlcude that if $\phi^{\sharp}: R\to S$ is a surjection, then for every $b_i\in S_1$, there exists $q_i\in R_1$ such that $\phi^{\sharp}(a_i)=b_i$, hence $\phi_{a_i}: W^+_{a_i}\to V^+_{a_i}$ can be glued to a map $\phi: W\to V$ given by $\phi^{\sharp}: k[V]\to k[W]$. 
+\end{proposition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{remark}
+We will resolve this issue in later discussion on projective schemes. 
+\end{remark}
+\end{tcolorbox}
+    
+
+\subsection{Product of projective Varieties}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}[Segre Embedding]
+The product of projective $k$-varieties in the category of $k$-prevarieties is a projective $k$-variety. The product is called the \underline{\textbf{Segre Embedding.}}
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+    Let $V\subset \mathbb{P}^m_K$ and $W\subset \mathbb{P}^n_K$ be projective varieties. Note $V\times_k W\to \mathbb{P}^m_K\times_k \mathbb{P}^n_K$ is a closed immersion. Thus, it suffices to show that $\mathbb{P}^m_K\times_k \mathbb{P}^n_K$ is a projective variety for all $m,n$. 
+
+    The construction is as follows: let $N=(m+1)(n+1)-1=mn+m+n$. Then, define $\Phi: \mathbb{P}^m\times_k \mathbb{P}^n\to \mathbb{P}^N$ by $(a_0:...:a_m),(b_0:....b_n)\mapsto (a_ib_j)$ where $(a_ib_j)$ is ordered lexicographically. This is a topological embedding. Consider $\underbar{Z}=(Z_{ij})$ a set of projective variables. Then, $$im(\Phi)=V(Z_{ij}Z{kl}-Z_{il}Z_{kj})_{i,j,k,l}$$
+\end{proof}
+
+
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{remark}
+Given $\mathbb{P}^n, \mathbb{P}^m$ with $m\leq n$. Let $x=(x_0:...x_n)$ and $y=(y_0:...y_n)$. Then, $k[\underbar{y}]\to k[\underbar{x}]$ given by $y_i\mapsto x_i$ for $i\leq m$ and $y_i\mapsto 0$ if $i>m$ defines a $k$-embedding $\mathbb{P}^m\to \mathbb{P}^n$ defines a $k$-embedding. The image is $V(y_{m+1},...,y_n)$. 
+\end{remark}
+\end{tcolorbox}
+
+
+
+
+
+
+
 
 
 
