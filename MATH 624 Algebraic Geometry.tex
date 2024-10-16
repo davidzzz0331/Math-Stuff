@@ -947,14 +947,42 @@ The product of projective $k$-varieties in the category of $k$-prevarieties is a
 
 \begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
 \begin{remark}
+The embedding is an example to the following problem: given morphisms of projective varieties, there is no canonical unique morphisms of ring of regular functions, as we can embed the varieties to a projective space of higher dimension. 
+\end{remark}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{remark}
 Given $\mathbb{P}^n, \mathbb{P}^m$ with $m\leq n$. Let $x=(x_0:...x_n)$ and $y=(y_0:...y_n)$. Then, $k[\underbar{y}]\to k[\underbar{x}]$ given by $y_i\mapsto x_i$ for $i\leq m$ and $y_i\mapsto 0$ if $i>m$ defines a $k$-embedding $\mathbb{P}^m\to \mathbb{P}^n$ defines a $k$-embedding. The image is $V(y_{m+1},...,y_n)$. 
 \end{remark}
 \end{tcolorbox}
 
 
 
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}(Chow's Lemma)
+Let $X$ be a proper $k$-variety. Then, there exists projective $k$-varieties $\tilde{X}$ together with a surjective morphism $\tilde{f}: \tilde{X}\to X$ satisfying $\tilde{f}$ is an isomorphism on an open affine subset $U\subset X$. 
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+    If $X$ is reducible, decompose $X$ into irreducible components $\cup X_{\alpha}$. Let $U_{\alpha}\subset X_{\alpha}$ be affine open dense such that $U_{\alpha}\cap U_{\beta}=\emptyset$. (every open will be dense on irreducible susbet, and point-set topology argument on disjointness). Do the thing on each irreducible component, and then take the disjoint union. 
+
+    Thus, we consider $X$ irreducible. Let $X=\cup U_{\beta}$ be an affine open covering. Pick closed immersions $U_{\beta}\to \mathbb{A}_{\beta}^n$, and take $U=\cup U_{\beta}$. 
+\end{proof}
 
 
+
+
+
+
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}[Nagata's Theorem]
+Let $X$ be a $k$-variety. Then, there is a proper $k$-variety $\widehat{X}$ and an open embedding $i: X\to \widehat{X}$ with $i(X)$ dense. 
+\end{theorem}
+\end{tcolorbox}
 
 
 
