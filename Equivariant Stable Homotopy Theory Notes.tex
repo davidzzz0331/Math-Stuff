@@ -507,5 +507,38 @@ As remarked before, the smash product is equipped with a universal bimorphism $i
 \[X_p\wedge Y_q\xrightarrow{x\wedge y\mapsto e\wedge x\wedge y} \bigvee_{p+q=n}O(n)_+\wedge_{O(p)\times O(q)}X_p\wedge Y_q\xrightarrow{projection} (X\wedge Y)_{p+q}\]
 
 
+\section{$RO(G)$-graded cohomology Theories}
+\subsection{Mackey Functors}
+Mackey Functors will serve the role of coefficient system in $RO(G)$-graded coefficient theories. In particular, the take into account of the transfer maps, which is not present in the orbit category $\mathcal{O}_G$. We first give a functorial definition for Mackey functors in terms of the Burnside category, and then present an alternative definition with axioms instead, which hopefully further elucidates the structure of a Macket functor. For the following discussions, $G$ will be a finite discrete group.
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $C$ be a category with finite limits and colimits. Then, \underline{\textbf{Span}(C)} is the category with the same objects as $C$, and morphisms equivalence classes of spans. Composition of morphisms is given by pullback of Spans.\\
+
+Given two morphisms in $\textbf{Span}(C)(X,Y)$ $X\leftarrow Z\rightarrow Y$ and $X\leftarrow Z'\rightarrow Y$, the disjoint union operation $X\leftarrow Z\coprod Z'\rightarrow Y$ endows the homsets a monoid structure. Let $\underline{\textbf{Span}^+(C)}$ denote the preadditive completion of $\textbf{Span}(C)$. 
+\end{definition}
+\end{tcolorbox}
+
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $G$ be a finite group. Then, the \underline{\textbf{Burnside Category}} is defined to be $\mathcal{A}(G):=\textbf{Span}^+(\mathcal{O}_G)$.
+\end{definition}
+\end{tcolorbox}
+Recall in the orbit category, we have a morphism $G/H\to G/K$ iff $H$ is subconjugate to $K$. The Burnside category can be viewed as formally adding the "wrong way maps" to each morphisms in the orbit category. 
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A \underline{\textbf{Mackey Functor}} is a functor $F: \mathcal{A}(G)^{op}\to \textbf{Ab}$. 
+\end{definition}
+\end{tcolorbox}
+And Mackey functors are coefficients systems with wrong way maps (transfers) added. 
+
+Before describing concrete examples, we want to clarify some strcuture inherent in a Mackey Functor: note that 
+
+
+
 
 \end{document}
