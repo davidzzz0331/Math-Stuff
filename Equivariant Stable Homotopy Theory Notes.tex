@@ -268,7 +268,7 @@ Taking $X$ to be $K_n$, we note that the indetitiy map from the LHS corresponds 
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
-A \underline{\textbf{spectrum}} is a sequence of pointed topological spaces $\{X_n\}$ with \underline{\textbf{structure maps}} 
+A $\underline{\textbf{spectrum}}$ is a sequence of pointed topological spaces $\{X_n\}$ with $\underline{\textbf{structure maps}}$.
 \[\Sigma X_n\to X_{n+1}\]
 . An \underline{\textbf{$\Omega$ spectrum}} is a spectrum whose adjoint structure maps
 \[X_n\to \Omega X_{n+1}\]
@@ -307,7 +307,7 @@ The second motivation is stable homotopy groups and stable maps:
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
-Let $X$ and $Y$ be pointed CW-complexes. The set of \underline{\textbf{stable homotopy classes of maps}} from $X$ to $Y$ is defined to be 
+Let $X$ and $Y$ be pointed CW-complexes. The set of $\underline{\textbf{stable homotopy classes of maps}}$ from $X$ to $Y$ is defined to be 
 \[[X,Y]^s:= \varinjlim_{k}[\Sigma^k X, \Sigma^k Y] \]
 \end{definition}
 \end{tcolorbox}
@@ -378,13 +378,11 @@ Building upon the motivations in the previous section, we want to build a catego
     \[[\Sigma^{\infty}A, \Sigma^{\infty}B]\cong [A,B]^s\]
     \textcolor{blue}{The motivation for this is to capture stable morphisms}.
     \item $\mathcal{S}$ has a closed symmetric monoidal structure, with $\wedge$ as the tensor product, and $F(-,-)$ as internal hom. $\Sigma^{\infty}S^0$ is the identity object.
-    \item The morphisms of $\mathcal{S}$ has the structure of graded abelian groups, with bilinear composition. We denote that graded components as $[-,-]_*$. Moreover, given a reduced cohomology theory $E^*$ there exists an object $K$ in \textrm{Sp} such that 
+    \item The morphisms of $\mathcal{S}$ has the structure of graded abelian groups, with bilinear composition. We denote that graded components as $[-,-]_*$. Moreover, given a reduced cohomology theory $E^*$ there exists an object $K$ in $\textrm{Sp}$ such that 
     \[E^*(A)\cong [\Sigma^{\infty}A, K]_{-*}\]
-    \\
     \textcolor{blue}{The motivation for this is to represent cohomology theories}.\\
     \item For every object $K$ in $\mathcal{S}$, one defines a reduced homology theory via 
     \[E_n(A):=\pi(K\wedge A)\]
-    \\
     \textcolor{blue}{The motivation for this is to deterime homology theories}.
     \\
     \item $\mathcal{S}$ has a closed symmetric monoidal structure, with $\wedge$ as the tensor product and $F(-,-)$ as internal hom. The object $\Sigma^{\infty}S^0$ is the identity object.\\
@@ -514,7 +512,7 @@ Mackey Functors will serve the role of coefficient system in $RO(G)$-graded coef
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
-Let $C$ be a category with finite limits and colimits. Then, \underline{\textbf{Span}(C)} is the category with the same objects as $C$, and morphisms equivalence classes of spans. Composition of morphisms is given by pullback of Spans.\\
+Let $C$ be a category with finite limits and colimits. Then, $\underline{\textbf{Span}(C)}$ is the category with the same objects as $C$, and morphisms equivalence classes of spans. Composition of morphisms is given by pullback of Spans.\\
 
 Given two morphisms in $\textbf{Span}(C)(X,Y)$ $X\leftarrow Z\rightarrow Y$ and $X\leftarrow Z'\rightarrow Y$, the disjoint union operation $X\leftarrow Z\coprod Z'\rightarrow Y$ endows the homsets a monoid structure. Let $\underline{\textbf{Span}^+(C)}$ denote the preadditive completion of $\textbf{Span}(C)$. 
 \end{definition}
@@ -524,19 +522,101 @@ Given two morphisms in $\textbf{Span}(C)(X,Y)$ $X\leftarrow Z\rightarrow Y$ and 
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
-Let $G$ be a finite group. Then, the \underline{\textbf{Burnside Category}} is defined to be $\mathcal{A}(G):=\textbf{Span}^+(\mathcal{O}_G)$.
+Let $G$ be a finite group. Then, the \underline{\textbf{Burnside Category}} is defined to be $\mathcal{A}(G):=\textbf{Span}^+(\textrm{GSet}^{\textrm{Fin}})$.
 \end{definition}
 \end{tcolorbox}
 Recall in the orbit category, we have a morphism $G/H\to G/K$ iff $H$ is subconjugate to $K$. The Burnside category can be viewed as formally adding the "wrong way maps" to each morphisms in the orbit category. 
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
-A \underline{\textbf{Mackey Functor}} is a functor $F: \mathcal{A}(G)^{op}\to \textbf{Ab}$. 
+A $\underline{\textbf{Mackey Functor}}$ is an additive functor $F: \mathcal{A}(G)^{op}\to \textbf{Ab}$. 
 \end{definition}
 \end{tcolorbox}
 And Mackey functors are coefficients systems with wrong way maps (transfers) added. 
 
-Before describing concrete examples, we want to clarify some strcuture inherent in a Mackey Functor: note that 
+Before describing concrete examples, we want to clarify some strcuture inherent in the burnside categories and Mackey Functors: we can then define a functor $i_*:\mathcal{O}_G\to \mathcal{A}(G)$ by sending a morphism $f:G/H\to G/K$ to the span $G/H\xleftarrow{Id}G/H\xrightarrow{f}G/K$; similarly, we have a functor $i^*:\mathcal{O}^{op}_G\to \mathcal{A}(G)$ by sending a morphism $f:G/H\to G/K$ to the span $G/K\xleftarrow{f}G/H\xrightarrow{Id}G/H$. Given a Mackey functor $\underline{M}: \mathcal{A}(G)\to \textrm{Ab}$, precomposition with $i_*$ gives a coefficients system, which we will denote $M^*$, and precomposition with $i^*$ is a covariant funcor $\mathcal{O}_G\to \textrm{Ab}$, which we will denote as $M_*$. By construction, $M_*$ and $M_*$ agree on objects, and they determine the value of the Mackey functor on objects: a Mackey functor is additive, its data is determined by the disjoint orbits. We would also like to know how the morphisms commute: if we have the pullback square of orbits
+\[\begin{tikzcd}
+	W & Y \\
+	X & Z
+	\arrow["\beta", from=1-1, to=1-2]
+	\arrow["\alpha"', from=1-1, to=2-1]
+	\arrow["\delta", from=1-2, to=2-2]
+	\arrow["\gamma"', from=2-1, to=2-2]
+\end{tikzcd}\]
+then $M_*(\beta)M^*(\alpha)=M^*(\delta)M_*(\gamma)$, as illustrated by the following composition diagram. 
+
+\[\begin{tikzcd}
+	&& W \\
+	& X && Y \\
+	X && Z & {} & Y
+	\arrow["\alpha", from=1-3, to=2-2]
+	\arrow["\beta"', from=1-3, to=2-4]
+	\arrow["\lrcorner"{anchor=center, pos=0.125, rotate=-45}, draw=none, from=1-3, to=3-3]
+	\arrow["Id"', from=2-2, to=3-1]
+	\arrow["\gamma", from=2-2, to=3-3]
+	\arrow["\delta"', from=2-4, to=3-3]
+	\arrow["Id", from=2-4, to=3-5]
+\end{tikzcd}\]
+
+From now on, let $\pi: G/H\to G/K$ be the canonical restriction map $gH\mapsto gK$, and define $\textrm{Res}_H^K:= M^*(\pi)$ and  $\textrm{Tr}_H^K:= M_*(\pi)$. Let $c_g: G/H\to G/gHg^{-1}$ be given by $\overline{x}\mapsto \overline{xg^{-1}}$. It is immediate that any $G$-map $g: G/H\to G/K$ can be decomposed into a $\pi\circ c_g$ for some $g$. Now consider the following pullback diagram of orbits 
+
+\[\begin{tikzcd}
+	G/H\times G/K & G/K \\
+	G/H & G/G\cong *
+	\arrow["\beta", from=1-1, to=1-2]
+	\arrow["\alpha"', from=1-1, to=2-1]
+	\arrow["\delta", from=1-2, to=2-2]
+	\arrow["\gamma"', from=2-1, to=2-2]
+\end{tikzcd}\]
+
+By the $G$-isomorphism $G/H\times G/K\cong G\times_H G/K$, it is easy to see the the class $(1,xK)_H$ has stablizer $H\cap xKx^{-1}$, and the orbits are indexed by a class in the double coset $H\backslash G/K$. Thus, $$G/H\times G/K\cong \coprod_{H\backslash G/K}G/H\cap xKx^{-1}$$. 
+We may use this decomposition to compute the composition of tranfers and restrictions: the composition $\textrm{Res}_K^G\circ \textrm{Tr}_H^G: M(G/H)\to M(G/K)$ is given by the value of the Mackey functor on the diagram 
+\[\begin{tikzcd}
+	&& {\coprod_{H\backslash G/K} G/H\cap xKx^{-1}} \\
+	& {G/H} && {G/K} \\
+	{G/H} && {G/G} && {G/K}
+	\arrow[from=1-3, to=2-2]
+	\arrow[from=1-3, to=2-4]
+	\arrow["\lrcorner"{anchor=center, pos=0.125, rotate=-45}, draw=none, from=1-3, to=3-3]
+	\arrow[from=2-2, to=3-1]
+	\arrow[from=2-2, to=3-3]
+	\arrow[from=2-4, to=3-3]
+	\arrow[from=2-4, to=3-5]
+\end{tikzcd}\]
+so by the additivity, it is the direct sum of the value of the morphisms
+\[\begin{tikzcd}
+	& {G/H\cap xKx^{-1}} \\
+	{G/H} && {G/K}
+	\arrow[from=1-2, to=2-1]
+	\arrow[from=1-2, to=2-3]
+\end{tikzcd}\]
+which is the composition $\textrm{Tr}_{x^{-1}Hx\cap K}^{K}\circ c_{x}\circ \textrm{Res}_{H\cap xKx^{-1}}^{H}$. We now have the double coset formula
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}[Double Coset Formula]
+    \[\textrm{Res}_K^G\circ \textrm{Tr}_H^G=\oplus_{x\in H\backslash G/K }\textrm{Tr}_{x^{-1}Hx\cap K}^{K}\circ c_{x}\circ \textrm{Res}_{H\cap xKx^{-1}}^{H}\]
+\end{theorem}
+\end{tcolorbox}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
