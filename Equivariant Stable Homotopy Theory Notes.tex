@@ -534,7 +534,9 @@ A $\underline{\textbf{Mackey Functor}}$ is an additive functor $F: \mathcal{A}(G
 \end{tcolorbox}
 And Mackey functors are coefficients systems with wrong way maps (transfers) added. 
 
-Before describing concrete examples, we want to clarify some strcuture inherent in the burnside categories and Mackey Functors: we can then define a functor $i_*:\mathcal{O}_G\to \mathcal{A}(G)$ by sending a morphism $f:G/H\to G/K$ to the span $G/H\xleftarrow{Id}G/H\xrightarrow{f}G/K$; similarly, we have a functor $i^*:\mathcal{O}^{op}_G\to \mathcal{A}(G)$ by sending a morphism $f:G/H\to G/K$ to the span $G/K\xleftarrow{f}G/H\xrightarrow{Id}G/H$. Given a Mackey functor $\underline{M}: \mathcal{A}(G)\to \textrm{Ab}$, precomposition with $i_*$ gives a coefficients system, which we will denote $M^*$, and precomposition with $i^*$ is a covariant funcor $\mathcal{O}_G\to \textrm{Ab}$, which we will denote as $M_*$. By construction, $M_*$ and $M_*$ agree on objects, and they determine the value of the Mackey functor on objects: a Mackey functor is additive, its data is determined by the disjoint orbits. We would also like to know how the morphisms commute: if we have the pullback square of orbits
+
+
+we can then define a functor $i_*:\mathcal{O}_G\to \mathcal{A}(G)$ by sending a morphism $f:G/H\to G/K$ to the span $G/H\xleftarrow{Id}G/H\xrightarrow{f}G/K$; similarly, we have a functor $i^*:\mathcal{O}^{op}_G\to \mathcal{A}(G)$ by sending a morphism $f:G/H\to G/K$ to the span $G/K\xleftarrow{f}G/H\xrightarrow{Id}G/H$. Given a Mackey functor $\underline{M}: \mathcal{A}(G)\to \textrm{Ab}$, precomposition with $i_*$ gives a coefficients system, which we will denote $M^*$, and precomposition with $i^*$ is a covariant funcor $\mathcal{O}_G\to \textrm{Ab}$, which we will denote as $M_*$. By construction, $M_*$ and $M_*$ agree on objects, and they determine the value of the Mackey functor on objects: a Mackey functor is additive, its data is determined by the disjoint orbits. We would also like to know how the morphisms commute: if we have the pullback square of orbits
 \[\begin{tikzcd}
 	W & Y \\
 	X & Z
@@ -558,7 +560,61 @@ then $M_*(\beta)M^*(\alpha)=M^*(\delta)M_*(\gamma)$, as illustrated by the follo
 	\arrow["Id", from=2-4, to=3-5]
 \end{tikzcd}\]
 
-From now on, let $\pi: G/H\to G/K$ be the canonical restriction map $gH\mapsto gK$, and define $\textrm{Res}_H^K:= M^*(\pi)$ and  $\textrm{Tr}_H^K:= M_*(\pi)$. Let $c_g: G/H\to G/gHg^{-1}$ be given by $\overline{x}\mapsto \overline{xg^{-1}}$. It is immediate that any $G$-map $g: G/H\to G/K$ can be decomposed into a $\pi\circ c_g$ for some $g$. Now consider the following pullback diagram of orbits 
+From the above discussion, we have another equivalent definition for Mackey functors, which is sometimes more useful 
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+    \begin{definition}
+    A \underline{\textbf{Mackey Functor}} is a pair of functors $M^*: \textrm{GSet}^{\textrm{Fin}}\to \textrm{Ab}$ and $M_*: \textrm{GSet}^{\textrm{Fin}}\to \textrm{Ab}$ such that the following axioms hold:
+    \begin{enumerate}
+        \item $M^*$ and $M_*$ agree on objects;
+        \item For every pullback square of orbits
+        \[\begin{tikzcd}
+            W & Y \\
+            X & Z
+            \arrow["\beta", from=1-1, to=1-2]
+            \arrow["\alpha"', from=1-1, to=2-1]
+            \arrow["\delta", from=1-2, to=2-2]
+            \arrow["\gamma"', from=2-1, to=2-2]
+        \end{tikzcd}\]
+        then $M_*(\beta)M^*(\alpha)=M^*(\delta)M_*(\gamma)$;
+        \item Both functors maps disjoint unions to direct sums. 
+    \end{enumerate}
+    \end{definition}
+    \end{tcolorbox}
+    
+
+
+Before describing concrete examples, we want to clarify some structure inherent in the burnside categories and Mackey Functors: suppose we have a $G$-Mackey functor $\underline{M}$; since it is additive, its data is completely determined by its value on orbits, and the restriction/transfer morphisms induced by morphisms between orbits. Further, recall that a $G$-map between orbits $G/H\to G/K$ given by $H\mapsto gK$ must satisfy $gHg^{-1}\subseteq K$. Thus, the map can be decomposed into 
+\[G/H\xrightarrow{c_{g}} G/gHg^{-1}\xrightarrow{\pi} G/K\] 
+where $c_{x}: G/H\to G/gHg^{-1}$ is the conjugation map defined by $H\mapsto g(gHg^{-1})$, and $\pi$ is the canonical projection that sends $gHg^{-1}\mapsto K$. herefore, the data of a Mackey functor is completely determined by the conjugation morphisms and the canonical projection. We will see how these morphisms commute with each other.
+
+Let $c_g^*:=M^*(c_g)$ and $c^g_*:=M_*(c_g)$. 
+
+We have the following pullback square 
+\[\begin{tikzcd}
+	{G/H} & {G/H} \\
+	{G/H} & {G/gHg^{-1}}
+	\arrow["Id", from=1-1, to=1-2]
+	\arrow["Id"', from=1-1, to=2-1]
+	\arrow["\lrcorner"{anchor=center, pos=0.125}, draw=none, from=1-1, to=2-2]
+	\arrow["{c_g}", from=1-2, to=2-2]
+	\arrow["{c_g}"', from=2-1, to=2-2]
+\end{tikzcd}\]
+So in fact we have $c_g^*=(c^g_*)^{-1}$. 
+
+Given a canonical projection $\pi: G/H\to G/K$, denote $\textrm{Res}_H^K:= M^*(\pi)$ and  $\textrm{Tr}_H^K:= M_*(\pi)$. 
+ Now consider the following commutative diagram:
+\[\begin{tikzcd}
+	{G/H} & {G/G} \\
+	{G/gHg^{-1}} & {G/G}
+	\arrow["\pi", from=1-1, to=1-2]
+	\arrow["{c_g}"', from=1-1, to=2-1]
+	\arrow["Id", from=1-2, to=2-2]
+	\arrow["\pi"', from=2-1, to=2-2]
+\end{tikzcd}\]
+which implies $\textrm{Tr}_H^G\circ c_*^g=\textrm{Tr}_H^G$ and $\textrm{Res}_H^G(x)=c_g^*\circ\textrm{Res}_H^G(x)$ for all $g$. Moreover, consider the pullback diagram
+
 
 \[\begin{tikzcd}
 	G/H\times G/K & G/K \\
@@ -599,11 +655,62 @@ which is the composition $\textrm{Tr}_{x^{-1}Hx\cap K}^{K}\circ c_{x}\circ \text
 \end{theorem}
 \end{tcolorbox}
 
+By the above discussion, we have a very concrete alternative definition for Mackey functors
 
 
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A Mackey functor $\underline{M}: \textrm{GSet}^{\textrm{Fin}}\to \textrm{Ab}$ consists of the following data:  
+\begin{enumerate}
+    \item An abelian group $\underline{M}(G/H)$ for every subgroup $H\leq G$;
+    \item For every subgroup $H\leq K\leq G$, a restriction map $\textrm{Res}_H^K: \underline{M}(G/K)\to \underline{M}(G/H)$ and a transfer map $\textrm{Tr}_H^K: \underline{M}(G/H)\to \underline{M}(G/K)$.
+    \item For every subgroup $H\leq G$ and $g\in G$, a conjugation homomorphism $c_g: \underline{M}(G/H)\to \underline{M}(G/H)$.
+    
+
+\end{enumerate}
+The three types of morphisms must also satisfy the following relations:
+\begin{enumerate}
+    \item $\textrm{Tr}_H^H$ and $\textrm{Res}_H^H$ are both identity maps for all subgroups $H\leq G$.
+    \item $\textrm{Res}_H^K\circ \textrm{Res}_K^L=\textrm{Res}_H^L$ and 
+     $\textrm{Tr}_K^L\circ \textrm{Tr}_H^K=\textrm{Tr}_H^L$ for $K\leq H\leq L$.
+    \item $c_g\circ c_h=c_{gh}$ for all $g,h\in G$.
+    \item $\textrm{Res}_{gHg^{-1}}^{gKg^{-1}}\circ c_g=c_g\circ \textrm{Res}^{K}_{H}$ and $\textrm{Tr}_{gHg^{-1}}^{gKg^{-1}}\circ c_g=c_g\circ \textrm{Tr}^{K}_{H}$ for $H\leq K$.
+    \item   For subgroups $H\leq K\leq L$
+      \[\textrm{Res}_K^L\circ \textrm{Tr}_H^L=\oplus_{x\in H\backslash L/K }\textrm{Tr}_{x^{-1}Hx\cap K}^{K}\circ c_{x}\circ \textrm{Res}_{H\cap xKx^{-1}}^{H}\]
+\end{enumerate}
+\end{definition}
+\end{tcolorbox}
+
+This definintion seems bulky, but when we are dealing with $G=C_p$ Mackey functors, the axioms can be reduced to the following: 
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+A $C_p$-Mackey functor $\underline{M}$ consists of the following data: 
+\[\begin{tikzcd}
+	{\underline{M}(C_p/C_p)} \\
+	\\
+	{\underline{M}(C_p/e)}
+	\arrow["{\textrm{Res}^{C_p}_{e}}",swap, bend right=50, from=1-1, to=3-1]
+	\arrow["{\textrm{Tr}^{C_p}_{e}}",swap, bend right=50, from=3-1, to=1-1]
+	\arrow["{c_g}", from=3-1, to=3-1, loop, in=305, out=235, distance=10mm]
+\end{tikzcd}\]
+where we ignore the some of all of the obvious identity morphisms. The morphisms satifies the following:
+\begin{enumerate}
+    \item $c_g\circ \textrm{Res}^{C_p}_{e}=\textrm{Res}^{C_p}_{e}$.
+    \item ${\textrm{Tr}^{C_p}_{e}}\circ c_g={\textrm{Tr}^{C_p}_{e}}$
+    \item $\textrm{Res}^{C_p}_{e}\circ \textrm{Tr}^{C_p}_{e}=\sum_{\gamma\in C_p}c_{\gamma}$
+\end{enumerate}
+
+\end{proposition}
+\end{tcolorbox}
+With the definition cleared away, we may finally construct some Mackey functors: 
 
 
-
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}[\underline{\textbf{constant Mackey functor}}]
+The constant $\underline{\mathbb{Z}}$ Mackey functor assigns every orbit the group $\mathbb{Z}$, and restriction maps the identity morphism. One may check that this forces the transfer maps $\textrm{Tr}_H^K: \mathbb{Z}\to \mathbb{Z}$ to be multiplication by $|K/H|$. The conjugation maps are the identity.
+\end{example}
+\end{tcolorbox}
 
 
 
