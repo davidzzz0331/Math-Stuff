@@ -16,6 +16,7 @@
 \graphicspath{ {D:/Chrome Downloads./} }
 \usepackage[parfill]{parskip}
 \usepackage{amsthm}
+\usetikzlibrary{calc}
 \addbibresource{EHT.bib}
 \theoremstyle{definition}
 \newtheorem{theorem}{Theorem}[section]
@@ -31,6 +32,13 @@
 \newtheorem{corollary}{Corollary}[theorem]
 \theoremstyle{definition}
 \newtheorem{example}{Example}[theorem]
+\tikzset{curve/.style={settings={#1},to path={(\tikztostart)
+    .. controls ($(\tikztostart)!\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+    and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+    .. (\tikztotarget)\tikztonodes}},
+    settings/.code={\tikzset{quiver/.cd,#1}
+        \def\pv##1{\pgfkeysvalueof{/tikz/quiver/##1}}},
+    quiver/.cd,pos/.initial=0.35,height/.initial=0}
 \title{Equivariant Stable Homotopy Notes}
 \author{David Zhu}
 
@@ -680,8 +688,44 @@ The three types of morphisms must also satisfy the following relations:
 \end{enumerate}
 \end{definition}
 \end{tcolorbox}
+For any group $G$, we can now give an example of a constant Mackey functor:
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+    \begin{example}[$\underline{\textbf{Constant Mackey functor}}$]
+    For every abelian group $A$, we have the constant Mackey functor $\underline{A}$, which assigns every orbit the abelian group $A$, and restriction maps the identity morphism. One may check that this forces the transfer maps $\textrm{Tr}_H^K: \mathbb{Z}\to \mathbb{Z}$ to be multiplication by $|K/H|$, and the conjugation maps to be the identity. \\
 
-This definintion seems bulky, but when we are dealing with $G=C_p$ Mackey functors, the axioms can be reduced to the following: 
+
+    In the case where $G=C_2$ and $A=\mathbb{Z}$, the Mackey functor is described by the following diagram:
+    \[\begin{tikzcd}
+        {\mathbb{Z}} \\
+        {\mathbb{Z}}
+        \arrow["{\times 2}",swap, curve={height=12pt}, from=2-1, to=1-1]
+        \arrow["Id"', curve={height=12pt}, from=1-1, to=2-1]
+        \arrow["Id"', from=2-1, to=2-1, loop, in=300, out=240, distance=5mm]
+    \end{tikzcd}\]
+    In the case where $G=C_2$ and $A=\mathbb{Z}/2$, the Mackey functor is described by the following diagram:
+    \[\begin{tikzcd}
+        {\mathbb{Z}/2} \\
+        {\mathbb{Z}/2}
+        \arrow["{\times 0}",swap, curve={height=12pt}, from=2-1, to=1-1]
+        \arrow["Id"', curve={height=12pt}, from=1-1, to=2-1]
+        \arrow["Id"', from=2-1, to=2-1, loop, in=300, out=240, distance=5mm]
+    \end{tikzcd}\]
+
+
+
+\end{example}
+\end{tcolorbox}
+
+    
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+    \begin{remark}
+    Note that the "constant" Mackey functor $\underline{\mathbb{Z}}$ breaks up to a constant coefficient system $\mathbb{Z}$, but the covariant part is $\textbf{NOT}$ the constant functor. We will run into this problem later. 
+    \end{remark}
+\end{tcolorbox}
+
+
+
+Definintion $3.1.1$ seems bulky, but when we are dealing with $G=C_p$ Mackey functors, the axioms can be reduced to the following: 
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
 \begin{proposition}
@@ -703,25 +747,21 @@ where we ignore the some of all of the obvious identity morphisms. The morphisms
 
 \end{proposition}
 \end{tcolorbox}
-With the definition cleared away, we may finally construct some Mackey functors: 
+Here are a few more examples of $C_p$-Mackey functors:
 
 
 \begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
-\begin{example}[\underline{\textbf{Constant Mackey functor}}]
-The constant $\underline{\mathbb{Z}}$ Mackey functor assigns every orbit the group $\mathbb{Z}$, and restriction maps the identity morphism. One may check that this forces the transfer maps $\textrm{Tr}_H^K: \mathbb{Z}\to \mathbb{Z}$ to be multiplication by $|K/H|$. The conjugation maps are the identity.
-\end{example}
-\end{tcolorbox}
+\begin{example}[$\underline{\textbf{Burnside Mackey Functor}}$]
+The Burnside Mackey Functor $A_G$ assigns every orbit $G/H$ the Grothendieck group of the symmetric monoidal category of finite $H$-sets under coproduct. The transfer and restriction maps come from induction and the forgetful functor, respectively, between $H$-Sets and $K$-Sets. \\
 
-
-\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
-\begin{example}
-    The constant $\underline{\mathbb{F}_p}$ Mackey functor assigns every orbit the group $\mathbb{Z}$, and restriction maps the identity morphism. One may check that this forces the transfer maps $\textrm{Tr}_H^K: \mathbb{Z}\to \mathbb{Z}$ to be multiplication by $|K/H|$. The conjugation maps are the identity.
-\end{example}
-\end{tcolorbox}
-
-
-\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
-\begin{example}[Burnside Mackey Functor]
+When $G=C_p$, the Burnside Mackey Functor $A_{C_p}$ is given by the following: there are two subgroups $e$ and $C_p$; the corresponding Grothendieck groups are $A_{C_p}(e)=\mathbb{Z}$, generated by the singleton with trivial action, and $A_{C_p}(C_p)=\mathbb{Z}\oplus \mathbb{Z}$, generated by the singleton with trivial action and a $C_p$ orbit. The induced $G$ set $C_p\times_e *$ is the $C_p$ orbit, and forgetting the $G$ action on the $C_p$-orbit gives us a disjoint union of $p$ singletons with trivial action. Diagramatically, we have the following  
+\[\begin{tikzcd}
+	{\mathbb{Z}} \\
+	{\mathbb{Z}\oplus \mathbb{Z}}
+	\arrow["{(0,Id)}"', curve={height=12pt}, from=1-1, to=2-1]
+	\arrow["{(Id,p)}"', curve={height=12pt}, from=2-1, to=1-1]
+	\arrow["Id"', from=2-1, to=2-1, loop, in=300, out=240, distance=5mm]
+\end{tikzcd}\]
 
 \end{example}
 \end{tcolorbox}
