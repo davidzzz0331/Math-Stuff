@@ -512,6 +512,68 @@ The collection $(X\wedge Y)_n$, with structure maps $\varphi_n$ forms an orthogo
 As remarked before, the smash product is equipped with a universal bimorphism $i: (X,Y)\to X\wedge Y$ given by 
 \[X_p\wedge Y_q\xrightarrow{x\wedge y\mapsto e\wedge x\wedge y} \bigvee_{p+q=n}O(n)_+\wedge_{O(p)\times O(q)}X_p\wedge Y_q\xrightarrow{projection} (X\wedge Y)_{p+q}\]
 
+\subsection{The Equivariant Case}
+One way to motivate the correct definition of equivariant stable homotopy category is to represent the equivariant cohomology theories. In particular, we want a form of the suspension isomorphism
+\[H^*(X)\cong H^{*+V}(\Sigma^VX)\]
+In the non-equivariant case, we only take $V$ to be trivial representations, which means we are smashing with a sphere with trivial $G$-action. However, it turns out that the cohomology would carry more useful data if we want to keep track all possible representations $V$. 
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A \underline{\textbf{complete $G$-universe}} $U$ is an infinite dimensional real inner product space with a $G$-action, such that it is a direct sum of countably many copies of each irreducible representations of $G$. 
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{remark}
+If we drop the adjective "complete" from the definition, we would only require that the universe containing some subset of $G$-representations and the trivial representation instead of all possible representations. However, if we want dualizable orbit, a convenient assumption is requiring $U$ to be complete.  
+\end{remark}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A $G$-\underline{\textbf{prespectrum}} $X$ is a collection of pointed $G$-spaces $X(V)$, one for each finite dimensional subspace $V\subset U$ of a given $G$ universe. The collection is equipped with structure maps 
+\[\Sigma^WX(V)\cong X(V\oplus W)\]
+The structure maps must be associative. A $G$-prespectrum is a \underline{\textbf{G-Spectrum}}(or $\Omega-G$-spectrum) if the adjoint structure maps 
+\[X(V)\to \Omega^WX(V\oplus W)\] 
+are homeomorphisms.
+\end{definition}
+\end{tcolorbox}
+This definition enlarges the usual $\mathbb{Z}$-graded notion of spectra. Sometimes in literature this representation graded spectrum is referred to as the genuine $G$-spectra. 
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+The \underline{\textbf{homotopy groups}} of $G$-prespectrum are 
+\[\pi_q^H(X):=\textrm{colim}_{V\subset U}\pi_q^H\Omega^VX(V)\]
+\[\pi_{-q}^H(X):=\textrm{colim}_{\mathbb{R}^m\subset V}\pi_q^H\Omega^{V-\mathbb{R}^m}X(V)\]
+where $V-\mathbb{R}^m$ denotes the orthogonal complement. 
+
+A \underline{\textbf{weak-equivalence}} between $G$-spectra is a $\pi_*$ equivanlence. 
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+There is a model structure on $G$-prespectra where the weak equivalences are the stable equivalences. 
+\end{theorem}
+\end{tcolorbox}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{$RO(G)$-graded cohomology Theories}
 \subsection{Mackey Functors}
@@ -747,7 +809,7 @@ where we ignore the some of all of the obvious identity morphisms. The morphisms
 
 \end{proposition}
 \end{tcolorbox}
-Here are a few more examples of $C_p$-Mackey functors:
+Here are a few more examples of Mackey functors:
 
 
 \begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
@@ -766,6 +828,14 @@ When $G=C_p$, the Burnside Mackey Functor $A_{C_p}$ is given by the following: t
 \end{example}
 \end{tcolorbox}
 
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+The homotopy groups of a genuine $G$-spectra $X$, $\pi^*_n(X)$, is naturally a Mackey functor: we have the assignment $\pi_n^*(X)(G/H):=\pi^H_n(X)$; by the Wirthmuller isomorphism and the fact that orbits are self dual, we have 
+\[\pi_n^H(X)\cong [S^n\wedge G/H_+, X]\cong [S^n,X\wedge G/H_+]\]
+since we have availabilities on both variances, the tranfers and restrictions maps are easy to define. 
+\end{example}
+\end{tcolorbox}
 
 
 
