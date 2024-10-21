@@ -865,22 +865,51 @@ and $q$ is the dimension of the sign representation.
 
 First, we recall the important fact that the $RO(C_2)$-cohomology at a trivial representation reduces to the Bredon cohomology with constant coefficient system induced from the Mackey functor. Our game plan is then to first abuse the suspension isomorphism and reduce to Bredon cohomology. We now break the calculation to two parts:
 
-If $q<0$, then by the suspension isomorphism we have $$H^{p,q}(*;\underline{\mathbb{Z}}):= \tilde{H}^{p,q}(S^0;\underline{\mathbb{Z}})\cong \tilde{H}^{p,0}(S^{-q\sigma};\underline{\mathbb{Z}})\cong H^{p}_{\textrm{Bredon}}(S^{-q\sigma};\underline{\mathbb{Z}})$$
-We note that the $C_2$ action on the representation sphere $S^{-q\sigma}$ is the antipodal action, which is free, so we can use the following proposition
+If $q\leq 0$, then by the suspension isomorphism we have $$H^{p,q}(*;\underline{\mathbb{Z}}):= \tilde{H}^{p,q}(S^0;\underline{\mathbb{Z}})\cong \tilde{H}^{p,0}(S^{-q\sigma};\underline{\mathbb{Z}})\cong \tilde{H}^{p}_{\textrm{Bredon}}(S^{-q\sigma};\underline{\mathbb{Z}})$$
+When the coefficient system is constant, we have the following reduction:
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+If the coefficient system is constant, then 
+\[\tilde{H}^*_{\textrm{Bredon}}(X; \underline{M})\cong \tilde{H}^*_{\textrm{Sing}}(X/G; M)\]
+\end{proposition}
+\end{tcolorbox}
+
+Recall that $S^{-q\sigma}$ is the one-point compactification of the sign-representation on $\mathbb{R}^{-q}$. It is not hard to see that $S^{-q\sigma}/C_2$ is homotopy equivalent to $\Sigma \mathbb{RP}^{-q-1}$. (Insert picture). Using suspension isomorphism, we have 
+\[H^{p,q}(*;\underline{\mathbb{Z}})\cong \tilde{H}^{p-1}(\mathbb{RP}^{-q-1})\]
+which we know how to compute. 
+
+When $q>0$, we still want to transform the $RO(G)$-graded cohomology to $\mathbb{Z}$-graded, so we apply the Spanier-Whitehead duality 
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}[Spanier-Whitehead Duality]
+Note that the sphere spectrum is self-dual, and in particular $S^{V}$ is dual to $S^{-V}$. 
+    \[\tilde{H}^{p,q}(S^0;\underline{\mathbb{Z}}):=[S^0,S^{p+q\sigma}\wedge H \mathbb{Z}]\cong [S^{-p-q\sigma}, S^0\wedge H \mathbb{Z}]=: \tilde{H}_{-p,-q}(S^0;\underline{\mathbb{Z}})\]
+\end{proposition}
+\end{tcolorbox}
+and we reduce the problem again to computing $\tilde{H}_{-p,-q}(S^0;\underline{\mathbb{Z}})\cong \tilde{H}^{\textrm{Bredon}}_{-p}(S^{q\sigma};\underline{\mathbb{Z}})$. However, we should note that the constant Mackey functor does not restrict to the constant covariant coefficient system! Thus, we do not get the analog of proposition $3.2.2$ for homology. However, we still have the following simplification available: 
 
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
 \begin{proposition}
-If the $G$-action is free, then 
-\[H^*_{\textrm{Bredon}}(X; M)\cong H^*_{\textrm{Sing}}(X/G; M(e))\]
+Suppose the $G$-action on $X$ is free, then 
+\[H^{\textrm{Bredon}}_{*}(X, \underline{M})\cong H^{\textrm{Bredon}}_{*}(X/G, \underline{M}(e))\]
 \end{proposition}
 \end{tcolorbox}
-
-
-
-
-
-
-
+ 
+The $C_2$-action on $S^{q\sigma}$ is not free: it has two fixed points at the poles. All hope is not lost, since we have the following cofiber sequence 
+\[S(V)_{+}\to D(V)_{+}\to S^V\]
+where $S(V)$ and $D(V)$ are the unit sphere and unit disk in the representation $V$, respectively. Moreover, $D(n)_{+}$ is $C_2$-homotopy equivalent to $S^0$, and the $C_2$-action on $S(V)_+$ is free. Then by the cofiber long exact sequence, we have 
+\[\begin{tikzcd}
+0\arrow[r]&\tilde{H}_{p+1}(S^{q\sigma};\underline{\mathbb{Z}})\arrow[r]&\tilde{H}_{p}(S(q\sigma)_+;\underline{\mathbb{Z}})\arrow[r]&0
+\end{tikzcd}\]
+for $p\geq 1$, and we have the same reduction again. When $p=0$, we open up the LES 
+\[\begin{tikzcd}
+ 0\arrow[r]&\tilde{H}_{1}(S^{q\sigma};\underline{\mathbb{Z}})\arrow[r]&\tilde{H}_{0}(S(q\sigma)_+;\underline{\mathbb{Z}})\cong \mathbb{Z}\arrow[r,"\gamma"]&\tilde{H}_{0}(S^0;\underline{\mathbb{Z}})\cong \mathbb{Z}\arrow[r]&\tilde{H}_{0}(S^{q\sigma};\underline{\mathbb{Z}})\arrow[r]&0
+    \end{tikzcd}\]
+Note that the middle map is induced by the inclusion 
+\[\tilde{H}_0(S(q\sigma)_+/C_2;\mathbb{Z})\cong \mathbb{Z}\to \tilde{H}_0(D(q\sigma)_+/C_2;\mathbb{Z})\cong \mathbb{Z}\]
+which is multiplication by $2$. 
 
 \end{document}
