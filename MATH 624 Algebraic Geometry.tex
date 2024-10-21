@@ -985,6 +985,115 @@ Let $X$ be a $k$-variety. Then, there is a proper $k$-variety $\widehat{X}$ and 
 \end{tcolorbox}
 
 
+\section{Schemes and Varieties in Mordern Sense}
+
+Recall that $Spec(A)$ has the zariski topology, and comes equipped with the structure sheaf 
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+The structure sheaf $\mathcal{O}_A$ associated to $Spec(A)$ is defined by the following: let $U\subset Spec(A)$, then $$\mathcal{O}_A(U)=\{f: U\to \coprod_{p\in U}A_p: \textrm{if } p\in U, \textrm{then } f(p)\in A_p \textrm{ and } f \textrm{is locally a constant fraction}\}$$.
+One may check that this defines a sheaf on $Spec(A)$. 
+\end{definition}
+\end{tcolorbox}
+Note that the global sections $\mathcal{O}_A(Spec(A))$ is canonically isomorphic to $A$.
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}[Affine Schemes]
+An \underline{\textbf{affine scheme}} is a locally ringed space isomorphic to $Spec(A)$ for some commutative ring $A$. 
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+There is a canonical bijection:
+$\textrm{Hom}_{\textrm{Aff Scheme}}(B,A)\cong \textrm{Hom}_{LRS}(Spec(A), Spec(B))$. 
+\end{theorem}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A \underline{\textbf{scheme}} is a locally ringed space locally isomorphism to an affine scheme. Alternatively, one may intepret a scheme as a glueing of affine schemes. 
+
+A morphism of schemes $(f,f^{\sharp}):(X,\mathcal{O}_X)\to (Y,\mathcal{O}_Y)$ is any morphism of locally ringed spaces. 
+\end{definition}
+\end{tcolorbox}
+
+Concretely, let $(X,\mathcal{O}_X)$ be the gluing of affine schemes $(X_{\alpha}, \mathcal{O}_{X_{\alpha}})\cong (Spec(A_{\alpha}), \mathcal{O}_{A_{\alpha}})$. Similarly, let $(Y,\mathcal{O}_Y)$ be the gluing of affine schemes $(Y_{\beta}, \mathcal{O}_{Y_{\beta}})\cong (Spec(B_{\beta}), \mathcal{O}_{B_{\beta}})$. Then, $f(X_{\alpha})\subset Y_{\beta}$ and $f^{\sharp}$ locally is the morphsim of affine schemes. Thus, a morphism is equivalent to gluing morphisms of affine schemes. 
+
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}[Relative Morphisms]
+Let $S$ be a fixed scheme. An \underline{\textbf{$S$-scheme}} is a morphism $\varphi: X\to S$. A morphism of $S$-schemes $f: X\to Y$ is a commutative triangle 
+\[\begin{tikzcd}
+	X && Y \\
+	& S
+	\arrow["f", from=1-1, to=1-3]
+	\arrow["{\varphi_x}"', from=1-1, to=2-2]
+	\arrow["{\varphi_y}", from=1-3, to=2-2]
+\end{tikzcd}\]
+Note that this is simply the slice catgeory $\textrm{Sch}/S$. 
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+The product exists in the category of schemes over $S$. This is equivalent to saying fiber products exists in the category of schemes. 
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+    The first step is to do it for affine schemes. Let $S$ be affine. Then, the product of affine $S$-schemes exists, and is realized as the spec of the tensor $S$-algebra. This is in fact the product in the catgeory of schemes, not only in the category of affine schemes. 
+
+    Step $2$ is to show the product of quasi-affine schemes exists. 
+    Step $3$ Break up general schemes $X,Y$ to affine charts, and use gluing schemes and morphism. 
+    Step $4$ Break up $S$ into affine charts and glue. 
+\end{proof}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+$\mathbb{A}^n:=\mathbb{A}^n_{\mathbb{Z}}$ by definition is $Spec(\mathbb{Z}[x_1,...,x_n])$. In general, $\mathbb{A}^n_R$ for any commutative ring $R$ is $Spec(R[x_1,...,x_n])\cong Spec(R)\otimes_{\mathbb{Z}}\mathbb{A}^n_{\mathbb{Z}}$. For $S$ a scheme, we define $\mathbb{A}^n_S:= S\times_{\mathbb{Z}}\mathbb{A}^n$. 
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}[Base change]
+Let $T\to S$ be a morphism fixed schemes. Then, the we have the base change functor from $\textrm{Sch}_S$ to $\textrm{Sch}_T$ given by $X\mapsto X\times_S T$. 
+\end{definition}
+\end{tcolorbox}
+
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $s\in S$ be a point. Then, $\mathcal{O}_s$ is a local ring, and let $\kappa(s)=\mathcal{O}_s/m_s$ be the residue field at $s$. Given a field $K$, $spec(K)$ has the data of the zero prime ideal, and the global section isomorphisc $K$. Given a morphism $Spec(K)\to S$ is precisely a point on $S$ and a field embedding from $\kappa(s)\to K$. 
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Fiber of a $S$-scheme: $X$ $\varphi_X: X\to S$ at $s\in S$ is $X\times_S s$ is the fiber of $\varphi_X$ at $s$. 
+\end{definition}
+\end{tcolorbox}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
