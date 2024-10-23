@@ -947,12 +947,45 @@ When $p+q=-1$, we have
 \[\tilde{H}^{p,q}_{C_2}(S^0)\cong ker(\tilde{H}_{C_2}^{p,q}(S^0)\to \tilde{H}_{C_2}^{p,q+1}(C_{2_+}))\]
 
 When $p+q=1$, we have 
-\[\tilde{H}^{p,q}_{C_2}(S^0)\cong coker(\tilde{H}_{C_2}^{p,q-1}(C_{2_+})\to \tilde{H}_{C_2}^{p,q+1}(C_{2_+}))\]
+\[\tilde{H}^{p,q}_{C_2}(S^0)\cong coker(\tilde{H}_{C_2}^{p,q-1}(C_{2_+})\to \tilde{H}_{C_2}^{p,q-1}(S^0))\]
 \end{proposition}
 \end{tcolorbox}
-The first isomorphism comes from the cohomology LES of cofiber sequence, and the second isomorphism comes from the homology LES of the cofiber sequence after applying Spanier-Whitehead duality. Note that as Mackey functors, the kernel and cokernel are both trivial at $e$, since the cohomologies will reduce to singular cohomology, and the maps are injectve/surjective. Thus, it suffices to determine the value of the Mackey functors at $C_2$, which amounts to computing the value of $\tilde{H}^{p,q}_{C_2}(S^0)$, $\tilde{H}^{p,q}_{C_2}(S^0)$ when $p+q=1,-1$. 
+The first isomorphism comes from the cohomology LES of cofiber sequence, and the second isomorphism comes from the homology LES of the cofiber sequence after applying Spanier-Whitehead duality. Note that as Mackey functors, the kernel and cokernel are both trivial at $e$, since the cohomologies will reduce to singular cohomology, and the maps are injectve/surjective. Thus, it suffices to determine the value of the Mackey functors at $C_2$, which amounts to computing the value of $\tilde{H}^{p,q}_{C_2}(S^0)$, $\tilde{H}^{p,q}_{C_2}(S^0)$ when $p+q=1,-1$. These computations can be done again using the cofiber sequence 
+\[S(q\sigma)_{+}\to D(q\sigma)_+\to S^{q\sigma}\]
 
 
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+ If $p\geq 0$ and $p+q=-1$, then 
+ \[\tilde{H}^{p,q}_{C_2}(S^0)\cong \begin{cases}
+    \mathbb{Z} & p=0\\
+    \mathbb{Z}/2 & p \textrm{ odd and greater or equal to }3  \\
+    0 & \textrm{otherwise}
+ \end{cases}\]
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    Since $p\geq 0$ and $p+q=-1$, then $\tilde{H}^{p,q}_{C_2}(S^0)\cong \tilde{H}^{p,-p-1}_{C_2}(S^0)\cong \tilde{H}^{p,0}_{C_2}(S^{(p+1)\sigma})$. When $p\geq 2$, the LES gives the isomorphism $H_{C_2}^{p-1,0}(S(p+1)\sigma)\cong H_{C_2}^{p,0}(S^{(p+1)\sigma})$. Again by proposition $3.2.4$, $H_{C_2}^{p-1,0}(S(p+1)\sigma)\cong \tilde{H}^{p-1}_{\textrm{Sing}}(\mathbb{RP}^p)$, which is $\mathbb{Z}/2$ iff $p$ is odd. When $p=1$, we open up the LES
+    \[\tilde{H}^{0,0}(D(2\sigma)_+)\to H^{0,0}(S(2\sigma)_+)\to \tilde{H}^{1,0}_{C_2}(S^{2\sigma})\]
+    where the first arrow is easily see to be surjective, and $H^{1,0}_{C_2}(S^{2\sigma})\cong 0$. For $p=0$, we have 
+     \[\tilde{H}^{0,0}(S^\sigma)\to \tilde{H}^{0,0}(D(\sigma)_+)\to \tilde{H}^{0,0}_{C_2}(S({\sigma})_+)\]
+    where the second arrow is a projection $\mathbb{Z}\oplus \mathbb{Z}\to \mathbb{Z}$, so $\tilde{H}^{0,0}_{C_2}(S^{\sigma})\cong \mathbb{Z}$. 
+
+    \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+        \begin{proposition}
+         If $p\leq 0$ and $p+q=1$, then 
+         \[\tilde{H}^{p,q}_{C_2}(S^0)\cong \begin{cases}
+            \mathbb{Z} & p=0\\
+            \mathbb{Z}/2 & p \textrm{ even and less or equal to }-2  \\
+            0 & \textrm{otherwise}
+         \end{cases}\]
+        \end{proposition}
+        \end{tcolorbox}
+The argument is entirely symmetric by first using duality to turn cohomology into homology, and then apply the LES to the same cofiber sequence. 
+
+We are left with what happens when $p+q=0$. At $p=q=0$, we know by dimension axiom that the Mackey functor is the burnside Mackey functor $A_{C_2}$. Lewis $A.5$.
+
+\end{proof} 
 
 
 
