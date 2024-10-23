@@ -853,7 +853,7 @@ since we have availabilities on both variances, the tranfers and restrictions ma
 
 
 \subsection{The $RO(C_2)$ cohomology of a point}
-
+\subsubsection{Computing $H^{p,q}_{C_2}(*; \underline{\mathbb{Z}})$}
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
 \begin{proposition}
@@ -911,5 +911,55 @@ for $p\geq 1$, and we have the same reduction again. When $p=0$, we open up the 
 Note that the middle map is induced by the inclusion 
 \[\tilde{H}_0(S(q\sigma)_+/C_2;\mathbb{Z})\cong \mathbb{Z}\to \tilde{H}_0(D(q\sigma)_+/C_2;\mathbb{Z})\cong \mathbb{Z}\]
 which is multiplication by $2$. 
+
+\subsubsection{Computing $H^{p,q}(C_2)(*; A_{C_2})$}
+First, we will reduce the problem to computing the reduced cohomology of $S^0$: $H^{p,q}_{C_2}(*; A_{C_2}):= \tilde{H}^{p,q}_{C_2}(S^0; A_{C_2})$. From now on, we will suppress the coefficient $A_{C_2}$ unless otherwise specified. Our primary strategy is going to be abusing the cofiber sequence 
+\[S(\sigma)_+\cong C_{2_{+}}\to S^0\to S^{\sigma} \]
+So the first step is understanding $\tilde{H}^{p,q}_{C_+2}(C_{2_+})$.
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+    The Mackey functor $\tilde{H}^{p,q}_{C_+2}(C_{2_+})$ is represented by the following diagram 
+    \[\begin{tikzcd}
+        {\tilde{H}^{p,q}_{C_2}(C_{2_+})} \\
+        \\
+        {\tilde{H}^{p,q}_{C_2}(C_{2_+})\oplus \tilde{H}^{p,q}_{C_2}(C_{2_+})}
+        \arrow["{\textrm{Res}_{e}^{C_2}}"', curve={height=24pt}, from=1-1, to=3-1]
+        \arrow["{\textrm{Tr}_{e}^{C_2}}"', curve={height=24pt}, from=3-1, to=1-1]
+        \arrow["{\textrm{swap}}"', from=3-1, to=3-1, loop, in=305, out=235, distance=10mm]
+    \end{tikzcd}\] 
+By adjunction, $\tilde{H}^{p,q}_{C_2}(C_{2_+}):= [C_{2_+}, \Sigma^{p+q\sigma}HA_{C_2}]_{C_2}=[S^0, HA_{C_2}]_{e}=\tilde{H}^{|p+q|}_{\textrm{Sing}}(S^0; \mathbb{Z})$. 
+\end{proposition}
+\end{tcolorbox}
+As a result, we have $\tilde{H}_{C_2}^{p,q}(C_{2_+})=0$ if $p+q\neq 0$. Then, we can apply the long exact sequence of the cofiber 
+\[\begin{tikzcd}
+...\arrow[r]&H^{p-1,q}_{C_2}(C_{2_+})\arrow[r]&H_{C_2}^{p,q}(S^{\sigma})\arrow[r]&H_{C_2}^{p,q}(S^0)\arrow[r]&H_{C_2}^{p,q}(C_{2_+})\arrow[r]&...
+\end{tikzcd}\] 
+Thus, if $p+q\neq 0,1$, we have the isomorphism $\tilde{H}_{C_2}^{p,q-1}(S^0)\cong \tilde{H}^{p,q}_{C_2}(S^{\sigma})\cong \tilde{H}_{C_2}^{p,q}(S^0)$. If we plot the Mackey functors onto the plane, where $X$-axis represents index $p$, and $Y$-axis represents index $p+q$, then every lattice point not on $y=0,1$ is isomorphic to the lattice point below it. Moreover, by dimension axiom, we have $\tilde{H}_{C_2}^{p,0}(S^0)=0$ if $p\neq 0$. Thus, all lattice points on the diagonal will be $0$, and by the previous observation, all of the $1$st and $3$rd quadrant will be $0$ Mackey functors. 
+
+For the rest of the missing pieces, it suffices to compute the values at $p+q=0,1,-1$.  
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+When $p+q=-1$, we have 
+\[\tilde{H}^{p,q}_{C_2}(S^0)\cong ker(\tilde{H}_{C_2}^{p,q}(S^0)\to \tilde{H}_{C_2}^{p,q+1}(C_{2_+}))\]
+
+When $p+q=1$, we have 
+\[\tilde{H}^{p,q}_{C_2}(S^0)\cong coker(\tilde{H}_{C_2}^{p,q-1}(C_{2_+})\to \tilde{H}_{C_2}^{p,q+1}(C_{2_+}))\]
+\end{proposition}
+\end{tcolorbox}
+The first isomorphism comes from the cohomology LES of cofiber sequence, and the second isomorphism comes from the homology LES of the cofiber sequence after applying Spanier-Whitehead duality. Note that as Mackey functors, the kernel and cokernel are both trivial at $e$, since the cohomologies will reduce to singular cohomology, and the maps are injectve/surjective. Thus, it suffices to determine the value of the Mackey functors at $C_2$, which amounts to computing the value of $\tilde{H}^{p,q}_{C_2}(S^0)$, $\tilde{H}^{p,q}_{C_2}(S^0)$ when $p+q=1,-1$. 
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
