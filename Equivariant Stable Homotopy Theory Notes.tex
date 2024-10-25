@@ -983,13 +983,18 @@ The first isomorphism comes from the cohomology LES of cofiber sequence, and the
         \end{tcolorbox}
 The argument is entirely symmetric by first using duality to turn cohomology into homology, and then apply the LES to the same cofiber sequence. 
 
-We are left with what happens when $p+q=0$. At $p=q=0$, we know by dimension axiom that the Mackey functor is the burnside Mackey functor $A_{C_2}$. Lewis $A.5$.
-
+We are left with what happens when $p+q=0$. At $p=q=0$, we know by dimension axiom that the Mackey functor is the burnside Mackey functor $A_{C_2}$. If $p<0$, then the LES 
+\[\tilde{H}_{C_2}^{p,q-1}(S^0)\cong \tilde{H}_{C_2}^{p,q}(S^{\sigma})\to H_{C_2}^{p,q}(S^0)\to H_{C_2}^{p,q}(S(\sigma)_+)\to H_{C_2}^{p+1,q-1}(S^0) \]
+If futher that $p\neq -1$, the two terms on the end are trivial since they land in the 3rd quadrant, and we have the middle arrow an isomorphism. If $p=-1$, one also note that there are no non-trivial maps from $\tilde{H}_{C_2}^{-1,1}(S(\sigma)_+)\to \tilde{H}_{C_2}^{0,0}(S^0)$. 
 \end{proof} 
 
+If $p\geq 2$, then we have the long exact sequence 
+\[\tilde{H}_{C_2}^{p-1,q+1}(S^0)\to \tilde{H}_{C_2}^{p-1,q+1}(S({\sigma})_+)\to \tilde{H}_{C_2}^{p,q+1}(S^{\sigma})\cong \tilde{H}_{C_2}^{p,q+1}(S^0) \to \tilde{H}_{C_2}^{p,q-1}(S^0) \]
+and the two terms on the end are trivial again since they are in the 1st quadrant, so the middle is an isomorphism. 
 
-
-
+The last step is to determine the specific case where $p=1,q=-1$, and it is given by the LES
+\[\tilde{H}_{C_2}^{0,0}(S^0)\to  \tilde{H}_{C_2}^{0,0}(C_{2_+})\to \tilde{H}_{C_2}^{1,0}(S^{\sigma})\cong \tilde{H}_{C_2}^{1,-1}(S^0)\to  \tilde{H}_{C_2}^{1,0}(S^0)\]
+where the last term is $0$ and the first term is the Burnside Mackey functor by dimension axiom, so we realize $H_{C_2}^{1,-1}(S^0)$ as the cokernel. 
 
 
 
