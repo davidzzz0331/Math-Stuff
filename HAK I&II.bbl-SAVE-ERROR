@@ -41,7 +41,7 @@
       \strng{authornamehash}{80564c1e2febdcd38b0f76734bfe3941}
       \strng{authorfullhash}{80564c1e2febdcd38b0f76734bfe3941}
       \strng{authorfullhashraw}{80564c1e2febdcd38b0f76734bfe3941}
-      \field{labelalpha}{Fri01}
+      \field{labelalpha}{Fri94}
       \field{sortinit}{F}
       \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
       \field{labelnamesource}{author}
@@ -51,7 +51,36 @@
       \field{isbn}{0-8218-2591-7}
       \field{title}{Appendix Q. On the group completion of a simplicial monoid}
       \field{volume}{110}
-      \field{year}{1994-01-01}
+      \field{year}{1994}
+    \endentry
+    \entry{Grayson}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=8df438c363ea4d5c6c8ab356266ca525}{%
+           family={Grayson},
+           familyi={G\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{8df438c363ea4d5c6c8ab356266ca525}
+      \strng{fullhash}{8df438c363ea4d5c6c8ab356266ca525}
+      \strng{fullhashraw}{8df438c363ea4d5c6c8ab356266ca525}
+      \strng{bibnamehash}{8df438c363ea4d5c6c8ab356266ca525}
+      \strng{authorbibnamehash}{8df438c363ea4d5c6c8ab356266ca525}
+      \strng{authornamehash}{8df438c363ea4d5c6c8ab356266ca525}
+      \strng{authorfullhash}{8df438c363ea4d5c6c8ab356266ca525}
+      \strng{authorfullhashraw}{8df438c363ea4d5c6c8ab356266ca525}
+      \field{labelalpha}{Gra76}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Lecture Notes in Mathematics}
+      \field{title}{Higher algebraic K-theory: II}
+      \field{volume}{551}
+      \field{year}{1976}
+      \verb{doi}
+      \verb https://doi-org.proxy.library.upenn.edu/10.1007/BFb0080003
+      \endverb
     \endentry
     \entry{MS}{article}{}{}
       \name{author}{2}{}{%

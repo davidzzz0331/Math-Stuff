@@ -31,13 +31,199 @@
 \newtheorem{corollary}{Corollary}[theorem]
 \theoremstyle{definition}
 \newtheorem{example}{Example}[theorem]
+\tikzset{curve/.style={settings={#1},to path={(\tikztostart)
+    .. controls ($(\tikztostart)!\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+    and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+    .. (\tikztotarget)\tikztonodes}},
+    settings/.code={\tikzset{quiver/.cd,#1}
+        \def\pv##1{\pgfkeysvalueof{/tikz/quiver/##1}}},
+    quiver/.cd,pos/.initial=0.35,height/.initial=0}
 \title{Higher Algebraic K-Theory}
 \author{David Zhu}
 
 \begin{document}
 \maketitle
 $K$-Theory started with Grothendieck's $K_0$ and projective modules/vector bundles. In this note, we present the various constructions for higher $K$-groups.
+\section{A Little about $K_0$}
+The first $K$ group, $K_0$, was constructed by Grothendieck in his generalization of the Riemann-Roch Theorem. The original purpose of the $K_0$ group gives a universal way to assign invariants to vector bundles over an algebraic variety that is compatible with exact sequences. A quick and dirty definition for the Grothendieck group for a commutative ring can be formulated in the following way:
 
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+    Given a commutative ring $R$, we define $K_0(R)$ to be the free group on the isomorphism classes of finitely generated projective $R$-modules modulo the relations $[P]+[Q]=[P\oplus Q]$.
+\end{definition}
+\end{tcolorbox}
+
+In full generality, the Grothedieck group $K_0$ is actually the construction of the universal abelian group from an abelian monoid.
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+    The group completion of an abelian monoid $M$ is an abelian group $M^{-1}M$ together with a monoid morphism $M\xrightarrow{f}M^{-1}M$ that is universal in the sense that the following triangle commutes 
+    \[
+\begin{tikzcd}
+M\arrow[rr,"f"]\arrow[dr,swap,"\alpha"]&&M^{-1}M\arrow[dl,dashrightarrow,"\exists !\alpha'"]\\
+&A
+\end{tikzcd}
+\]
+\end{definition}
+\end{tcolorbox}
+
+
+
+We may check that this definition of $K_0(R)$ actually gives us the group completion of the set of isomorphism classes of projective $R$-modules, which forms a abelian monoid. In fact, we can make $K_0(R)$ into a ring with the tensor product operation, provided that $R$ is commutative as then the tensor product distributes over the direct sum. Using this definition, we may compute an easy class of examples
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+    If $R$ is a PID, then $K_0(R)=\mathbb{Z}$.
+\end{example}
+\end{tcolorbox}
+It is a standard result from ring theory that finitely generated projective modules over a PID are actually free. Thus, the isomorphism classes are characterized by the rank of the free modules, which are natural numbers. The group completion of $\mathbb{N}$ is then $\mathbb{Z}$. \\
+
+
+We can also construct an example where $K_0(R)$ is not a finitely generated abelian group. 
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+    Let $M_k(F)$ denote the ring of $k\times k$ matrices with entries in a field $F$. Let $R$ be the direct limit of the inclusion 
+    \[
+    M_{1!}(F)\hookrightarrow M_{2!}(F)\hookrightarrow M_{3!}(F)...
+    \]
+    where for each inclusion $M_{n!}(F)\hookrightarrow M_{n+1!}(F)$, we view $M_{n+1!}(F)$ as the tensor product $M_{n!}(F)\otimes M_{n+1}(F)$, and the inclusion is given by $M\mapsto M\otimes \textbf{id}_{n+1}$. 
+    It is possible to show that $R$ has a rank function $\rho$ such that $\rho: R\xrightarrow{g}[0,1]$ has image $\mathbb{Q}\cap [0,1]$. Then, it is not hard to see that $K_0(R)\cong \mathbb{Q}$.
+\end{example}
+\end{tcolorbox}
+
+
+After the invention of the Grothendieck group, Atiyah and Hirzbruch were able to transport $K_0$ to topology: to each topological space $X$, they constructed a sequence of groups $K_n$ associated to the $n$-vector bundles on $X$, which forms a extraordinary cohomology theory. The discipline is now know as topological $K$-theory. However, it turned out that the generalization of higher dimensional $K$ groups were much more difficult on the algebraic side(for rings and varieties), and it was Quillen's plus construction that brought about the first satisfactory definition of higher algebraic $K$-theory.
+
+\section{A Little about $K_1$}
+Let $R$ be a associative ring with unit. We may define the inclusion $GL(n,R)\hookrightarrow GL(n+1,R)$ by turning a matrix $M\in GL(n,R)$ into a upper left block matrix with a $1$ on the $(n,n)$ entry. Then, we define $GL(R)$ to be the union of the infinite chain of inclusions of the general linear groups with entries in $R$.
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+    We define $GL(R)$ to be the direct limit of the inclusion
+    \[
+GL(1,R)\hookrightarrow GL(2,R)\hookrightarrow GL(3,R)\hookrightarrow GL(4,R)\hookrightarrow ...
+\] in $\textbf{Grp}$.
+\end{definition}
+\end{tcolorbox}
+
+We then can define $K_1(R)$:
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+    For any associated unital ring $R$, $K_1(R)$ is the abelian group $GL(R)/[GL(R),GL(R)]$, where $[GL(R),GL(R)]$ is the commutator subgroup of $GL(R)$. 
+\end{definition}
+\end{tcolorbox}
+From basic group theory, we know that every homomorphism from $GL(R)$ to an abelian group factors through $K_1(R)$, so such universal properties matches that of $K_0$. Moreover, it is easier to see that $K_1$ is functorial, such that each ring map $R\xrightarrow{}S$ induces a group homomorphisms $GL(R)\xrightarrow{}GL(S)$, which desceneds to a morphisms $K_1(R)\xrightarrow{}K_1(S)$.
+
+The development of $K_1$ was attributed to Bass and Schanuel, whose motivation came largely from the analogue in topological $K$-theory and Whitehead's work in simple homotopy type.
+
+\section{The Plus Construction}
+In general, Quillen's Plus Construction is a way to modify the fundamental group of a given topological space while not altering its homology. 
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+    If $X$ is a connected CW complex, with $P$ a perfect subgroup of its fundamental group, then an acyclic map $f:X\xrightarrow{}X^{+}$ is called a plus construction (relative to $P$) if the kernel of the induced map on fundamental groups is the normal subgroup generated by $P$. 
+\end{definition}
+\end{tcolorbox}
+The acyclic condition on the homotopy fiber is equivalent to the condition that the map induces isomorphisms on all local coefficient systems, which we show in the proposition below. 
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+    Let $X$ and $Y$ be connected CW complexes. Then, a map $f:X\xrightarrow{}Y$ is acyclic if and only if they induces isomorphism on homology with coefficients $M$ a $\pi_1(Y)$ module.
+\end{proposition}
+\end{tcolorbox}
+
+\begin{proof}
+We may turn $f:X\xrightarrow{}Y$ into its pathspace fibration first. Suppose $f$ is acyclic, then by definition its homotopy fiber $F_f$ is an acyclic space and has trivial reduced homology. So by universal coefficient theorem, we have $\Tilde{H}_i(X;M)=0$ and $H_0(X;M)=M$. Thus, we see that the $E_2$ page of the Leray-Serre spectral sequence of the fibration $F_f\hookrightarrow X\xrightarrow{}Y$ stabilizes and converges to the homology of $X$. In other words, we have
+\[
+H_i(X;M)\cong H_i(Y;M)
+\]
+for all $i$.
+For the converse direction, we first assume that $\pi_1 (Y)=0$ and $H_*(X;\mathbb{Z})\cong H_*(Y;\mathbb{Z})$. Then by the comparison theroem for Serre spectral sequence associated to the fibrations $F_f\hookrightarrow{}X\xrightarrow{}Y$ and $*\hookrightarrow Y\xrightarrow{=}Y$, we have $\Tilde{H}_*(F_f;\mathbb{Z})=0$, so that $f$ is acyclic. For the general case, we may lift everything into the universal cover. Let $\Tilde{Y}$ be the universal cover for $Y$. Then, the pullback $f^*X:=X\times_Y \Tilde{Y}$ is a covering space for $X$. We also have the natural isomorphisms $H_*(X;\mathbb{Z}[\pi_1(Y)])\cong H_*(f^*X;\mathbb{Z})$ and $H_*(Y;\mathbb{Z}[\pi_1(Y)])\cong H_*(\Tilde{Y};\mathbb{Z})$. By naturality, the induced map $\title{f}:f^*X\xrightarrow{}\Tilde{Y}$ induces isomorphism on integral homology. Since $\pi_1(\Tilde{Y})$ is trivial, the homotopy fiber $F_{\Tilde{f}}$ is acyclic. Moreover, by path-lifting the homotopy fibers $F_f$ and $F_{\Tilde{f}}$ are homotopic. Thus, $F_f$ is also acyclic, and we are done. 
+\end{proof}
+We now introduce one possible model for the plus construction. First, we may show a simpler scenario where $H_1(X)=0$. 
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+    Let $X$ be a connected CW complex with $H_1(X)=0$. Then, there exists a simply-connected CW complex $X^+$ and a map $X\xrightarrow{}X^+$ inducing isomorphisms of all homology groups.
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+We may choose loops $\phi_i:S^1\xrightarrow{}X^1$ that generate $\pi_1(X)$ and use these to attach two cells $e_i^2$ to kill the fundamental group. Call the resulting space $X'$. Then, we have the homology LES of the pair $(X',X)$
+\[
+\begin{tikzcd}
+0\arrow[r]&H_2(X)\arrow[r]&H_2(X')\arrow[r]&H_2(X',X)\arrow[r]&0
+\end{tikzcd}
+\]
+Note that this short exact sequence splits, since $H_2(X'X)$ is free with basis $e_i^2$ by cellular homology. Since $X'$ is simply connected, Hurewicz theorem gives us $H_2(X')\cong \pi_2(X')$, so that we can write each basis $e_i^2$ of $H_2(X',X)$ by a map $\psi_i:S^2\xrightarrow{}X'$. We may assume that these maps are cellular by cellular approximation theorem. Then, we can attach three cells accordingly to form a simply-connected CW complex $X^+$, such that the inclusion $X\hookrightarrow X^+$ induces isomorphism on all homology groups. 
+\end{proof}
+Note that in the previous proposition, the condition $H_1(X)=0$ is equivalent to the fact that the the choice of the perfect normal subgroup is $\pi_1(X)$ itself, so that the abelianization is trivial. For the general case, we again use the trick to lift to covering spaces. 
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+    Every connected CW complex $X$ has a plus constrcution $X\xrightarrow{}X^+$ relative to any choice of perfect subgroup $P$. Moreover, such construction is unique up to homotopy.
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+Let $p:\Tilde{X}\xrightarrow{}X$ be the covering space corresponding to $P$, so that $\pi_1(\Tilde{X})=P$. From the previous proposition, we get an inclusion $f:\Tilde{X}\xrightarrow{}\Tilde{X}^+$ inducing isomorphisms on all homology groups. Then let $X^+$ be the disjoint union of $\Tilde{X}$ and the mapping cylinder $M_p$ by identifying the copies of $\Tilde{X}$. We then have the commutative diagram
+\[
+\begin{tikzcd}
+\Tilde{X}\arrow[r,hookrightarrow]\arrow[d,swap,"p"]&\Tilde{x}^+\arrow[d,hookrightarrow]\\
+X\cong M_p\arrow[r,hookrightarrow]&X^+
+\end{tikzcd}
+\]
+By Van-Kampen theorem, the induced map $\pi_1(X)\xrightarrow{}\pi_1(X^+)$ is surjective with kernel generated by $P$. Moreover, $X^+/M_p$ is homeomorphic to $\Tilde{X}^+/\Tilde{X}$, so we have $H_*(X^+,M_p)\cong H_*(\Tilde{X}^+,\Tilde{X})=0$. By the LES of the pair $(X^+,X)$, we have that $X\hookrightarrow X^+$ induces isomorphisms on all homology groups. The uniqueness(up to homotopy) of the above construction is a direct result from obstruction theory: given an abelian space $Y$ such that $X\xrightarrow{} Y$ is a plus construction relative to the same perfect subgroup, we consider the lifting problem
+\[
+\begin{tikzcd}
+X\arrow[d,hookrightarrow]\arrow[r]&Y\\
+X^+\arrow[ur,dashrightarrow]
+\end{tikzcd}
+\]
+By assumption, we have $\pi_1(Y)\cong \pi_1(X^+)=G$, and $H_n(Y;M)\cong H_n(X^;M)$ for any $G$-module. In particular, the higher homotopy groups of $Y$ are naturally $G$-modules, so we have the isomorphism $H_n(X;\pi_n(Y))\cong H_n(Y;\pi_n(Y))\cong H_n(X^;\pi_n(Y))$ for all $n$. An application of the naturality of universal coefficient theorem and the five lemma also gives us the isomorphism on cohomology $H^n(X;\pi_n(Y))\cong H^n(X^+;\pi_n(Y))$. By the LES, we know that $H^n(X,X^+;\pi_n(Y))$ should vanish, and the obstruction theorem gives us the unique dashed lift. In particular, the lift induces isomorphism on $\pi_1$ and all homology groups on universal covers, which must be a homotopy equivalence.(Hatcher Ex 4.2.12). Moreover, we also see that the plus construction is functorial from the $\textbf{Top}_*$ to $\textbf{HoTop}_*$.
+\end{proof}
+
+\section{The Higher $K$-Groups}
+We are now ready to define the higher $K$-groups, first proposed by Quillen. First, we shall consider the space $BGL(R)$, which is the classifying space for the group $GL(R)$, defined in section $2$. Using the plus construction with respect to the commutator subgroup of $\pi_1(BGL(R))=GL(R)$, we have a map $BGL(R)\xrightarrow{}BGL(R)^+$ that satisfies the two following properties:
+\begin{enumerate}
+    \item $\pi_1(BGL(R)^+)\cong K_1(R)$
+    \item $H_*(BGL(R);M)\cong H_*(BGL(R)^+;M)$ for every $K_1(R)$-module $M$
+\end{enumerate}
+Quillen's originally defined $K_n(R)$ to be the homotopy groups $\pi_n(BGL(R)^+)$. However by the path-connectedness of the plus space, we cannot recover the original definition of $K_0(R)$, as we saw it can be not even finitely generated in example $1.2$. The better solution was proposed by Quillen as the new $Q$-construction, where he moved most of the construction to abelian categories. However, there is a way to sidestep this and give a definition for $K_n(R)$ for all $n\geq 0$
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+    Let $K(R)$ be the product space $K_0(R)\times BGL(R)^+$, where $K_0(R)$ is given the discrete topology. We then define $K_n(R):=\pi_n(K(R))$ for all $n\geq 0$.
+\end{definition}
+\end{tcolorbox}
+We see from definition that $K_0(R)\cong \pi_0(K(R))$, and $\pi_n(K(R))$ agrees with the definition of $K_n(R)$ above. We are happy to see that $K_n$ are functorial as it is the composition of multiple functors.
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{corollary}
+    Each $K_n$ is a functor from $\textbf{Ring}$ to $\textbf{Ab}$.
+\end{corollary}
+\end{tcolorbox}
+
+The important calculation that Quillen gave was the calculation of the algebraic $K$-theory of finite fields, which we list as an unproved theorem below:
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+    (Quillen) Let BU be the classifying space of the direct limit of $U(n)$. There is a fibration
+    \[
+    BGL(F_q)^+\xrightarrow{}BU\xrightarrow{\psi^q-1}BU
+    \]
+    where $\psi^q-1$ is the Adams operation. The LES of homotopy groups then gives the isomorphism
+    \[
+    K_n(F_q)=\pi_n(BGL(F_q))^+\cong
+    \begin{cases}
+    \mathbb{Z}/(q^n-1)& n=2i-1\\
+    0& n \textup{ even}
+    \end{cases}
+    \]
+\end{theorem}
+\end{tcolorbox}
 \section{The Group Completion Theorem }
 First, we recall Grothendieck's definition of $K_0$ for an abelian monoid $M$
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
@@ -153,9 +339,56 @@ Let $S=\coprod GL_n(R)$ be the category of free $R$-modules. Then, $BS^{-1}S$ is
 \begin{proof}
     We will construct a map $f:BGL(R)\to Y_S$, where $Y_S$ is the connected component of $BS^{-1}S$ containing the basepoint, such that $f$ induces isomorphism on integral homology. The universal property of the plus contruction then implies a homotopy equivalence $BGL(R)^{+}\to Y_S$.
 
+    Pick the distinguished component $e\in \pi_0(BS)$ that represents $R$, so that the other components are represented by $e^n$ for some $n$. By the previous theorem, $H_*(BS^{-1}S)$ is $H_*(BS)$ localized at $\{e^n\}$. More explcitly, it is also the colimit of the map $H_*(BS)\to H_*(BS)$ induced by the translation $\oplus R:S\to S$. We now have an algebraic fact due to Quillen in his previous work \cite{QGc}
 
     
+    \begin{tcolorbox}
+    \begin{lemma}[Quillen]
+    Suppose a unital ring $R$ is graded with respect to a multiplicative subset $S\subset R$, i.e 
+    \[R=\oplus_{s\in S}R_s\]
+    with $R_sR_{s'}\subset R_{ss'}$. Let $\overline{S}$ be the group completion of $S$. Then, $RS^{-1}$ is graded with respect to $\overline{S}$, and 
+    \[\overline{R}_e\cong \varinjlim_{s}R_s\]
+    where $\overline{R}_e$ represents the graded component that corresponds to $e\in \overline{S}$.
+    \end{lemma}
+    \end{tcolorbox}
+In our case, we have $H_*(Y_S)\cong \varinjlim H_*(BGL_n(R))\cong H_*(BGL(R))$, as desired. 
 \end{proof}
+
+To transport the result to the category of finite generated projective modules, we need the a cofinality theorem: 
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A monoidal functor $f: S\to T$ is called cofinal if for every object $t\in T$, there exists some $s\in \textrm{ob}S$ and $t'\in \textrm{ob} T$ such that $f(s)=t\otimes t'$.
+\end{definition}
+\end{tcolorbox}
+Recall that the category of finitely generated free modules and the category of finitely generated projective modules and are both symmetric monoidal under the direct sum, and the inclusion functor is monoidal by a characterization of projective module being a direct summand of a free module. 
+
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+Suppose $f: S\to T$ is cofinal, and $\textrm{Aut}_S(s)\cong \textrm{Aut}_T(f(s))$ for all $s\in \textrm{ob}S$, then the basepoint components of $BS^{-1}S$ and $BT^{-1}T$ are homotopy equivalent.  
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+    Let $Y_S$ and $Y_T$ denote the respective basepoint components. Then 
+    \[H_*(Y_S)\cong \varinjlim_{s\in S}H_*(B \textrm{Aut}_S(s))\cong \varinjlim_{s\in S}H_*(B \textrm{Aut}_T(f(s)))\cong \varinjlim_{t\in T}H_*(B \textrm{Aut}_T(t))\cong H_*(Y_T)\]
+    where the third isomorphism is an easy exercise on general cofinal inductive limits.
+\end{proof}
+We have two immediate applications:
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{corollary}
+Let $S$ be the category of finitely generated projective modules with morphisms isomorphisms. Then for $n\geq 1$, we have the isomorphism 
+\[BS^{-1}S\cong K_0(R)\times BGL(R)^+\]
+\end{corollary}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{remark}
+A cofinal functor in general does not induce isomorphism on $K_0$, since the $K_0$ of the category of free $R$ modules must be $\mathbb{Z}$.
+\end{remark}
+\end{tcolorbox}
 
 
 \section{Exact Category}
