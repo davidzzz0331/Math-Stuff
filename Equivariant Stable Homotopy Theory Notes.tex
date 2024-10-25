@@ -377,6 +377,25 @@ which is trivial except $i=0$.
 
 Thus, we have seen that the singular homology is recovered from a spectrum; moreover, a spectrum gives a reduced homology theory by proposition $2.3.1$. 
 
+\subsection{Duality}
+We first recall a classifc duality theorems from singular cohomology:
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}[Alexander Duality]
+If $K$ is a compact, locally contractible, nonempty, proper subspace of $S^n$. Then we have the isomorphism
+\[\tilde{H}^{n-i-1}(K;\mathbb{Z})\cong \tilde{H}_i(S^n-K;\mathbb{Z})\] 
+\end{theorem}
+\end{tcolorbox}
+The theorem roughly says that a compact manifold is dual to its complement when embedded in the $n$-sphere. 
+
+
+
+
+
+
+
+
+
 \subsection{The Desired Stable Homotopy Category}
 Building upon the motivations in the previous section, we want to build a category $\mathcal{S}$ that captures the stable phenomena and cohomology theories/homology theories. In particular, we want it to satisfy the following properties (not necessarily axioms):
 \begin{enumerate}
@@ -511,6 +530,12 @@ The collection $(X\wedge Y)_n$, with structure maps $\varphi_n$ forms an orthogo
 
 As remarked before, the smash product is equipped with a universal bimorphism $i: (X,Y)\to X\wedge Y$ given by 
 \[X_p\wedge Y_q\xrightarrow{x\wedge y\mapsto e\wedge x\wedge y} \bigvee_{p+q=n}O(n)_+\wedge_{O(p)\times O(q)}X_p\wedge Y_q\xrightarrow{projection} (X\wedge Y)_{p+q}\]
+The punchline is that we also have an internal hom orthogonal spectra $F(X,Y)$ for orthogonal spectra $X,Y$, which makes $\textbf{Sp}$ a closed symmetric monoidal category in which we have the adjunction 
+\[\textrm{Hom}_{\textbf{Sp}}(X\wedge Y,Z)\cong \textrm{Hom}_{{Sp}}(X,F(Y,Z))\]
+which we will show later in the equivariant case below. 
+
+
+
 
 \subsection{The Equivariant Case}
 One way to motivate the correct definition of equivariant stable homotopy category is to represent the equivariant cohomology theories. In particular, we want a form of the suspension isomorphism
@@ -561,6 +586,7 @@ A \underline{\textbf{weak-equivalence}} between $G$-spectra is a $\pi_*$ equivan
 There is a model structure on $G$-prespectra where the weak equivalences are the stable equivalences. 
 \end{theorem}
 \end{tcolorbox}
+Again, we want the symmetric monoidal structure on the category of genuine $G$-spectra, and we are going to use the orthogonal $G$-spectra model again. 
 
 
 
