@@ -386,7 +386,41 @@ If $K$ is a compact, locally contractible, nonempty, proper subspace of $S^n$. T
 \[\tilde{H}^{n-i-1}(K;\mathbb{Z})\cong \tilde{H}_i(S^n-K;\mathbb{Z})\] 
 \end{theorem}
 \end{tcolorbox}
-The theorem roughly says that a compact manifold is dual to its complement when embedded in the $n$-sphere. 
+The theorem in particular implies that different embeddings of some nice enough space in $S^n$ has isomorphic homology. However, they do not necessarily have the same homotopy type, as there are tons of examples in knot theory. Nevertheless, Spanier and Whitehead prove the following theorem, which states that the homotopy types are the same after sufficiently many suspensions. 
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}[Spanier-Whitehead Duality]
+    Let $X$ be a compact simplicial complex. Let $f,g: X\to S^n$ be two simplicial embeddings. Then for some sufficiently large $M$ the $M$-fold suspensions $\Sigma^M (S^n\setminus f(X))$ and $\Sigma^M (S^n\setminus g(X))$ are homotopy equivalent.
+\end{theorem}
+\end{tcolorbox}
+To study this phenomenon more formally, Spanier-Whitehead proposed the now-called Spanier-Whitehead category:
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}[Spanier-Whitehead Category]
+The Spanier-Whitehead category, or $S$-category for short, has objects finite CW complexes, and morphisms 
+\[Hom_{S}(X,Y):=\varinjlim_{n}[\Sigma^n X, \Sigma^n Y]\]
+\end{definition}
+\end{tcolorbox}
+In this category, we see immediately that the different embeddings $X\to S^n$ become actually isomorphic by theorem $2.5$. Moreover, we have the important notion of Spanier-Whitehead duals, which we will put in a more general formality that is the symmetric monoidal category.
+
+
+
+
+
+
+
+
+closed symmetric monoidal category $\mathcal{C}$. We will not spell out the entire definition of such a category, but here are the important properties that we want:
+\begin{enumerate}
+    \item A symmetric monoidal product $A\wedge B$ for all objects $A,B$; denote the unit object by $S^0$.
+    \item An internal hom object for $F(A,B)$ for all objects $A,B$.
+    \item The functor $-\wedge B$ is left adjoint to $F(B,-)$
+\end{enumerate}
+Then, we can immediately check that the $S$-category is closed symmetric monoidal, with the topological smash product as the product. 
+
+
+
 
 
 
