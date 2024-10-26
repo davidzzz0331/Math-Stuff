@@ -398,26 +398,47 @@ To study this phenomenon more formally, Spanier-Whitehead proposed the now-calle
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}[Spanier-Whitehead Category]
-The Spanier-Whitehead category, or $S$-category for short, has objects finite CW complexes, and morphisms 
-\[Hom_{S}(X,Y):=\varinjlim_{n}[\Sigma^n X, \Sigma^n Y]\]
+The \underline{\textbf{Spanier-Whitehead category}}, or \underline{\textbf{$S$-category}} for short, has objects pairs $(X,n)$, where $X$ is a pointed finite CW complex, and $n$ is an integer. The morphisms are defined by 
+\[Hom_{S}((X,n),(Y,m)):=\varinjlim_{q\geq \textrm{max}(|m|,|n|)}[\Sigma^{q+n} X, \Sigma^{q+m} Y]\]
 \end{definition}
 \end{tcolorbox}
-In this category, we see immediately that the different embeddings $X\to S^n$ become actually isomorphic by theorem $2.5$. Moreover, we have the important notion of Spanier-Whitehead duals, which we will put in a more general formality that is the symmetric monoidal category.
+We can think of $(X,m)$ as the $m$-fold suspension of $X$. If $m=n=0$, we see that $\textrm{Hom}_S((X,0),(Y,0))=\varinjlim_{k}[\Sigma^k X, \Sigma^k Y]$, which are simply the stable morphisms and that the different embeddings $X\to S^n$ become actually isomorphic in this category by theorem $2.5$. If $m>0$, we may denote $(X,-m)$ as $\Sigma^{-m}X$ to represent formal desuspensions. We can also think of this as "inverting smashing with spheres".
 
 
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $\mathcal{C}$ be a symmetric monoidal category with the tensor product denoted by $\wedge$, and unit object $S^0$. Then, $X,Y$ are \underline{\textbf{dual}} if there are morphisms $X\wedge Y\to S^0$ and $S^0\to Y\wedge X$ such that the following compositions
+\[X\wedge S^0\to X\wedge Y\wedge X\to S^0\wedge Y\]
+\[S^0\wedge Y\to Y\wedge X\wedge Y\to Y\wedge S^0\]
+are the swap isomorphisms in the symmetric monoidal category.
+\end{definition}
+\end{tcolorbox}
+By the identity $\Sigma(X\wedge Y)\cong X\wedge \Sigma Y$, we see that the smash product defined by 
+\[(X,m)\wedge (Y,n):=(X\wedge Y,m+n)\]
+endows the $S$-category with a symmetric monoidal structure. Let us see some explicit dualities
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+    $S^n$ is dual to $S^{-n}$, the formal $n-$fold desuspension of $S^0$. This follows directly from definition.
+\end{example}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+    \begin{example}[Alexander duality in $S$-category]
+   Let $X$ be a compact finite CW complex with an embedding $X\to S^{n+1}$. Let us denote the complement $S^n\setminus X$ as $D_nX$. Then, one may construct a map $X\wedge D_nX\to S^n$, and a desuspension of such map exhibits $X$ and $\Sigma^{-n}D_nX$ as duals. \\
+
+   Let $Y$ be a finite discrete set of points. Then, $Y$ embeds in $S^1$, and the complement is homotopy equivalent to $Y$ again. This shows that $Y$ is self-dual. This example will come up later when we deal with finite $G$-sets and equivariant embeddings. 
+    \end{example}
+    \end{tcolorbox}
 
 
-
-
-
-
-closed symmetric monoidal category $\mathcal{C}$. We will not spell out the entire definition of such a category, but here are the important properties that we want:
-\begin{enumerate}
-    \item A symmetric monoidal product $A\wedge B$ for all objects $A,B$; denote the unit object by $S^0$.
-    \item An internal hom object for $F(A,B)$ for all objects $A,B$.
-    \item The functor $-\wedge B$ is left adjoint to $F(B,-)$
-\end{enumerate}
-Then, we can immediately check that the $S$-category is closed symmetric monoidal, with the topological smash product as the product. 
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}[Atiyah Duality]
+Suppose $M$ is a closed smooth manifold with a smooth embedding $M\to \mathbb{R}^n$. Let $Tv$ be the Thom space of the normal bundle of the embedding. The Pontrjagin-Thom construction yields a map 
+\[Tv\wedge M_+\to \Sigma^nM_+\xrightarrow{\textrm{collapse } M_+}S^n\]
+which exhibits $Tv$ and $\Sigma^{-n}M_+$ as duals.
+\end{example}
+\end{tcolorbox}
 
 
 
