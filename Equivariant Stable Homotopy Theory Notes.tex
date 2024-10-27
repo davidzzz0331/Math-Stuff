@@ -259,7 +259,7 @@ One possible application is a quick proof of a theorem by Smith:
 
 \section{Spectra and the Stable Category}
 \subsection{Motivations}
-The first motivation is Brown Reresentability Theorem, which is about represeting reduced cohomology theories 
+So why do we want spectra? The first motivation is Brown Reresentability Theorem, which is about represeting reduced cohomology theories 
 
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}[Brown Representability Theorem]
@@ -310,7 +310,7 @@ The $\Omega$-spectrum that represents reduced ordinary cohomology with coefficie
 
 Here is a natural question: how do we design a category of spectra, such that an "equivalence" if spectra will give equivalent reduced cohomology theories?
 
-The second motivation is stable homotopy groups and stable maps: 
+The second motivation is stable homotopy groups and stable maps. The heuristics is: in most cases the homotopy classes of maps $[X,Y]$ is very difficult to compute. However, the stable maps $\varinjlim_n[\Sigma^nX,\Sigma^n Y]$ gives us nice approximation and is sometimes easier to understand. Spanier-Whitehead duality is a nice example of this (Theorem $2.5$). 
 
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
@@ -377,8 +377,9 @@ which is trivial except $i=0$.
 
 Thus, we have seen that the singular homology is recovered from a spectrum; moreover, a spectrum gives a reduced homology theory by proposition $2.3.1$. 
 
+
 \subsection{Duality}
-We first recall a classifc duality theorems from singular cohomology:
+We now have spectra and stable morphisms that represents cohomology and homology. Moreover, we want to recover some of the classical duality theorems in the case of singular (co)homology. 
 
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}[Alexander Duality]
@@ -408,14 +409,19 @@ We can think of $(X,m)$ as the $m$-fold suspension of $X$. If $m=n=0$, we see th
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
 Let $\mathcal{C}$ be a symmetric monoidal category with the tensor product denoted by $\wedge$, and unit object $S^0$. Then, $X,Y$ are \underline{\textbf{dual}} if there are morphisms $X\wedge Y\to S^0$ and $S^0\to Y\wedge X$ such that the following compositions
-\[X\wedge S^0\to X\wedge Y\wedge X\to S^0\wedge Y\]
-\[S^0\wedge Y\to Y\wedge X\wedge Y\to Y\wedge S^0\]
-are the swap isomorphisms in the symmetric monoidal category.
+\[X\cong X\wedge S^0\to X\wedge Y\wedge X\to S^0\wedge X\cong X\]
+\[Y\cong S^0\wedge Y\to Y\wedge X\wedge Y\to Y\wedge S^0\cong Y\]
+are the indetitiies in the symmetric monoidal category. Given an object $A$ in $\mathcal{C},$ we denote its dual as $DA$, if it exists.
 \end{definition}
 \end{tcolorbox}
+Note that the definition implies precisely the adjunction 
+\[\textrm{Hom}_{\mathcal{C}}(X\wedge A, Y)\cong \textrm{Hom}_{\mathcal{C}}(X, DA\wedge Y)\]. 
+
+
+
 By the identity $\Sigma(X\wedge Y)\cong X\wedge \Sigma Y$, we see that the smash product defined by 
 \[(X,m)\wedge (Y,n):=(X\wedge Y,m+n)\]
-endows the $S$-category with a symmetric monoidal structure. Let us see some explicit dualities
+endows the $S$-category with a symmetric monoidal structure, with $S^0$ being the unit. Let us see some explicit dualities
 
 \begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
 \begin{example}
@@ -441,6 +447,13 @@ which exhibits $Tv$ and $\Sigma^{-n}M_+$ as duals.
 \end{tcolorbox}
 
 
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}[Poincar\'e Duality]
+Let $M$ be a closed orientable manifold of dimension $m$, with an embedding in $M\to \mathbb{R}^n$. Let $H \mathbb{Z}$ be the Eilenberg-Maclane spectra that represents singualar cohomology. From Atiyah duality, we have $[DM,H \mathbb{Z}]\cong [S^0, M_+\wedge H \mathbb{Z}]=: \tilde{H}_*(M_+)$. On the other hand, $[DM, H \mathbb{Z}]=[\Sigma^{-n}Tv, H \mathbb{Z}]\cong \tilde{H}^{*}(\Sigma^{-n}Tv)$. By Thom isomorphism and suspension isomorphism
+\[\tilde{H}^*(M_+)\cong \tilde{H}^{*+(n-m)}(Tv)\cong \tilde{H}^{*-m}(\Sigma^{-n}Tv)\]
+and we establish the classical Poincar\'e duality $\tilde{H}^*(M_+)\cong \tilde{H}_{*-m}(M_+)$.
+\end{example}
+\end{tcolorbox}
 
 
 
@@ -452,22 +465,21 @@ which exhibits $Tv$ and $\Sigma^{-n}M_+$ as duals.
 
 
 \subsection{The Desired Stable Homotopy Category}
-Building upon the motivations in the previous section, we want to build a category $\mathcal{S}$ that captures the stable phenomena and cohomology theories/homology theories. In particular, we want it to satisfy the following properties (not necessarily axioms):
+Building upon the motivations in the previous section, we want to build a category $\mathcal{SHC}$ that captures the stable phenomena and cohomology theories/homology theories. In particular, we want it to satisfy the following properties (not necessarily axioms):
 \begin{enumerate}
-    \item There is a functor $\Sigma^{\infty}: \textrm{HoTop}_*\to \textrm{Sp}$, together with an adjoint $\Omega^{\infty}: \mathcal{S}\to \textrm{HoTop}_*$. \\
+    \item There is a functor $\Sigma^{\infty}: \textrm{HoTop}_*\to \mathcal{SHC}$, together with an adjoint $\Omega^{\infty}: \mathcal{SHC}\to \textrm{HoTop}_*$. \\
     \textcolor{blue}{The motivation for this is the suspension spectrum}.
     \item Let $A,B$ be CW complexes, where $A$ has finite dimension. Then, there is a natural isomorphism
     \[[\Sigma^{\infty}A, \Sigma^{\infty}B]\cong [A,B]^s\]
     \textcolor{blue}{The motivation for this is to capture stable morphisms}.
-    \item $\mathcal{S}$ has a closed symmetric monoidal structure, with $\wedge$ as the tensor product, and $F(-,-)$ as internal hom. $\Sigma^{\infty}S^0$ is the identity object.
-    \item The morphisms of $\mathcal{S}$ has the structure of graded abelian groups, with bilinear composition. We denote that graded components as $[-,-]_*$. Moreover, given a reduced cohomology theory $E^*$ there exists an object $K$ in $\textrm{Sp}$ such that 
+    \item The morphisms of $\mathcal{SHC}$ has the structure of graded abelian groups, with bilinear composition. We denote that graded components as $[-,-]_*$. Moreover, given a reduced cohomology theory $E^*$ there exists an object $K$ in $\textrm{Sp}$ such that 
     \[E^*(A)\cong [\Sigma^{\infty}A, K]_{-*}\]
     \textcolor{blue}{The motivation for this is to represent cohomology theories}.\\
-    \item For every object $K$ in $\mathcal{S}$, one defines a reduced homology theory via 
+    \item For every object $K$ in $\mathcal{SHC}$, one defines a reduced homology theory via 
     \[E_n(A):=\pi(K\wedge A)\]
     \textcolor{blue}{The motivation for this is to deterime homology theories}.
     \\
-    \item $\mathcal{S}$ has a closed symmetric monoidal structure, with $\wedge$ as the tensor product and $F(-,-)$ as internal hom. The object $\Sigma^{\infty}S^0$ is the identity object.\\
+    \item $\mathcal{SHC}$ has a closed symmetric monoidal structure, with $\wedge$ as the tensor product and $F(-,-)$ as internal hom. The object $\Sigma^{\infty}S^0$ is the identity object.\\
     \textcolor{blue}{The motivation for this is that smashing with the suspension funcor induces isomorphism of stable homotopy groups, so it should induce an equivalence of spectra. The tensor-hom adjunction is going to help set up duality statements similar to Spanier-Whitehead duality and Poincar\'e duality.}.
 \end{enumerate}
 In particular, property $6$ was the central one in the sense that the entire theory began with the work of Spanier and Whitehead with their search for a category where one has the desired dualities in homotopy theory. It is also the structure that seems to be the hardest to obtain.  
@@ -482,7 +494,9 @@ The first attempt to construct such a category is the Spanier-Whitehead category
 By Brown representability, it should be natural to consider a category with objects spectra, and the natural choice for morphisms between spectra is a collection of level-wise maps that is compatible with the structure maps. A natural candidate for homotopies in this category is a map $H: X\wedge I_{+}\to Y$ However, it turns out there are not enough maps in this category, such that non-homotopy equivalent spectra might represent isomorphic cohomology theories. Adams then in his 74 paper resolves the issue by consider equivalences classes of "cofinal spectra," which turns out to be quite a complicated a construction. 
 
 \subsubsection{\textrm{Ho(Sp)} and Structured Spectra}
-The first construction in line with modern treatment of the subject is Bousfield and Friedlander's construction, which puts a model structure on the naive category of spectra, and considers its homotopy category. This category turns out satisfies almost all the properties that people wanted. (We say "almost" since Lewis in 91 showed that it is impossible to put a symmetric monoidal structure on the category of spectra that also satifies a list of desirable axioms). However, people still searched for a point-set model that does so without going through the homotopy category.  People later constructed more structured spectra, such as orthogonal spectra and symmetric spectra, whose additional structure then provided a fix to such a problem. 
+The first construction in line with modern treatment of the subject is Bousfield and Friedlander's construction, which puts a model structure on the naive category of spectra, and considers its homotopy category. This category turns out satisfies all the properties that people wanted, and is referred to as the stable homotopy category.
+
+However, people still searched for a point-set model that does so without going through the homotopy category. The sad news is Lewis in 91 showed that it is impossible to put a symmetric monoidal structure on the category of spectra that also satifies a list of desirable axioms. Nevertheless, people later constructed models category categories of structured spectra, such as orthogonal spectra and symmetric spectra, whose homotopy category is equivalent to the stable homotopy category. Point-set wise, although they do not satisfies all of the desired properties, they are at least symmetric monoidal, and their additional structure turn out to be incredibly useful.
 
 \subsection{Orthogonal Spectra}
 
@@ -592,7 +606,7 @@ which we will show later in the equivariant case below.
 
 
 
-\subsection{The Equivariant Case}
+\section{The Equivariant Stable Homotopy Category}
 One way to motivate the correct definition of equivariant stable homotopy category is to represent the equivariant cohomology theories. In particular, we want a form of the suspension isomorphism
 \[H^*(X)\cong H^{*+V}(\Sigma^VX)\]
 In the non-equivariant case, we only take $V$ to be trivial representations, which means we are smashing with a sphere with trivial $G$-action. However, it turns out that the cohomology would carry more useful data if we want to keep track all possible representations $V$. 
@@ -615,13 +629,98 @@ If we drop the adjective "complete" from the definition, we would only require t
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
 A $G$-\underline{\textbf{prespectrum}} $X$ is a collection of pointed $G$-spaces $X(V)$, one for each finite dimensional subspace $V\subset U$ of a given $G$ universe. The collection is equipped with structure maps 
-\[\Sigma^WX(V)\cong X(V\oplus W)\]
+\[\Sigma^WX(V)\to X(V\oplus W)\]
 The structure maps must be associative. A $G$-prespectrum is a \underline{\textbf{G-Spectrum}}(or $\Omega-G$-spectrum) if the adjoint structure maps 
 \[X(V)\to \Omega^WX(V\oplus W)\] 
 are homeomorphisms.
 \end{definition}
 \end{tcolorbox}
 This definition enlarges the usual $\mathbb{Z}$-graded notion of spectra. Sometimes in literature this representation graded spectrum is referred to as the genuine $G$-spectra. 
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}[Orthogonal $G$-spectra]
+An \underline{\textbf{orthogonal G-spectrum}} is an orthogonal spectrum equippned with a $G$-action through automorphisms of orthogonal spectra. Explicitly, this amounts to the data of 
+\begin{enumerate}
+    \item A sequence of $O(n)\times G$ spaces $X_n$
+    \item structure maps $\sigma_n: X_n\wedge S^1\to X_{n+1}$ that is $G$-equivariant with respect to the trivial $G$-action on $S^1$, and $O(n)\times O(m)$ equivariant 
+\end{enumerate}
+
+A morphism of orthogonal $G$-spectra is a morhism of orthogonal spectra that commutes with the $G$-action. 
+\end{definition}
+\end{tcolorbox}
+It is not immediate that this is a genuine $G$-prespectrum in definition $3.0.2$. It turns out that the action of the orthogonal groups encode enough information so that we can evaluate an orthogonal $G$-spectrum on a $G$-representation. To see this, let $V$ be a finite dimensional inner product space, and let $L(\mathbb{R}^n, V)$ be the space of linear isometries from $\mathbb{R}^n$ to $B$. We have a canonical $O(n)$-action on $L(\mathbb{R}^n, V)$ by precomposition, so we may define 
+\[X(V):=L(\mathbb{R}^n, V)_+\wedge_{O(n)}X_n\]
+Suppose $V$ is a $G$-representation, then $X(V)$ is equipped with the $G$-action defined by $g\cdot [\varphi, x]=[g\varphi, gx]$. To define the structure maps 
+\[\sigma_{V,W}: X(V)\wedge S^W\to X(V\oplus W)\]
+ we set $m=\textrm{dim}(W)$, and choose an isometry $\gamma: \mathbb{R}^m\to W$. Then, define 
+ \[\sigma_{V,W}([\varphi,x]\wedge w):=[\varphi\oplus \gamma, \sigma^m(x\wedge \gamma^{-1}(w))]\in X(V\oplus W)\]
+where $\sigma^m:X_n\wedge S^m\to X_{n+m} $ is the structure map built in the orthogonal spectra. It is straightforward to verify that the definition does not depend on the choice of $\gamma$ and has the correct equivariance. 
+
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{remark}
+This definition of orthogonal $G$-spectra is due to Schwede. It is different from the original definition used by Mandell and May, but the categories defined are equivalent. The proof is given in \cite{SS}.
+\end{remark}
+\end{tcolorbox}
+Now we give a few examples of important orthogonal spectra.
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}[Sphere spectrum]
+The equivaraint sphere spectrum $\mathbb{S}$ is given by 
+\[\mathbb{S}_n:=S^n\]
+and the $O(n)$-action is the natural action induced from $\mathbb{R}^n$, and a group $G$-acts trivially on $\mathbb{S}_n$ for all $n$. Note that we have a $G$-equivariant homeomorphism 
+\[\mathbb{S}(V):=L(\mathbb{R}^n, V)_+\wedge S^n\to S^V\]
+defined by $[\varphi, x]\mapsto \varphi(x)$.
+
+\end{definition}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}[Suspension Spectra]
+Given a pointed $G$-space $X$, we may define a suspension spectrum $\Sigma^{\infty}X$ by 
+\[(\Sigma^{\infty}X)_n:=X\wedge S^n\]
+The $O(n)$-action is on the $S^n$-coordinate, and the $G$-action is on the $X$-coordinate. Note that we have 
+\[\Sigma^{\infty}X(V)=X\wedge S^n\wedge L(\mathbb{R}^n,V)\cong X\wedge S^V\]
+\end{definition}
+\end{tcolorbox}
+
+
+
+
+
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}[Internal Hom spectra]
+
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}[Duality]
+
+\end{proposition}
+\end{tcolorbox}
+
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}[Orbits are self-dual]
+
+\end{proposition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}[Sphere spectrum is self dual]
+
+\end{proposition}
+\end{tcolorbox}
+
+
+
 
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
