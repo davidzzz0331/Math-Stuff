@@ -1087,9 +1087,28 @@ Fiber of a $S$-scheme: $X$ $\varphi_X: X\to S$ at $s\in S$ is $X\times_S s$ is t
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
 A Scheme $X$ is irreducible if the underlying topological space is irreducible. A scheme is reduced if every stalk is reduced, equivalently covered by affine schemes corresponding to reduced rings.  A scheme is integral if $X$ is irreducible and reduced. 
-
-
 \end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A morphism of schemes $f: X\to Y$ is called \underline{\textbf{dominant}} is $f(X)$ is dense in $Y$. 
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A scheme is called \underline{\textbf{normal}} if each stalk is integrally closed. 
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+If $X=spec(R)$, then $X$ is normal iff $R$ is normal, i.e every localization at prime is integrally closed. 
+\end{example}
 \end{tcolorbox}
 
 
@@ -1097,18 +1116,67 @@ A Scheme $X$ is irreducible if the underlying topological space is irreducible. 
 
 
 
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}[Normalization and Generic Fiber ]
+Given an integral scheme $X$, let $K=\kappa (X)$ be its function field and $L|K$ be an algebraic extension. Then, there exists a scheme $X_L$ such that $L:=\kappa(X_L)$ and there exists a dominant morphism 
+$\varphi_L: X_L\to X$ satisfiying the universal property:
+
+Given a integral scheme $Y$ and a dominant morphism $f: Y\to X$, there is a commutative diagram of fields
+\[\begin{tikzcd}
+	L && {K=\kappa(X)} \\
+	& {\kappa(Y)}
+	\arrow["{f_L}", dashed, from=1-1, to=2-2]
+	\arrow["{\varphi_L*}"', from=1-3, to=1-1]
+	\arrow["{f^{*}}"', from=1-3, to=2-2]
+\end{tikzcd}\]
+\end{theorem}
+\end{tcolorbox}
+and $f_L$ is the generic fiber. In the case of $L=K$, $X_L\xrightarrow{\varphi}X$ is called the normalization of $X$. 
+
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{corollary}
+Let $X$ be a separated scheme of finite type over a field $k$. Then, the normalization of $X$ in any field extension $L|\kappa(X)$ is again a $k$-variety, and $\varphi; X_L\to X$  is a finite morphism. Moreover, of $X$ is a projective $k$-variety, then $X_L$ is projective as well. 
+\end{corollary}
+\end{tcolorbox}
 
 
 
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+Let $X$ be a noetherian integral normal scheme, $L|\kappa(X)$ a finite field extension. Then, $X_L$ is Noetherian and $X_L\to X$ is a finite morphism. 
+\end{theorem}
+\end{tcolorbox}
 
 
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $f: X\to Y$ be a morphism in $\textrm{Sch}_S$. Then,
+\begin{enumerate}
+    \item $f$ is \underline{\textbf{affine}} is it can be factored as 
+    
+    \[X\xrightarrow{\textrm{cl. imm}} \mathbb{A}^n_Y\to Y\]
+    \item $f$ is \underline{\textbf{projective}} is it can be factored as 
+    
+    \[X\xrightarrow{\textrm{cl. imm}} \mathbb{P}^n_Y\to Y\]
+    
+\end{enumerate}
+\end{definition}
+\end{tcolorbox}
 
 
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Affine morphism are separated and affine schemes are separated. 
+\end{proposition}
+\end{tcolorbox}
 
 
-
-
-
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+Projective schemes are proper and projective morphisms are proper. 
+\end{theorem}
+\end{tcolorbox}
 
 
 

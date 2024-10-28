@@ -222,9 +222,22 @@ The intersection $U_1\cap U_2=V(x_2)\cup V(x_3)\cup V(2x_1-x_3)$. The closure of
 Recall that the twisted cubic is defined by $V(x_1^2-x_2,x_1x_2-x_3,x_2^2-x_1x_3)\subset \mathbb{A}^3$. The closure is $V(x_1^2-x_0x_2, x_1x_2-x_3,x_2^2-x_1x_3)\subset \mathbb{P}^3$, since it has one extra point, and any affine variety is not compact. The points at infinity is $[0:0:0:1]$.
 
 \subsection*{Problem 7}
-\subsection*{Problem 8}
-\subsection*{Problem 10}
+\subsection*{(a)}
+Let $X$ be the irreducible, and $U_i$ be the standard affine opens. Then, $I(X)=H_i(I(U_i\cap X))$. To see that, note $\overline{X\cap U_i}\subseteq X$, so $I(X)\subseteq I(\overline{X\cap U_i})=H_i(I(U_i\cap X))$. 
 
+Conversely, since $X\subseteq \cup X\cap U_i$, we have 
+\[I(X)\supseteq I(\cup X\cap U_i)=\cap I( X\cap U_i)=\cap H_i(I( X\cap U_i))\].
+
+\subsection*{Problem 8}
+\subsection*{(b)(c)(d)}
+b,c are easy to see. To prove $\mathbb{P}^n$ is separated, it suffices to show that for every $x,y\in \mathbb{P}^n$, there exists an affine open that contains $x,y$. Using standard reduction, it suffices to show that a basic open $D^+_{x_1+x_2}$ is affine, and that follows from the automorphism of $\mathbb{P}^n$ that sends $x_1+x_2$ to $x_1$, and the basic open $D^+_{x_1+x_2}$ is then isomorphic to the standard affine open $D^+_{x_1}$.
+
+
+\subsection*{Problem 10}
+\subsection*{(a)}
+The result follows from part (b).
+\subsection*{(b)}
+It suffice to show this for every irreducible component, and for an dense affine open subset. Then the claim follows from the fact that for affine varieties, the each irreducible component of $X\cap Y$ has dimension at least $\textrm{dim}(X)+\textrm{dim}(Y)- n$.
 
 
 
