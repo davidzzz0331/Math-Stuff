@@ -588,18 +588,19 @@ with morphisms equivalence classes of diagrams
 	\arrow["\cong", from=2-1, to=1-1]
 	\arrow[from=1-2, to=1-3]
 	\arrow["{\cong }", from=1-2, to=2-2]
-	\arrow[from=1-3, to=2-3]
+	\arrow[equal, from=1-3, to=2-3]
 	\arrow[from=2-1, to=2-2]
-	\arrow[equal, from=2-2, to=2-3]
+	\arrow[from=2-2, to=2-3]
 \end{tikzcd}\]
 \end{definition}
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
 \begin{example}
-Let $0$ be the zero object of $A$. Note that the category $\mathcal{E}_0$ is homotopy equivalent to the category $S=iso \mathcal{A}$: consider the functor $S\to \mathcal{E}_0$ that sends an object $C$ to the exact sequence $A\xrightarrow{=}A\twoheadrightarrow 0$. This is an equivalence of categories, and thus is a homotopy equivalence. 
+Let $0$ be the zero object of $A$. Note that the category $\mathcal{E}_0$ is homotopy equivalent to the category $S=iso \mathcal{A}$: consider the functor $S\to \mathcal{E}_0$ that sends an object $C$ to the exact sequence $A\xrightarrow{\textrm{Id}}A\twoheadrightarrow 0$. The functor is fully faithful and essentially surjective, thus an equivalence of categories. It is a standard lemma that any adjunction induce a homotopy equivalence. 
 \end{example}
 \end{tcolorbox}
+We want to construct a fibered category over $Q \mathcal{A}$ with fibers $\mathcal{E}_C$. 
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
@@ -622,17 +623,105 @@ Given exact category $\mathcal{A}$, we define the extension category $\mathcal{E
 	\arrow[two heads, from=3-2, to=3-3]
 \end{tikzcd}\]
 where two diagrams are considered isomorphic if there is an isomorphism of diagrams which is the identity at all vertices except possibly for the $C''$ vertex. 
-
 \end{definition}
 \end{tcolorbox}
+It is easy to see that the rightmost column is a morphism $C\to C'$ in $Q \mathcal{A}$, and the projection functor $\pi: \mathcal{E}\mathcal{A}\to Q \mathcal{A}$ by $(A\rightarrowtail B\twoheadrightarrow C)\mapsto C$ has fiber category $\mathcal{E}_C$. We may equip $\mathcal{E}\mathcal{A}$ with an $S$-action, defined by $ D\cdot (A\rightarrowtail B\twoheadrightarrow C):= A\oplus D\rightarrowtail B\oplus D \twoheadrightarrow C$. The action lifts to an action on each fiber $\mathcal{E}_C$.
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+$\mathcal{E}_C$ is symmetric monoidal, thus realizes to an $H$-space.
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    Given $E_i=A_i\rightarrowtail B_i\twoheadrightarrow C$, the tensor product $E_1\otimes E_2$ is defined to be 
+    \[A_1\oplus A_2\rightarrowtail (B_1\times_C B_2) \twoheadrightarrow C \]
+    and the unit can be checked to be $e: 0\rightarrowtail C\twoheadrightarrow C$. 
+\end{proof}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+$M:=\langle S, \mathcal{E}_C \rangle$ is contractible.
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    First we show that $M$ is a connected $H$-space. Given $E_i=A_i\rightarrowtail B_i\twoheadrightarrow C$, since $\mathcal{A}$ is split exact, a splitting induces an isomorphism $A_2\cdot E_1\cong E_1\otimes E_2$, which determinjes morphisms $E_1\to E_1\otimes E_2$ and $E_2\to E_1\otimes E_2$ in $M$, and we have connectedness. 
+
+    Note that there is a natural transformation between the identity functor and multiplication by $2$ functor given by the diagonal map, i.e 
+    \[\begin{tikzcd}
+        {E:} & A & B & C \\
+        \\
+        {E\otimes E:} & {A\oplus A} & {B\times_C B} & C
+        \arrow[from=1-1, to=3-1]
+        \arrow[tail, from=1-2, to=1-3]
+        \arrow[from=1-2, to=3-2]
+        \arrow[two heads, from=1-3, to=1-4]
+        \arrow[from=1-3, to=3-3]
+        \arrow[equal, from=1-4, to=3-4]
+        \arrow[tail, from=3-2, to=3-3]
+        \arrow[two heads, from=3-3, to=3-4]
+    \end{tikzcd}\]
+
+It is a standard fact that the homotopy classes of maps $[M,M]$ is a group, and by the previous observation satisfies $x^2=x$, which implies it is trivial and is contractible. 
+\end{proof}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+We have a canonical fibration $S^{-1}S\to S^{-1}\mathcal{E}_C\to \langle S, \mathcal{E}_C\rangle$. 
+\end{proposition}
+\end{tcolorbox}
+By the contracitiblity of $M$, the fibration in proposition $9.1.3$ implies $S^{-1}S\cong S^{-1}\mathcal{E}_C$. 
 
 
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}
 If $\mathcal{A}$ is split exact category and $S= iso \mathcal{A}$, then we have the homotopy fibration sequence 
-\[S^{-1}S\to S^{\mathcal{E} A}\to QA\]
+\[S^{-1}S\to S^{-1}\mathcal{E} \mathcal{A}\to QA\]
 \end{theorem}
 \end{tcolorbox}
+
+To show this, we recall Quillen's Theorem $B$ in \cite{Quillen}
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}[Quillen's Theorem B]
+Suppose $f: C\to C'$ is a prefibered and that for every arrow $u: Y\to Y'$ the base chaneg functor $u^*: f^{-1}(Y')\to f^{-1}(Y)$ is a homotopy equivalence. Then, for any $Y\in C'$, the category $f^{-1}(Y)$ is a homotopy equivalent to the homotopy fiber of $f$ over $Y$. In particular, we have the homotopy fibration
+\[f^{-1}(Y)\to C\to C'\]
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}[Proof of theorem $9.2$]
+    It suffice to show the base-change functor associated to the prefibered functor $S^{-1}\mathcal{E}\mathcal{A}\to Q \mathcal{A}$ are homotopy equivalences. Moreover, it is enough to consider those associated to injective and surjective morphisms of $Q \mathcal{A}$ of the form $0\rightarrowtail C$ and $0\twoheadleftarrow C'$. By example $9.0.1$, we may identify $\mathcal{E}_0$ with $S$, so a base change map $j^*: \mathcal{E}_0\to \mathcal{E}_C$ is a homotopy equivalence by proposition $9.1.3$. The case is similar for the other direction, and we are done.
+\end{proof}
+
+Finally, we only have to show that $S^{-1}\mathcal{E}\mathcal{A}$ is contractible, which together with Theorem $9.2$ implies Theorem $9.1$. 
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+$S^{-1}\mathcal{E}\mathcal{A}$ is contractible.
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    If $X$ is a category, we define its subdivision category $\textrm{sub}(X)$ whose objects are arrows of $X$, and arrows from $f$ to  $g$ is a pair of arrows $h,k$ such that $kfh=g$. It is not hard to verify that $\textrm{Sub}(X)\to X$ is a homotopy equivalence. 
+
+    If $X$ is the subcategory of $Q \mathcal{A}$ of injective arrows, then $\mathcal{E}\mathcal{A}$ is equivalent to $\textrm{Sub} (X)$. Note that $X$ has initial object $0$, and $\mathcal{E}\mathcal{A}$ is contractible. Since $S$ acts invertibly, so we know that $\mathcal{E} \mathcal{A}$ and $S^{-1}\mathcal{E} \mathcal{A}$ are homotopy equivalent, so we finish.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -112,6 +112,32 @@
       \verb https://doi.org/10.1007/BF01403148
       \endverb
     \endentry
+    \entry{Quillen}{article}{}
+      \name{author}{1}{}{%
+        {{hash=45a2ceee22b7804cbcd4a41eea4e690f}{%
+           family={Quillen},
+           familyi={Q\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{45a2ceee22b7804cbcd4a41eea4e690f}
+      \strng{fullhash}{45a2ceee22b7804cbcd4a41eea4e690f}
+      \strng{bibnamehash}{45a2ceee22b7804cbcd4a41eea4e690f}
+      \strng{authorbibnamehash}{45a2ceee22b7804cbcd4a41eea4e690f}
+      \strng{authornamehash}{45a2ceee22b7804cbcd4a41eea4e690f}
+      \strng{authorfullhash}{45a2ceee22b7804cbcd4a41eea4e690f}
+      \field{labelalpha}{Qui73}
+      \field{sortinit}{Q}
+      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Lecture Notes in Mathematics}
+      \field{title}{Higher algebraic K-theory: I}
+      \field{volume}{341}
+      \field{year}{1973}
+      \field{pages}{85\bibrangedash 147}
+      \range{pages}{63}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
