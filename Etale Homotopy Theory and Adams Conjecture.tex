@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{fullpage}
+\usepackage{tikz-cd}
+\usepackage{spectralsequences}
+\usepackage{adjustbox}
+\usepackage[backend=biber, style=alphabetic]{biblatex}
+\usepackage{xfrac}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{ {D:/Chrome Downloads./} }
+\usepackage[parfill]{parskip}
+\usepackage{amsthm}
+\addbibresource{sample.bib}
+\usetikzlibrary{calc}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[theorem]
+\theoremstyle{definition}
+\newtheorem{remark}{Remark}[theorem]
+\theoremstyle{definition}
+\newtheorem{proposition}{Proposition}[theorem]
+\theoremstyle{definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{corollary}{Corollary}[theorem]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[theorem]
+\tikzset{curve/.style={settings={#1},to path={(\tikztostart)
+    .. controls ($(\tikztostart)!\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+    and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+    .. (\tikztotarget)\tikztonodes}},
+    settings/.code={\tikzset{quiver/.cd,#1}
+        \def\pv##1{\pgfkeysvalueof{/tikz/quiver/##1}}},
+    quiver/.cd,pos/.initial=0.35,height/.initial=0}
+\title{\'Etale Homotopy Theory and Adams' Conjecture}
+\author{David Zhu}
+
+\begin{document}
+\maketitle
+
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}[\u Cech Nerve ]
+Let $X$ be a finite CW complex, and $\mathcal{U}:=\{U_i: i\in I\}$ be an open cover of $X$. Then, we may define a simplicial set call the \underline{\textbf{\u Cech Nerve}} $N \mathcal{U}$ as follows: we have the assignment on objects $[n]\mapsto \{\textrm{functions from }[n] \textrm{ to } I: \cap^n_{i=1}U_{f(i)}\neq \emptyset \}$. The face maps and degeneracy maps are defined by deleting and inserting appropriate indices. 
+\end{definition}
+\end{tcolorbox}
+
+Alternatively, we can think of a covering $\mathcal{U}$ as follows: suppose given a covering $X=\cup_{i\in I}U_i$; let $\mathcal{U}=\coprod_{i\in i} U_i$, and the covering is the obvious map $\mathcal{U}\to X$. Note that we have 
+\[U_i\cap U_j=U_i\times_X U_j\]
+so the $n$-fold fiber product $U\times_X...\times_X U$ is the disjoint union of $n$-fold intersections of opens in the cover. Then, the $n$th simplices of the \u Cech nerve is $\pi_0(  \underbrace{U\times_X...\times_X U }_{n-fold})$. The face maps are projections, and the degeneracy maps are various diagonal embeddings.
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+If the covering $\mathcal{U}$ satisfies the property that arbitrary intersections of opens in the cover is either empty or contractible, then th realization $|N \mathcal{U}|$ is weakly equivalent to $X$.
+\end{theorem}
+\end{tcolorbox}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
