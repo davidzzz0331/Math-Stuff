@@ -649,7 +649,7 @@ An \underline{\textbf{orthogonal G-spectrum}} is an orthogonal spectrum equippne
 A morphism of orthogonal $G$-spectra is a morhism of orthogonal spectra that commutes with the $G$-action. 
 \end{definition}
 \end{tcolorbox}
-It is not immediate that this is a genuine $G$-prespectrum in definition $3.0.2$. It turns out that the action of the orthogonal groups encode enough information so that we can evaluate an orthogonal $G$-spectrum on a $G$-representation. To see this, let $V$ be a finite dimensional inner product space, and let $L(\mathbb{R}^n, V)$ be the space of linear isometries from $\mathbb{R}^n$ to $B$. We have a canonical $O(n)$-action on $L(\mathbb{R}^n, V)$ by precomposition, so we may define 
+It is not immediate that this is a genuine $G$-prespectrum in definition $3.0.2$. It turns out that the action of the orthogonal groups encode enough information so that we can evaluate an orthogonal $G$-spectrum on a $G$-representation. To see this, let $V$ be a $n$= dimensional inner product space, and let $L(\mathbb{R}^n, V)$ be the space of linear isometries from $\mathbb{R}^n$ to $B$. We have a canonical $O(n)$-action on $L(\mathbb{R}^n, V)$ by precomposition, so we may define 
 \[X(V):=L(\mathbb{R}^n, V)_+\wedge_{O(n)}X_n\]
 Suppose $V$ is a $G$-representation, then $X(V)$ is equipped with the $G$-action defined by $g\cdot [\varphi, x]=[g\varphi, gx]$. To define the structure maps 
 \[\sigma_{V,W}: X(V)\wedge S^W\to X(V\oplus W)\]
@@ -660,50 +660,132 @@ where $\sigma^m:X_n\wedge S^m\to X_{n+m} $ is the structure map built in the ort
 
 \begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
 \begin{remark}
-This definition of orthogonal $G$-spectra is due to Schwede. It is different from the original definition used by Mandell and May, but the categories defined are equivalent. The proof is given in \cite{SS}.
+This definition of orthogonal $G$-spectra is due to Schwede. It is different from the original definition used by Mandell and May, but the categories defined are equivalent. The proof is given in schwede.
 \end{remark}
 \end{tcolorbox}
 Now we give a few examples of important orthogonal spectra.
 
-\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
-\begin{definition}[Sphere spectrum]
-The equivaraint sphere spectrum $\mathbb{S}$ is given by 
-\[\mathbb{S}_n:=S^n\]
-and the $O(n)$-action is the natural action induced from $\mathbb{R}^n$, and a group $G$-acts trivially on $\mathbb{S}_n$ for all $n$. Note that we have a $G$-equivariant homeomorphism 
-\[\mathbb{S}(V):=L(\mathbb{R}^n, V)_+\wedge S^n\to S^V\]
-defined by $[\varphi, x]\mapsto \varphi(x)$.
 
-\end{definition}
-\end{tcolorbox}
-
-\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
-\begin{definition}[Suspension Spectra]
-Given a pointed $G$-space $X$, we may define a suspension spectrum $\Sigma^{\infty}X$ by 
-\[(\Sigma^{\infty}X)_n:=X\wedge S^n\]
-The $O(n)$-action is on the $S^n$-coordinate, and the $G$-action is on the $X$-coordinate. Note that we have 
-\[\Sigma^{\infty}X(V)=X\wedge S^n\wedge L(\mathbb{R}^n,V)\cong X\wedge S^V\]
-\end{definition}
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}[Sphere Spectrum]
+    The equivaraint sphere spectrum $\mathbb{S}$ is given by 
+    \[\mathbb{S}_n:=S^n\]
+    and the $O(n)$-action is the natural action induced from $\mathbb{R}^n$, and a group $G$-acts trivially on $\mathbb{S}_n$ for all $n$. Note that we have a $G$-equivariant homeomorphism 
+    \[\mathbb{S}(V):=L(\mathbb{R}^n, V)_+\wedge S^n\to S^V\]
+    defined by $[\varphi, x]\mapsto \varphi(x)$.
+    
+\end{example}
 \end{tcolorbox}
 
 
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}[Suspension Spectra]
+    Given a pointed $G$-space $X$, we may define a suspension spectrum $\Sigma^{\infty}X$ by 
+    \[(\Sigma^{\infty}X)_n:=X\wedge S^n\]
+    The $O(n)$-action is on the $S^n$-coordinate, and the $G$-action is on the $X$-coordinate. Note that we have 
+    \[\Sigma^{\infty}X(V)=X\wedge S^n\wedge L(\mathbb{R}^n,V)\cong X\wedge S^V\]
+\end{example}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}[Loop Spectrum by a representation]
+    Let $V$ be a $G$-representation and $X$ a $G$-spectrum. The \underline{\textbf{loop spectrum}} $\Omega^VX$ is defined by 
+    \[(\Omega^VX)_n:=\Omega^V(X_n)=\textrm{Maps}(S^V,X_n)\]
+    The $O(n)$-action is given by the induced action from $X_n$, and $G$-acts by conjugation: for $\varphi\in \textrm{Maps}(S^V,X_n)$,
+    \[(g\cdot \varphi)(v)=g\cdot \varphi(g^{-1}\cdot v)\]. The structure maps are given by the composition 
+    \[\textrm{Maps}(S^V,X_n)\wedge S^1 \xrightarrow{f}\textrm{Maps}(S^V,X_n\wedge S^1)\xrightarrow{\sigma_n\circ -}\textrm{Maps}(S^V,X_{n+1})\]
+    where $f(\varphi\wedge s)(v):=\varphi(v)\wedge s$.\\ 
+    
+
+    The value of a the loop spectrum at a representation is checked to be $\Omega^VX(W)=\textrm{Maps}(S^V, X(W))$.
+\end{example}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}[Suspention by a representation]
+    Let $V$ be a $G$-representation and $X$ a $G$-spectrum. The \underline{\textbf{Suspensio}} $\Sigma^VX$ is defined by 
+    \[(\Sigma^VX)_n:=S^V\wedge X_n\]
+    We have $O(n)$-acts on $X_n$, and $G$-acts diagonally, and the structure maps are given by the obvious composite.
+
+The value of $\Sigma^VX$ at an inner product space $W$ is checked to be 
+\[\Sigma^VX(W)=S^V\wedge X(W)\]
+
+\end{example}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+The two functors $\Sigma^V$ and $\Omega^V$ are adjoints.
+\end{proposition}
+\end{tcolorbox}
 
 
 
 
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}[Shift]
+    Let $V$ be an $m$-dimensional $G$-representation. The $V$\underline{\textbf{-shift}} of a $G$-spectrum $X$, denoted $\textrm{sh}^VX$ is defined to be
+    \[(\textrm{sh}^VX)_n: X(V\oplus \mathbb{R}^n)=L(\mathbb{R}^{m+n}, V\oplus \mathbb{R}^n)\wedge_{O(m+n)}X_{m+n}\]
+    The $O(n)$-action is given by the inclusion $O(n)\to O(m+n)$, and $G$-act the same way as defined after definition $3.0.3$ by treating $\mathbb{R}^n$ as a space with trivial $G$-action. The structure maps are also inherited from that of $X$.\\
+    
+    Note that if $V=\mathbb{R}^m$, then $(\textrm{sh}^VX)_n=X_{m+n}$. Moreover, we have the canonical isomorphism $\textrm{sh}^V(\textrm{sh}^WX)\cong \textrm{sh}^{V\oplus W}X$. \\
 
+    We also want to see how shifting and taking suspension commute: there exists a morphism $\lambda: S^V\wedge X\to \textrm{sh}^VX$ defined in each level by:
+    \[S^V\wedge X_n\xrightarrow{\textrm{twist}}X_n\wedge S^V\xrightarrow{\sigma_{n,V}}X(\mathbb{R}^n\oplus V)\xrightarrow{X(\textrm{twist})}X(V\oplus \mathbb{R}^n)=(\textrm{sh}^VX)_n\]
+where the first map is the canonical twist, the second map is the generalized structure map, the third map is induced from the canonical isometric isomorphism $\mathbb{R}^n\oplus V\to V\oplus \mathbb{R}^n$. 
+
+
+
+\end{example}
+\end{tcolorbox}
+Given orthogonal $G$-spectra $X,Y$, the morphisms $\textrm{Maps}(X,Y)$ is naturally a subset of $\prod \textrm{Maps}(X_n,Y_n)$. We thus endow $\textrm{Maps}(X,Y)$ with the subspace topology. 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}[Internal Hom spectra]
+For orthogonal spectra $X,Y$, we may define an orthogonal spectra $F(X,Y)$ by 
+\[F(X,Y)_n:=\textrm{Maps}(X, \textrm{Sh}^nY)\]
+The $O(n)$-action on $\textrm{Sh}^nY$ induces an $O(n)$-action on $F(X,Y)_n$; the structure maps $\sigma_n: (F(X,Y))_n\wedge S^1\to (F(X,Y))_{n+1}$ is defined to be the composite
+\[\textrm{Maps}(X,\textrm{Sh}^nY)\wedge S^1\xrightarrow{f} \textrm{Maps}(X,S^1\wedge \textrm{Sh}^nY)\xrightarrow{\sigma} \textrm{Maps}(X,\textrm{Sh}^{n+1}Y)\]
+where $f$ is given by $f(\varphi\wedge t)(x):=t\wedge \varphi(x) $, and $\sigma$ is the post composition bt $\lambda$ defined in example $3.0.5$. \\
 
+If $X,Y$ are $G$-spectra, then the conjugation $G$-action on $\textrm{Maps}(X,\textrm{sh}^VY)$ makes $F(X,Y)$ a orthogonal $G$-spectra. 
 \end{definition}
 \end{tcolorbox}
 
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
-\begin{proposition}[Duality]
-
+\begin{proposition}
+We have isomorphisms 
+\[F(X,Y)(V)\cong \textrm{Maps}(X, \textrm{sh}^VY)\]
+and the internal hom spectrum commutes with shifting in the second variable
+\[F(X,\textrm{sh}^VY)\cong \textrm{sh}^VF(X,Y)\]
 \end{proposition}
 \end{tcolorbox}
+\begin{proof}
+    This is checking the definitions.
+\end{proof}
 
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}[Adjunction]
+We have the natural isomorphism
+\[\textrm{Maps}(Z\wedge X,Y)\cong \textrm{Maps}(Z, F(X,Y))\]
+\end{theorem}
+\end{tcolorbox}
+To see this, recall that we a morphism of orthogonal spectra $Z\wedge X\to Y$ is a bimorphism $(Z,X)\to Y$, which is a collection of morphisms $Z_m\wedge X_n\to Y_{m+n}$ that satisfies the compactibility conditions. On the other hand, a morphism $Z\to F(X,Y)$ is a collection of morphisms $Z_m\to \textrm{Maps}(X,\textrm{sh}^mY)$, where the data of $\textrm{Maps}(X,\textrm{sh}^mY)$ is a compatible collection of maps $X_n\to Y_{m+n}$. By the adjunction $$\textrm{Hom}_{CGWH}(Z_m\wedge X_n,Y_{m+n})\cong \textrm{Hom}_{CGWH}(Z_m, \textrm{Hom}(X_n,Y_{m+n}))$$
+It is clear that ignoring compatibility, the two sets of data are the same. The rest is simply checking compactibility and $G$-action through. 
+
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}[Duality]
+In a closed symmetric monoidal category, the dual of $X$ is is canonically isomorphic to $F(X,S)$, where $S$ is the unit. 
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    Application of Yoneda Lemma.
+\end{proof}
 
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]

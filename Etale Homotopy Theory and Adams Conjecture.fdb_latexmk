@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber Etale Homotopy Theory and Adams Conjecture"] 1730222945 "Etale Homotopy Theory and Adams Conjecture.bcf" "Etale Homotopy Theory and Adams Conjecture.bbl" "Etale Homotopy Theory and Adams Conjecture" 1730235353 0
+["biber Etale Homotopy Theory and Adams Conjecture"] 0 "Etale Homotopy Theory and Adams Conjecture.bcf" "Etale Homotopy Theory and Adams Conjecture.bbl" "Etale Homotopy Theory and Adams Conjecture" 1730308591 -1
   "/usr/local/texlive/2023/texmf-dist/bibtex/bib/gloss/sample.bib" 1136766823 2721 b88105703bd616b4f9867992219afb8a ""
-  "Etale Homotopy Theory and Adams Conjecture.bcf" 1730235353 107446 b1703c238c462b0222a50098008a9b82 "pdflatex"
+  "Etale Homotopy Theory and Adams Conjecture.bcf" 1730308591 107446 b1703c238c462b0222a50098008a9b82 "pdflatex"
   (generated)
   "Etale Homotopy Theory and Adams Conjecture.bbl"
   "Etale Homotopy Theory and Adams Conjecture.blg"
   (rewritten before read)
-["pdflatex"] 1730235352 "/Users/davidzhu/Documents/GitHub/Math-Stuff/Etale Homotopy Theory and Adams Conjecture.tex" "Etale Homotopy Theory and Adams Conjecture.pdf" "Etale Homotopy Theory and Adams Conjecture" 1730235353 0
-  "/Users/davidzhu/Documents/GitHub/Math-Stuff/Etale Homotopy Theory and Adams Conjecture.tex" 1730235352 3002 302a92ee98bf5b975226967e3996823b ""
+["pdflatex"] 1730308590 "/Users/davidzhu/Documents/GitHub/Math-Stuff/Etale Homotopy Theory and Adams Conjecture.tex" "Etale Homotopy Theory and Adams Conjecture.pdf" "Etale Homotopy Theory and Adams Conjecture" 1730308591 0
+  "/Users/davidzhu/Documents/GitHub/Math-Stuff/Etale Homotopy Theory and Adams Conjecture.tex" 1730308590 4671 1b3e19eda3d41f1a2416a84cbc9b9120 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -18,6 +18,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1246382020 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1136768653 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1136768653 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -30,8 +31,10 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1248133631 37912 77d683123f92148345f3fc36a38d9ab1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
@@ -209,10 +212,10 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1710130202 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1710130178 7883461 5901c145d91f673e1f689bc83c44d735 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "Etale Homotopy Theory and Adams Conjecture.aux" 1730235353 179 f3b64a09d3daf056420dc9b954f881da "pdflatex"
+  "Etale Homotopy Theory and Adams Conjecture.aux" 1730308591 284 fb01c1f362b94840f322abcac505d46e "pdflatex"
   "Etale Homotopy Theory and Adams Conjecture.bbl" 1730222950 466 ee04f40f768daeed26442158e95aba61 "biber Etale Homotopy Theory and Adams Conjecture"
-  "Etale Homotopy Theory and Adams Conjecture.run.xml" 1730235353 2587 f362f6822897a82e19a515ae70152a58 "pdflatex"
-  "Etale Homotopy Theory and Adams Conjecture.tex" 1730235352 3002 302a92ee98bf5b975226967e3996823b ""
+  "Etale Homotopy Theory and Adams Conjecture.run.xml" 1730308591 2587 f362f6822897a82e19a515ae70152a58 "pdflatex"
+  "Etale Homotopy Theory and Adams Conjecture.tex" 1730308590 4671 1b3e19eda3d41f1a2416a84cbc9b9120 ""
   (generated)
   "Etale Homotopy Theory and Adams Conjecture.aux"
   "Etale Homotopy Theory and Adams Conjecture.bcf"
