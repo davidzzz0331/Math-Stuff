@@ -847,14 +847,21 @@ For notational simplicity, we will denote $A_i:=A_{0i}$
         \arrow[two heads, from=2-2, to=2-3]
     \end{tikzcd}\]
 
-and the outer vertical maps $A_{ij}\to B_{ij}$ and $A_{jk}\to B_{jk}$ are cofibrations, and the induced morphism $$B_{ij}\cup_{A_{ij}}A_{ik}\to B_{ik}$$ is a cofibration. A morphism $A_{\cdot}\to B_{\cdot}$ is a weak equivalence if every induced morphism $A_{ij}\to B_{ij}$ is a weak equilence in $\mathcal{C}$(equivalently, having $A_i\to B_i$ being weak equivalences suffice)
+and the outer vertical maps $A_{ij}\to B_{ij}$ and $A_{jk}\to B_{jk}$ are cofibrations, and the induced morphism $$B_{ij}\cup_{A_{ij}}A_{ik}\to B_{ik}$$ is a cofibration. A morphism $A_{\cdot}\to B_{\cdot}$ is a weak equivalence if every induced morphism $A_{ij}\to B_{ij}$ is a weak equilence in $\mathcal{C}$(equivalently, having $A_i\to B_i$ being weak equivalences suffice).
 
-
-
-
+The face maps $\partial_i: S_n \mathcal{C}\to S_{n-1} \mathcal{C}$ is defined by deleting the $i$th column and row, and reindexing the entire diagram. The degeneracy maps $s_i: S_n \mathcal{C}\to S_{n+1} \mathcal{C}$ by duplicating $A_i$ and reindexing with the normalization $A_{i,i+1}=0$. 
 \end{proof}
+By the above construction, the subcategories $wS_n \mathcal{C}$ of weak equivalences form a simplicial category as well.
 
 
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+If $\mathcal{C}$ is a small Waldhausen category, its algebraic $K$-theory space $K(C)$ is defined to be the loop space
+\[K(C):= \Omega (wS_{\cdot} \mathcal{C})\]
+and the $K$-groups are defined to be its homotopy groups 
+\[K_n(\mathcal{C}):=\pi_n(K(C))=\pi_{n+1}|wS_{\cdot}\mathcal{C}|\]
+\end{definition}
+\end{tcolorbox}
 
 
 
