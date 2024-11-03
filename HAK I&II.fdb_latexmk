@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber HAK I&II"] 1730487542 "HAK I&II.bcf" "HAK I&II.bbl" "HAK I&II" 1730496821 0
+["biber HAK I&II"] 1730487542 "HAK I&II.bcf" "HAK I&II.bbl" "HAK I&II" 1730650572 0
   "./HAK.bib" 1730159929 1202 b8410e49cc6dba0b1af785d9fc59b67c ""
-  "HAK I&II.bcf" 1730496821 108092 471151a8409afa25cd656b5b7be32789 "pdflatex"
+  "HAK I&II.bcf" 1730650572 108092 471151a8409afa25cd656b5b7be32789 "pdflatex"
   (generated)
   "HAK I&II.bbl"
   "HAK I&II.blg"
   (rewritten before read)
-["pdflatex"] 1730496818 "/Users/davidzhu/Documents/GitHub/Math-Stuff/HAK I&II.tex" "HAK I&II.pdf" "HAK I&II" 1730496821 0
-  "/Users/davidzhu/Documents/GitHub/Math-Stuff/HAK I&II.tex" 1730496816 55484 441d5bcdea7606db0d27aaf68f0c844d ""
+["pdflatex"] 1730650570 "/Users/davidzhu/Documents/GitHub/Math-Stuff/HAK I&II.tex" "HAK I&II.pdf" "HAK I&II" 1730650572 0
+  "/Users/davidzhu/Documents/GitHub/Math-Stuff/HAK I&II.tex" 1730650570 56185 18b48759a5edf9aae57ca6d1bbbe20dc ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -224,10 +224,10 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1710130202 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1710130178 7883461 5901c145d91f673e1f689bc83c44d735 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "HAK I&II.aux" 1730496821 1959 9c6d630dffe4beb1ef615cd4d84cea72 "pdflatex"
+  "HAK I&II.aux" 1730650572 1959 9c6d630dffe4beb1ef615cd4d84cea72 "pdflatex"
   "HAK I&II.bbl" 1730487544 5498 e4bf27968f606bb0761d62d5dcce36d2 "biber HAK I&II"
-  "HAK I&II.run.xml" 1730496821 2346 dd39fdfddf0e5ad67b043f70cc30e790 "pdflatex"
-  "HAK I&II.tex" 1730496816 55484 441d5bcdea7606db0d27aaf68f0c844d ""
+  "HAK I&II.run.xml" 1730650572 2346 dd39fdfddf0e5ad67b043f70cc30e790 "pdflatex"
+  "HAK I&II.tex" 1730650570 56185 18b48759a5edf9aae57ca6d1bbbe20dc ""
   (generated)
   "HAK I&II.aux"
   "HAK I&II.bcf"
