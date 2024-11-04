@@ -114,6 +114,32 @@ The composite $J\circ i: BU(n)\to BU\to BG$, classifyies a sphere bundle over $B
 \end{proposition}
 \end{tcolorbox}
 
+Fact: the composition $J\circ i: BU(n)\to BG$ classifies the sphere bundle associated to the canonical bundle over $BU(n)$, and it is fiber homotopy equivalent to the fibration 
+\[BU(n-1)\to BU(n)\]
+
+We can dream of a proof here: if we have unstable adams operations $\psi^k: BU(n)\to BU(n)$, which are homotopy equivalences, with a pullback diagram
+\[\begin{tikzcd}
+	{BU(n-1)} & {BU(n-1)} \\
+	{BU(n)} & {BU(n)}
+	\arrow["{\psi^k}", from=1-1, to=1-2]
+	\arrow["i", from=1-1, to=2-1]
+	\arrow["i", from=1-2, to=2-2]
+	\arrow["{\psi^k}"', from=2-1, to=2-2]
+\end{tikzcd}\]
+Then, the bundle $J\circ i$ is fiber homotopy equivalent $J\circ \psi^k$. However, unstable Adams operation does not exist on $BU(n)$. However, Sullivan proves that 
+\[\begin{tikzcd}
+	{\widehat{BU(n-1)}_p} & {\widehat{BU(n-1)}_p} \\
+	{\widehat{BU(n)}_p} & {\widehat{BU(n)}_p}
+	\arrow["{\psi^k}", from=1-1, to=1-2]
+	\arrow["i", from=1-1, to=2-1]
+	\arrow["i", from=1-2, to=2-2]
+	\arrow["{\psi^k}"', from=2-1, to=2-2]
+\end{tikzcd}\]
+where $\psi^k$ is an unstable Adams operation on the profinite completion. 
+
+
+
+
 
 
 
@@ -121,7 +147,13 @@ The composite $J\circ i: BU(n)\to BU\to BG$, classifyies a sphere bundle over $B
 
 Recall that the classifying space $BU(n)$ is constructed as the direct limit of complex grassmannians $\varinjlim_{k}Gr_n(k)$. Via Pl\"{u}cker embeddings, the complex grassmannians are naturally affine complex varieties embedded in projective space. Moreover, the defining polynomials also have coefficients in $\mathbb{Q}$.(Example here?)
 
-Thus, an automorphism $Gal(\mathbb{C}|\mathbb{Q})$ gives rise to an automorphism of these varieties, but they are wildly discontinuous in the classical topology. However, the Cech/etale story tells us that 
+Thus, an automorphism $Gal(\mathbb{C}|\mathbb{Q})$ gives rise to an automorphism of these varieties, but they are wildly discontinuous in the classical topology. However, the Cech/etale story tells us that the absolute galois group acts on the profinite homotopy type of the grassmannians, preserving the filtration. 
+
+By naturality and splitting principal, understanding the action of $Gal(\mathbb{C}|\mathbb{Q})$ on the profinite complex $K$-theory reduces to understanding the action on $\cup_n \widehat{\mathbb{CP}^n}\cong K(\widehat{\mathbb{Z}},2)$, which can be checked to be the composition 
+\[Gal(\mathbb{C}|\mathbb{Q})\to \widehat{\mathbb{Z}}^*\to K(\widehat{Z},2)\]
+
+
+\section*{Idea of proof}
 
 
 

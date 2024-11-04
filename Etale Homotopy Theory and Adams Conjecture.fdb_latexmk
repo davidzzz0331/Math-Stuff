@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber Etale Homotopy Theory and Adams Conjecture"] 0 "Etale Homotopy Theory and Adams Conjecture.bcf" "Etale Homotopy Theory and Adams Conjecture.bbl" "Etale Homotopy Theory and Adams Conjecture" 1730745169 -1
+["biber Etale Homotopy Theory and Adams Conjecture"] 0 "Etale Homotopy Theory and Adams Conjecture.bcf" "Etale Homotopy Theory and Adams Conjecture.bbl" "Etale Homotopy Theory and Adams Conjecture" 1730753171 -1
   "/usr/local/texlive/2023/texmf-dist/bibtex/bib/gloss/sample.bib" 1136766823 2721 b88105703bd616b4f9867992219afb8a ""
-  "Etale Homotopy Theory and Adams Conjecture.bcf" 1730745169 107446 b1703c238c462b0222a50098008a9b82 "pdflatex"
+  "Etale Homotopy Theory and Adams Conjecture.bcf" 1730753171 107446 b1703c238c462b0222a50098008a9b82 "pdflatex"
   (generated)
   "Etale Homotopy Theory and Adams Conjecture.bbl"
   "Etale Homotopy Theory and Adams Conjecture.blg"
   (rewritten before read)
-["pdflatex"] 1730745168 "/Users/davidzhu/Documents/GitHub/Math-Stuff/Etale Homotopy Theory and Adams Conjecture.tex" "Etale Homotopy Theory and Adams Conjecture.pdf" "Etale Homotopy Theory and Adams Conjecture" 1730745169 0
-  "/Users/davidzhu/Documents/GitHub/Math-Stuff/Etale Homotopy Theory and Adams Conjecture.tex" 1730745168 5247 65954fc554fbc8c8e9167aa70759f44f ""
+["pdflatex"] 1730753170 "/Users/davidzhu/Documents/GitHub/Math-Stuff/Etale Homotopy Theory and Adams Conjecture.tex" "Etale Homotopy Theory and Adams Conjecture.pdf" "Etale Homotopy Theory and Adams Conjecture" 1730753171 0
+  "/Users/davidzhu/Documents/GitHub/Math-Stuff/Etale Homotopy Theory and Adams Conjecture.tex" 1730753170 6791 08bf83cb988f374a1d908157c8bef8ca ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -213,10 +213,10 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1710130202 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1710130178 7883461 5901c145d91f673e1f689bc83c44d735 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "Etale Homotopy Theory and Adams Conjecture.aux" 1730745169 386 ba7fcecfbec869b898e1b731df4ea4b6 "pdflatex"
+  "Etale Homotopy Theory and Adams Conjecture.aux" 1730753171 386 32d24133120d799654ca79093e8dfb12 "pdflatex"
   "Etale Homotopy Theory and Adams Conjecture.bbl" 1730222950 466 ee04f40f768daeed26442158e95aba61 "biber Etale Homotopy Theory and Adams Conjecture"
-  "Etale Homotopy Theory and Adams Conjecture.run.xml" 1730745169 2587 f362f6822897a82e19a515ae70152a58 "pdflatex"
-  "Etale Homotopy Theory and Adams Conjecture.tex" 1730745168 5247 65954fc554fbc8c8e9167aa70759f44f ""
+  "Etale Homotopy Theory and Adams Conjecture.run.xml" 1730753171 2587 f362f6822897a82e19a515ae70152a58 "pdflatex"
+  "Etale Homotopy Theory and Adams Conjecture.tex" 1730753170 6791 08bf83cb988f374a1d908157c8bef8ca ""
   (generated)
   "Etale Homotopy Theory and Adams Conjecture.aux"
   "Etale Homotopy Theory and Adams Conjecture.bcf"
