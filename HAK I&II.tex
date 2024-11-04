@@ -95,7 +95,181 @@ We can also construct an example where $K_0(R)$ is not a finitely generated abel
 \end{tcolorbox}
 
 
-After the invention of the Grothendieck group, Atiyah and Hirzbruch were able to transport $K_0$ to topology: to each topological space $X$, they constructed a sequence of groups $K_n$ associated to the $n$-vector bundles on $X$, which forms a extraordinary cohomology theory. The discipline is now know as topological $K$-theory. However, it turned out that the generalization of higher dimensional $K$ groups were much more difficult on the algebraic side(for rings and varieties), and it was Quillen's plus construction that brought about the first satisfactory definition of higher algebraic $K$-theory.
+After the invention of the Grothendieck group, Atiyah and Hirzbruch were able to transport $K_0$ to topology: to each topological space $X$, they constructed a sequence of groups $K_n$ associated to the $n$-vector bundles on $X$, which forms a extraordinary cohomology theory. The discipline is now know as topological $K$-theory. However, it turned out that the generalization of higher dimensional $K$ groups were much more difficult on the algebraic side(for rings and varieties), and it was Quillen's plus construction that brought about the first satisfactory definition of higher algebraic $K$-theory. But before moving on, we can see a nice application of $K_0$ in determining when a CW-complex is homotopy equivalent to one of finite type/dimension.
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A CW-complex is \underline{\textbf{finite}}, or equivalently of \underline{\textbf{finite type}}, if it is constructed with finitely many cells. 
+\end{definition}
+\end{tcolorbox}
+
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A map $\varphi: K\to X$ is $n$\underline{\textbf{-connected}} if the relative homotopy group $\pi_i(\varphi):= \pi_i(M_{\varphi},K\times 1)$ is trivial for $0\leq i\leq n$, where $M_{\varphi}$ is the mapping cylinder equivalent to $X$.
+\end{definition}
+\end{tcolorbox}
+
+For the following discussion, we will use the notation $\Lambda$ for the integral group ring on the fundamental group of $X$.
+\subsection{Complexes of Finite Type}
+For the condition of $X$ being equivalent to a complex with finite $n$-skeleton, we associate an algerbaic condition $F_n$, defined as follows: 
+
+\begin{itemize}
+    \item $F_1$ is $\pi_1(X)$ being finitely generated.
+    \item $F_2$ is $\pi_1(X)$ being finitely presented, and for any finite complex $K^2$ and a map $\varphi: K^2\to X$ inducing isomorphism on fundamental groups, $\pi_2(\varphi)$ is a finitely generated $\Lambda$-module. 
+    \item  For $n\geq 3$, $F_n$ stands for $F_{n-1}$ holds and for any finite complex $K^{n-1}$ and an $n-1$ connected map $\varphi: K^{n-1}\to X$, $\pi_n(\varphi)$ is a finitely generated $\Lambda$-module.
+\end{itemize}
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+A CW complex $X$ is equivalent to a complex with finite $n$-skeleton iff it satisfies $F_n$.
+\end{theorem}
+\end{tcolorbox}
+
+
+\begin{proof}[Proof of Theorem $1.1$]
+$\Rightarrow$    Let us first deal with the case where $n=1,2$. Recall that the fundamental group of $X$ is completely determined by its $2$-skeleton. The proof using Van-Kampen directly tells us that if the $1$-skeleton being finite implies $\pi_1(X)$ is finitely generated, and $2$-skeleton being finite implies $\pi_1(X)$ is finitely presented. For the second-part of $F_2$ and the rest of the theorem, by Hurewicz we have 
+\[\pi_n(\varphi)\cong \pi_n(X,K)\cong \pi_n(\tilde{X},\Tilde{K})\cong H_n(\tilde{X},\Tilde{K})\]
+
+By cellular approximation and a lemma of whitehead, we may assume $\tilde{K}$ is the $n-1$ skeleton of $\tilde{X}$. Then, $\cong H_n(\tilde{X},\Tilde{K})$ is a quotient of $\cong H_n(\tilde{X}^n,\Tilde{K})\cong C_n(\tilde{X})$, which is a finite $\Lambda$-module.
+
+$\Leftarrow$: Before proving the direction, we make the following observation: for $n\geq 3$, given an $n-1$-connected map $\varphi: K^{n-1}\to X$, the LES of homotopy groups shows that it induces isomorphism on $\pi_i$ for $i< n-1$ and $\pi_{n-1}(K^{n-1})\to \pi_{n-1}(X)$ is a surjection. Then, we may attch $n$-cells to kill the kernel, each corresponding to a class in $\pi_n(K^{n-1},X)$. Specifically, consider the LES of the triple $(X,K^n,K^{n-1})$, where $K^{n}$ is the complex obtained by attaching $n$-cells to $K^{n-1}$:
+\[\begin{tikzcd}
+\pi_n(K^n,K^{n-1})\arrow[r]&\pi_n(X,K^{n-1})\arrow[r]&\pi_n(X,K^n)
+\end{tikzcd}\]
+
+Our goal is to build $K^n$ such that $\pi_n(K^n,X)$ vanishes. Note that $\pi_n(K^n,K^{n-1})\cong C_n(\tilde{L})$. So by finite generation assumption, only finitely many cells are needed, each corresponding to a generator of $\pi_n(K^{n-1},X)$ as a $\Lambda$-module (The module structure exists when $K^n\to X$ induces isomorphism on fundamental group, which holds for $n\geq 3$).
+
+Now to the proof: If $X$ satisfies $F_1$, we may start with a finite wedge $K^1:=\bigvee S^1$, each copy corresponding to a generator of $\pi_1(X)$, and a map $K^1\to X$ inducing surjection on fundamental group. Then, attach cells of dimension $\geq 2$ to make it a homotopy equivalence. If $X$ satisfies $F_2$, by finite presentation of $\pi_1$ we can add finitely many $2$-cells to $K^1$ and form a new complex $K^2$. There is then a map $\varphi: K^2\to X$ that induces isomorphism of $\pi_1$ and thus is $2$-connected by LES.
+We finish by using the construction outlined int he previous paragraph and continue inductively.
+
+
+\end{proof}
+
+We also have a stronger result that we will not prove here:
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+$X$ is equivalent to a complex with finite $n$-skeleton iff $X$ is a homotopy retract of one.
+\end{theorem}
+\end{tcolorbox}
+
+
+\subsection{Complexes of Finite Dimension}
+
+
+
+Similar to the previous section, we associate an algebraic condition $D_n$ to the topological condition that $X$ is equivalent to a CW complex of dimension $n$.
+
+\begin{itemize}
+  \item $D_n$: $H_i(\tilde{X})=0$ for $i>n$, and $H^{n+1}(X;B)=0$ for all local coefficient $B$. 
+\end{itemize}
+
+Let us give a quick summary of the construction of the previous section, but without finiteness restriction on the number of cells allowed: given a CW complex $X$, we may approximate it by inductively building an $n$-connected map $\varphi_n: K^n\to X$ by attaching $n$-cells to $K^{n-1}$. Assuming path-connectedness, we start with $1$-cells corresponding to generators of $\pi_1(X)$, $2$-cells according to presentation of $\pi_1(X)$, and $n\geq 3$ cells according to generators of $\pi_n(K^{n-1},X)$. Now, if the module $\pi_n(K^{n-1},X)$ were free, then by construction and the LES,
+\[\begin{tikzcd}
+  \pi_{n+1}(X,K^{n})\arrow[r]&\pi_n(K^n,K^{n-1})\cong C_n(\tilde{K}^n)\arrow[r]&\pi_n(X,K^{n-1})\arrow[r]&\pi_n(X,K^n)
+  \end{tikzcd}\]
+
+we will also get $H_{n+1}(\tilde{X},\tilde{K}^{n})=0$ and $H_{n}(\tilde{X},\tilde{K}^{n})=0$ for free by Hurewicz. This comes in handy when we look at the homology LES of the triple $(X,K^{n},K^{n-1})$:
+
+\[
+  \begin{tikzcd}
+  H_i(\tilde{K}^n,\tilde{K}^{n-1})\arrow[r]&H_i(\tilde{X},\tilde{K}^{n-1})\arrow[r]&H_i(\tilde{X},\Tilde{K}^n)
+\end{tikzcd}
+\]
+If $X$ satisfies $D_n$, then $H_i(\tilde{X},\tilde{K}^{n-1})$ vanishes for $i\neq n$ by LES of the pair; $H_i(\tilde{K}^n,\tilde{K}^{n-1})=0$ for $i\neq n$ by cellular homology. Combined with the results in dimension $n$ and $n+1$, we get $H_*(\tilde{X},\Tilde{K}^n)=0$, which implies $\tilde{K}^n$ is equivalent to $X$ (inductive argument by Hurewicz since by construction $K^2\to X$ induces isomorphism on fundamental group). What this tells us is that if $X$ satisfies $D_n$ and $\pi_n(X,K^{n-1})$ is free, then we may stop at dimension $n$ and already get a homotopy equivalence. The result of this section is that (for $n\geq 3$) we may alway add $n-1$-cells to $K^{n-1}$ to make $\pi_n(X,K^{n-1})$ free, thus proving part $3$ of the following theorem
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}The following hold:
+  \begin{itemize}
+    \item $X$ satisfies $D_1$ iff it is a wedge of circles.
+    \item $X$ satisfies $D_2$ iff it is equivalent to a $3$-dimensional complex.
+    \item $X$ satisfies $D_n$ ($n\geq 3$) iff it is equivalent to a $n$-dimensional complex. 
+  \end{itemize}
+
+\end{theorem}
+\end{tcolorbox}
+
+The key proposition is the following: 
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+For $n\geq 3$, suppose $X$ satisfies $D_n$. Then, given an $n-1$ connected map of CW complexes $\varphi: K^{n-1}\to X$, we have $\pi_n(\varphi)$ a projective $\Lambda$-module. 
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+  We have the usual isomorphism $\pi_n(\varphi)\cong H_n(\tilde{X},\tilde{K}^{n-1})$. By cellular homology, $H_n(\tilde{X},\tilde{K}^{n-1})$ is isomorphic $C_n(\tilde{X})/B_n(\tilde{X})$, and we have the commutative diagram
+  \[\begin{tikzcd}
+  C_{n+2}\arrow[r,"d_{n+2}"]&C_{n+1}\arrow[dr,twoheadrightarrow,"j"]\arrow[rr,"d_{n+1}"]&&C_n\\
+  &&B_n\arrow[ur,hookrightarrow,"i"]
+  \end{tikzcd}\]
+where $j$ is the induced surjective map from $d_{n+1}$. Note $B_n$ is naturally a $\Lambda$-module, and let us take $B_n$ to be the local coefficient system. Then, $j$ represents a class in $H^{n+1}(X;B_n)$, which by assumption is trivial. Therefore, $j$ is a coboundary, so there exists a $s: C_n\to B_n$ such that $j=s\circ d_{n+1}=s\circ i\circ j$. Since $j$ is epic, we have $s\circ i=Id$, so the short exact sequence 
+\[\begin{tikzcd}
+0\arrow[r]&B_n(\tilde{X})\arrow[r]&C_n(\tilde{X})\arrow[r]&\pi_n(\varphi)\arrow[r]&0
+\end{tikzcd}\] 
+splits. But $C_n(\tilde{X})$ is free, so $\pi_n(\varphi)$ is projective. 
+\end{proof}
+
+Here is a nice algebraic fact on projective modules:
+
+\begin{tcolorbox}
+\begin{lemma}
+(Eilenberg Swindle) Given a projective $R$ module $M$, there exists a free module $N$ (in general not finitely generated) such that $M\oplus N\cong N$.
+\end{lemma}
+\end{tcolorbox}
+\begin{proof}
+  By projectivity, there exists a module $L$ such that $F:=M\oplus L$ is free. Then, take 
+  \[N:=M\oplus L\oplus M\oplus L...\]
+  By associativity, $N$ is isomorphic to both $F^{\mathbb{N}}$ and $M\oplus F^{\mathbb{N}}$.
+\end{proof}
+The topological construction corresponding to Eilenberg Swindle is the following: $\pi_n(\varphi_{n-1})=\pi_n(K^{n-1},X)$ measures the kernel of the map $\pi_{n-1}(K^{n-1})\to \pi_{n-1}(X)$, and our goal is to introduce addition kernel to make $\pi_n(\varphi_{n-1})$ free. Let $F$ be the free $\Lambda$-module such that $F\oplus \pi_n(\varphi_{n-1})$ is free by the Eilenberg Swindle. Then, attach $n-1$ cells by the constant boundary map, one for each generator of $F$, to $K^{n-1}$ (equivalent to wedging $n-1$ spheres). Let $K'^{n-1}$ denote the new complex, and we may extend the map to $\varphi'_{n-1}: K'^{n-1}\to X$ by collapsing the new $n-1$ spheres to the basepoint. It is easily verified that the construction makes $\pi_n(\varphi'_{n-1})$ free. 
+
+Now let us finish off Theorem $2.1$:
+\begin{proof}[Proof of Theorem $2.1$]
+ For $D_1$: by universal coefficient theorem, $D_1$ implies all homologies of $\tilde{X}$ vanishes, so $X$ is a $K(\pi,1)$. In particular, $H^2(X;B)\cong H^2_{\textrm{Grp}}(\pi;B)=0$ implies every extension of $B$ by $\pi$ is split. Now let $B=ker(F\to \pi)$, where $F\to \pi$ is any surjection from a free group $F$ to $B$. Then, $\pi$ is realized as a direct summand of a free group and thus free. 
+
+ For $D_2$: we construct the $2$-connected map $\varphi_2: K^2\to X$, it is easily showed that $\pi_3(\varphi_2)$ is projective usuing the same argument as in Proposition $2.1.1$ with $\pi_3(\varphi_2)\cong B_2$. We finish by first applying the topological Eilenberg Swindle, and then applying the argument outlined in the beginning paragraphs of the section.
+\end{proof}
+
+\subsection{$\tilde{K}_0$ and Obstruction to Finiteness}
+
+
+Note that the construction of the complexes of finite $n$-skeleton, corresponding to $F_n$, the construction of $n$-dimensional complexes, corresponding to $D_n$, are not "compatible constructions". Namely, when we were turning the projective $\pi_n(\varphi)$ to a free module in the construction of finite dimensionality, we added possibly infinitely many $n-1$ cells. The idea is that this is the only obstruction to $X$ being finite $n$-dimensional when it satisfies $D_n$ and $F_n$. Algebraically, the obstruction measures how far the projective $\pi_n(\varphi)$ is from being stably free.
+
+\begin{tcolorbox}
+\begin{lemma}
+Suppose $X$ satisfies $F_n$ and $D_n$. Let $\varphi_1: K_1\to X$ and $\varphi_2: K_2\to X$ be two $n-1$-connected maps, with $K_1,K_2$ finite $n$-dimensional. Then, $\pi_n(\varphi_1)$ and $\pi_n(\varphi_2)$ represents the same class in $\Tilde{K}_0(\mathbb{Z}[\pi_1(X)])$
+\end{lemma}
+\end{tcolorbox}
+\begin{proof}
+  First, show that if $X$ satifies $D_n$, then both $\varphi_i$ has a homotopy right inverse by basic obstruction theory. Then, composing one of $\varphi$ with the right inverse of the other gives a map between $K_1$ and $K_2$. It is easy to see that the map is $n-1$-connected. We may view $K_1$ as subcomplex of a complex equivalent to $K_2$, with possibly extra cells only in dimension $n$ and $n+1$. Then, we can identify $\pi_n(\varphi_1)$ and $\pi_n(\varphi_2)$ with the $n$th and $n+1$th homology of $(\tilde{K_2},\tilde{K_1})$, and an algebraic argument from there finishes. 
+\end{proof}
+
+The lemma says that $\pi_n(\varphi)$ is an invariant of $X$, and determines a class in $\Tilde{K}_0(\Lambda)$. From the argument of section $2$, we may conclude with the obstruction theorem:
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+If $X$ satisfies $D_n$ and $F_n$ for $n\geq 3$, then there is a obstruction to finiteness $w(X):=[\pi_n(\varphi)]\in \Tilde{K}_0(\Lambda)$. Specifically, $X$ is equivalent to a finite $n$-dimensional CW complex iff $w(X)$ vanishes.  
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+  If $X$ is equivalent to a finite $n$-dimensional CW complex iff $w(X)$ vanishes, take $\varphi: X\to X$ to be the identity. For the converse, repeat the construction in section $2$ on turning $\pi_n(\varphi)$ free, knowing we only have to attach finitely many $n-1$ cells based on the assumption that $\pi_n(\varphi)$ is stably free. 
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{A Little about $K_1$}
 Let $R$ be a associative ring with unit. We may define the inclusion $GL(n,R)\hookrightarrow GL(n+1,R)$ by turning a matrix $M\in GL(n,R)$ into a upper left block matrix with a $1$ on the $(n,n)$ entry. Then, we define $GL(R)$ to be the union of the infinite chain of inclusions of the general linear groups with entries in $R$.
@@ -224,6 +398,16 @@ The important calculation that Quillen gave was the calculation of the algebraic
     \]
 \end{theorem}
 \end{tcolorbox}
+The proof hinges on the part $BGL(F_q)^+$ is homotopy equivalent to the homotopy fiber of the Adams operation $BU\xrightarrow{\psi^q-1}BU$, whose homotopy groups is easy to compute by Bott-periodicity. Through Brauer lifting, Quillen constructed a map $\theta: BGL(F_q)^+\to F\psi^q$, which he shows is a integral homology equivalence, thus a weak homotopy equivalence since both spaces are simply connected. We give a quick outline on the proof of the integral homology equivalence: by elementary facts on homology, it suffice to show that $\theta$ induce isomorphisms on coefficients $\mathbb{Q}$ and $\mathbb{Z}/l$ for all primes $l$. The easier part is first showing that $F\psi^q$ and $BGL(F_q)^+$ both have trivial rational homology: this is a direct application of Serre class for $F\psi^q$ and transfer in group cohomology for $BGL(F_q)^+$; Then, one show that for the prime $p|q$, we have $F\psi^q$ and $BGL(F_q)^+$ both have trivial $\mathbb{Z}/p$ homology: for $F\psi^q$ again is an application of Serre class; however, the computation of $H_*(BGL(F_q); \mathbb{Z}/l)=0$, and  the last part that is $\mathbb{Z}/l$ homology equivalence came down to hardcore computations of these homology groups. 
+
+
+
+
+
+
+
+
+
 \section{The Group Completion Theorem }
 First, we recall Grothendieck's definition of $K_0$ for an abelian monoid $M$
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
@@ -885,10 +1069,58 @@ and thus the Waldhausen construction of algebraic $K$-theory agrees with the Qui
 
 \section{The Fundamental Theorems of algebraic $K$-theory}
 
+\subsection{The Additivity Theorem}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}[Short exact sequence of functors]
+If $\mathcal{B}, \mathcal{C}$ are exact categories, then a sequence of exact functors $\mathcal{B}\to \mathcal{C}$
+\[F'\rightarrowtail F \twoheadrightarrow F''\]
+is a \underline{\textbf{short exact sequence}} of exact functors, if 
+\[\begin{tikzcd}
+0\arrow[r]&F'(B)\arrow[r]&F(B)\arrow[r]&F''(B)\arrow[r]&0
+\end{tikzcd}\]
+is exact in $\mathcal{C}$ for every $B\in \mathcal{B}$.\\
+
+
+If $\mathcal{B}, \mathcal{C}$ are Waldhausen categories, then a sequence of exact functors $\mathcal{B}\to \mathcal{C}$
+\[F'\rightarrowtail F \twoheadrightarrow F''\]
+is a \underline{\textbf{short exact sequence}} of exact functors, if 
+\[F'(B)\rightarrowtail F(B)\twoheadrightarrow F''(B)\]
+is a cofibration sequence,with the extra condition that for every cofibration $A\rightarrowtail B$ in $\mathcal{B}$, then map 
+\[F(A)\cup_{F'(A)}F'(B)\rightarrowtail F(B)\]
+is a cofibration in $\mathcal{C}$.
+\end{definition}
+\end{tcolorbox}
+When an exact category is viewed as a Waldhausen category by Example $10.1.1$, the two notions of exactness are the same. 
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+Let $\mathcal{E}:=\mathcal{E}(C)$ be the extension category of $\mathcal{C}$, which is the category of all exact sequences $E: A\rightarrowtail B\twoheadrightarrow B/A$ in $\mathcal{C}$. 
+\end{example}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}[Additivity Theorem]
+Let $F'\rightarrowtail F \twoheadrightarrow F''$ be a short exact sequence of exact functors from $\mathcal{B}$ to $\mathcal{C}$. Then, $F_*\cong F'_*+F''_*$ as $H$-space maps $K(\mathcal{B})\to K(\mathcal{C})$ on the $K$-theory spaces. Thus on the $K$-groups we have 
+\[F_*=F'_*+F''_*: K_i(\mathcal{B})\to K_i(\mathcal{C})\]
+\end{theorem}
+\end{tcolorbox}
 
 
 
 
+
+
+
+
+
+\subsection{The Resolution Theorem}
+
+\subsection{Devissage}
+
+\subsection{The Fundamental Theorem}
 
 
 
