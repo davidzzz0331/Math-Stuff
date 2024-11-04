@@ -1179,5 +1179,72 @@ Projective schemes are proper and projective morphisms are proper.
 \end{tcolorbox}
 
 
+\section{Valuative Criterion for Separatedness}
+
+Let $X$ be an $S$-scheme. $x_1,x_0\in X$ such that $x_1\sim x_0$ a specialization. Equivalently, we have $x_1\in Spec(O_{x_0})$. By Chevalley's theorem, there exists a valuations rings $R\in Val(\kappa(x_1))$ such that $R$ dominates $O_{x_1x_0}:= O_{x_0}/x_1$. 
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Let $f: X\to Y$ be a quasi-compact morphism of $S$-schemes, and $Z\subset X$ a closed subset. Then the following hold:
+
+\begin{enumerate}
+    \item (Closedness vs specialization) $f(Z)\subset Y$ is closed iff $f(Z)\subset Y$ is closed under specialization. 
+    \item (Closedness and valuations) $f(Z)\subset Y$ is closed for every $y_1$ specializing to $y_0$, and $f(x_1)=y_1$ for some $x_1\in Z$, there is a valuation ring $R\in Val(\kappa(x_0))$ such that $R$ dominates $O_{y_1y_0}$ where $\kappa(y_1)\hookrightarrow \kappa(x_1)$ and $R$ has a center $x_0\in Z$, which means that $R$ dominates $O_{x_1x_0}$. Equivalently, there exists some $\varphi_R: Spec(R)\to Z$ such that $\varphi_R$ maps the generic poitn to $x_1$ and the maximal ideal to $x_0$. 
+\end{enumerate}
+\end{proposition}
+\end{tcolorbox}
+
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}[Valuative Criterion for Separatedness]
+    Let $f: X\to Y$ be a quasi-compact morphism of $S$-schemes. Then, $f$ is separated iff for all $x_1\in X$, and $R\in Val(\kappa(x_1))$, and all diagrams
+    \[\begin{tikzcd}
+        X & Y \\
+        {x_1} & {Spec(R)}
+        \arrow[from=1-1, to=1-2]
+        \arrow[tail, from=2-1, to=1-1]
+        \arrow[from=2-1, to=2-2]
+        \arrow[dashed, from=2-2, to=1-1]
+        \arrow[from=2-2, to=1-2]
+    \end{tikzcd}\]
+    there exists at most $1$ dashed arrow to make the diagram commute. In fact, we only need $x_1\to X$ a generic point. 
+
+\end{theorem}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+Let $f: X\to Y$ be a quasi-compact morphism of $S$-schemes. Then, $f$ is universally closed iff for every $x_1\in X$ and $R\in Val(\kappa(x_1))$, and every diagram
+\[\begin{tikzcd}
+    X & Y \\
+    {x_1} & {Spec(R)}
+    \arrow[from=1-1, to=1-2]
+    \arrow[tail, from=2-1, to=1-1]
+    \arrow[from=2-1, to=2-2]
+    \arrow[dashed, from=2-2, to=1-1]
+    \arrow[from=2-2, to=1-2]
+\end{tikzcd}\]
+
+there exists a unique dashed arrow making the diagram commute.
+\end{theorem}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{corollary}
+The following hold:
+\begin{enumerate}
+    \item If $f$ is finite, then $f$ is proper.
+    \item If $f$ is profinite, then $f$ is separated and universally closed.
+    \item Integral $S$-scheme $X$ in field extension $L|K(X)$ are separated and universally closed. 
+    \item iF $X$ is a $k$-prevariety, and $X_L\to X$ of $X$ in $L|K(X)$ finite is a $k$-prevariety. Then, $X$ affine/projective/proper implies $X_L$ affine/projective/proper. 
+    \item Let $X=Proj R$ be a the projective scheme associated to the graded ring $R$. Then, $X$ is separated and $X$ quasi-compact implies $X$ is universally closed. 
+\end{enumerate}
+\end{corollary}
+\end{tcolorbox}
+
 
 \end{document}

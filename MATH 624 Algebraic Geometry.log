@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.11)  28 OCT 2024 13:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.11)  4 NOV 2024 13:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -911,24 +911,24 @@ Underfull \hbox (badness 2103) in paragraph at lines 895--896
 []\OT1/cmr/bx/n/10 Definition 4.8.1. []\OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 R \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^H[]\OML/cmm/m/it/10 R[]$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 S \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^H[]\OML/cmm/m/it/10 S[]$ \OT1/cmr/m/n/10 be graded $\OML/cmm/m/it/10 A$\OT1/cmr/m/n/10 -algebras. Then, a
  []
 
-[12] [13] [14] [15] Total classes: 0 [16] (./MATH 624 Algebraic Geometry.aux)
+[12] [13] [14] [15] [16] Total classes: 0 [17] (./MATH 624 Algebraic Geometry.aux)
 Package logreq Info: Writing requests to '"MATH 624 Algebraic Geometry".run.xml'.
 \openout1 = `"MATH 624 Algebraic Geometry.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33154 strings out of 476025
- 779151 string characters out of 5790017
+ 33252 strings out of 476025
+ 781553 string characters out of 5790017
  1872388 words of memory out of 5000000
- 53108 multiletter control sequences out of 15000+600000
+ 53206 multiletter control sequences out of 15000+600000
  523306 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,17n,104p,5064b,1257s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on "MATH 624 Algebraic Geometry.pdf" (16 pages, 293777 bytes).
+Output written on "MATH 624 Algebraic Geometry.pdf" (17 pages, 299445 bytes).
 PDF statistics:
- 154 PDF objects out of 1000 (max. 8388607)
- 97 compressed objects within 1 object stream
+ 157 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
