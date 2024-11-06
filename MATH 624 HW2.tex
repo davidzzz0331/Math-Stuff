@@ -242,24 +242,40 @@ It suffice to show this for every irreducible component, and for an dense affine
 
 \section*{Homework 5}
 \subsection*{Problem 1}
-Consider 
-
-
-
-
-
 Suppose $k$ is algebraically closed. Recall that a regular function $\varphi$ on $\mathbb{P}^n$ is locally of the form $\frac{p}{q}$ on some $U$, where $p,q$ are homogeneous of the same degree, with no common factors. If $q$ is not a constant, then it vanishes at some point $a\in \mathbb{P}^n$. But for any open set $U'$ containing $a$, $\varphi$ is of the form $\frac{p'}{q'}$. On $U\cap U'$, we have 
 \[\frac{p}{q}=\frac{p'}{q'}\]
 so we must have $qp'=pq'$, which implies $q|q'$, and $\varphi$ is not regular at $p$. Thus, the only regular functions on $\mathbb{P}^n$ is constants. 
 
 If $k$ is not algebraically closed, we can have non-trivial regular functions. For example, $\frac{x^2}{y^2+x^2}$ is regular on $\mathbb{P}_{\mathbb{R}}^1$.
 
-
-
 \subsection*{Problem 2}
+For the following problems, it is useful to prove the following proposition:
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+A $k$-morphism $f:\mathbb{P}^n\to \mathbb{P}^m$ is of the form 
+\[x\mapsto [f_0(x):...:f_m(x)]\]
+where $f_i$ are homogeneous polynomials of the same degree and $V(f_0,...f_m)=\emptyset$.
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+	By abuse of notation, let $\mathbb{A}_i^m$ denote the standard $i$th affine open cover of $\mathbb{P}^m$, and let $X_i:=f^{-1}(\mathbb{A}_i^m)$, which is dense open. The restriction $f|_{X_i}: X_i\to \mathbb{A}_i^m$ is of the form $(\varphi_0,...\varphi_{i-1},\varphi_{i+1},...,\varphi_m)$, where $\varphi_k=\frac{p_k}{q_k}$  are elements in $O_{\mathbb{P}^n}(X_i)$. By multiplying the common denominator, we can turn this back to homogeneous coordinates, so that $f|_{X_i}$ is given by $x\mapsto (f_0:....:f_m)$. Suppose we do the same procedure and get $f|_{X_j}$ given by $x\mapsto (g_0:....:g_m)$, then on $X_i\cap X_j$ they must agree. Since $k[X]$ is a UFD, the two expression are the same modulo a constant. 
+\end{proof}
+
+Using the result of problem $3$, we see that $\mathbb{P}^n\times \mathbb{P}^m$ has a non-trivial map to $\mathbb{P}^n$ given by the projection, but $\mathbb{P}^{m+n}\to \mathbb{P}^n$ must be constant. 
+
+
+
 \subsection*{Problem 3}
-\subsection*{Problem 4}
+By previous proposition, it suffices to show that the intersection of $m+1$-hyperplanes in $\mathbb{P}^n$ is non-empty. But this follows from the dimension formula
+\[\textrm{dim}(H_1\cap...\cap H_m)\geq (m+1)(n-1)-mn=n-m>0\]
+so a $k$-morphism $f: \mathbb{P}^m\to \mathbb{P}^m$ when $n>m$ must be a constant map. 
+
 \subsection*{Problem 5}
+\subsubsection*{(b)}
+By proposition $0.0.1$, a morphism $\mathbb{P}^1\to \mathbb{P}^1$ is given by $x\mapsto [f_0(x):f_1(x)]$, which restricts to a map $[1: \frac{f_0}{f_1}]$ on some non-empty dense open subset. 
+
+\subsubsection*{(c)}
 \subsection*{Problem 6}
 \subsection*{Problem 7}
 \subsection*{Problem 8}
