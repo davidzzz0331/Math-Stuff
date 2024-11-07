@@ -273,13 +273,27 @@ so a $k$-morphism $f: \mathbb{P}^m\to \mathbb{P}^m$ when $n>m$ must be a constan
 
 \subsection*{Problem 5}
 \subsubsection*{(b)}
-By proposition $0.0.1$, a morphism $\mathbb{P}^1\to \mathbb{P}^1$ is given by $x\mapsto [f_0(x):f_1(x)]$, which restricts to a map $[1: \frac{f_0}{f_1}]$ on some non-empty dense open subset. 
+Note that the function field of a irreducible variety is isomorphic to the function field of any of its dense open subset. So, we identify $k(t)\cong k(U_0)$, where $U_0$ is the standard affine open where $x_0\neq 0$. 
+By proposition $0.0.1$, a morphism $\mathbb{P}^1\to \mathbb{P}^1$ on $U_0$ is given by a map $[1: \frac{y}{x}]\mapsto [1: \frac{p(\frac{y}{x},1)}{g(\frac{y}{x},1)}]$. We thus have a natural map to automorphism of $k(t)$ defined by $t\mapsto \frac{f_0(t,1)}{f_1(t,1)}$.  Thus, an automorphism of $\mathbb{P}^1$ corresponds to an automorphism of $k(t)$. 
 
 \subsubsection*{(c)}
+An automorphism of $k(t)$ will be a Moebius transform, as will we demonstrate in problem $6$ to be induced by projective linear transformations. 
+
+
+
 \subsection*{Problem 6}
+We have an obvious choice of map 
+\[\rho: GL_{n+1}(k)\to Aut(\mathbb{P}_k^n) \]
+by the clear action on the homogeneous coordinates. It is clear that this is a group homomorphism and the scalar multiples of the identity matrix form the kernel of this homomorphism.
+
+By Bezout's theorem, an automorphism of $\mathbb{P}^n$ takes hyperplanes to hyperplanes. Moreover, on a dense open subset of $\mathbb{P}^n$, a morphism will take the form $x\mapsto [f_0(x):...:f_n(x)]$. Since such morphism takes hyperplanes to hyperplanes, each $f_i$ must be of degree $1$, and thus the automorphism must be induced by linear transforms, so the homomorphism is surjective.
 \subsection*{Problem 7}
+\subsubsection*{(d)}
+it is clear that matrix multiplication and taking inverse have each coordinate functions polynoimials, therefore define $k$-morphism of affine varieties.
+\subsubsection*{(d)}
+
 \subsection*{Problem 8}
 \subsection*{Problem 9}
-
+\subsection*{Problem 10}
 
 \end{document}
