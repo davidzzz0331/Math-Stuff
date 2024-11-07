@@ -288,12 +288,26 @@ by the clear action on the homogeneous coordinates. It is clear that this is a g
 
 By Bezout's theorem, an automorphism of $\mathbb{P}^n$ takes hyperplanes to hyperplanes. Moreover, on a dense open subset of $\mathbb{P}^n$, a morphism will take the form $x\mapsto [f_0(x):...:f_n(x)]$. Since such morphism takes hyperplanes to hyperplanes, each $f_i$ must be of degree $1$, and thus the automorphism must be induced by linear transforms, so the homomorphism is surjective.
 \subsection*{Problem 7}
-\subsubsection*{(d)}
+\subsubsection*{(c)}
 it is clear that matrix multiplication and taking inverse have each coordinate functions polynoimials, therefore define $k$-morphism of affine varieties.
 \subsubsection*{(d)}
+We note that $PGL_n(k)$ is the quasi-projective variety that is the complement of the projetive variety $V(det)\subset \mathbb{P}^{n^2-1}$, where $det$ is the homogeneous polynomial defining the determinant. It is irreducible since it is an open subset of a irreducible projective variety. It has dimension $n^2-1$ since it is open dense in $\mathbb{P}^{n^2-1}$.
 
 \subsection*{Problem 8}
+It suffices to show that it is open on each affine chart, where $f$ restricts to a rational function $\frac{f}{g}$. It belongs to the image of the stalk $O_{X,x}$ iff $g$ does not vanish at $x$, and such $x$ is open. 
 \subsection*{Problem 9}
+Note $X=V(2x_1^2-3x_2x_3)$ is irreducible, so its function field is the field of fraction of $k[X]=\textrm{Quot}(k[x_1,x_2,x_3]/(2x_1^2-3x_2x_3))$.
+
+Note $Y=V(x_1x_2-x_1)$ is has irreducible components $V(x_1)$ and $V(x_2-1)$, so the function field is $k(Y)\cong k(x_2,x_3)\times \textrm{Quot}(k[x_1,x_2]/x(x_2-1))$.
+
+Note $X\cap Y$ has irreducible components $V(x_2)$, $V(x_3)$ and $V(2x_1^2-3x_3)$, so the function field is $k(X\cap Y)\cong k(x_1,x_3)\times k(x_1,x_2)\times \textrm{Quot}(k[x_1,x_2,x_3]/(2x_1^2-3x_3))$
+
+
 \subsection*{Problem 10}
+\subsubsection*{(a)}
+The function field of the cuspidal curve is \[\textrm{Quot}(k[x_1,x_2]/(x_1^2-x_2^3))\cong \textrm{Quot}(k[x_1,x_2]/(x_1^2-x_2^3))\cong \textrm{Quot}(k[t^2,t^3]\cong k(t)\], so the cuspidal cubic is ratinal.
+
+\subsubsection*{(c)}
+An immediate consequence of rationality is that the variety is birationally equivalent to $\mathbb{A}^n$ for some $n$, and birational equivalence preserves $k$-points. Thus, the question reduces to showing the $k$-points are dense in $\mathbb{A}^n_K$.
 
 \end{document}
