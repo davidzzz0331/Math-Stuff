@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber MATH 618"] 1730995249 "MATH 618.bcf" "MATH 618.bbl" "MATH 618" 1730997430 0
-  "MATH 618.bcf" 1730997430 107355 6cd72457589b2457c16275800c7a0390 "pdflatex"
+["biber MATH 618"] 1730995249 "MATH 618.bcf" "MATH 618.bbl" "MATH 618" 1731010659 0
+  "MATH 618.bcf" 1731010659 107355 6cd72457589b2457c16275800c7a0390 "pdflatex"
   (generated)
   "MATH 618.bbl"
   "MATH 618.blg"
   (rewritten before read)
-["pdflatex"] 1730997428 "/Users/davidzhu/Documents/GitHub/Math-Stuff/MATH 618.tex" "MATH 618.pdf" "MATH 618" 1730997430 0
-  "/Users/davidzhu/Documents/GitHub/Math-Stuff/MATH 618.tex" 1730997428 9949 9fbb815a3f4418e081517aa932150f3d ""
+["pdflatex"] 1731010658 "/Users/davidzhu/Documents/GitHub/Math-Stuff/MATH 618.tex" "MATH 618.pdf" "MATH 618" 1731010659 0
+  "/Users/davidzhu/Documents/GitHub/Math-Stuff/MATH 618.tex" 1731010657 9954 308ff55eacbef04ccf618c684b73fdc3 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -216,10 +216,10 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1710130202 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1710130178 7883461 5901c145d91f673e1f689bc83c44d735 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "MATH 618.aux" 1730997430 287 78ff477c7eaa9c333b0ea901a4ae311d "pdflatex"
+  "MATH 618.aux" 1731010659 287 78ff477c7eaa9c333b0ea901a4ae311d "pdflatex"
   "MATH 618.bbl" 1730995255 0 d41d8cd98f00b204e9800998ecf8427e "biber MATH 618"
-  "MATH 618.run.xml" 1730997430 2272 f66633f469ab551a8910353d4593127d "pdflatex"
-  "MATH 618.tex" 1730997428 9949 9fbb815a3f4418e081517aa932150f3d ""
+  "MATH 618.run.xml" 1731010659 2272 f66633f469ab551a8910353d4593127d "pdflatex"
+  "MATH 618.tex" 1731010657 9954 308ff55eacbef04ccf618c684b73fdc3 ""
   (generated)
   "MATH 618.aux"
   "MATH 618.bcf"
