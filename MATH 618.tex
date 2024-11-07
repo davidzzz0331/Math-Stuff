@@ -183,13 +183,60 @@ A functor $F: T_*\to C$ for some catgeory $C$ is called a \underline{\textbf{hom
 
 
 
+\begin{tcolorbox}
+\begin{lemma}
+Let $C=(C^{*,*}, d,\delta)$, be a double complex, $(C^{*},d)$ a complex with $\epsilon: C^{*}\to C^{*,0}$ such that $d\epsilon+\epsilon d=0$. Furthermore, assume that the columns are exact(in particular, this implies that $H^q(C^{p,*}, \delta)\cong C^p$ for $q=0$). Then, $\epsilon: H^p(C,d)\to H^p(\textrm{Tot}(C),D)$ is an isomorphism.
+\end{lemma}
+\end{tcolorbox}
+\begin{proof}
+    standard augmentation/resolution lemma. Mattie you can do this. 
+\end{proof}
+
+Let $M$ be a smooth manifold. Suppose $M$ has a good cover $U=\{U_\alpha\}$ such that each intersection $U_{\alpha_1,...,\alpha_n}$ is either empty or contractible. (Note that you can always do this for a Riemannian manifold). We define a double complex as follows: Let 
+\[C^{p,q}=\prod_{\alpha_0,...,\alpha_q}\Omega^q(U_{\alpha_0,...,\alpha_q})\]
+The horizontal differentials $d: C^{p,q}\to C^{p+1,q}$ is $d(\omega\in \Omega^p(u_{\alpha_0,...,\alpha_q}))=d\omega\in \Omega^{p+1}(U_{\alpha_0,...,\alpha_q})$, which is just the De Rham differentials.
+
+The vertical differential $\delta: C^{p,q}\to C^{p,q+1}$ is defined to by: let $\omega\in \prod_{\alpha_0,...,\alpha_q}\Omega^p(U_{\alpha_0,...,\alpha_q})$
+\[\delta(\omega)_{\alpha_0,...,\alpha_{q+1}}=\sum_{j=0}^{q+1}(-1)^j\omega_{\alpha_0,...,\widehat{\alpha_j},...,\alpha_{q+1}}|_{U_{\alpha_0,...,\widehat{\alpha_j},...,\alpha_{q+1}}}\]
+which is the Cech differential.
+
+It is easy to check that $\delta^2=0$ and $d^2=0$ and $d\delta=\delta d$.
+
+We have an agumentation of the double complex by the De Rham complex, and apply the previous lemma. The trick to checking the columns are exact is to let $\lambda_{\alpha}$ be a partition of unity for $U_{\alpha}$, and define a chain contraction $s: C^{p,q}\to C^{p,q-1}$ defined by $(s\omega)_{\alpha_0,...,\alpha_{q-1}}=\sum\lambda_{\alpha_0}\omega_{\alpha_0,...,\alpha_{q-1}}$. Thus, we get that $H^p(\Omega M)\cong H^p(\textrm{Tot}(C), D)$. 
+
+Similarly, there is an augmentation of the Cech comomplex $C^{\vee,q}(U)=\prod_{\alpha_0,...,\alpha_q} \mathbb{R}$, with $\delta: C^{\vee q}\to C^{\vee q+1}$ defined by $\delta(c)_{\alpha_0,...,\alpha_{q+1}}:=\sum(-1)^jc_{\alpha_0,...,\widehat{\alpha_j},...,\alpha_{q+1}}$. We may check that the rows are exact directly this time, and that the cohomology of the complex is isomorphic to the cech cohomology $H^*(C^{\vee,*},\delta)$ by the row analog of the lemma. In the end, we have 
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}[De Rham Theorem]
+\[H^{*}_{DR}(M)\cong H^*(\Omega^*M)\cong H^{\vee,*}(M)\]
+\end{theorem}
+\end{tcolorbox}
 
 
 
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A \underline{\textbf{spectral sequence}} is a sequence of abelian groups and differentials $(A_n,d_n)$, such that $d_n: A_n\to A_n$, such that $A_n\cong H^*(A_n,d_n)$ (Block's notation $A_n$ is the page). A morphism of spectral sequences is a sequence of map $A_n\to E_n$ that commutes with all differentials and turning the page.
+\end{definition}
+\end{tcolorbox}
 
 
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}[Serre Spectral Sequence]
+Let $\pi: Y\to X$ be a Serre fibration, with fiber $F$. Then, there exists a spectral sequence $(E_r^{p,q},d_r)$, with the differentials going the way 
+\[d_r: E_r^{p,q}\to E_r^{p+r,q-r+1}\]
+If $X$ is simply connected, then the $E_2$ page is given by 
+\[E_2^{p,q}=H^{p}(X; H^q(F))\Rightarrow H^{p+q}(Y)\]
+\end{theorem}
+\end{tcolorbox}
 
 
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+Consider the fibration $S^1\to S^{2n+1}\to \mathbb{CP}^n$. Then, $E_2^{p,q}=H^p(\mathbb{CP}^n,H^q(S^1))$. You can draw the $E_2$ page of the spectral sequence, and find that the non-trivial terms concentrate on row $0,1$ by our knowledge of the cohomology of $S^1$. Moreover, we know the cohomology of $\mathbb{CP}^n$ is only in even degrees, so we only get non-zero terms in the even columns. Combining the information, the $E_2$ page is pretty clear to see. You can work out when the spectral sequence collapses and how it converges.  
+\end{example}
+\end{tcolorbox}
 
 
 \end{document}
