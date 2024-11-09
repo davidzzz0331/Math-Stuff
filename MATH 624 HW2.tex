@@ -39,6 +39,8 @@
 
 \section*{Homework 2}
 
+
+
 \subsection*{Problem 1b}
 Suppose $U_f$ is not empty. Let $W=\{ a\in V: k(a)|k \textrm{ is a finite algebraic extension} \}$, which corresponds to the vanishing locus of maximal ideals of $k[V]$. Clearly $W\subset V(\overline{k})$, so it suffices to show that $W\cap U_f$ is dense in in $U_f$ for every $f$, which is equivalent to every open $U_f$ containing a point in $W$. To see this, consider a maximal ideal in $k[V]_f$, which must be the image of a maximal ideal in $k[V]$ under localization: suppose otherwise, then every maximal ideal of $k[V]$ contains $f$, which implies $f$ is in the Jacobson radical of $k[V]$. However, $k[V]$ has trivial Jacobson radical since $k[X]$ is Jacobson, which implies $f=0$ and $U_f$ is empty, and contradiction. Then, the locus of the maximal ideal is contyained in $U_f\cap W$.
 
@@ -314,11 +316,22 @@ An immediate consequence of rationality is that the variety $X$ is birationally 
 \section*{Homwork 6}
 
 \subsection*{Problem 1}
-
-
+\subsubsection*{(a)}
+By Chevalley's extension theorem, every local ring $(R, \mathfrak{m})$ is dominated by a valuation ring whose field of fraction is $K(X)$. By valuative criterion, separatedness is equivalent to having at most one point whose stalk is dominated by the valuation ring. Since domination is transitive, we are done.   
+\subsubsection*{(b)}
+It suffices to show this fact for $U$ affine open, and $U'=D(f)$ a basic open. Then, the restriction map $O_X(U)\to O_X(U')$ corresponds to the localization map $A\to A_f$, which is injective if $A$ is integral.  
 
 \subsection*{Problem 2}
-Vakil 7.4.4
+\subsubsection*{(a)}
+Obvious to check.
+
+\subsubsection*{(b)}
+Let $R=\oplus_{*}R_*$ and $S=\oplus_{*}R_{d*}$. We will show that $Proj R\to Proj S$ is a isomorphism on an open cover. By definition, $Proj S$ is covered by homogeneous elements $f$ of degree $d$, and let $D^S_+(f)$ denote such a basic open. Note that $\{D^R_+(f)_+|def(f)=d\}$ also covers $R$, as $D_+(g)=D_+(g^n)$ for any $g$. We have the canonical isomorphism $D^S_+(f)=Spec S_f^0$ and $D^R_+(f)=Spec(R_f^0)$, and note that $S_f^0=\{\frac{s}{f^k}|s\in R_{kd}\}=R_f^0$ are canonically isomorphic.
+
+\subsubsection*{(c)}
+Consider the Veronese embedding: $\mathbb{P}^1\to \mathbb{P}^2$ given by $[s:t]\mapsto [s^2:st:t^2]$. Then, the induced map on homogeneous coordinate rings is the inclusion $k[x,y,z]/(xz-y^2)\cong k[s^2,st,t^2]\to k[s,t]$, which is not an isomorphism of $k$-algebras. 
+
+
 
 
 \subsection*{Problem 4}
@@ -348,8 +361,58 @@ Suppose $f$ is a $k$-isomorphism with inverse $f^{-1}$. Then, the Jacobians sati
 
 \subsection*{Problem 9}
 
+\subsubsection*{(a)}
+The closed subschemes of an affine scheme $Spec R$ corresponds to closed immersions of the form $Spec(R/I)\to Spec(R)$, where $I$ is an ideal of $R$. The points of $Spec(\mathbb{Z}[t])$ are prime ideals of $\mathbb{Z}[t]$, which is of the following three forms: $(p)$ where $p$ is a prime number, $(f(t))$ where $f$ is irreducible, and $(p,f(t))$ where $f$ is irreducible mod $p$. The residue field of $(p)$ is precisely $(\mathbb{Z}/p)(t)$; the residue fields of $f(t)$ corresponds to the quotient field of $\mathbb{Z}[t]/(f(t))$; the residue field of $(p,f(t))$ is isomorphic to $\mathbb{F}_p[t]/(f(t))$, which is the finite field $\mathbb{F}_{p^n}$, where $n$ is the degree of $f(t)$.
+\subsubsection*{(b)}
+Let $p$ be a choice of point in $Spec(\mathbb{Z}[t])$. Then, the fiber is computed as the pullback of the diagram
+\[\begin{tikzcd}
+	{\pi^{-1}(p)} & {Spec(\mathbb{Z}[t])\times_{\mathbb{Z}}Spec(\mathbb{Z}[x_1,...,x_n])} \\
+	{Spec(\kappa(p)} & {Spec(\mathbb{Z}[t])}
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-1, to=2-1]
+	\arrow["\pi"', from=1-2, to=2-2]
+	\arrow[from=2-1, to=2-2]
+\end{tikzcd}\]
+since everything is affine, we move to the ring side and compute that the fiber is 
+\[Spec(\kappa(p)\otimes_{\mathbb{Z}[t]}\mathbb{Z}[t,x_1,...,x_n])\cong Spec(\kappa(p)[x_1,...,x_n])\]
+
+\section*{Homework 7}
+
+\subsection*{Problem 3}
+\subsubsection*{(a)}
+For each pair $x,y$, let $U$ be the affine open set that contains $x,y$, so we get a covering $\{U\times_k U\}$ of $X\times_k X$, and it suffices to show that the diagonal map $U\to U\times_k U$ is a closed immersion. But this is standard since the map $A\otimes_k A\to A $ is always surjective, thus inducing a closed immerison of affine schemes. 
+
+\subsubsection*{(b)}
+Let $f: X\to S$ be the structure map, $\{U_i\}$ be an affine covering of $X$, and choose $V_i$ to be an affine subscheme of $S$ that contains $f(U_i)$. Then, $U_i\times_{V_i}U_i$ is affine open in $X\times_S X$, and $\Delta^{-1}(U_i\times_{V_i}U_i)=U_i$. If $\Delta (X)$ is closed, then to check that $\Delta: X\to \Delta(X)\subset X\times_{S}X$ is a closed immersion, it suffices to show that $\Delta: U_i\to U_i\times_{V_i}U_i$ is a closed immersion for every $i$, but we have checked this true for affine schemes so we are done. 
 
 
+
+
+\subsection*{Problem 4}
+\subsubsection*{(a)}
+If direction is trivial, since we can take $X=Y$. For the other direction, we have the pullback square
+\[\begin{tikzcd}
+X\arrow[d]\arrow[r]& X\times_S Y\arrow[d]\\
+Y\arrow[r]&Y\times_S Y
+\end{tikzcd}\]
+and the bottom arrow is a closed immersion by assumption, so the top arrow is a closed immersion as well since it is stable under pullback.
+
+
+\subsubsection*{(b)}
+This is done in HW4, problem 1.
+
+
+
+\subsection*{Problem 6}
+
+\subsection*{Problem 7}
+
+\subsection*{Problem 8}
+
+\subsection*{Problem 9}
+
+
+\subsection*{Problem 10}
 
 
 
