@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber MATH 624 HW2"] 1731117531 "MATH 624 HW2.bcf" "MATH 624 HW2.bbl" "MATH 624 HW2" 1731118226 0
+["biber MATH 624 HW2"] 1731117531 "MATH 624 HW2.bcf" "MATH 624 HW2.bbl" "MATH 624 HW2" 1731341707 0
   "/usr/local/texlive/2023/texmf-dist/bibtex/bib/gloss/sample.bib" 1136766823 2721 b88105703bd616b4f9867992219afb8a ""
-  "MATH 624 HW2.bcf" 1731118226 107446 b1703c238c462b0222a50098008a9b82 "pdflatex"
+  "MATH 624 HW2.bcf" 1731341707 107446 b1703c238c462b0222a50098008a9b82 "pdflatex"
   (generated)
   "MATH 624 HW2.bbl"
   "MATH 624 HW2.blg"
   (rewritten before read)
-["pdflatex"] 1731118225 "/Users/davidzhu/Documents/GitHub/Math-Stuff/MATH 624 HW2.tex" "MATH 624 HW2.pdf" "MATH 624 HW2" 1731118226 0
-  "/Users/davidzhu/Documents/GitHub/Math-Stuff/MATH 624 HW2.tex" 1731118225 32640 032cec8999b2bb2afb3d8925eba43cd1 ""
+["pdflatex"] 1731341706 "/Users/davidzhu/Documents/GitHub/Math-Stuff/MATH 624 HW2.tex" "MATH 624 HW2.pdf" "MATH 624 HW2" 1731341707 0
+  "/Users/davidzhu/Documents/GitHub/Math-Stuff/MATH 624 HW2.tex" 1731341706 45493 5c8ee8ca546759a22d10a2e64b4f31c0 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -77,6 +77,7 @@
   "/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex" 1673816307 22012 81b34a0aa8fa1a6158cc6220b00e4f10 ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex" 1601326656 8893 e851de2175338fdf7c17f3e091d94618 ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex" 1601326656 4572 4a19637ef65ce88ad2f2d5064b69541d ""
+  "/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex" 1601326656 15929 463535aa2c4268fead6674a75c0e8266 ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfit.code.tex" 1673816307 3626 2d87dc681257fa32d07a8b3934b10f88 ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryintersections.code.tex" 1601674905 5286 9a47f1a4030b41b12ff25b93bef99d01 ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymatrix.code.tex" 1673816307 4228 c39d423dc1a80da31c8c67bf1067f384 ""
@@ -223,10 +224,10 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1710130202 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1710130178 7883461 5901c145d91f673e1f689bc83c44d735 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "MATH 624 HW2.aux" 1731118226 180 b43e80bff2588865cbf39fb2addf62cb "pdflatex"
+  "MATH 624 HW2.aux" 1731341707 180 0e9969a98af6640f1d9a3349cb86d680 "pdflatex"
   "MATH 624 HW2.bbl" 1731117534 466 ee04f40f768daeed26442158e95aba61 "biber MATH 624 HW2"
-  "MATH 624 HW2.run.xml" 1731118226 2377 4d257a4427245aba4aaf5b1d890fc9e5 "pdflatex"
-  "MATH 624 HW2.tex" 1731118225 32640 032cec8999b2bb2afb3d8925eba43cd1 ""
+  "MATH 624 HW2.run.xml" 1731341707 2377 4d257a4427245aba4aaf5b1d890fc9e5 "pdflatex"
+  "MATH 624 HW2.tex" 1731341706 45493 5c8ee8ca546759a22d10a2e64b4f31c0 ""
   (generated)
   "MATH 624 HW2.aux"
   "MATH 624 HW2.bcf"

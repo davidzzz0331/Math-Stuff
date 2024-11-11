@@ -396,6 +396,8 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/preprint/fullpage.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/preprint/fullpage.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/preprint/fullpage.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/preprint/fullpage.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
@@ -961,6 +963,8 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+OUTPUT MATH 624 HW2.pdf
+INPUT /usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
@@ -968,8 +972,6 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm5.tfm
-OUTPUT MATH 624 HW2.pdf
-INPUT /usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT MATH 624 HW2.aux

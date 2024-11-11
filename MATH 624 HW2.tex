@@ -5,6 +5,7 @@
 \usepackage{amssymb}
 \usepackage{tikz}
 \usepackage{fullpage}
+\usetikzlibrary{calc}
 \usepackage{tikz-cd}
 \usepackage{spectralsequences}
 \usepackage{adjustbox}
@@ -31,16 +32,77 @@
 \newtheorem{corollary}{Corollary}[theorem]
 \theoremstyle{definition}
 \newtheorem{example}{Example}[theorem]
-\title{MATH 624 HW2}
+\tikzset{curve/.style={settings={#1},to path={(\tikztostart)
+    .. controls ($(\tikztostart)!\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+    and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+    .. (\tikztotarget)\tikztonodes}},
+    settings/.code={\tikzset{quiver/.cd,#1}
+        \def\pv##1{\pgfkeysvalueof{/tikz/quiver/##1}}},
+    quiver/.cd,pos/.initial=0.35,height/.initial=0}
+\title{MATH 624 Homeworks}
 \author{David Zhu}
 
 \begin{document}
 \maketitle
 
+\section*{Problem 1}
+\subsection*{(a)}
+The fixed field of the aboslute galois group $G_k$ acting on $k^s$ is $k$; The fixed field of the aboslute galois group acting on $\overline{k}$ is $k^i$. The assertion follows immediately. 
+
+
+\subsection*{(b)}
+$(i)\implies (ii)$ $V$ minimal implies $I(V)$ is maximal since $I(-)$ reverses inclusion. 
+
+$(ii)\implies (iv)+\textrm{irreducible}$: $I(V)$ maximal implies $K[V]$ is a finite field extension of $k$. In particular, for each $x_i$, $I(V)\cap k[x_i]\neq 0$. We may thus pick $f_1(x_1),..,f_n(x_n)\in I(V)$, so that the $i$th  coordinate of $a\in V$ must satisfy $f_i$, and there are only finitely many roots to choose from. 
+
+$(iv)+\textrm{irreducible}\implies (iii)$: Points on $V(\overline{k})$ corresponds bijectively to $k$-algebra homomorphisms $k[V]\to \overline{k}$ by evaluation. If $V$ has only finitely many points, then $k[V]$ must be a finite field extension of $k$, so points on $V$ correspond to $Gal(K[V]|k)$, which is a quotient subgroup of $G_k$. Clearly the action of $G_k$ on the quotient is transitive, and thus $V$ is a $G_k$ orbit. 
+
+$(iii)\implies (i)$: a galois orbit is necessarily finite, thus $k[V]$ is a finite extension of $K$ and thus $I(V)$ is maximal, which implies $V$ is minimal.
+
+\section*{Problem 3}
+$2x_1^2-3x_2x_3$ is irreducible by degree reasons, therefore $V_1:=V(2x_1^2-3x_2x_3)$ is irreducible. Clearly irreducible implies connected. 
+
+$x_1^2x_2^2-x_3^4=(x_1x_2-x_3^2)(x_1x_2+x_3^2)$, therefore $V_2:=V(x_1^2x_2^2-x_3^4)=V(x_1x_2-x_3^2)\cup V(x_1x_2+x_3^2)$ is not irreducible. The irreducible components are connected and $(0,0,0)$ is in the intersection, so $V_2$ is connected. 
+
+Clearly the intersection of an irreducible set and a reducible set is reducible; the intersection $V_3:V_1\cap V_2$ is the union $(V_1\cap V(x_1x_2-x_3^2))\cup (V_1\cap V(x_1x_2+x_3^2))$, where both are connected curves and the intersection contains $(0,0,0)$, so it is connected.
+
+The union is still reducible since $V_2$ is reducible, and $V((x_1^2x_2^2-x_3^4)(2x_1^2-3x_2x_3))$ does not have a prime radical. The union is connected since the intersection is non-empty.
+
+\section*{Problem 5}
+\subsection*{(a)}
+If the closure of $x$ is contained in $V_1\cup V_2$, where $V_1$, $V_2$ are closed and disjoint, then clearly $x$ must belong to one of them. Thus, the closure of a singleton must be irreducible. Note that the argument does not 
+
+\subsection*{(b)}
+Take any variety of dimension $0$ to $n$, and choose a generic point on that variety suffices.
+
+\subsection*{(c)}
+Consider the evaluation homomorphism $\varphi_x: k[x_1,...,x_n]\to K$ by plugging in $x$. The coordinate ring of $V_x$ is precisely $k[x_1,...,x_n]/ker(\varphi_x)$. 
+
+\subsection*{(d)}
+For example, consider $V_x=\{x\}=(\sqrt[p]{t},1)=V(x^p-t,y-1)$ in $\mathbb{A}^2_{F_p(t)}$. 
+
+
+\section*{Problem 6}
+\subsection*{(c)}
+Suppose $V$ is irreducible, then $k[V]$ is a domain and admits an embedding into $K$, and one such embedding determines a generic point given by the image of $(x_1,...,x_n)$. 
+\subsection*{(d)}
+If $dim(V)>0$, and suppose $V$ admits a generic point. Then, $trdeg(K|k)\geq 1$ and $k[V]\to K$ admits infinitely many embeddings.  
+
+\section*{Problem 7}
+Since closed sets are finite union of points in $\mathbb{A}^1$, ${A}^1-\{0\}$ clearly cannot be written as a union of two disjoint closed sets. Clearly the disconnected subsets are finite union of singletons with more than $1$ element, so all infinite subsets are connected. 
+
+Take $V((x-2)(x-3))$, which is a disconnected infinite set in $\mathbb{A}^2$.
+
+\section*{Problem 8}
+\subsection*{(a),(c)}
+Trivial exercise. See 602 Notes.
+
+\subsection*{(e)}
+The variety $V$ can be parallel to $H_f$, so the intersection is trivial. Otherwise, the assertion follows from the krull dimension of $k[x_1,...,x_n]/(I(V),f)$, which has dimension $dim(V)-1$. 
+
+
+
 \section*{Homework 2}
-
-
-
 \subsection*{Problem 1b}
 Suppose $U_f$ is not empty. Let $W=\{ a\in V: k(a)|k \textrm{ is a finite algebraic extension} \}$, which corresponds to the vanishing locus of maximal ideals of $k[V]$. Clearly $W\subset V(\overline{k})$, so it suffices to show that $W\cap U_f$ is dense in in $U_f$ for every $f$, which is equivalent to every open $U_f$ containing a point in $W$. To see this, consider a maximal ideal in $k[V]_f$, which must be the image of a maximal ideal in $k[V]$ under localization: suppose otherwise, then every maximal ideal of $k[V]$ contains $f$, which implies $f$ is in the Jacobson radical of $k[V]$. However, $k[V]$ has trivial Jacobson radical since $k[X]$ is Jacobson, which implies $f=0$ and $U_f$ is empty, and contradiction. Then, the locus of the maximal ideal is contyained in $U_f\cap W$.
 
@@ -367,7 +429,7 @@ The closed subschemes of an affine scheme $Spec R$ corresponds to closed immersi
 Let $p$ be a choice of point in $Spec(\mathbb{Z}[t])$. Then, the fiber is computed as the pullback of the diagram
 \[\begin{tikzcd}
 	{\pi^{-1}(p)} & {Spec(\mathbb{Z}[t])\times_{\mathbb{Z}}Spec(\mathbb{Z}[x_1,...,x_n])} \\
-	{Spec(\kappa(p)} & {Spec(\mathbb{Z}[t])}
+	{Spec(\kappa(p))} & {Spec(\mathbb{Z}[t])}
 	\arrow[from=1-1, to=1-2]
 	\arrow[from=1-1, to=2-1]
 	\arrow["\pi"', from=1-2, to=2-2]
@@ -404,15 +466,145 @@ This is done in HW4, problem 1.
 
 
 \subsection*{Problem 6}
+\subsubsection*{(a)}
+\underline{\textbf{Quasi-compact}}: It suffices to find an affine open covering of $T$ such that the inverse image of each affine open in the cover under the map $g:X\times_S T\to T$ is quasi-compact. Let $\phi: T\to S$ be the stucture morphism, and for every $x\in T$, we have an affine open $U$ containing $\phi(x)\in S$. Moreover, we can find an affine open $U'\subset \phi^{-1}(U)$ containing $x$. Using this procedure, we can find a (not necessarily finite) affine open covering $\{U'_i\}$ of $T$, with a collection $\{U_i\}$ of affine opens in $S$ such that $\phi(U'_i)\subset U_i$. Let $f:X\to S$ be the structure morphism of $X$. Then, $f^{-1}(U_i)$ can be covered by finitely many affine open sets of $X$, say $\{V_j\}$. Then, 
+\[g^{-1}(U_i')=f^{-1}(U_i)\times_{U_i}U_i'=\cup_J V_j\times_{U_i} U_i' \]
+so it is a finite union of quasi-compact open subschemes and is thus quasi-compact, and we are done. 
+
+\underline{\textbf{Noetherian}}
+Not stable under base change. For example, $\mathbb{C}\times_{\mathbb{Q}} \mathbb{C}$ is not a Noetherian $k$-algebra.
+
+
+\underline{\textbf{Locally of finite type}}
+Note that to show a morphism $f: X\to T$ is of finite type, it suffices to find an open covering $\{U_i\}$ of $T$, such that ther exists an open affine covering $\{T_{i,j}\}$ for each $f^{-1}(U_i)\subset X$, and each ring map $O_X(U_i)\to O_X(V_i)$ is of finite type. Then by similar argument to part $a$, we may reduce the problem into showing that base change of an affine scheme locally of finite type is locally of finite type, which follows from the statement from ring theory and base change along a finite type ring morphism is of finite type.
+
+
+\underline{\textbf{Finite over Base}}
+I don't know what this means.
+
+\subsubsection*{(b)}
+
+\underline{\textbf{Integral}}: Not stable under base change. See below for irreducible/reduced.
+
+\underline{\textbf{Irreducible}}: Take any non absolutely irreducible variety, and base change to $\overline{k}$.
+
+\underline{\textbf{Reduced}}: Consider the variety $\mathbb{F}_p(t)[x]/(x^p-t)$, which is reduced, and base change to the closure, where it becomes no longer reduced since $x-\sqrt[p]{t}$ is a nilpotent. 
+
+\underline{\textbf{Normal}}
+Base change does not preserve integrality, thus cannot preserve normality. 
+
+
+
+
 
 \subsection*{Problem 7}
+Every morphism except dominant is stable under base change. 
+
+
 
 \subsection*{Problem 8}
+\subsubsection*{(a)}
+Note that $R=k[x_1,x_2,x_3]/((x_1-x_2)^2,x_1^3)$ has the obvious reduction to $R'=k[x_1,x_2,x_3]/(x_1-x_2,x_1)\cong k[x_3]$. Thus, $X^{\textrm{red}}=Spec(k[x_3])$.
+
+
 
 \subsection*{Problem 9}
-
-
+We have $k[x_1,x_2,x_3]/(x_1^2-2x_1x_2-x_2^2-x_1^3)\cong k[t_1,t_2,x_3]/(t_2^2-t_1^3)\cong k[t^2,t^3,x_3]$ by a linear change of variables $t_1\to x_1$ and $t_2\to x_1-x_2$. The integral closure of $k[t^2,t^3,x+3]$ is clearly $k[t,x_3]$ since it is a UFD.
 \subsection*{Problem 10}
+To compute normal locus and normalization, it suffices to compute these on each affine chart and glue. We let $U_i$ denote the standard affine chart on which $x_i\neq 0$. 
+
+\subsubsection*{(a)}
+On $U_0$, we have the affine curve $V(ax_1^3-x_2^2)$. Assuming $char (k)\neq 3$ and $k$ algebraically closed, we have $k[x_2,x_3]/(ax_1^3-x_2^2)\cong k[t^2,t^3]$, whose normal closure is $k[t]$. On $U_1$, we have the affine curve $V(a-x_0x_2^2)$. Consider the map $k[x_0,x_2]\to k[t,\frac{1}{t}]$ by $x_0\mapsto at^2$ and $x_2\mapsto \frac{1}{t}$. The map induces an isomorphism between $k[x_0,x_2]/(a-x_0x_2^2)$ and $k[t,\frac{1}{t}]$, which is integrally closed. Alternatively, is it easy to compute that the curve is smooth. On $U_2$, we have the affine curve $V(ax_1^3-x_0)$, which is smooth and thus normal.
+
+\subsubsection*{(b)}
+For $X$, we may first perform a change of variable so that $a=b=1$. Then, $k[x_1,x_2,x_3]/(x_1^2-x_2x_3)\cong k[s^2,st,t^2]\subset k[s,t]$ using the same map as the veronese embedding. The normalization is thus $k[s,t]$. 
+
+For $Y$, the curve is smooth so it is normal. 
+
+Note that $X\cap Y=V(x_1,x_3)\cup V(x_1-\frac{3}{2}x_2^2,x_3-x_1x_2)$. The second irreducible component is parameterized by $t\mapsto (t,\frac{3}{2}t^2,\frac{3}{2}t^3)$, which is a twisted cubic and is smooth.
+
+\subsubsection*{(c)}
+On $U_0$, we have the affine nodal curve $V(ax_1^3-bx_1^2-x_2^2)$, whose normalization is $k[t]$ by considering $t=\frac{x_2}{x_1}$; On $U_1$, we have the affine curve $V(a-bx_0-x_0x_2^2)$, which is smooth; On $U_2$, we have the affine curve $V(ax_1^3-bx_0x_1^2-x_0)$, which is smooth.
+
+
+
+
+\section*{Homework 8}
+
+\subsection*{Problem 1}
+Every property listed is local in natural, thus inherited by the open/closed subschemes. 
+
+\subsection*{Problem 2}
+\subsubsection*{(a)}
+Note that Noetherian valuation rings have principal maximal ideals, since finitely generated ideals in valuation rings must be principal. By Krull Hauptidealsatz, every ideal of a notherian valuation ring is a power of its maximal ideal, therefore must be discrete. Conversely, a DVR is a PID and is surely Noetherian.
+
+\subsubsection*{(b)}
+Suppose we are given ideals $I,J$. If there exists $j\in J$ such that $j\not \in I$, then $\frac{i}{j}\in R$ for all $i\in I$, for otherwise there exists $i'$ such that $\frac{j}{i'}\in R$, which implies $j\in I$. Thus, $I\subseteq J$, and in particular $Spec(R)$ is a chain. For the second part of the question, it suffices to show that every subring of $K$ containing the valuation ring $R$ is a localization of $R$ at a prime. This follows from the fact that valuation rings are maximal under domination. 
+\subsection*{Problem 4}
+\subsubsection*{(a)}
+$X\times_T Y$ and $X\times_S Y$ are canonically isomorphic as $S$-schemes by the uniqueness of pullback, since they are both the pullback of the same diagram 
+\[\begin{tikzcd}
+	Z & Y \\
+	X & T \\
+	&& S
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-1, to=2-1]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=1-2, to=2-2]
+	\arrow[curve={height=12pt}, from=2-1, to=3-3]
+	\arrow[curve={height=-12pt}, from=1-2, to=3-3]
+	\arrow[from=2-2, to=3-3]
+\end{tikzcd}\]
+
+\subsubsection*{(b)}
+Assuming all schemes are Noetherian. One direction follows from the lemma that if $f: X\to Y$ and $g:Y\to Z$ are morphism of schemes, and if $g\circ f$ is separated, then $f$ is separated. (Hartshorne corllary $4.6$)
+
+The other direction depends on the morphism $T\to S$.
+
+\subsubsection*{(c)}
+Assuming all schemes are Noetherian. One direction follows from the lemma that if $f: X\to Y$ and $g:Y\to Z$ are morphism of schemes, and if $g\circ f$ is universally closed, then $f$ is universally closed. (Hartshorne corllary $4.8$). The other direction depends on the morphism $T\to S$. 
+
+\subsection*{Problem 6}
+\subsubsection*{(a)}
+Suffices to show that the closed sets are stable under specialization. Suppose $x\in \overline{\{y\}}$. Then, let $y\in U$, where $U$ is closed. It is immediate that $\overline{\{y\}}\subset U$, and thus $x\in U$. Conversely, by definition of closure we have $x\in \overline{\{y\}}$ if $x$ is in the every closed set that contains $t$. Taking the complement shows that open sets are stable under generalization. 
+
+\subsubsection*{(b)}
+Suffice to show that for a scheme $X$, every irreducible closed set $Z$ has a generic point. But this is clear since there exists some dense affine open such that $U\cap Z$ is a closed irreducible subset of an affine scheme, which has a generic point given by the defining prime ideal.
+
+\subsection*{Problem 8}
+\subsubsection*{(a)}
+By problem $4b$, it suffices to show that $Proj R\to Spec(\mathbb{Z})$ is a separated. To show this, recall the lemma that a scheme $X$ is separated if for every pair of affine open $U,V$, the intersection $U\cap V$ is affine and the induced map $O_X(U)\otimes O_X(V)\to O_X(U\cap V)$ is surjective. For $Proj R$, the standard affine open $D_+(f)$ suffices, since $D+(f)\cap D_+(g)=D_+(fg)$ is affine, and 
+\[R^0_{(f)}\otimes R^0_{(g)}\to R^0_{(fg)}\]
+is easily checked to be surjective. 
+
+\subsubsection*{(b)}
+Suffices to show that the morphism $Proj S\to Spec(S_0)$ is quasi-compact, and satisfies the hypothesis of the valuative criterion for universally closedness. A proof can be found in Stacks project lemma $27.8.11$. 
+
+\subsection*{Problem 9}
+\subsubsection*{(a)}
+Suffices to show for an affine scheme $Spec(R)$, the normal locus and reduced locus are open.
+\subsubsection*{(b)}
+No. It is easy to show that the singular locus of a curve is affine since it is defined by the vanishing of formal derivatives; The normal locus is then the complement of a closed affine variety of codimension $1$, which is never affine. 
+
+
+
+\subsubsection*{(c)}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

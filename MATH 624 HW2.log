@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.11)  8 NOV 2024 21:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.11)  11 NOV 2024 11:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -313,6 +313,8 @@ File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/local/texlive/2023/texmf-dist/tex/latex/preprint/fullpage.sty
 Package: fullpage 1999/02/23 1.1 (PWD)
 \FP@margin=\skip53
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
 Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
  (/usr/local/texlive/2023/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymatrix.code.tex
@@ -432,12 +434,12 @@ File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \sseq@macro@defaultarggetters@toks=\toks45
 \sseq@groupargspectoks=\toks46
 \sseq@groupthiscalltoks=\toks47
-) (/usr/local/texlive/2023/texmf-dist/tex/latex/spectralsequences/sseqparsers.code.tex
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/spectralsequences/sseqparsers.code.tex
 \sseq@cp@row=\count309
 \sseq@cp@n=\count310
 \sseq@userstacksavecount=\count311
-)
-(/usr/local/texlive/2023/texmf-dist/tex/latex/spectralsequences/sseqforeach.code.tex
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/spectralsequences/sseqforeach.code.tex
 \sseq@Do@depth=\count312
 \sseq@foreachcall=\toks48
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/spectralsequences/sseqkeys.code.tex
@@ -838,20 +840,20 @@ Package: amsthm 2020/05/29 v2.20.6
  (./MATH 624 HW2.aux)
 \openout1 = `"MATH 624 HW2.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
  (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count457
@@ -884,49 +886,49 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file '"MATH 624 HW2".bbl' found.
  (./MATH 624 HW2.bbl)
-Package biblatex Info: Reference section=0 on input line 37.
-Package biblatex Info: Reference segment=0 on input line 37.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
+Package biblatex Info: Reference section=0 on input line 45.
+Package biblatex Info: Reference segment=0 on input line 45.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+euf on input line 49.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [1
 
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5]
-Overfull \hbox (18.09407pt too wide) in paragraph at lines 196--197
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 111.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+) [3] [4] [5] [6] [7]
+Overfull \hbox (18.09407pt too wide) in paragraph at lines 258--259
 \U/euf/m/n/10 a\OMS/cmsy/m/n/10 i$\OT1/cmr/m/n/10 , and the ith de-ho-mog-e-niza-tion of a ho-mo-ge-neous ideal $\U/euf/m/n/10 b$ \OT1/cmr/m/n/10 is the ideal gen-er-ated by $\OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 D[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 ) : \OML/cmm/m/it/10 f[]\U/euf/m/n/10 b\OMS/cmsy/m/n/10 i$\OT1/cmr/m/n/10 .
  []
 
-[6] [7] [8]
-Overfull \hbox (29.14128pt too wide) in paragraph at lines 301--302
+[8] [9] [10]
+Overfull \hbox (29.14128pt too wide) in paragraph at lines 363--364
 \OT1/cmr/m/n/10 Note $\OML/cmm/m/it/10 X \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 V\OT1/cmr/m/n/10 (2\OML/cmm/m/it/10 x[] \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 3\OML/cmm/m/it/10 x[]x[]\OT1/cmr/m/n/10 )$ is ir-re-ducible, so its func-tion field is the field of frac-tion of $\OML/cmm/m/it/10 k\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ] = [](\OML/cmm/m/it/10 k\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 x[]; x[]; x[]\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 (2\OML/cmm/m/it/10 x[] \OMS/cmsy/m/n/10 ^^@
  []
 
-[9] [10] [11] Total classes: 0 [12] (./MATH 624 HW2.aux)
+[11] [12] [13] [14] [15] [16] Total classes: 0 [17] (./MATH 624 HW2.aux)
 Package logreq Info: Writing requests to '"MATH 624 HW2".run.xml'.
 \openout1 = `"MATH 624 HW2.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33017 strings out of 476025
- 776922 string characters out of 5790017
- 1873388 words of memory out of 5000000
- 52976 multiletter control sequences out of 15000+600000
+ 33162 strings out of 476025
+ 780255 string characters out of 5790017
+ 1875388 words of memory out of 5000000
+ 53118 multiletter control sequences out of 15000+600000
  521204 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,20n,104p,5049b,998s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on "MATH 624 HW2.pdf" (12 pages, 241355 bytes).
+Output written on "MATH 624 HW2.pdf" (17 pages, 267367 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 157 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
