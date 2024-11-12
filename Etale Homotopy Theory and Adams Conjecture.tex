@@ -145,15 +145,64 @@ where $\psi^k$ is an unstable Adams operation on the profinite completion.
 
 \section{Algebraic Side}
 
-Recall that the classifying space $BU(n)$ is constructed as the direct limit of complex grassmannians $\varinjlim_{k}Gr_n(k)$. Via Pl\"{u}cker embeddings, the complex grassmannians are naturally affine complex varieties embedded in projective space. Moreover, the defining polynomials also have coefficients in $\mathbb{Q}$.(Example here?)
-
-Thus, an automorphism $Gal(\mathbb{C}|\mathbb{Q})$ gives rise to an automorphism of these varieties, but they are wildly discontinuous in the classical topology. However, the Cech/etale story tells us that the absolute galois group acts on the profinite homotopy type of the grassmannians, preserving the filtration. 
-
-By naturality and splitting principal, understanding the action of $Gal(\mathbb{C}|\mathbb{Q})$ on the profinite complex $K$-theory reduces to understanding the action on $\cup_n \widehat{\mathbb{CP}^n}\cong K(\widehat{\mathbb{Z}},2)$, which can be checked to be the composition 
-\[Gal(\mathbb{C}|\mathbb{Q})\to \widehat{\mathbb{Z}}^*\to K(\widehat{Z},2)\]
 
 
 \section*{Idea of proof}
+
+\underline{\textbf{Step 1}}: Sullivan proves that the stable fiber homotopy types injects into profinite stable homotopy types. In particular, we have the isomorphism on classifying space level 
+\[\textrm{Stable profinite theory}: \ \widehat{B}_{\infty}\cong B_{SG}\times K(\widehat{\mathbb{Z}^*},1)\]
+\[\textrm{Stable theory}: \ BG\cong B_{SG}\times K(\mathbb{Z}/2,1)\]
+where $B_{SG}=\varinjlim_n B_{SG(n)}$, and $B_{SG(n)}$ is the classifying space for the component of the identity map in $G(n)$. (Alternatively, it is also the universal cover of $BG(n)$). Thus, the classifying space for the stable theory is a direct factor of the stable profinite theory, and it suffice to formulate and prove the Adams conjecture in the profinite setting. 
+
+\underline{\textbf{Step 2}}: We identify the classical Adams operation in the following way: the classical Adams operation 
+\[K(X)\xrightarrow{\psi^k}K(X)\]
+naturally desends to maps on the profinite completion, which factors as 
+\[\prod_p \widehat{K(X)}_p\xrightarrow{\widehat{\psi}_p} \prod_p \widehat{K(X)}_p\]
+and $\widehat{\psi^k}_p: \widehat{K(X)}_p\to \widehat{K(X)}_p$ is an isomorphism iff $k$ is prime to $p$. If $k$ is divisible by $p$, we redefine $\widehat{\psi^k}_p$ to be the identity map. After the redefinition, we obtain 
+\[\widehat{K(X)}\xrightarrow{\psi^k}\widehat{K(x)}\]
+which we call the "isomorphic" part of the Adams operation. 
+
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{remark}
+Before the redefinition, in the case where $k|p$, we note that$ widehat{\psi^k}_p$ is topologically nilpotent. 
+\end{remark}
+\end{tcolorbox}
+
+Following this, Sullivan observed that this isomorphic part of the Adams operation is compatible with the natural action of $Gal(\overline{\mathbb{Q}}|\mathbb{Q})$ in the category of profinite homotopy type and maps coming from the algebraic varieties defiend over $\mathbb{Q}$. In particular, there iare homomorphisms
+\[Gal(\mathbb{Q}|\mathbb{Q})\to \widehat{\mathbb{Z}}^*\to \textrm{Aut}(\widehat{K(X)})\]
+by letting $G$ act on the roots of unity. Moreover, for each $\psi^k$, we note that $k$ defines an element $(k)\in \widehat{\mathbb{Z}}^*$ by giving the automorphism 
+\[(k)x=\begin{cases}
+	k\cdot x & \textrm{if } x\in \widehat{\mathbb{Z}_p}, (k,p)=1\\
+	x & \textrm{if } x\in  \widehat{\mathbb{Z}_p}, (k,p)\neq 1
+\end{cases}\]
+Clearly this is compatible with the Adams operation on profinite $K$ theory. Thus, we have identified the profinite Adams operation with the action of the profinite group $\widetilde{\mathbb{Z}}^*$. 
+
+\underline{\textbf{Step 3}}: There is a natural action of the absolute Galois group $Gal(\overline{\mathbb{Q}}|\mathbb{Q})$ on the profinite classifying space $\widehat{BU}$, and the Adams operation is compactible with such action through the abelianization map.
+\[Gal(\overline{\mathbb{Q}|\mathbb{Q}})\to \widehat{\mathbb{Z}}^*\]
+
+The aboslute Galois group action is how the etale homotopy type theory factors in. Note that the absolute galois group acts algebraically on $\mathbb{C}^n$ and $\mathbb{CP}^n$, but with classical topology this action is wildly discontinuous. However, for every algebraic variety $V$, we may constrtcut an inverse system of nerves $N_{\alpha}$, with natural maps $V\to \{N_{\alpha}\}$ giving 
+\[\widehat{\pi_1(V)}\cong \varprojlim_{\alpha}\pi_1N_{\alpha} \textrm{   and   } H^i(V; M)\cong \varinjlim H^i(N_{\alpha; M})\]
+ for all finite coefficient $M$.
+
+
+Sullivan proves that the the above isomorphism imply the profinite completion of $V$ can be constructed from the nerves 
+\[\widehat{V}\cong \varprojlim_{\alpha} N_{\alpha}\]
+in the sense of compact functors (with the extra assumption that $\pi_i(N_{\alpha})$ is finite. )
+
+
+Since each $N_{\alpha}$ is constructed using the algebraic structure of $V$, and each automorphism $\sigma\in Gal(\overline{Q}|\mathbb{Q})$ determines a simplicial automorpihism of $N_{\alpha}$, and thus the profinite homotopy type of any complex algebraic variety defined over $\mathbb{Q}$.
+
+Recall that the classifying space $BU(n)$ is constructed as the direct limit of complex grassmannians $\varinjlim_{k}Gr_n(k)$. Via Pl\"{u}cker embeddings, the complex grassmannians are naturally affine complex varieties embedded in projective space. Moreover, the defining polynomials also have coefficients in $\mathbb{Q}$.(Example here?)
+
+
+By naturality and splitting principal, understanding the action of $Gal(\mathbb{C}|\mathbb{Q})$ on the profinite complex $K$-theory reduces to understanding the action on $\cup_n \widehat{\mathbb{CP}^n}\cong K(\widehat{\mathbb{Z}},2)$, which can be checked to be the composition 
+\[Gal(\mathbb{C}|\mathbb{Q})\to \widehat{\mathbb{Z}}^*\to K(\widehat{Z},2)\]
+and thus agrees with the isomorphic part of he Adams operations discussed above. 
+
+\section{The Adams Conjecture-Proof}
+
+
 
 
 
