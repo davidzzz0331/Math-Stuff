@@ -197,11 +197,31 @@ Recall that the classifying space $BU(n)$ is constructed as the direct limit of 
 
 
 By naturality and splitting principal, understanding the action of $Gal(\mathbb{C}|\mathbb{Q})$ on the profinite complex $K$-theory reduces to understanding the action on $\cup_n \widehat{\mathbb{CP}^n}\cong K(\widehat{\mathbb{Z}},2)$, which can be checked to be the composition 
-\[Gal(\mathbb{C}|\mathbb{Q})\to \widehat{\mathbb{Z}}^*\to K(\widehat{Z},2)\]
+\[Gal(\mathbb{C}|\mathbb{Q})\xrightarrow{\chi} \widehat{\mathbb{Z}}^*\to K(\widehat{Z},2)\]
 and thus agrees with the isomorphic part of he Adams operations discussed above. 
 
 \section{The Adams Conjecture-Proof}
+Again, we note that by choosing $\sigma\in Gal(\overline{\mathbb{Q}}|\mathbb{Q})$ such that $\chi(\sigma)=k^{-1}$, we have the commutative square
 
+\[\begin{tikzcd}
+	{\widehat{BU(n)}} & {\widehat{BU}} \\
+	{\widehat{BU(n)}} & {\widehat{BU}}
+	\arrow[from=1-1, to=1-2]
+	\arrow["\sigma", from=1-1, to=2-1]
+	\arrow["{\psi^k}"', from=1-2, to=2-2]
+	\arrow[from=2-1, to=2-2]
+\end{tikzcd}\]
+
+\underline{\textbf{Final Step}}: We note that the inclusion map $\widehat{BU(n)}\to \widehat{BU}$ is the tautological spherical fibration. The pullback of the fibration is also the bundle classfied by the map $\psi^k\circ i$. In other words, we have the homotopy cartesian square 
+\[\begin{tikzcd}
+	{\widehat{BU(n-1)}} & {\widehat{BU(n-1)}} \\
+	{\widehat{BU(n)}} & {\widehat{BU(n)}}
+	\arrow["i", from=1-1, to=2-1]
+	\arrow["{\psi^k}"', from=1-2, to=1-1]
+	\arrow["i"', from=1-2, to=2-2]
+	\arrow["{\psi^k}"', from=2-2, to=2-1]
+\end{tikzcd}\]
+where we are pulling back along a homotopy equivalence, so the two fibrations are fiber homotopically equivalent, and we finish. 
 
 
 
