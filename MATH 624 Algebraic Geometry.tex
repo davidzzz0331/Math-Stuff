@@ -1247,6 +1247,110 @@ The following hold:
 \end{tcolorbox}
 
 
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}[Kronecker-Weber Theorem for Curves]
+The category of $k$-curves with dominant rational map to the catgeory of function fields of transcendence degree $1$ over $k$. 
+\end{theorem}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $X,T$ be $S$-schemes, and define $X(T):= Hom(T,X)$ as a set, called the $T$\underline{\textbf{-rational points}} of $X$. $X(T)$ is naturally a contravariant functor in $T$ for a fixed $X$, from the category of $S$-schemes to sets, denoted $h^T$. Similarly, it is also a covariant functor in $X$ for a fixed $T$, denoted $h_X$.
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+The following hold: 
+\begin{enumerate}
+    \item The functor $h^T$ satisfies
+    \[h^T(X\times_S Y)=h^T(X)\times h^T(Y)\]
+and if $X_T:= X\times_ST$ is the base change of $X$ to $T$, then $X_S(T)=X_T(T)$.
+    \item For $X,Y$ $S$-schemes, one has a canonical bijection 
+    \[Hom_S(X,Y)\to Nat(h_X,h_Y)\]
+\end{enumerate}
+\end{proposition}
+\end{tcolorbox}
+\begin{proof}
+    Basic abstract nonsense.
+\end{proof}
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}[Representability]
+Consider the functor $F: Sch_S\to Grp$ defined by $X\mapsto \Gamma(O_X,X,+)$. Then, $\mathbb{G}_a= Spec(S[t])$ satisfies $G_a(T)=F(T)$. \\
+
+Consider the functor $F_m: Sch_S\to Grp$, defined by $F_m(T)=O_T(T)^{\times}$. Then, the functor is represented by $\mathbb{G}_m= Spec(S[t,t^{-1}])$. 
+\\
+
+These are called the additive and multiplicative $S$-\underline{\textbf{group schemes}}, respectively. 
+\end{example}
+\end{tcolorbox}
+
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Let $X$ be an $S$-scheme. Then, the follwoing hold:
+\begin{enumerate}
+    \item Let $K$ be an $S$-field. Then, giving a $k$-rational point, $\varphi\in X(K)$ is equivalent to gvinig $x\in X$ and an $S$-embedding $\kappa(x)\to K$, i.e an $S$-morphism $Spec(K)\to Spec(S)\to X$. 
+    \item Let $(R,\mathfrak{m})$ be a local ring. Then, giving a $R$-rational point $\varphi\in X(R)$ is equivalent to giving $x_0\in X$ and a $S$-morphism $O_{X,x_0}\to R$ of local rings. 
+\end{enumerate}
+\end{proposition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+Consider $X:= \mathbb{A}^n_A$, and $k$ a field. Then, $X(K)== Hom(K, \mathbb{A}_A^n)\cong Hom_A(A[x_1,...,x_n], K)= K^n$, as a set. 
+\end{example}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+let $X:= \mathbb{P}^n_A=Proj(A[x_0,...,x_n])$. Then, 
+\begin{enumerate}
+    \item Let $K$ be an $A$-field, i.e there is structure ring homomorphism $\varphi_K: A\to K$. Then, $X(K)K^{n+1}/\sim$ as one would define the projective space. 
+\end{enumerate}
+\end{example}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+The same situation as example $6.3.3$, but with $K$ replaced by an $A$-algebra $R$. Then, $\mathbb{P}^n_A(R)=\{(r_0,...r_n)\in R^n| (r_0,...,r_n)=1\}/ \textrm{units}$
+\end{example}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+Let $K|k$ be a field extension, with $K$ algebraically closed. Then, the functor $K$-points 
+\[h^K: Sch_k^{red,f.t}\to Prevar_k\] 
+defined by $X\mapsto X(K)$ is an equivalence of categories. The analogous statements hold if we add affine/projective/proper. 
+\end{theorem}
+\end{tcolorbox}
+\begin{proof}
+    \underline{\textbf{Step 1}}: Affine schemes of finite types is equivalent to the category of reduced $k$-algebras of finite type. 
+
+
+    \underline{\textbf{Step 2}}: Let $U\to X$ be an open immersion into an affine subscheme/open subvariety. Then, $i$ is completely determined by $O_U(U)\hookleftarrow O_X(X)$.
+
+    \underline{\textbf{Step 3}}: Any $X,Y$ in $Sch_k^{red,f.t}$ and $f: X\to Y$ is determined by the glueing data of affine and quasi-affine schemes. The same is true for varieties. 
+
+    \underline{\textbf{Step 4}}: Let $C,C'$ be category of $k$-ringed spaces, and subcategories $C_0, C_0'$ such is cofinal (everything from $C,C'$ is glued from that of $C_0,C_0'$). 
+
+
+\end{proof}
+
+
+
+
+
+
 
 
 
