@@ -45,6 +45,178 @@
 \begin{document}
 \maketitle
 
+We only prove the Adams conjecture for complex vector bundles, but the same strategy also applies for the real case, albeit needing some modifications. 
+
+\section{The Adams Conjecture}
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+	\begin{definition}
+	Let $X$ be compact Hausdorff and let $KU(X)$ be Grothendieck group of complex vector bundles over $X$, and let $\mathcal{SF}(X)$ be the Grothendieck group of stable sphere bundles over $X$ modulo fiber homotopy equivalence. The \underline{\textbf{complex $J$-homomorphism}} can be viewed as the homomorphism
+	\[J: KU(X)\to \mathcal{SF}(X)\]
+	by sending a complex vector bundle to its fiberwise one-point compactification. 
+	\end{definition}
+	\end{tcolorbox}
+
+	
+	\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+		\begin{theorem}
+		The stable sphere bundles over $X$ is classified by the the groups of self-homotopy equivalences of $S^n$, which we denote by $G(n):=\textrm{Equiv}(S^n,S^n)$. 
+		\end{theorem}
+		\end{tcolorbox}
+		
+
+	\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+		\begin{proposition}
+		The complex $J$-homomorphism $J: KU(X)\to \mathcal{SF}(X)$ is induced by a map between respective classifying spaces, which we also denote 
+		\[J: BU\to BG:=\varinjlim_{n} BG(n)\]
+		\end{proposition}
+		\end{tcolorbox}
+
+
+	
+	
+	
+	
+	\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+	\begin{definition}
+	\underline{\textbf{The $k$-th Adams Operation}} $\psi^k: KU(X)\to KU(X)$ is defined to be a ring homomorphism that is natural in $X$, and satisfies 
+	\[\psi^k(L)=L^{\otimes k}\]
+	where $L$ is any line bundle over $X$. 	
+	\end{definition}
+	\end{tcolorbox}
+	Note that $\psi^k$ is unique by the splitting principal. 
+	
+	\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+	\begin{theorem}[\underline{\textbf{The Adams Conjecture}}]
+	The composite 
+	\[BU\xrightarrow{\psi^k-1}BU\xrightarrow{J}BG\]
+	is nullhomotopic up to multiplication by some $k^n$. 
+	\end{theorem}
+	\end{tcolorbox}
+	
+	
+	\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+	\begin{remark}
+	Historically, Adams realized Whithead's $J$-homomorphism $J: \pi_i(SO)\to \pi^s_i$ can be used to understand the stable homotopy groups of spheres, since $\pi_i(SO)$ is known by Bott periodicity. The Adams conjecture became one of the steps in understanding the image of the $J$ homomorphism. \\
+
+	Multiple proofs of the Adams conjecture were completed around 1970. Notably, Quillen's (second) proof using Brauer lifting and by computing the cohomology of $BGL(\mathbb{F}_q)$ led to his later construction of higher algebraic $K$-theory. In this talk, we present Sullivan's proof using profinite completion and \'etale homotopy theory, which turns the Adams conjecture into a case of Galois symmetry of algebraic varieties.
+
+
+	\end{remark}
+	\end{tcolorbox}
+
+
+
+\section{Preview of Proof}
+
+We are trying to show that the map
+\[BU\xrightarrow{id} BU\xrightarrow{J}BG\]
+and 
+\[BU\xrightarrow{\psi^k} BU\xrightarrow{J}BG\]
+are homotopic modulo $k$. The first map classies the spherical bundle associated to the tautological bundle $\gamma$ over $BU$, and the second map is the spherical bundle associated to the pullback $\psi^{k*}\gamma$, so it suffices to show that these sphere bundles are fiber homotopy equivalent. Sullivan noted that 
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}[Inertia Lemma]
+A filtered automorphism $\varphi: BU\to BU$, meaning a automorphism coming from the limit of automorphisms $\varphi_n:BU(n)\to BU(n)$, induces a fiber homotopy equivalence $\gamma\sim \varphi^* \gamma$. 
+\end{theorem}
+\end{tcolorbox}
+However, the classical Adams operation cannot descend to compatible self-homotopy equivalences on $BU(n)$. However, we can do this following Sullivan's idea of turning the classical theory into the "profinite theory".
+
+\section{Profinite Completion}
+We recall some facts about profinte completion in algebra.
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A \underline{\textbf{profinite group}} is the projective limit of finite discrete groups.
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+The Galois group of an infinite field extension $K|F$ is the profinite limit of the Galois groups $Gal(L|F)$, where $L$ ranges from all finite Galois extensions of $F$. \\
+
+Let $\mathbb{Q}^{ab}$ denote the maximal abelian extension of $\mathbb{Q}$. From class field theory, one know that any abelian extension of $\mathbb{Q}$ is contained in some cyclotomic extension (meaning joining some root of unity). Thus, 
+\[Gal(\mathbb{Q}^{ab}|\mathbb{Q})=\varprojlim Gal(\mathbb{Q}(\zeta_{n})|\mathbb{Q})=\varprojlim_n (\mathbb{Z}/n)^{\times}\]
+\end{example}
+\end{tcolorbox}
+So here is Sullivan's idea of profinite completion of spaces, inspired by Artin-Mazur's 
+\'etale homotopy theory. We start by the following example:
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+Fix a space $F$ with finite homotopy groups. For every CW complex $Y$, the set $[Y,F]$ carries a compact topology since we have 
+\[[Y,F]=\varprojlim_{\alpha}[Y_{\alpha}, F]\]
+where $Y_{\alpha}$ ranges from all finite subcomplexes of $Y$ and as $[Y_{\alpha}, F]$ is finite by obstruction theory. \\
+
+
+Now fix a CW complex $X$. Let $X/\mathcal{F}$ denote the category whose objects are maps $X\to F$ for some $F$ with finite homotopy groups, and morphisms diagrams of the form 
+\[\begin{tikzcd}
+	& X \\
+	{F'} && F
+	\arrow[from=1-2, to=2-1]
+	\arrow[from=1-2, to=2-3]
+	\arrow[from=2-1, to=2-3]
+\end{tikzcd}\]
+Artin-Mazur showed that this category is equivalent to a small filtering category. 
+\end{example}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+The functor $Y\mapsto \varprojlim_{X/\mathcal{F}}[Y,F]$ satisfies the hypothesis of Brown Representability, therefore is represented by some CW complex, which we call $\widehat{X}$, the \underline{\textbf{profinite completion of $X$}}. Note that there is a natural map $X\to \widehat{X}$ given by the structure maps $X\to F$ in $X/\mathcal{F}$.
+\end{theorem}
+\end{tcolorbox}
+Sullivan also proved the following equivalence:
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+For a CW complex $X$, the profinite completion $X\to \widehat{X}$, and the inverse system of spaces ${F}$ in $X/\mathcal{F}$, the following hold:
+\begin{enumerate}
+	\item $\widehat{X}=\varprojlim_{X/\mathcal{F}}F$
+	\item $\widehat{\pi_1(X)}\cong \varprojlim_{X/\mathcal{F}}\pi_1(F)$.
+	\item $H^*(X;M)\cong \varprojlim_{X/\mathcal{F}}H^*(F;M)$ for all finite coefficient $M$.
+\end{enumerate}
+The converse is also true: let ${F_{\alpha}}$ be any inverse system of spaces with finite homotopy groups, together with maps $X\to F_{\alpha}$. If The system satisfies 2 and $3$ listed above, then $\widehat{X}\cong \varprojlim_{\alpha} F_{\alpha}$.
+\end{theorem}
+\end{tcolorbox}
+
+If the reader if familiar, criteria 2 and 3 corresponds to the properties of \'etale fundamental group and  \'etale cohomology respectively. The general construction of this is motivated by the theory of \'etale homotopy type, which tried to capture the theory of \'etale fundamental group and cohomology into one unifying ordinary homotopy type. 
+
+\section{Etale Homotopy Theory}
+
+
+
+
+
+
+
+
+\section{The Case of $\mathbb{CP}^1$}
+
+\section{Proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
@@ -68,54 +240,7 @@ If the covering $\mathcal{U}$ satisfies the property that arbitrary intersection
 \section{Adam's conjecture}
 
 
-\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
-\begin{definition}
-Let $X$ be compact Hausdorff and let $KU(X)$ be Grothendieck group of complex vector bundles over $X$, and let $\mathcal{SF}(X)$ be the Grothendieck group of sphere bundles over $X$ modulo fiber homotopy equivalence. 
-\end{definition}
-\end{tcolorbox}
 
-
-\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
-\begin{theorem}
-The stable sphere bundles over $X$ is classified by the the groups of self-homotopy equivalences of $S^n$, which we denote by $G(n):=\textrm{Equiv}(S^n,S^n)$. 
-\end{theorem}
-\end{tcolorbox}
-
-
-\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
-\begin{proposition}
-The complex $J$-homomorphism $J: KU(X)\to \mathcal{SF}(X)$ is induced by a map between classifying spaces, which we also denote 
-\[J: BU\to BG:=\varinjlim_{n} BG(n)\]
-\end{proposition}
-\end{tcolorbox}
-
-
-\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
-\begin{definition}
-The Adams' operation $\psi^k: KU(X)\to KU(X)$ is induced by a map of classifying spaces
-\[\psi^k: BU\to BU\]
-\end{definition}
-\end{tcolorbox}
-
-
-\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
-\begin{theorem}[The Adams Conjecture]
-The composite 
-\[BU\xrightarrow{\psi^k-1}BU\xrightarrow{J}BG\]
-is nullhomotopic up to multiplication by some $k^n$. 
-\end{theorem}
-\end{tcolorbox}
-
-
-\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
-\begin{proposition}
-The composite $J\circ i: BU(n)\to BU\to BG$, classifyies a sphere bundle over $BU(n)$, and is fiber homotopy equivalent to the fibration 
-\[BU(n-1)\to BU(n)\]
-\end{proposition}
-\end{tcolorbox}
-
-Fact: the composition $J\circ i: BU(n)\to BG$ classifies the sphere bundle associated to the canonical bundle over $BU(n)$, and it is fiber homotopy equivalent to the fibration 
-\[BU(n-1)\to BU(n)\]
 
 We can dream of a proof here: if we have unstable adams operations $\psi^k: BU(n)\to BU(n)$, which are homotopy equivalences, with a pullback diagram
 \[\begin{tikzcd}
