@@ -96,9 +96,10 @@ We only prove the Adams conjecture for complex vector bundles, but the same stra
 	
 	\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
 	\begin{remark}
-	Historically, Adams realized Whithead's $J$-homomorphism $J: \pi_i(SO)\to \pi^s_i$ can be used to understand the stable homotopy groups of spheres, since $\pi_i(SO)$ is known by Bott periodicity. The Adams conjecture became one of the steps in understanding the image of the $J$ homomorphism. \\
+	Historically, Adams realized Whithead's $J$-homomorphism $J: \pi_i(SO)\to \pi^s_i$ can be used to understand the stable homotopy groups of spheres, since $\pi_i(SO)$ is known by Bott periodicity. The Adams conjecture then serves a central role in the identification of the image of the J-homomorphism.
+	\\
 
-	Multiple proofs of the Adams conjecture were completed around 1970. Notably, Quillen's (second) proof using Brauer lifting and by computing the cohomology of $BGL(\mathbb{F}_q)$ led to his later construction of higher algebraic $K$-theory. In this talk, we present Sullivan's proof using profinite completion and \'etale homotopy theory, which turns the Adams conjecture into a case of Galois symmetry of algebraic varieties.
+	Multiple proofs of the Adams conjecture were completed around 1970. Notably, Quillen's (second) proof using Brauer lifting and by computing the cohomology of $BGL(\mathbb{F}_q)$ led to his later construction of higher algebraic $K$-theory. In this talk, we present Sullivan's proof using profinite completion and \'etale homotopy theory, which turns the Adams conjecture into a beautiful case of Galois symmetry of algebraic varieties.
 
 
 	\end{remark}
@@ -198,15 +199,19 @@ A morphism between schemes $f: X\to Y$ is \underline{\textbf{\'etale}} if it is 
 More explicitly, a morphism is etale if for given a point $x\in X$, there exists an affine neighborhood $U=Spec(R)$ containing $X$ and an affine neighborhood $V=Spec(S)$ containing $f(x)$ such that $F(U)\subseteq V$, such that the induced ring map $S\to R$ is flat and unramified. 
 
 
-\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
-\begin{example}
-Suppose we have smooth complex varieties. Then, any ring morphism between finite $k$-algebras
-\end{example}
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Given a scheme $X$, a \underline{\textbf{\'etale covering}} of $X$ is a collection of \'etale morphisms $\varphi_i: U_i\to X$ such that $\cup_i \varphi_i(U_i)=X$
+\end{definition}
 \end{tcolorbox}
 
 
-
-
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+If $X$ is a smooth complex variety, then every \'etale covering of $X$ can be refined to a covering for the complex topology. In particular, given an \'etale neighborhood $(U,u)\to (X,x)$ of $x\in X$, then there exists a open set in the complex topology $(V,x)$ such that the inclusion factors 
+\[(V,x)\to (U,u)\to (X,x)\]
+\end{theorem}
+\end{tcolorbox}
 
 
 
@@ -214,7 +219,6 @@ Suppose we have smooth complex varieties. Then, any ring morphism between finite
 \section{The Case of $\mathbb{CP}^1$}
 
 \section{Proof}
-
 
 
 
