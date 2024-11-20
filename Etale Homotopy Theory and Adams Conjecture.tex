@@ -184,9 +184,25 @@ The converse is also true: let ${F_{\alpha}}$ be any inverse system of spaces wi
 \end{theorem}
 \end{tcolorbox}
 
-If the reader if familiar, criteria 2 and 3 corresponds to the properties of \'etale fundamental group and  \'etale cohomology respectively. The general construction of this is motivated by the theory of \'etale homotopy type, which tried to capture the theory of \'etale fundamental group and cohomology into one unifying ordinary homotopy type. 
+If the reader if familiar, criteria 2 and 3 corresponds to the comparison theorems of \'etale fundamental group and  \'etale cohomology respectively. The general construction of this is motivated by the theory of \'etale homotopy type, which tried to capture the theory of \'etale fundamental group and cohomology into one unifying ordinary homotopy type. 
 
-\section{Etale Homotopy Theory}
+\section{\'Etale Homotopy Theory}
+Since we are only dealing with smooth complex varieties, we follow Sullivan's approach to this topic and avoid much of Artin-Mazur's technical machinery. In analogy of the classical complex geometry, etale maps are more or less local diffeomorphism, such that they satisfiy the hypothesis of the inverse function theorem; an etale covering is then closely related to a topological covering spaces by Riemann existence theorem.
+
+We focus on smooth complex varieties.
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A morphism between schemes $f: X\to Y$ is \underline{\textbf{\'etale}} if it is flat and unramified 
+\end{definition}
+\end{tcolorbox}
+More explicitly, a morphism is etale if for given a point $x\in X$, there exists an affine neighborhood $U=Spec(R)$ containing $X$ and an affine neighborhood $V=Spec(S)$ containing $f(x)$ such that $F(U)\subseteq V$, such that the induced ring map $S\to R$ is flat and unramified. 
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+Suppose we have smooth complex varieties. Then, any ring morphism between finite $k$-algebras
+\end{example}
+\end{tcolorbox}
 
 
 
