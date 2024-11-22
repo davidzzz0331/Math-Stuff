@@ -310,11 +310,6 @@ INPUT C:\Users\David\AppData\Local\Programs\MiKTeX\tex\latex\biblatex\lbx\englis
 INPUT C:\Users\David\AppData\Local\Programs\MiKTeX\tex\latex\biblatex\lbx\english.lbx
 INPUT C:\Users\David\AppData\Local\Programs\MiKTeX\tex\latex\biblatex\lbx\english.lbx
 OUTPUT Etale Homotopy Theory and Adams Conjecture.bcf
-INPUT Etale Homotopy Theory and Adams Conjecture.bbl
-INPUT .\Etale Homotopy Theory and Adams Conjecture.bbl
-INPUT .\Etale Homotopy Theory and Adams Conjecture.bbl
-INPUT .\Etale Homotopy Theory and Adams Conjecture.bbl
-INPUT Etale Homotopy Theory and Adams Conjecture.bbl
 INPUT C:\Users\David\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Users\David\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\David\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
@@ -368,8 +363,6 @@ INPUT C:\Users\David\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\David\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\David\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\David\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
-INPUT C:\Users\David\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cmextra\cmex7.pfb
-INPUT C:\Users\David\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cmextra\cmex7.pfb
 INPUT C:\Users\David\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Users\David\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Users\David\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi5.pfb

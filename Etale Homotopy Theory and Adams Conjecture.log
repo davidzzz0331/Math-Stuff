@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.16)  21 NOV 2024 20:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.16)  22 NOV 2024 02:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -886,12 +886,13 @@ Package biblatex Info: Automatic encoding selection.
 \openout4 = `"Etale Homotopy Theory and Adams Conjecture.bcf"'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file '"Etale Homotopy Theory and Adams Conjecture".bbl' found.
- (Etale Homotopy Theory and Adams Conjecture.bbl)
+Package biblatex Info: ... file '"Etale Homotopy Theory and Adams Conjecture".bbl' not found.
+
+No file "Etale Homotopy Theory and Adams Conjecture".bbl.
 Package biblatex Info: Reference section=0 on input line 45.
 Package biblatex Info: Reference segment=0 on input line 45.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
- (C:\Users\David\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+(C:\Users\David\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
@@ -914,11 +915,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 155--156
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--170
-
- []
-
-
 
 [3]
 
@@ -928,18 +924,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 168--170
 
 [6]
 
-[7]
+[7] Total classes: 0
 
-[8]
-Overfull \hbox (7.90015pt too wide) in paragraph at lines 473--474
-[]\OT1/cmr/m/n/10 Recall that the clas-si-fy-ing space $\OML/cmm/m/it/10 BU\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n\OT1/cmr/m/n/10 )$ is con-structed as the di-rect limit of com-plex grass-man-ni-ans $[][] \OML/cmm/m/it/10 Gr[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 k\OT1/cmr/m/n/10 )$.
- []
-
-
-
-[9] Total classes: 0
-
-[10] (Etale Homotopy Theory and Adams Conjecture.aux)
+[8] (Etale Homotopy Theory and Adams Conjecture.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
@@ -949,17 +936,17 @@ Package logreq Info: Writing requests to '"Etale Homotopy Theory and Adams Conje
 
  ) 
 Here is how much of TeX's memory you used:
- 32895 strings out of 473898
- 774857 string characters out of 5726479
- 1585429 words of memory out of 5000000
- 55292 multiletter control sequences out of 15000+600000
+ 32846 strings out of 473898
+ 773545 string characters out of 5726479
+ 1584407 words of memory out of 5000000
+ 55245 multiletter control sequences out of 15000+600000
  567179 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,17n,107p,5082b,1259s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on "Etale Homotopy Theory and Adams Conjecture.pdf" (10 pages, 235239 bytes).
+ 102i,17n,107p,5082b,997s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on "Etale Homotopy Theory and Adams Conjecture.pdf" (8 pages, 210896 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
+ 102 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
