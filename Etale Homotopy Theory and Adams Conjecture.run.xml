@@ -79,7 +79,7 @@
       <file>"Etale Homotopy Theory and Adams Conjecture".bcf</file>
     </requires>
     <requires type="editable">
-      <file>sample.bib</file>
+      <file>Etale Talk.bib</file>
     </requires>
   </external>
 </requests>

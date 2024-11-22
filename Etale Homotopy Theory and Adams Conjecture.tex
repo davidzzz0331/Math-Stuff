@@ -16,7 +16,7 @@
 \graphicspath{ {D:/Chrome Downloads./} }
 \usepackage[parfill]{parskip}
 \usepackage{amsthm}
-\addbibresource{sample.bib}
+\addbibresource{Etale Talk.bib}
 \usetikzlibrary{calc}
 \theoremstyle{definition}
 \newtheorem{theorem}{Theorem}[section]
@@ -113,20 +113,36 @@ We are trying to show that the map
 \[BU\xrightarrow{id} BU\xrightarrow{J}BG\]
 and 
 \[BU\xrightarrow{\psi^k} BU\xrightarrow{J}BG\]
-are homotopic modulo $k$. The first map classies the spherical bundle associated to the tautological bundle $\gamma$ over $BU$, and the second map is the spherical bundle associated to the pullback $\psi^{k*}\gamma$, so it suffices to show that these sphere bundles are fiber homotopy equivalent. Sullivan noted that 
+are homotopic modulo $k$. The first map classifies the spherical bundle associated to the tautological bundle $\gamma$ over $BU$, and the second map is the spherical bundle associated to the pullback $\psi^{k*}\gamma$, so it suffices to show that these sphere bundles are fiber homotopy equivalent. To make a further reduction, the tautological bundle over $BU$ are constructed as the limit of the tautological bundles over $BU(n)$, so it suffices to prove that the "unstable version" of the Adams conjecture is true for all $n$. 
+
+It turns out that the sphere bundle associated to the tautological bundle over $BU(n)$ is fiber homotopy equivalent to $BU(n-1)$. Thus, we will be done if we have unstable Adams operations $\psi^k: BU(n)\to BU(n)$, which are homotopy equivalences, with a pullback diagram
+\[\begin{tikzcd}
+	{BU(n-1)} & {BU(n-1)} \\
+	{BU(n)} & {BU(n)}
+	\arrow["{\psi^k}", from=1-1, to=1-2]
+	\arrow["i", from=1-1, to=2-1]
+	\arrow["i", from=1-2, to=2-2]
+	\arrow["{\psi^k}"', from=2-1, to=2-2]
+\end{tikzcd}\]
+It follows that the bundle $J\circ i$ is fiber homotopy equivalent $J\circ \psi^k$. However, unstable Adams operation does not exist on $BU(n)$.
 
 
-\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
-\begin{theorem}[Inertia Lemma]
-A filtered automorphism $\varphi: BU\to BU$, meaning a automorphism coming from the limit of automorphisms $\varphi_n:BU(n)\to BU(n)$, induces a fiber homotopy equivalence $\gamma\sim \varphi^* \gamma$. 
-\end{theorem}
-\end{tcolorbox}
-However, the classical Adams operation cannot descend to compatible self-homotopy equivalences on $BU(n)$. However, we can do this following Sullivan's idea of turning the classical theory into the "profinite theory".
+
+Sullivan's idea is to produce an unstable Adams operation on the pro-$p$ completion $BU(n)$, where one naturally has the diagram
+\[\begin{tikzcd}
+	{\widehat{BU(n-1)}_p} & {\widehat{BU(n-1)}_p} \\
+	{\widehat{BU(n)}_p} & {\widehat{BU(n)}_p}
+	\arrow["{\psi^k}", from=1-1, to=1-2]
+	\arrow["i", from=1-1, to=2-1]
+	\arrow["i", from=1-2, to=2-2]
+	\arrow["{\psi^k}"', from=2-1, to=2-2]
+\end{tikzcd}\]
+And then he showed that it sufficed to prove the profinite version of Adams conjecture. 
+
+
 
 \section{Profinite Completion}
-We recall some facts about profinte completion in algebra.
-
-
+We recall some facts about profinte completion in algebra.  
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
 A \underline{\textbf{profinite group}} is the projective limit of finite discrete groups.
@@ -187,36 +203,177 @@ The converse is also true: let ${F_{\alpha}}$ be any inverse system of spaces wi
 
 If the reader if familiar, criteria 2 and 3 corresponds to the comparison theorems of \'etale fundamental group and  \'etale cohomology respectively. The general construction of this is motivated by the theory of \'etale homotopy type, which tried to capture the theory of \'etale fundamental group and cohomology into one unifying ordinary homotopy type. 
 
+By developing the theory of profinite completion, Sullivan introduced profinite $K$-theory, defined by 
+\[\widehat{K}(X)=\varprojlim_n K(X)\otimes \mathbb{Z}/n\]
+and showed that it is classified by $\widehat{BU}$, which is also built from the limit of $\widehat{BU}(n)$. Moreover, Sullivan developed the theory of localized and completed spherical fibrations, with the main theorem being that the stable fiber homotopy types injects into profinite stable homotopy types. In particular, we have the isomorphism on classifying space level 
+\[\textrm{Stable profinite theory}: \ \widehat{B}_{\infty}\cong B_{SG}\times K(\widehat{\mathbb{Z}^*},1)\]
+\[\textrm{Stable theory}: \ BG\cong B_{SG}\times K(\mathbb{Z}/2,1)\]
+where $B_{SG}=\varinjlim_n B_{SG(n)}$, and $B_{SG(n)}$ is the classifying space for the component of the identity map in $G(n)$. (Alternatively, it is also the universal cover of $BG(n)$). Thus, the classifying space for the stable theory is a direct factor of the stable profinite theory, and it suffice to formulate and prove the Adams conjecture in the profinite setting. 
+
+
+
+
+
+
+
+
 \section{\'Etale Homotopy Theory}
-Since we are only dealing with smooth complex varieties, we follow Sullivan's approach to this topic and avoid much of Artin-Mazur's technical machinery. In analogy of the classical complex geometry, etale maps are more or less local diffeomorphism, such that they satisfiy the hypothesis of the inverse function theorem; an etale covering is then closely related to a topological covering spaces by Riemann existence theorem.
-
-We focus on smooth complex varieties.
-\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
-\begin{definition}
-A morphism between schemes $f: X\to Y$ is \underline{\textbf{\'etale}} if it is flat and unramified 
-\end{definition}
-\end{tcolorbox}
-More explicitly, a morphism is etale if for given a point $x\in X$, there exists an affine neighborhood $U=Spec(R)$ containing $X$ and an affine neighborhood $V=Spec(S)$ containing $f(x)$ such that $F(U)\subseteq V$, such that the induced ring map $S\to R$ is flat and unramified. 
-
-
-\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
-\begin{definition}
-Given a scheme $X$, a \underline{\textbf{\'etale covering}} of $X$ is a collection of \'etale morphisms $\varphi_i: U_i\to X$ such that $\cup_i \varphi_i(U_i)=X$
-\end{definition}
-\end{tcolorbox}
+Suppose we have a smooth complex variety $X$. Its complex points has a complex analytic topology, which we denote $X^{an}$. The Zariski topology is much more coarse than the analytic topology, so how can we extract classical algebraic invariants such as homotopy groups and cohomology groups of $X^{an}$ from algebraic data of $X$? On one hand, one has the \'etale fundamental group, which classifies the finite \'etale covers over a scheme $X$. For a smooth variety over $\mathbb{C}$, we have the comparison theorem
 
 
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}
-If $X$ is a smooth complex variety, then every \'etale covering of $X$ can be refined to a covering for the complex topology. In particular, given an \'etale neighborhood $(U,u)\to (X,x)$ of $x\in X$, then there exists a open set in the complex topology $(V,x)$ such that the inclusion factors 
-\[(V,x)\to (U,u)\to (X,x)\]
+Let $X$ be a smooth variety over $\mathbb{C}$, then
+\[\pi_1^{et}(X,\overline{x})\cong \widehat{\pi_1(X^{an},x)}\]
+\end{theorem}
+\end{tcolorbox}
+On the other hand, Grothendieck developed the theory of \'etale topology and \'etale cohomology, which yields the following comparison theorem 
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+Let $X$ be a smooth variety over $\mathbb{C}$, then
+\[H^*(X_{et}; M)\cong H^*(X^{an};M)\]
+for all finite coefficients $M$.
+\end{theorem}
+\end{tcolorbox}
+
+\subsection{\'Etale morphisms}
+The motivation is to have an analog of covering space theory in algebraic geometry, and the correct notion for that is a finite \'etale morphism.
+
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A morphism of schemes $f: X\to Y$ is \underline{\textbf{\'etale}} if it is flat and unramified.
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+Suppose $Y$ is a connected variety/scheme. A finite \'etale morphism $\varphi: X\to Y$ is open, closed, and thus surjective. Moreover, for each point $y\in Y$, there is an \'etale neighborhood $(U,u)\to (Y,y)$ such that $X\times_Y U$ is a disjoint union of open subvarieties/subschemes, each mapping isomorphically down to $U$.
+\end{proposition}
+\end{tcolorbox}
+From this we see that finite \'etale morphisms are indeed natural analog of a finite covering spaces. However, there is no direct algebraic analog for the "universal cover," when it is often an infinite sheeted covering.
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+The universal cover of $\mathbb{C}-\{0\}$ is given by 
+\[\mathbb{C}\xrightarrow{exp} \mathbb{C}-\{0\}\]
+which is a $\mathbb{Z}$-sheeted cover.  
+\end{example}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+There is no algebraic analog for the universal covering space as in example $4.1.1$: any morphism 
+\[\mathbb{A}^1_{\mathbb{C}}\to \mathbb{A}^1_{\mathbb{C}}-\{0\}\]
+must be a constant map, hence not even \'etale. The finite \'etale covers of $\mathbb{A}^1_{\mathbb{C}}-\{0\}$ are of the form 
+\[\mathbb{A}^1_{\mathbb{C}}-\{0\}\xrightarrow{z\mapsto z^n}\mathbb{A}^1_{\mathbb{C}}-\{0\}\]
+for some $n$. 
+\end{example}
+\end{tcolorbox}
+It is not hard to check by hand that these morphisms are \'etale. The fact that these are essentially the only ones is given by Riemann existence theorem.
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}[Riemann Existence Theorem]
+Let $X$ be a nonsingular variety over $\mathbb{C}$. Then, a finite \'etale morphism $Y\to X$ lifts to a finite covering space of analytifications $Y^{an}\to X^{an}$. Moreover, there is a equivalence of categories between finite etale covers of $X$ and finite coverings of $X^{an}$.
 \end{theorem}
 \end{tcolorbox}
 
 
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{remark}
+The solution to the lack of universal cover is to consider a projective system of finite covers $\{(X_i,\pi_i)\}$ that \underline{\textbf{pro-represents}} the functor taking the fiber over a chosen geometric point of a finite \'etale morphism. This leads to the definition of the \'etale fundamental group
+\[\pi_1^{et}(X,\overline{x})=\varprojlim_i \textrm{Aut}_X(X_i)\]
 
+It follows from the Riemann existence theorem that 
+\[\pi_1^{et}(X,\overline{x})\cong \widehat{\pi_1(X^{an},x)}\]
+\end{remark}
+\end{tcolorbox}
+
+\subsection{\'Etale Topology}
+Recall in topology, we have the Leray nerve theorem, which says given a "good" open covering of $X$ (good meaning each finite intersection of opens sets in the cover is either empty of contractible), then the associated nerve complex is weak homotopy equivalent to $X$.
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+Let $\{U_1,..,U_n\}$ be a Zariski covering of an irreducible variety $X$. Then, the associated nerve complex is $\Delta^{n-1}$.
+\end{example}
+\end{tcolorbox}
+This is because any intersection of non-empty open set in the Zariski topology is non-empty. Grothendieck's idea is then to replace Zariski open sets with \'etale opens.
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+	\begin{definition}
+	A morphism between schemes $f: X\to Y$ is \underline{\textbf{\'etale}} if it is flat and unramified.
+	\end{definition}
+	\end{tcolorbox}
+In particular, an \'etale morphism is open; moreover, an \'etale morphism between smooth affine varieties over an algebraically closed field is precisely a regular map that induces an isomorphism of Zariski tangent spaces. Thus, one can think of \'etale morphism as a generalization for local diffeomorphisms. The work of Verdier on hypercoverings, and independently the work of Lubkin on punctually finite coverings, made possible to associate any locally notherian scheme $X$ a pro-object $\{N_{\alpha}\}$ in the homotopy category of simplicial sets. This is what Artin-Mazur referred to as the \underline{\textbf{\'etale homotopy type}} of $X$. The homotopy groups/homology groups of the etale homotopy type are then defined to be the projective/injective limit of homotopy groups/homology groups of $N_{\alpha}$.
+
+We now explain more in detail Sullivan's slight variation of Lubkin's method: for a complex algebraic variety $V$, he considers an \'etale covering $\mathcal{U}_{\alpha}:=\{(U_i,\varphi_i)\}$ of $V$ to be a collection of \'etale morphisms $\varphi: U_i\to V$ such that $\cup_i \varphi_i(U_i)=V$. Then, consider $\mathcal{U}_{\alpha}$ as a full category of schemes over $V$, so that morphism $U_i\to U_j$ are $V$-morphisms. Let $N_{\alpha}$ denote the realization of $U_{\alpha}$, and we get an inverse system of complexes $\{N_{\alpha}\}$ indexed by \'etale covers of $V$ and filtered by refinement. The work of Artin-Mazur yield the following comparison theorem
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}[Comparison Theorem]
+If $V$ is normal, then 
+\[\widehat{\pi_1(V^{an})}\cong \varprojlim \pi_1{N_{\alpha}}\]
+and 
+\[H^*(V^{an};M)\cong \varinjlim H^*(N_{\alpha};M)\]
+for finite coefficients.
+\end{theorem}
+\end{tcolorbox}
+so indeed the \'etale homotopy type $\varprojlim N_{\alpha}$ does give the profinite completion of $V^{an}$, through a purely algebraic method. 
 
 \section{The Case of $\mathbb{CP}^1$}
+We now discuss the main example to the construction above. Let $\mathcal{U}_n$ denote the following \'etale cover of $\mathbb{P}^1_{\mathbb{C}}$: take $V_0=\mathbb{A}^1$ and $V_1=\mathbb{A}^1$ be the standard affine opens of $\mathbb{P}^1$ and $V_{01}:=V_1\cap V_2\cong \mathbb{A}^1-\{0\}$. Then, we may \'etale cover $\mathbb{P}^1$ by 
+$$U_0=\mathbb{A}_1\xrightarrow{\cong }V_0$$
+$$U_1=\mathbb{A}_1\xrightarrow{\cong }V_0$$
+$$U_2=\mathbb{A}_1-\{0\}\xrightarrow{\textrm{deg } n }V_{01}$$
+
+The category $\mathcal{U}_n$ has the following morphisms: there is a unique morphism from $U_2$ to $U_0$ and to $U_1$, and $U_2$ has automorphisms group $\mathbb{Z}/n$. We may represent  $\mathcal{U}_n$ as 
+\[\begin{tikzcd}
+	\bullet && {\mathbb{Z}/n} && \bullet
+	\arrow[from=1-3, to=1-1]
+	\arrow[from=1-3, to=1-5]
+\end{tikzcd}\]
+and the nerve of the category is $\Sigma K(\mathbb{Z}/n,1)$. One may see this as attaching two cones over $K(\mathbb{Z}/n,1)$. 
+
+
+We may consider the inverse system of nerves $\{N\mathcal{U}_{n}\}=\{\Sigma K(\mathbb{Z}/n,1)\}$ partially ordered by divisiblility of $n$.The system is homotopically cofinal in the inverse system of all nerves of etale coverings, so it represents the \'etale homotopy type of $\mathbb{P}^1$. Let $\widehat{X}=\varprojlim_n \Sigma K(\mathbb{Z}/n,1)$. One easily see that $\pi_1(\widehat{X})=0=\pi_1(\mathbb{CP}^1)^{\wedge}$, and 
+\[H^*(\widehat{X};M)=\varinjlim_n H^*(\Sigma K(\mathbb{Z}/n,1))=H^*(\mathbb{CP}^1;M)\]
+for all finite coefficient system $M$. Thus, we have constructed the profintie completion of $\mathbb{CP}^1$ purely from the etale coverings of $\mathbb{P}^1$.
+
+\section{Galois symmetry}
+Note that $BU(n)$ is the inductive limit of grassmannians, which are naturally complex varieties through plucker embedding. In fact, they are varieties over $\mathbb{Q}$, and there is a natural absolute Galois group $Gal(\mathbb{Q}^{sep}|\mathbb{Q})$ action on the grassmannians. The action also induces an automorphism of the etale covers, as we have the pullback
+\[\begin{tikzcd}
+	{\sigma^*U} & U \\
+	V & V
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-1, to=2-1]
+	\arrow[from=1-2, to=2-2]
+	\arrow["\sigma", from=2-1, to=2-2]
+\end{tikzcd}\]
+It is easy to verify for the example 
+\[\mathbb{A}^1-\{0\}\xrightarrow{z\mapsto z^n}\mathbb{A}^1-\{0\}\]
+which has covering automoprhism $\mathbb{Z}/n$, the aboslute galois group acts by moving the $n$th root of unity around. Thus, there is an action on each nerve $\Sigma K(\mathbb{Z},1)$, and the one may check 
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+The absolute Galois $Gal(\mathbb{Q}^{sep}|\mathbb{Q})$ acts via acts via the cyclotomic character through $\widehat{\mathbb{Z}}^*$ on $H^2(\widehat{P}^1;\widehat{\mathbb{Z}})$, and the action is given by sending the generator $x\to ax$, where $a\in \widehat{\mathbb{Z}}^*$.
+\end{theorem}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{corollary}
+	The absolute Galois $Gal(\mathbb{Q}^{sep}|\mathbb{Q})$ acts via the cyclotomic character through $\widehat{\mathbb{Z}}^*$ on $H^*(\widehat{BU}(n);\widehat{\mathbb{Z}})=\widehat{\mathbb{Z}}[c_1,...,c_n]$, and the action is given by map on the ith chern classs $c_i\to a^ic_i$, where $a\in \widehat{\mathbb{Z}}^*$.
+\end{corollary}
+\end{tcolorbox}
+The first Chern class classifies isomorphism class of line bundles. So for any $k$, we may choose a class $\sigma\in Gal(\mathbb{C}|\mathbb{Q})$ such that $\chi(\sigma)=k\in \widehat{\mathbb{Z}}^*$. It follows from the profinite theory of characteristic classes, the homotopy equivalence 
+\[BU\xrightarrow{\sigma} BU\]
+sends lines bundles to their $k$th power, as desired. 
+
 
 \section{Proof}
 
@@ -262,28 +419,6 @@ If the covering $\mathcal{U}$ satisfies the property that arbitrary intersection
 
 
 
-We can dream of a proof here: if we have unstable adams operations $\psi^k: BU(n)\to BU(n)$, which are homotopy equivalences, with a pullback diagram
-\[\begin{tikzcd}
-	{BU(n-1)} & {BU(n-1)} \\
-	{BU(n)} & {BU(n)}
-	\arrow["{\psi^k}", from=1-1, to=1-2]
-	\arrow["i", from=1-1, to=2-1]
-	\arrow["i", from=1-2, to=2-2]
-	\arrow["{\psi^k}"', from=2-1, to=2-2]
-\end{tikzcd}\]
-Then, the bundle $J\circ i$ is fiber homotopy equivalent $J\circ \psi^k$. However, unstable Adams operation does not exist on $BU(n)$. However, Sullivan proves that 
-\[\begin{tikzcd}
-	{\widehat{BU(n-1)}_p} & {\widehat{BU(n-1)}_p} \\
-	{\widehat{BU(n)}_p} & {\widehat{BU(n)}_p}
-	\arrow["{\psi^k}", from=1-1, to=1-2]
-	\arrow["i", from=1-1, to=2-1]
-	\arrow["i", from=1-2, to=2-2]
-	\arrow["{\psi^k}"', from=2-1, to=2-2]
-\end{tikzcd}\]
-where $\psi^k$ is an unstable Adams operation on the profinite completion. 
-
-
-
 
 
 
@@ -294,10 +429,7 @@ where $\psi^k$ is an unstable Adams operation on the profinite completion.
 
 \section*{Idea of proof}
 
-\underline{\textbf{Step 1}}: Sullivan proves that the stable fiber homotopy types injects into profinite stable homotopy types. In particular, we have the isomorphism on classifying space level 
-\[\textrm{Stable profinite theory}: \ \widehat{B}_{\infty}\cong B_{SG}\times K(\widehat{\mathbb{Z}^*},1)\]
-\[\textrm{Stable theory}: \ BG\cong B_{SG}\times K(\mathbb{Z}/2,1)\]
-where $B_{SG}=\varinjlim_n B_{SG(n)}$, and $B_{SG(n)}$ is the classifying space for the component of the identity map in $G(n)$. (Alternatively, it is also the universal cover of $BG(n)$). Thus, the classifying space for the stable theory is a direct factor of the stable profinite theory, and it suffice to formulate and prove the Adams conjecture in the profinite setting. 
+
 
 \underline{\textbf{Step 2}}: We identify the classical Adams operation in the following way: the classical Adams operation 
 \[K(X)\xrightarrow{\psi^k}K(X)\]
