@@ -1348,10 +1348,41 @@ defined by $X\mapsto X(K)$ is an equivalence of categories. The analogous statem
 
 
 
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
+\begin{proposition}
+If $\Sigma$ is a subset of a scheme $X$, then $\overline{\Sigma}$ carries a unique reduced scheme structure $X_{\Sigma}$. 
+\end{proposition}
+\end{tcolorbox}
 
 
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+Let $x\in \mathbb{P}^n(K)$ be given, say $x=(x_0:...:x_n)$. Let $\lambda\in K$ such that $v(\lambda)=min_iv(x_i)$. Then, take $y=(y_0:...:y_n)$ such that $y_i=x_i\lambda^{-1}$, and each $y_i$ is a unit. Define $\rho: \mathbb{P}^n_K(K)\to \mathbb{P}^n_k(k)$ by $x=\lambda y\mapsto (\overline{y_0}:...:\overline{y_n})$, wher $\overline{y_i}=(y_i mod \ \mathfrak{m})\in k$.
+\end{definition}
+\end{tcolorbox}
 
 
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}[Reduction of Schemes]
+Consider the composition 
+\[\mathbb{P}^n_K\hookrightarrow \mathbb{P}^n_R\hookleftarrow \mathbb{P}^n_k\]
+where the maps are the obvious base change, be the generic, respectively, special fibers. 
+
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+Let $R$ be a valuation ring inside an algebraically closed field $K$, and $Z\subset \mathbb{P}^n_K$ be a closed projective $K$-variety. Then, then following hold: 
+\begin{enumerate}
+    \item there is a unique projective $k$-variety $Z_k\subset \mathbb{P}^n_k$ such that $Z_k(k)=\rho(Z(K))$. 
+    \item The variety $Z_k$ is realized as the special fiber of the reduced scheme closure $Z_r:=i(Z_k)\subset \mathbb{P}^n_R$.
+    \item $Z_R\subset \mathbb{P}^n_R$ is the unique closed $R$-subscheme containing $Z_k$ and satisfying $O_x$ is a $R$-torsion free module for all $x\in Z_K$.
+\end{enumerate}
+\end{theorem}
+\end{tcolorbox}
+The above theorem applies to the projective Noether normalization and projection from linear subspace. 
 
 
 
