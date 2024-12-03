@@ -603,22 +603,33 @@ By the standard technique of building disjoint open dense subsets, each belongin
 
 
 \subsection*{Problem 4}
-Suppose $f$ is strictly dominant. Then, the funtion field is the product of the function fields of the irreducible components, which is the product of stalks of the generic points of the irreducible components. 
-
+By previous work, we already know that the function fields are product of the stalks of the generic points, and it clear that the map $\kappa(X)\to \kappa(X_{\alpha})$ is the projection map. Then suppose $f$ is strictly dominant, such that $x_i,y_i$ are generic points of components $X_i,Y_i$ and $f(x_i)=y_i$. Then, it is straightforward to see that $f^*: \mathcal{O}_{Y,y_i}\to \mathcal{O}_{X,x_i}$ is injective since for all affine opens $U_i\subset X_i$ and $V_i\subset Y_i$ with $f(U_i)\subset V_i$, the induced ring map (which are integral domains) satisfies $(f^*)^{-1}((0))=(0)$, which is true since $f$ maps the generic point to the generic point. Thus, the composition $\kappa(Y)\to \kappa(X)\to \kappa(X_{\alpha})$ is injective hence non-zero. Suppose $f$ is not strictly dominant, so that there is a generic point $x\in Z\subset X$ such that $f(x)$ is not a generic point. 
 
 
 \subsection*{Problem 5}
-
+\subsubsection*{(a)}
+We have already showed that every morphism $\mathbb{P}^m\to \mathbb{P}^n$ is constant when $m>n$, so a dominant rational map cannot have domain the entire $\mathbb{P}^m$.
 
 \subsection*{Problem 6}
+Follows from general abstract nonsense that $Hom(A,-)$ preserves all limits, and pullback and products are both limits. 
 
+However, it does not preserve coproducts. For example, 
+\[Mor_{Spec(\mathbb{Z})}(Spec(\mathbb{Z}), \coprod_{I}Spec(\mathbb{Z}) )=Hom(\prod_I \mathbb{Z}, \mathbb{Z})\neq \prod Hom(\mathbb{Z},\mathbb{Z})\]
 
 
 \subsection*{Problem 8}
-
+\subsubsection*{(a)}
+Consider $X:= \mathbb{A}^n_A$, and $R$ an $A$-ring. Then, $X(R)= Mor(Spec(R), \mathbb{A}_A^n)\cong Hom_A(A[x_1,...,x_n], R)= R^n$, as a set. 
+\subsubsection*{(b)}
+The inclusion $Hom_A(A[X]/\mathfrak{a}, R)\cong Mor(Spec(R),Spec(A[X]/\mathfrak{a}))\to Mor(Spec(R),Spec(A[X]))\cong Hom_A(A[X], R)$ is induced by with $A[X]\to A[X]/\mathfrak{a}$, which is clearly identified by part(a) as the points in $R^n$ that vanishes on $\mathfrak{a}$.
 
 
 \subsection*{Problem 9}
+Note that $Mor(Spec(l),Proj(A[x_0,...,x_n]))$ is the same as the gluing data of 
+\[Mor(Spec(l),Spec(A[\frac{x_0}{x_i},...,\frac{x_n}{x_i}]))\cong Hom(A[x_0,...,x_n],l)\cong l^{n+1}\], 
+with the obvious identification that reduces to the projectivization of $l^{n+1}$. 
+Part b follows in the same manner as in problem 8.
+
 
 
 
