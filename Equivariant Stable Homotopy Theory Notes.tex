@@ -214,7 +214,10 @@ For each $n$, we may define a coefficient system $C_n(-)$, given by
 The differential of the CW chain complex induces a chain complex of coefficient systems $C_{\cdot}(-)$. 
 \end{definition}
 \end{tcolorbox}
-It is easy to check that $Hom_{\mathcal{CS}}(C_{\cdot}(-),M)$ is a cochain complex whose differentials is induced by those of $C_{\cdot}()$. 
+It is instructive to $\textcolor{red}{check}$: for a morphism $G/H\to G/K$, the induced morphism 
+\[C_n^{CW}(X^K)\to C_n^{CW}(X^H)\]
+is given by the viewing each cell as a orbit.
+
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
 The \underline{\textbf{Bredon cohomology}} of $X$ with coefficients in a system $M$ is defined by 
@@ -222,7 +225,120 @@ The \underline{\textbf{Bredon cohomology}} of $X$ with coefficients in a system 
 \end{definition}
 \end{tcolorbox}
 
-proof of the axioms and computation of examples. 
+Similarly, we may define Bredon homology with coefficients: recall singular homology with coefficients, we are tensoring the chain complex with some abelian group; for coefficient systems, we have the analog of ``tensoring," which is a coend. We first recall the following construction
+
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{remark}
+The tensor product of of a right $R$-module $A$ and a left $R$-module $B$ is the coequalizer of the diagram 
+\[\alpha_A:\alpha_B: A\otimes R\otimes B\to A\otimes B\]
+where the the tensor product is given in $\textbf{Ab}$ and the two maps are given by the $R$ action on $A,B$, respectively.
+\end{remark}
+\end{tcolorbox}
+
+To distinguish a covariant coefficient system with a contravariant one, we give it another name
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+A covariant functor $N: \mathcal{O}_G\to \textbf{Ab}$ is called an \underline{$\mathcal{O}_G$\textbf{-module}}.
+\end{definition}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
+\begin{definition}
+The \underline{\textbf{Bredon homology}} with coefficients an $\mathcal{O}_G$-module $N$ is defined to be the homology of the chain complex 
+\[C_*(X)\otimes_{\mathcal{O}_G} N\]
+where each degree $C_n(X)\otimes_{\mathcal{O}_G} N$ is defined to be the coequalizer of the following
+\[ \bigoplus_{H,K\leq G}\bigoplus_{\textrm{Hom}_{\mathcal{O}_G}(G/H,G/K)}C_n(X)(G/K)\otimes N(G/H)\rightrightarrows \bigoplus_{H\leq G}C_n(X)(G/H)\otimes N(G/H) \]
+where the two arrows are given by the contravariant functoriality of $C_n$ and covariant functoriality of $N$. The differentials are induced by the cellular differentials of $C_*(X)$.
+
+\end{definition}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
+\begin{remark}
+The above construction is the \underline{\textbf{coend}}
+\[C_n(X)\otimes_{\mathcal{O}_G} N=\int^{G/H\in \mathcal{O}_G}C_n(X)(G/H)\otimes_{\mathcal{O}_G} N(G/H)\]
+\end{remark}
+\end{tcolorbox}
+One may unravel the definition of coequalizer and note that 
+\[C_n(X)\otimes_{\mathcal{O}_G} N\cong \bigoplus_{H\leq G}C_n(X)(G/H)\otimes N(G/H)/\sim\]
+where the equivalence relation is given by: for every $f\in \textrm{Hom}_{\mathcal{O}_G}(G/H,G/K)$, we have $f^*x\otimes y\sim x\otimes f_*y$ for every $x\otimes y\in C_n(X)(G/K)\otimes N(G/H)$.
+
+\subsection{Computations}
+We start with a concrete example: let $\sigma: C_2\to GL_1(\mathbb{R})$ be the sign representation. Taking its direct sum with itself given us a two dimensional real $C_2$-representation $2\sigma$, which on coordinates is given by $(x,y)\mapsto (-x,-y)$. Then, taking the one-point compactification gives us a representation sphere, which we denote as $S^{2\sigma}$. The representation sphere has the following $G$-CW decomposition 
+
+[Insert Picture]
+
+and we shall compute its Bredon cohomology with constant coefficient system $\underline{\mathbb{Z}}$, which is defined in the obvious way by mapping all cosets to the group $\mathbb{Z}$ and are morphisms to the identity map. 
+
+The orbit category of $C_2$ is easy to describe:
+\[\begin{tikzcd}
+	{C_2/e} \\
+	{C_2/C_2}
+	\arrow["{\textrm{swap}}", from=1-1, to=1-1, loop, in=55, out=125, distance=10mm]
+	\arrow["{\textrm{collapse}}", from=1-1, to=2-1]
+\end{tikzcd}\]
+and we suppress all identity maps. Then, the $n$th group in our chain complex, which is $\textrm{Hom}_{\mathcal{CS}}(C_n(X),\underline{\mathbb{Z}})$, is computed as follows: the zero cells are simply the two poles, which are fixed under the $G$-action. Thus, for $n=0$, we are looking for morphisms of the following diagram 
+\[\begin{tikzcd}
+	{C_2/e:} & {\mathbb{Z}v_1\oplus\mathbb{Z}v_2} && {\mathbb{Z}} \\
+	{C_2/C_2:} & {\mathbb{Z}v_1\oplus\mathbb{Z}v_2} && {\mathbb{Z}}
+	\arrow["Id", from=1-2, to=1-2, loop, in=55, out=125, distance=10mm]
+	\arrow[dashed, from=1-2, to=1-4]
+	\arrow["Id", from=1-4, to=1-4, loop, in=55, out=125, distance=10mm]
+	\arrow["Id", from=2-2, to=1-2]
+	\arrow[dashed, from=2-2, to=2-4]
+	\arrow["Id", from=2-4, to=1-4]
+\end{tikzcd}\]
+
+It is clear that the morphism is determined by the what happens at the $C_2/e$ spot, and we have total freedom to send $v_1,v_2$ to whichever element we wish. Thus, $\textrm{Hom}_{\mathcal{CS}}(C_0(X),\underline{\mathbb{Z}})\cong \mathbb{Z}\oplus \mathbb{Z}$. 
+
+For $n=1$, the story is a bit different: we have two $1$-cells, and the $G$-action swaps these two. The morphisms 
+we are looking for morphisms of the following diagram 
+\[\begin{tikzcd}
+	{C_2/e:} & {\mathbb{Z}e_1\oplus\mathbb{Z}e_2} && {\mathbb{Z}} \\
+	{C_2/C_2:} & 0 && {\mathbb{Z}}
+	\arrow["Swap", from=1-2, to=1-2, loop, in=55, out=125, distance=10mm]
+	\arrow[dashed, from=1-2, to=1-4]
+	\arrow["Id", from=1-4, to=1-4, loop, in=55, out=125, distance=10mm]
+	\arrow[from=2-2, to=1-2]
+	\arrow[dashed, from=2-2, to=2-4]
+	\arrow["Id", from=2-4, to=1-4]
+\end{tikzcd}\]
+so the morphism is determined by the two dashed arrow. To be compatible with the swap map, we see that $e_1,e_2$ must be mapped to the same element, thus $\textrm{Hom}_{\mathcal{CS}}(C_1(X),\underline{\mathbb{Z}})\cong \mathbb{Z}$. The story with $n=2$ is the same as $n=1$, and the Bredon cochain complex is then 
+\[0\to \mathbb{Z}\varphi_1\oplus \mathbb{Z}\varphi_2\xrightarrow{d_0} \mathbb{Z}f\xrightarrow{d_1} \mathbb{Z}g\to 0\] 
+It is easy to first \textcolor{red}{correctly compute} the cellular differential $d(e_1)=d(e_2)=v_1+v_2$, and $d(f_1)=f(f_2)=e_1-e_2$. It then follows that the induced differentials $d_0((\varphi_1,0))=d_0((0,\varphi_1))=f$, which also implies $d_1$ is the $0$-map. Thus, we have 
+\[H^n_{\textrm{Bredon}}(S^{2\sigma}; \underline{\mathbb{Z}})=
+\begin{cases}
+    \mathbb{Z}& n=0,2\\
+    0 & \textrm{otherwise}
+\end{cases}
+\] 
+
+This procedure can be generalized: note that since we are taking the constant coefficient system, each $\textrm{Hom}_{\mathcal{CS}}(C_n(X),\underline{\mathbb{Z}})\cong \mathbb{Z}$ is determined by what happens at the $G/e$ level; the cell complex at $G/e$ level are freely generated by the $n$-cells under the $G$-action, which reduces to morphisms 
+\[\begin{tikzcd}
+	{\bigoplus_{\textrm{n-cells}}\mathbb{Z}} && {\mathbb{Z}}
+	\arrow["G", from=1-1, to=1-1, loop, in=55, out=125, distance=10mm]
+	\arrow[from=1-1, to=1-3]
+\end{tikzcd}\]
+so the morphisms is determined by where to send a $G$-orbit of $n$-cells. We then have the canonical identification 
+ 
+ \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+ \begin{theorem}
+ If $X$ is a $G$-CW complex, and $G$ has a $CW$-decomposition induced from the $G$-CW structure (always hold when $G$ is finite), we have the canonical isomorphism 
+\[\textrm{Hom}_{\mathcal{CS}}(C_n(X),\underline{\mathbb{Z}})\cong \textrm{Hom}_{\textbf{Ab}}(C_n(X)(G/e)/G,\mathbb{Z})\]. As a corollary, we also have the isomorphism:
+ \[H^*_{\textrm{Bredon}}(X;\underline{\mathbb{Z}})\cong H^*_{\textrm{CW}}(X/G;\mathbb{Z})\]
+ \end{theorem}
+ \end{tcolorbox}
+
+Now let us consider the Bredon homology of $S^{2\sigma}$.
+
+
+
+
+
+
+
 
 \subsection{Classical Application}
 homotopy fixed points and actual fixed points: coarse vs fine
