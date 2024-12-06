@@ -266,6 +266,10 @@ One may unravel the definition of coequalizer and note that
 where the equivalence relation is given by: for every $f\in \textrm{Hom}_{\mathcal{O}_G}(G/H,G/K)$, we have $f^*x\otimes y\sim x\otimes f_*y$ for every $x\otimes y\in C_n(X)(G/K)\otimes N(G/H)$.
 
 \subsection{Computations}
+
+
+
+\subsubsection{Constant Coefficients}
 We start with a concrete example: let $\sigma: C_2\to GL_1(\mathbb{R})$ be the sign representation. Taking its direct sum with itself given us a two dimensional real $C_2$-representation $2\sigma$, which on coordinates is given by $(x,y)\mapsto (-x,-y)$. Then, taking the one-point compactification gives us a representation sphere, which we denote as $S^{2\sigma}$. The representation sphere has the following $G$-CW decomposition 
 
 [Insert Picture]
@@ -330,8 +334,44 @@ so the morphisms is determined by where to send a $G$-orbit of $n$-cells. We the
  \[H^*_{\textrm{Bredon}}(X;\underline{\mathbb{Z}})\cong H^*_{\textrm{CW}}(X/G;\mathbb{Z})\]
  \end{theorem}
  \end{tcolorbox}
+There is a similar statement for homology: take any constant $\mathcal{O}_G$-module, say $\underline{\mathbb{Z}}$. Then, every group $C_n(X)(G/H)\otimes \mathbb{Z}$ is identified with $C_n(X)(G/e)\otimes \mathbb{Z}$; the identification within $C_n(X)(G/e)\otimes \mathbb{Z}$ reduces the group to $C_n(X)/G\otimes \mathbb{Z}$.
 
-Now let us consider the Bredon homology of $S^{2\sigma}$.
+ 
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+    \begin{theorem}
+    If $X$ is a $G$-CW complex, and $G$ has a $CW$-decomposition induced from the $G$-CW structure (always hold when $G$ is finite), we have the canonical isomorphism 
+   \[C_n(X)\otimes_{\mathcal{O}_G}\underline{\mathbb{Z}}\cong C_n(X)(G/e)/G\otimes \mathbb{Z}\]. As a corollary, we also have the isomorphism:
+    \[H_*^{\textrm{Bredon}}(X;\underline{\mathbb{Z}})\cong H_*^{CW}(X/G; \mathbb{Z})\]
+    \end{theorem}
+    \end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+Consider the Bredon homology of $S^{2\sigma}$ with coefficients $\underline{\mathbb{Z}}$. By Theorem $1.7$, this reduces to the computation of the cellular homology of $S^{2\sigma}/C_2\cong S^2$, 
+\textcolor{red}{Insert Pic}
+which is concentrated in degree $0,2$. The generalization holds for $S^{n\sigma}$
+\[H_k^{\textrm{Bredon}}(S^{n\sigma}; \underline{\mathbb{Z}})=
+\begin{cases}
+    \mathbb{Z} & k=0,n\\
+    0 & \textrm{otherwise}.
+\end{cases}\]
+\end{example}
+\end{tcolorbox}
+
+\subsubsection{Free Action} 
+Now let fix some arbitrary coefficients system ($\mathcal{O}_G$-module) $\underline{M}$. It turns out that if the $G$-action on a manifold is free, then the Bredon (co)homology also reduces to cellular homology. We outline the proof for cohomology: suppose the $G$-action on $X$ is free, then the group $C_n(X)(G/H)$ is trivial for all subgroups $H$ except for $H=e$. Thus, $\textrm{Hom}_{\mathcal{CS}}(C_n(X),\underline{M})$ reduces to finding morphisms of the diagram
+
+\[\begin{tikzcd}
+	{C_n(X)(G/e)} && {\underline{M}(G/e)}
+	\arrow["G", from=1-1, to=1-1, loop, in=55, out=125, distance=10mm]
+	\arrow[dashed, from=1-1, to=1-3]
+	\arrow["G", from=1-3, to=1-3, loop, in=55, out=125, distance=10mm]
+\end{tikzcd}\]
+
+
+
+
 
 
 
