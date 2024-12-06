@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.11)  5 DEC 2024 23:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.11)  6 DEC 2024 17:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -907,12 +907,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 474--475
 []\OT1/cmr/bx/n/10 Definition 2.2.1. []\OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 Y$ \OT1/cmr/m/n/10 be pointed CW-complexes. The set of
  []
 
-[9]
+[9] [10]
 Underfull \hbox (badness 4193) in paragraph at lines 558--559
 []\OT1/cmr/bx/n/10 Definition 2.5.1 \OT1/cmr/m/n/10 (Spanier-White-head Cat-e-gory)\OT1/cmr/bx/n/10 . []\OT1/cmr/m/n/10 The $[]$, or
  []
 
-[10]
+
 Underfull \hbox (badness 10000) in paragraph at lines 590--591
 
  []
@@ -942,12 +942,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 889--890
 
  []
 
-
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 905--907
 
  []
 
-[18] [19]
+[19]
 Underfull \hbox (badness 10000) in paragraph at lines 1003--1004
 
  []
@@ -975,13 +975,13 @@ Package logreq Info: Writing requests to '"Equivariant Stable Homotopy Theory No
 Here is how much of TeX's memory you used:
  34175 strings out of 476025
  805154 string characters out of 5790017
- 1883388 words of memory out of 5000000
+ 1881388 words of memory out of 5000000
  54135 multiletter control sequences out of 15000+600000
  522362 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,20n,104p,5077b,1309s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on "Equivariant Stable Homotopy Theory Notes.pdf" (28 pages, 382111 bytes).
+Output written on "Equivariant Stable Homotopy Theory Notes.pdf" (28 pages, 382666 bytes).
 PDF statistics:
  208 PDF objects out of 1000 (max. 8388607)
  132 compressed objects within 2 object streams
