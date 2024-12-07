@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.3 $
+% $ biblatex bbl format version 3.2 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,8 +18,72 @@
 
 
 \refsection{0}
-  \datalist[entry]{anyt/global//global/global/global}
-    \entry{Blumberg}{article}{}{}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{Adams74}{book}{}
+      \name{author}{1}{}{%
+        {{hash=3692b7705c0a00b88a736b125125a6cd}{%
+           family={Adams},
+           familyi={A\bibinitperiod},
+           given={J.\bibnamedelimi F.},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {University of Chicago Press, Chicago, Ill.-London}%
+      }
+      \strng{namehash}{3692b7705c0a00b88a736b125125a6cd}
+      \strng{fullhash}{3692b7705c0a00b88a736b125125a6cd}
+      \strng{bibnamehash}{3692b7705c0a00b88a736b125125a6cd}
+      \strng{authorbibnamehash}{3692b7705c0a00b88a736b125125a6cd}
+      \strng{authornamehash}{3692b7705c0a00b88a736b125125a6cd}
+      \strng{authorfullhash}{3692b7705c0a00b88a736b125125a6cd}
+      \field{labelalpha}{Ada74}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Chicago Lectures in Mathematics}
+      \field{title}{Stable homotopy and generalised homology}
+      \field{year}{1974}
+      \field{pages}{x+373}
+      \range{pages}{-1}
+    \endentry
+    \entry{BF78}{incollection}{}
+      \name{author}{2}{}{%
+        {{hash=a0b9a3c3c0072881d2c312df66899c1b}{%
+           family={Bousfield},
+           familyi={B\bibinitperiod},
+           given={A.\bibnamedelimi K.},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=27f1444934eef90834a84b81fa5a979e}{%
+           family={Friedlander},
+           familyi={F\bibinitperiod},
+           given={E.\bibnamedelimi M.},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer, Berlin-New York}%
+      }
+      \strng{namehash}{c6fe9cded60efbc35e252d852ff1bdcf}
+      \strng{fullhash}{c6fe9cded60efbc35e252d852ff1bdcf}
+      \strng{bibnamehash}{c6fe9cded60efbc35e252d852ff1bdcf}
+      \strng{authorbibnamehash}{c6fe9cded60efbc35e252d852ff1bdcf}
+      \strng{authornamehash}{c6fe9cded60efbc35e252d852ff1bdcf}
+      \strng{authorfullhash}{c6fe9cded60efbc35e252d852ff1bdcf}
+      \field{labelalpha}{BF78}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Geometric applications of homotopy theory ({P}roc. {C}onf., {E}vanston, {I}ll., 1977), {II}}
+      \field{isbn}{3-540-08859-8}
+      \field{series}{Lecture Notes in Math.}
+      \field{title}{Homotopy theory of {$\Gamma $}-spaces, spectra, and bisimplicial sets}
+      \field{volume}{658}
+      \field{year}{1978}
+      \field{pages}{80\bibrangedash 130}
+      \range{pages}{51}
+    \endentry
+    \entry{Blumberg}{unpublished}{}
       \name{author}{1}{}{%
         {{hash=686d13bfb9ff6272f0ed90872a8dd87e}{%
            family={Blumberg},
@@ -29,48 +93,138 @@
       }
       \strng{namehash}{686d13bfb9ff6272f0ed90872a8dd87e}
       \strng{fullhash}{686d13bfb9ff6272f0ed90872a8dd87e}
-      \strng{fullhashraw}{686d13bfb9ff6272f0ed90872a8dd87e}
       \strng{bibnamehash}{686d13bfb9ff6272f0ed90872a8dd87e}
       \strng{authorbibnamehash}{686d13bfb9ff6272f0ed90872a8dd87e}
       \strng{authornamehash}{686d13bfb9ff6272f0ed90872a8dd87e}
       \strng{authorfullhash}{686d13bfb9ff6272f0ed90872a8dd87e}
-      \strng{authorfullhashraw}{686d13bfb9ff6272f0ed90872a8dd87e}
       \field{labelalpha}{Blu17}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Lecture Notes}
       \field{title}{The Burnside Category}
+      \field{type}{Lecture Notes}
       \field{year}{2017}
+      \verb{urlraw}
+      \verb https://people.math.rochester.edu/faculty/doug/otherpapers/blumberg-burnside.pdf
+      \endverb
+      \verb{url}
+      \verb https://people.math.rochester.edu/faculty/doug/otherpapers/blumberg-burnside.pdf
+      \endverb
     \endentry
-    \entry{Bredon}{book}{}{}
+    \entry{BR}{book}{}
+      \name{author}{2}{}{%
+        {{hash=2b683716dcfcd4b51eeab4ae59f2839c}{%
+           family={Barnes},
+           familyi={B\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=bf6ee079428733827b3b153f330279b4}{%
+           family={Roitzheim},
+           familyi={R\bibinitperiod},
+           given={Constanze},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press, Cambridge}%
+      }
+      \strng{namehash}{22895932d78c4bab297d3ae9b54c95ea}
+      \strng{fullhash}{22895932d78c4bab297d3ae9b54c95ea}
+      \strng{bibnamehash}{22895932d78c4bab297d3ae9b54c95ea}
+      \strng{authorbibnamehash}{22895932d78c4bab297d3ae9b54c95ea}
+      \strng{authornamehash}{22895932d78c4bab297d3ae9b54c95ea}
+      \strng{authorfullhash}{22895932d78c4bab297d3ae9b54c95ea}
+      \field{labelalpha}{BR20}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-1-108-48278-3}
+      \field{series}{Cambridge Studies in Advanced Mathematics}
+      \field{title}{Foundations of stable homotopy theory}
+      \field{volume}{185}
+      \field{year}{2020}
+      \field{pages}{vi+423}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1017/9781108636575
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1017/9781108636575
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1017/9781108636575
+      \endverb
+    \endentry
+    \entry{Bredon}{book}{}
       \name{author}{1}{}{%
-        {{hash=acb2dd8cb0c915a49c4741d39cf3d5f9}{%
+        {{hash=9c4bb39f297b8837de2c1a53b0b3e7db}{%
            family={Bredon},
            familyi={B\bibinitperiod},
-           given={Glen.},
-           giveni={G\bibinitperiod}}}%
+           given={Glen\bibnamedelima E.},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
       }
-      \strng{namehash}{acb2dd8cb0c915a49c4741d39cf3d5f9}
-      \strng{fullhash}{acb2dd8cb0c915a49c4741d39cf3d5f9}
-      \strng{fullhashraw}{acb2dd8cb0c915a49c4741d39cf3d5f9}
-      \strng{bibnamehash}{acb2dd8cb0c915a49c4741d39cf3d5f9}
-      \strng{authorbibnamehash}{acb2dd8cb0c915a49c4741d39cf3d5f9}
-      \strng{authornamehash}{acb2dd8cb0c915a49c4741d39cf3d5f9}
-      \strng{authorfullhash}{acb2dd8cb0c915a49c4741d39cf3d5f9}
-      \strng{authorfullhashraw}{acb2dd8cb0c915a49c4741d39cf3d5f9}
+      \list{publisher}{1}{%
+        {Springer-Verlag, Berlin-New York}%
+      }
+      \strng{namehash}{9c4bb39f297b8837de2c1a53b0b3e7db}
+      \strng{fullhash}{9c4bb39f297b8837de2c1a53b0b3e7db}
+      \strng{bibnamehash}{9c4bb39f297b8837de2c1a53b0b3e7db}
+      \strng{authorbibnamehash}{9c4bb39f297b8837de2c1a53b0b3e7db}
+      \strng{authornamehash}{9c4bb39f297b8837de2c1a53b0b3e7db}
+      \strng{authorfullhash}{9c4bb39f297b8837de2c1a53b0b3e7db}
       \field{labelalpha}{Bre67}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Lecture Notes in Mathematics}
-      \field{title}{Equivariant Cohomology Theories}
-      \field{volume}{34}
+      \field{series}{Lecture Notes in Mathematics}
+      \field{title}{Equivariant cohomology theories}
+      \field{volume}{No. 34}
       \field{year}{1967}
+      \field{pages}{vi+64 pp. (not consecutively paged)}
+      \range{pages}{-1}
     \endentry
-    \entry{ST}{article}{}{}
+    \entry{Lew91}{article}{}
+      \name{author}{1}{}{%
+        {{hash=c9999639d517a960904e7fbf4499aa5c}{%
+           family={Lewis},
+           familyi={L\bibinitperiod},
+           given={L.\bibnamedelimi Gaunce},
+           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod},
+           suffix={Jr.},
+           suffixi={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{c9999639d517a960904e7fbf4499aa5c}
+      \strng{fullhash}{c9999639d517a960904e7fbf4499aa5c}
+      \strng{bibnamehash}{c9999639d517a960904e7fbf4499aa5c}
+      \strng{authorbibnamehash}{c9999639d517a960904e7fbf4499aa5c}
+      \strng{authornamehash}{c9999639d517a960904e7fbf4499aa5c}
+      \strng{authorfullhash}{c9999639d517a960904e7fbf4499aa5c}
+      \field{labelalpha}{Lew91}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0022-4049,1873-1376}
+      \field{journaltitle}{J. Pure Appl. Algebra}
+      \field{number}{3}
+      \field{title}{Is there a convenient category of spectra?}
+      \field{volume}{73}
+      \field{year}{1991}
+      \field{pages}{233\bibrangedash 246}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1016/0022-4049(91)90030-6
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1016/0022-4049(91)90030-6
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1016/0022-4049(91)90030-6
+      \endverb
+    \endentry
+    \entry{ST}{article}{}
       \name{author}{1}{}{%
         {{hash=11149a42a90779df0bd6b6539568f5ed}{%
            family={May},
@@ -80,12 +234,10 @@
       }
       \strng{namehash}{11149a42a90779df0bd6b6539568f5ed}
       \strng{fullhash}{11149a42a90779df0bd6b6539568f5ed}
-      \strng{fullhashraw}{11149a42a90779df0bd6b6539568f5ed}
       \strng{bibnamehash}{11149a42a90779df0bd6b6539568f5ed}
       \strng{authorbibnamehash}{11149a42a90779df0bd6b6539568f5ed}
       \strng{authornamehash}{11149a42a90779df0bd6b6539568f5ed}
       \strng{authorfullhash}{11149a42a90779df0bd6b6539568f5ed}
-      \strng{authorfullhashraw}{11149a42a90779df0bd6b6539568f5ed}
       \field{labelalpha}{May87}
       \field{sortinit}{M}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
@@ -99,7 +251,49 @@
       \verb https://doi.org/10.2307/2046679
       \endverb
     \endentry
-    \entry{SS}{article}{}{}
+    \entry{MM}{article}{}
+      \name{author}{2}{}{%
+        {{hash=6c965b4f27f2f863afabea43d7f886f2}{%
+           family={Mandell},
+           familyi={M\bibinitperiod},
+           given={M.\bibnamedelimi A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=11149a42a90779df0bd6b6539568f5ed}{%
+           family={May},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{a01314fa7a6760fa07c71f2f897b67e4}
+      \strng{fullhash}{a01314fa7a6760fa07c71f2f897b67e4}
+      \strng{bibnamehash}{a01314fa7a6760fa07c71f2f897b67e4}
+      \strng{authorbibnamehash}{a01314fa7a6760fa07c71f2f897b67e4}
+      \strng{authornamehash}{a01314fa7a6760fa07c71f2f897b67e4}
+      \strng{authorfullhash}{a01314fa7a6760fa07c71f2f897b67e4}
+      \field{labelalpha}{MM02}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0065-9266,1947-6221}
+      \field{journaltitle}{Mem. Amer. Math. Soc.}
+      \field{number}{755}
+      \field{title}{Equivariant orthogonal spectra and {$S$}-modules}
+      \field{volume}{159}
+      \field{year}{2002}
+      \field{pages}{x+108}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1090/memo/0755
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1090/memo/0755
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1090/memo/0755
+      \endverb
+    \endentry
+    \entry{Schwede}{unpublished}{}
       \name{author}{1}{}{%
         {{hash=1a7f216d0e6df7b6f3ea9e6c3e2c18df}{%
            family={Schwede},
@@ -109,12 +303,41 @@
       }
       \strng{namehash}{1a7f216d0e6df7b6f3ea9e6c3e2c18df}
       \strng{fullhash}{1a7f216d0e6df7b6f3ea9e6c3e2c18df}
-      \strng{fullhashraw}{1a7f216d0e6df7b6f3ea9e6c3e2c18df}
       \strng{bibnamehash}{1a7f216d0e6df7b6f3ea9e6c3e2c18df}
       \strng{authorbibnamehash}{1a7f216d0e6df7b6f3ea9e6c3e2c18df}
       \strng{authornamehash}{1a7f216d0e6df7b6f3ea9e6c3e2c18df}
       \strng{authorfullhash}{1a7f216d0e6df7b6f3ea9e6c3e2c18df}
-      \strng{authorfullhashraw}{1a7f216d0e6df7b6f3ea9e6c3e2c18df}
+      \field{extraname}{1}
+      \field{labelalpha}{Sch23}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Lectures on Equivariant Stable Homotopy Theory}
+      \field{type}{Lecture Notes}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.math.uni-bonn.de/~schwede/equivariant.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.math.uni-bonn.de/~schwede/equivariant.pdf
+      \endverb
+    \endentry
+    \entry{SS}{article}{}
+      \name{author}{1}{}{%
+        {{hash=1a7f216d0e6df7b6f3ea9e6c3e2c18df}{%
+           family={Schwede},
+           familyi={S\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{1a7f216d0e6df7b6f3ea9e6c3e2c18df}
+      \strng{fullhash}{1a7f216d0e6df7b6f3ea9e6c3e2c18df}
+      \strng{bibnamehash}{1a7f216d0e6df7b6f3ea9e6c3e2c18df}
+      \strng{authorbibnamehash}{1a7f216d0e6df7b6f3ea9e6c3e2c18df}
+      \strng{authornamehash}{1a7f216d0e6df7b6f3ea9e6c3e2c18df}
+      \strng{authorfullhash}{1a7f216d0e6df7b6f3ea9e6c3e2c18df}
+      \field{extraname}{2}
       \field{labelalpha}{Sch62}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
@@ -128,7 +351,7 @@
       \verb https://doi.org/10.2307/1993676
       \endverb
     \endentry
-    \entry{WH}{article}{}{}
+    \entry{WH}{article}{}
       \name{author}{1}{}{%
         {{hash=611a2bb976f0e5d27f7251b344aaf20a}{%
            family={Whitehead},
@@ -138,12 +361,10 @@
       }
       \strng{namehash}{611a2bb976f0e5d27f7251b344aaf20a}
       \strng{fullhash}{611a2bb976f0e5d27f7251b344aaf20a}
-      \strng{fullhashraw}{611a2bb976f0e5d27f7251b344aaf20a}
       \strng{bibnamehash}{611a2bb976f0e5d27f7251b344aaf20a}
       \strng{authorbibnamehash}{611a2bb976f0e5d27f7251b344aaf20a}
       \strng{authornamehash}{611a2bb976f0e5d27f7251b344aaf20a}
       \strng{authorfullhash}{611a2bb976f0e5d27f7251b344aaf20a}
-      \strng{authorfullhashraw}{611a2bb976f0e5d27f7251b344aaf20a}
       \field{labelalpha}{Whi62}
       \field{sortinit}{W}
       \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}

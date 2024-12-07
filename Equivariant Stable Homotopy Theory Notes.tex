@@ -51,7 +51,9 @@ This is a currently still under construction set of notes for equivariant stable
 
 Throughout the note, a group $G$ is assumed to be a compact Lie group, and all subgroups $H\leq G$ are assumed to be closed. A safe standing assumption is that are $G$ are finite discrete, althought some theorems also hold in more general settings. 
 
+\tableofcontents
 
+\newpage
 
 \section{Unstable Equivariant Homotopy Theory}
 \subsection{G-CW Complexes}
@@ -366,7 +368,7 @@ we are looking for morphisms of the following diagram
 \end{tikzcd}\]
 To be compatible with the swap map, we see that $e_1,e_2$ must be mapped to the same element, thus $\textrm{Hom}_{\mathcal{CS}}(C_1(X),\underline{\mathbb{Z}})\cong \mathbb{Z}$. The story with $n=2$ is the same as $n=1$, and the Bredon cochain complex is then 
 \[0\to \mathbb{Z}\varphi_1\oplus \mathbb{Z}\varphi_2\xrightarrow{d_0} \mathbb{Z}f\xrightarrow{d_1} \mathbb{Z}g\to 0\] 
-It is easy to first \textcolor{red}{correctly compute} the cellular differential $d(e_1)=d(e_2)=v_1+v_2$, and $d(f_1)=f(f_2)=e_1-e_2$. It then follows that the induced differentials $d_0((\varphi_1,0))=d_0((0,\varphi_1))=f$, which also implies $d_1$ is the $0$-map. Thus, we have 
+It is easy to first \textcolor{red}{correctly compute} the cellular differential $d(e_1)=v_1+v_2$, $d(e_2)=-v_1-v_2$, and $d(f_1)=d(f_2)=e_1-e_2$. It then follows that the induced differentials $d_0((\varphi_1,0))=f$ and $d_0((0,\varphi_2))=-f$, which also implies $d_1$ is the $0$-map. Thus, we have 
 \[H^n_{\textrm{Bredon}}(S^{2\sigma}; \underline{\mathbb{Z}})=
 \begin{cases}
     \mathbb{Z}& n=0,2\\
@@ -488,15 +490,15 @@ for all $n$. Moreover, the $K_n$ are determined up to homotopy equivalence.
 \end{tcolorbox}
 In fact, there are more structure to the set $\{K_n\}$: using the suspension axiom and loop-suspension adjunction, we see that there must be an isomorphism 
 \[[X,K_n]\cong \tilde{h}^n(X)\cong \tilde{h}^{n+1}(\Sigma X)\cong [\Sigma X,K_n]\cong [X,\Omega K_n]\]
-Taking $X$ to be $K_n$, we note that the indetitiy map from the LHS corresponds uniquely to a map $\alpha_n: K_n\to \Omega K_n$, which we will call the \underline{\textbf{structure map.}}. By naturality and taking $A=S^k$, the structure map induces a weak equivalence 
+Taking $X$ to be $K_n$, we note that the indetitiy map from the LHS corresponds uniquely to a map $\alpha_n: K_n\to \Omega K_n$, which we will call the \underline{\textbf{structure map.}}. By naturality and taking $X=S^k$, the structure map induces a weak equivalence 
 \[K_n\cong  \Omega K_n\]
-. This motivates the definintion for $\Omega$-Spectra
+. This motivates the definintion for $\Omega$-spectra. 
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
 A $\underline{\textbf{spectrum}}$ is a sequence of pointed topological spaces $\{X_n\}$ with $\underline{\textbf{structure maps}}$.
 \[\Sigma X_n\to X_{n+1}\]
-. An \underline{\textbf{$\Omega$ spectrum}} is a spectrum whose adjoint structure maps
+. An \underline{\textbf{$\Omega$-spectrum}} is a spectrum whose adjoint structure maps
 \[X_n\to \Omega X_{n+1}\]
 are weak equivalences. 
 \end{definition}
@@ -504,13 +506,13 @@ are weak equivalences.
 So we see that a reduced cohomology theory corresponds to an $\Omega$-spectrum. In fact, it is not hard to show that an $\Omega$-spectrum defines a reduced cohomology theory as well. We can then present Brown Representability Theorem in the following way:
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}[Brown Representability Theorem]
-    Every reduced cohomology theory on the category of basepointed CW complexes  has the form $\tilde{h}^n(X) = [X,K_n]$ for some $\Omega$-spectrum $\{K_n\}$
+    Every reduced cohomology theory on the category of basepointed CW complexes  has the form $\tilde{h}^n(X) = [X,K_n]$ for some $\Omega$-spectrum $\{K_n\}$.
 \end{theorem}
 \end{tcolorbox}
 
 \begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
 \begin{example}[Eilenberg-Maclane Spectrum]
-The $\Omega$-spectrum that represents reduced ordinary cohomology with coefficients in $\mathbb{Z}$ is given by the $\Omega$-spectra that is the Eilenberg-Maclane spaces $HG:=\{K(G,n)\}$.
+The $\Omega$-spectrum that represents reduced ordinary cohomology with coefficients in $\mathbb{Z}$ is given by the Eilenberg-Maclane spaces $HG:=\{K(G,n)\}$.
 \end{example}
 \end{tcolorbox}
 
@@ -526,9 +528,9 @@ The $\Omega$-spectrum that represents reduced ordinary cohomology with coefficie
 \end{example}
 \end{tcolorbox}
 
-Here is a natural question: how do we design a category of spectra, such that an "equivalence" if spectra will give equivalent reduced cohomology theories?
+The stable homotopy category will be a category of spectra, such that an ``equivalence" of spectra will give equivalent reduced cohomology theories.
 
-The second motivation is stable homotopy groups and stable maps. The heuristics is: in most cases the homotopy classes of maps $[X,Y]$ is very difficult to compute. However, the stable maps $\varinjlim_n[\Sigma^nX,\Sigma^n Y]$ gives us nice approximation and is sometimes easier to understand. Spanier-Whitehead duality is a nice example of this (Theorem $2.5$). 
+The second motivation is stable homotopy groups and stable maps. The heuristics is: in most cases the homotopy classes of maps $[X,Y]$ is very difficult to compute. However, the stable maps $\varinjlim_n[\Sigma^nX,\Sigma^n Y]$ gives us nice approximation and is sometimes easier to understand. Spanier-Whitehead duality is a nice example of this, stated in Theorem \ref{SWdual}.
 
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
@@ -545,7 +547,7 @@ For a pointed CW-complex, the $n$-th \underline{\textbf{stable homotopy group}} 
 \[\pi_n^{st}(X):=\varinjlim_{k}\pi_{n+k}(\Sigma^k X)=\varinjlim_{k}[\Sigma^k S^n, \Sigma^k X]=[S^n,X]^s\]
 \end{definition}
 \end{tcolorbox}
-By definition, we see that the stable homotopy group should be the homotopy group in some "stable category". Moreover, stable homotopy groups actually defines a reduced homology theory: the two axioms that are not trivial are the LES and the wedge axiom. The key point is that Blaker's Massey Theorem plus the LES of homotopy groups of a pair will give us the LES of stable homotopy groups of a pair; the wedge axiom follows from that $\Sigma^i X\wedge \Sigma^i Y$ is the $2i-1$ skeleton of  $\Sigma^i X\times \Sigma^i Y$. Generalizing this, we have 
+These stable homotopy groups will be the homotopy groups in the stable homtopy category. Moreover, stable homotopy groups actually defines a reduced homology theory: the two axioms that are not trivial to check are the LES and the wedge axiom. The key point is that Blakers-Massey theorem plus the LES of homotopy groups of a pair will give us the LES of stable homotopy groups of a pair; the wedge axiom follows from that $\Sigma^i X\wedge \Sigma^i Y$ is the $2i-1$ skeleton of  $\Sigma^i X\times \Sigma^i Y$. Generalizing this, we have 
 
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}
@@ -578,8 +580,9 @@ Given a spectrum $K=\{K_n\}$ and a CW complex $X$, there is a associated smash s
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
 \begin{proposition}
+\label{homologyrep}
 Let $K$ be a spectrum. Given a CW complex $X$, the sequence
-\[h_n:=\pi_n(X\wedge K)\]
+\[h_n(X):=\pi_n(X\wedge K)\]
 is a reduced homology theory.
 \end{proposition}
 \end{tcolorbox}
@@ -593,7 +596,7 @@ which is trivial except $i=0$.
 \end{tcolorbox}
 
 
-Thus, we have seen that the singular homology is recovered from a spectrum; moreover, a spectrum gives a reduced homology theory by proposition $2.3.1$. 
+Thus, we have seen that the singular homology is recovered from a spectrum; moreover, a spectrum gives a reduced homology theory by proposition \ref{homologyrep}.
 
 
 \subsection{Duality}
@@ -609,6 +612,7 @@ The theorem in particular implies that different embeddings of some nice enough 
 
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}[Spanier-Whitehead Duality]
+    \label{SWdual}
     Let $X$ be a compact simplicial complex. Let $f,g: X\to S^n$ be two simplicial embeddings. Then for some sufficiently large $M$ the $M$-fold suspensions $\Sigma^M (S^n\setminus f(X))$ and $\Sigma^M (S^n\setminus g(X))$ are homotopy equivalent.
 \end{theorem}
 \end{tcolorbox}
@@ -617,11 +621,12 @@ To study this phenomenon more formally, Spanier-Whitehead proposed the now-calle
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}[Spanier-Whitehead Category]
+\label{SWcat}
 The \underline{\textbf{Spanier-Whitehead category}}, or \underline{\textbf{$S$-category}} for short, has objects pairs $(X,n)$, where $X$ is a pointed finite CW complex, and $n$ is an integer. The morphisms are defined by 
 \[Hom_{S}((X,n),(Y,m)):=\varinjlim_{q\geq \textrm{max}(|m|,|n|)}[\Sigma^{q+n} X, \Sigma^{q+m} Y]\]
 \end{definition}
 \end{tcolorbox}
-We can think of $(X,m)$ as the $m$-fold suspension of $X$. If $m=n=0$, we see that $\textrm{Hom}_S((X,0),(Y,0))=\varinjlim_{k}[\Sigma^k X, \Sigma^k Y]$, which are simply the stable morphisms and that the different embeddings $X\to S^n$ become actually isomorphic in this category by theorem $2.5$. If $m>0$, we may denote $(X,-m)$ as $\Sigma^{-m}X$ to represent formal desuspensions. We can also think of this as "inverting smashing with spheres".
+We can think of $(X,m)$ as the $m$-fold suspension of $X$. If $m=n=0$, we see that $\textrm{Hom}_S((X,0),(Y,0))=\varinjlim_{k}[\Sigma^k X, \Sigma^k Y]$, which are simply the stable morphisms and that the different embeddings $X\to S^n$ become actually isomorphic in this category by theorem \ref*{SWdual}. If $m>0$, we may denote $(X,-m)$ as $\Sigma^{-m}X$ to represent formal desuspensions. We can also think of this as ``inverting smashing with spheres".
 
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
@@ -685,39 +690,38 @@ and we establish the classical Poincar\'e duality $\tilde{H}^*(M_+)\cong \tilde{
 \subsection{The Desired Stable Homotopy Category}
 Building upon the motivations in the previous section, we want to build a category $\mathcal{SHC}$ that captures the stable phenomena and cohomology theories/homology theories. In particular, we want it to satisfy the following properties (not necessarily axioms):
 \begin{enumerate}
-    \item There is a functor $\Sigma^{\infty}: \textrm{HoTop}_*\to \mathcal{SHC}$, together with an adjoint $\Omega^{\infty}: \mathcal{SHC}\to \textrm{HoTop}_*$. \\
-    \textcolor{blue}{The motivation for this is the suspension spectrum}.
+    \item There is a functor $\Sigma^{\infty}: \textrm{HoTop}_*\to \mathcal{SHC}$, together with an adjoint $\Omega^{\infty}: \mathcal{SHC}\to \textrm{HoTop}_*$. 
+
     \item Let $A,B$ be CW complexes, where $A$ has finite dimension. Then, there is a natural isomorphism
     \[[\Sigma^{\infty}A, \Sigma^{\infty}B]\cong [A,B]^s\]
-    \textcolor{blue}{The motivation for this is to capture stable morphisms}.
+
     \item The morphisms of $\mathcal{SHC}$ has the structure of graded abelian groups, with bilinear composition. We denote that graded components as $[-,-]_*$. Moreover, given a reduced cohomology theory $E^*$ there exists an object $K$ in $\textrm{Sp}$ such that 
     \[E^*(A)\cong [\Sigma^{\infty}A, K]_{-*}\]
-    \textcolor{blue}{The motivation for this is to represent cohomology theories}.\\
+
     \item For every object $K$ in $\mathcal{SHC}$, one defines a reduced homology theory via 
     \[E_n(A):=\pi(K\wedge A)\]
-    \textcolor{blue}{The motivation for this is to deterime homology theories}.
-    \\
+
     \item $\mathcal{SHC}$ has a closed symmetric monoidal structure, with $\wedge$ as the tensor product and $F(-,-)$ as internal hom. The object $\Sigma^{\infty}S^0$ is the identity object.\\
     \textcolor{blue}{The motivation for this is that smashing with the suspension funcor induces isomorphism of stable homotopy groups, so it should induce an equivalence of spectra. The tensor-hom adjunction is going to help set up duality statements similar to Spanier-Whitehead duality and Poincar\'e duality.}.
 \end{enumerate}
-In particular, property $6$ was the central one in the sense that the entire theory began with the work of Spanier and Whitehead with their search for a category where one has the desired dualities in homotopy theory. It is also the structure that seems to be the hardest to obtain.  
-
-
+It was clear historically that this stable homotopy category should be built from the category of spectra, but naively things do not work out easily.
 
 \subsection{Attempts}
 
 \subsubsection{The Spanier-Whitehead Category}
-The first attempt to construct such a category is the Spanier-Whitehead category, where the objects are finite CW complexes, and the morphisms are stable maps. The catgeory was originally set up to perform Spanier-Whitehead duality (chronologically it was ), but the objects "almost" represents cohomology theories. We use the word almost because since the objects are only finite complexes, we do not have arbitrary products and coproduts, and the wedge axiom do not hold. 
+The first attempt to construct such a category is the Spanier-Whitehead category, given in definition \ref{SWcat}. But the objects ``almost" represent cohomology theories, since the objects are only finite complexes. As a result, the $S-$category does not have arbitrary products and coproduts, and the wedge axiom do not hold. 
 \subsubsection{An Attempt for \textrm{Sp}}
-By Brown representability, it should be natural to consider a category with objects spectra, and the natural choice for morphisms between spectra is a collection of level-wise maps that is compatible with the structure maps. A natural candidate for homotopies in this category is a map $H: X\wedge I_{+}\to Y$ However, it turns out there are not enough maps in this category, such that non-homotopy equivalent spectra might represent isomorphic cohomology theories. Adams then in his 74 paper resolves the issue by consider equivalences classes of "cofinal spectra," which turns out to be quite a complicated a construction. 
+By Brown representability, it should be natural to consider a category with objects spectra, and the natural choice for morphisms between spectra is a collection of level-wise maps that is compatible with the structure maps. A natural candidate for homotopies in this category is a map $H: X\wedge I_{+}\to Y$ However, it turns out there are not enough maps in this category, such that non-homotopy equivalent spectra might represent isomorphic cohomology theories. Adams then in \cite{Adams74} resolved the issue by consider equivalences classes of ``cofinal spectra," which turns out to be quite a complicated a construction. 
 
 \subsubsection{\textrm{Ho(Sp)} and Structured Spectra}
-The first construction in line with modern treatment of the subject is Bousfield and Friedlander's construction, which puts a model structure on the naive category of spectra, and considers its homotopy category. This category turns out satisfies all the properties that people wanted, and is referred to as the stable homotopy category.
+The first construction in line with modern treatment of the subject is Bousfield and Friedlander's construction in \cite{BF78}, which puts a model structure on the category of spectra, and considered its homotopy category. This homotopy category turns out satisfies all the properties that people wanted, and is referred to as the stable homotopy category. A detailed account of the construction can be found in \cite{BR}.
 
-However, people still searched for a point-set model that does so without going through the homotopy category. The sad news is Lewis in 91 showed that it is impossible to put a symmetric monoidal structure on the category of spectra that also satifies a list of desirable axioms. Nevertheless, people later constructed models category categories of structured spectra, such as orthogonal spectra and symmetric spectra, whose homotopy category is equivalent to the stable homotopy category. Point-set wise, although they do not satisfies all of the desired properties, they are at least symmetric monoidal, and their additional structure turn out to be incredibly useful.
+However, people still searched for a point-set model of spectra that satisfies the desired properties without going through the homotopy category. G. Lewis in \cite{Lew91} showed that it is impossible to put a symmetric monoidal structure on the category of spectra that also satifies a list of desirable axioms. 
+
+Nevertheless, people later constructed models category categories of structured spectra, such as orthogonal spectra and symmetric spectra, whose homotopy category is equivalent to the stable homotopy category. Point-set wise, their symmetric monoidal structure turn out to be incredibly useful in defining ring spectra, along with $A_{\infty}/E_{\infty}$-rings. Another modern construction is to consider the $(\infty,1)$ category of spectra. The next section will discuss the case of orthogonal spectra more in detail. 
 
 \subsection{Orthogonal Spectra}
-
+The account mostly follows these lecture notes \cite{Schwede} on equivariant stable homotopy theory by S. Schwede. 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
 An \underline{\textbf{orthogonal spectrum}} consists of the following data:
@@ -737,7 +741,7 @@ An \underline{\textbf{orthogonal spectrum}} consists of the following data:
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
-A morphism of orthogonal spectra $f: X\to Y$ is a sequences of maps $f_n: X_n\to Y_n$ that are $O(n)$-equivariant, and compatible with the structure maps such that 
+A \underline{\textbf{morphism of orthogonal spectra}} $f: X\to Y$ is a sequences of maps $f_n: X_n\to Y_n$ that are $O(n)$-equivariant, and compatible with the structure maps such that 
 \[\begin{tikzcd}
 X_n \wedge S^1 \arrow[r,"f_n\wedge S^1"]\arrow[d,"\sigma_n"]& Y_n\wedge S^1\arrow[d,"\sigma_n"]\\
 X_{n+1}\arrow[r,"f_{n+1}"]& Y_{n+1}
@@ -755,11 +759,11 @@ Note that $G_+\wedge_{H} X$ is canonically a $G$-space by the action on the $G_+
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
 \begin{proposition}
-The funcor $\textrm{Htop}_*\to \textrm{GTop}_*$ given by the balanced smash product is left adjoint to the forgetful functor. Specifically, we have the natural isomorphism
-\[Hom_H(X,Y)\cong Hom_G(G\wedge_H X, Y)\]
+The funcor $H\textbf{Top}_*\to G\textbf{Top}_*$ given by the balanced smash product is left adjoint to the forgetful functor. Specifically, we have the natural isomorphism
+\[\textrm{Hom}_H(X,Y)\cong \textrm{Hom}_G(G\wedge_H X, Y)\]
 \end{proposition}
 \end{tcolorbox}
-Recall the universal property of the tensor product in $\textbf{RMod}$ is given by the universal object from which a $R$-balanced map from the product factors through. In our situation, the ring $R$ is more or less the sphere spectrum, and in order to define the tensor product, we should first give an appropriate definition of a balanced map.
+Recall the universal property of the tensor product in $R\textbf{Mod}$ is given by the universal object from which a $R$-balanced map from the product factors through. In our situation, the ring $R$ is more or less the sphere spectrum, and in order to define the tensor product, we should first give an appropriate definition of a balanced map.
 
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
@@ -788,7 +792,7 @@ Recall the universal property of the tensor product in $\textbf{RMod}$ is given 
     \end{tikzcd}\]
 \end{definition}
 \end{tcolorbox}
-The map $\chi_{p,q}$ correspond to the element in $O(p+q)$ that swaps the first $q$ coordinates with the remaining $q$-coordinates. In analogy to \textrm{RMod}, the first diagram says that $(x\otimes y)\cdot r=x\otimes (y\cdot r)$, and the second diagram says that $x\otimes (y\cdot r)=(x\cdot r)\otimes y$. 
+The map $\chi_{p,q}$ correspond to the element in $O(p+q)$ that swaps the first $q$ coordinates with the remaining $q$-coordinates. In analogy to \textbf{RMod}, the first diagram says that $(x\otimes y)\cdot r=x\otimes (y\cdot r)$, and the second diagram says that $x\otimes (y\cdot r)=(x\cdot r)\otimes y$. 
 
 Recall that the tensor product of two $R$-modules $A,B$ is the coequalizer of the diagram 
 \[\alpha_1,\alpha_2: A\otimes R\otimes B\to A\otimes B\]
@@ -804,7 +808,7 @@ in the category of $O(n)$-spaces, where $\alpha_X$ is induced by the maps
 \[X_p\wedge S^1\wedge Y_q\xrightarrow{X_p\wedge twist}X_p\wedge Y_p\wedge S^1\to X_{p}\wedge Y_{q+1}\xrightarrow{X_p\wedge \chi_{q,1}} X_{p}\wedge Y_{1+q}\]
 \end{definition}
 \end{tcolorbox}
-Note that the coequalizer in $GTop$ is created by the coequalizer in the underlying $Top$, so in our case, $(X\wedge Y)_n$ is a quotient space of 
+Note that the coequalizer in $G\textbf{Top}$ is created by the coequalizer in the underlying $\textbf{Top}$, so in our case, $(X\wedge Y)_n$ is a quotient space of 
 $\bigvee_{p+q=n}O(n)_+\wedge_{O(p)\times O(n)}X_p\wedge Y_q$. Then, the maps 
 \[O(n)_+\wedge_{O(p)\times O(q)}X_p\wedge Y_q\wedge S^1\to O(n+1)_+\wedge_{O(p)\times O(q)}X_p\wedge Y_q\]
 given by $Id\wedge \sigma_Y$ induces a morphism $\varphi_n:(X\wedge Y)_n\wedge S^1\to (X\wedge Y)_{n+1}$. It follows that 
@@ -818,7 +822,7 @@ The collection $(X\wedge Y)_n$, with structure maps $\varphi_n$ forms an orthogo
 As remarked before, the smash product is equipped with a universal bimorphism $i: (X,Y)\to X\wedge Y$ given by 
 \[X_p\wedge Y_q\xrightarrow{x\wedge y\mapsto e\wedge x\wedge y} \bigvee_{p+q=n}O(n)_+\wedge_{O(p)\times O(q)}X_p\wedge Y_q\xrightarrow{projection} (X\wedge Y)_{p+q}\]
 The punchline is that we also have an internal hom orthogonal spectra $F(X,Y)$ for orthogonal spectra $X,Y$, which makes $\textbf{Sp}$ a closed symmetric monoidal category in which we have the adjunction 
-\[\textrm{Hom}_{\textbf{Sp}}(X\wedge Y,Z)\cong \textrm{Hom}_{{Sp}}(X,F(Y,Z))\]
+\[\textrm{Hom}_{\textbf{Sp}}(X\wedge Y,Z)\cong \textrm{Hom}_{\textbf{Sp}}(X,F(Y,Z))\]
 which we will show later in the equivariant case below. 
 
 
@@ -846,14 +850,15 @@ If we drop the adjective "complete" from the definition, we would only require t
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
-A $G$-\underline{\textbf{prespectrum}} $X$ is a collection of pointed $G$-spaces $X(V)$, one for each finite dimensional subspace $V\subset U$ of a given $G$ universe. The collection is equipped with structure maps 
+\label{Gspectrum}
+A \underline{\textbf{G-prespectrum}} $X$ is a collection of pointed $G$-spaces $X(V)$, one for each finite dimensional subspace $V\subset U$ of a given $G$ universe. The collection is equipped with structure maps 
 \[\Sigma^WX(V)\to X(V\oplus W)\]
-The structure maps must be associative. A $G$-prespectrum is a \underline{\textbf{G-Spectrum}}(or $\Omega-G$-spectrum) if the adjoint structure maps 
+The structure maps must be associative. A $G$-prespectrum is a \underline{\textbf{G-spectrum}}(or $\Omega$ $G$-spectrum) if the adjoint structure maps 
 \[X(V)\to \Omega^WX(V\oplus W)\] 
 are homeomorphisms.
 \end{definition}
 \end{tcolorbox}
-This definition enlarges the usual $\mathbb{Z}$-graded notion of spectra. Sometimes in literature this representation graded spectrum is referred to as the genuine $G$-spectra. 
+This definition enlarges the usual $\mathbb{Z}$-graded notion of spectra. Sometimes in literature this representation graded spectrum is referred to as the \underline{\textbf{genuine}} $G$-spectra. 
 
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
@@ -867,7 +872,7 @@ An \underline{\textbf{orthogonal G-spectrum}} is an orthogonal spectrum equippne
 A morphism of orthogonal $G$-spectra is a morhism of orthogonal spectra that commutes with the $G$-action. 
 \end{definition}
 \end{tcolorbox}
-It is not immediate that this is a genuine $G$-prespectrum in definition $3.0.2$. It turns out that the action of the orthogonal groups encode enough information so that we can evaluate an orthogonal $G$-spectrum on a $G$-representation. To see this, let $V$ be a $n$= dimensional inner product space, and let $L(\mathbb{R}^n, V)$ be the space of linear isometries from $\mathbb{R}^n$ to $B$. We have a canonical $O(n)$-action on $L(\mathbb{R}^n, V)$ by precomposition, so we may define 
+It is not immediate that this is a genuine $G$-prespectrum in definition \ref{Gspectrum}. It turns out that the action of the orthogonal groups encode enough information so that we can evaluate an orthogonal $G$-spectrum on a $G$-representation. To see this, let $V$ be a $n$-dimensional inner product space, and let $L(\mathbb{R}^n, V)$ be the space of linear isometries from $\mathbb{R}^n$ to $B$. We have a canonical $O(n)$-action on $L(\mathbb{R}^n, V)$ by precomposition, so we may define 
 \[X(V):=L(\mathbb{R}^n, V)_+\wedge_{O(n)}X_n\]
 Suppose $V$ is a $G$-representation, then $X(V)$ is equipped with the $G$-action defined by $g\cdot [\varphi, x]=[g\varphi, gx]$. To define the structure maps 
 \[\sigma_{V,W}: X(V)\wedge S^W\to X(V\oplus W)\]
@@ -878,7 +883,7 @@ where $\sigma^m:X_n\wedge S^m\to X_{n+m} $ is the structure map built in the ort
 
 \begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
 \begin{remark}
-This definition of orthogonal $G$-spectra is due to Schwede. It is different from the original definition used by Mandell and May, but the categories defined are equivalent. The proof is given in schwede.
+This definition of orthogonal $G$-spectra is due to Schwede. It is different from the original definition used by Mandell and May in \cite{MM}, but the categories defined are equivalent. The proof of the equivalence is given in \cite{Schwede}.
 \end{remark}
 \end{tcolorbox}
 Now we give a few examples of important orthogonal spectra.
@@ -922,7 +927,7 @@ Now we give a few examples of important orthogonal spectra.
 
 \begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
 \begin{example}[Suspention by a representation]
-    Let $V$ be a $G$-representation and $X$ a $G$-spectrum. The \underline{\textbf{Suspensio}} $\Sigma^VX$ is defined by 
+    Let $V$ be a $G$-representation and $X$ a $G$-spectrum. The \underline{\textbf{suspension}} $\Sigma^VX$ is defined by 
     \[(\Sigma^VX)_n:=S^V\wedge X_n\]
     We have $O(n)$-acts on $X_n$, and $G$-acts diagonally, and the structure maps are given by the obvious composite.
 
@@ -1043,28 +1048,16 @@ There is a model structure on $G$-prespectra where the weak equivalences are the
 Again, we want the symmetric monoidal structure on the category of genuine $G$-spectra, and we are going to use the orthogonal $G$-spectra model again. 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 \section{$RO(G)$-graded cohomology Theories}
 \subsection{Mackey Functors}
-Mackey Functors will serve the role of coefficient system in $RO(G)$-graded coefficient theories. In particular, the take into account of the transfer maps, which is not present in the orbit category $\mathcal{O}_G$. We first give a functorial definition for Mackey functors in terms of the Burnside category, and then present an alternative definition with axioms instead, which hopefully further elucidates the structure of a Macket functor. For the following discussions, $G$ will be a finite discrete group.
+Mackey Functors will serve the role of coefficient system in $RO(G)$-graded coefficient theories. In particular, the take into account of the transfer maps, which is not present in the orbit category $\mathcal{O}_G$. We first give a functorial definition for Mackey functors in terms of the Burnside category, and then present an alternative definition with axioms instead, which hopefully further elucidates the structure of a Mackey functor. For the following discussions, $G$ will be a finite discrete group.
 
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
 Let $C$ be a category with finite limits and colimits. Then, $\underline{\textbf{Span}(C)}$ is the category with the same objects as $C$, and morphisms equivalence classes of spans. Composition of morphisms is given by pullback of Spans.\\
 
-Given two morphisms in $\textbf{Span}(C)(X,Y)$ $X\leftarrow Z\rightarrow Y$ and $X\leftarrow Z'\rightarrow Y$, the disjoint union operation $X\leftarrow Z\coprod Z'\rightarrow Y$ endows the homsets a monoid structure. Let $\underline{\textbf{Span}^+(C)}$ denote the preadditive completion of $\textbf{Span}(C)$. 
+Given two morphisms $X\leftarrow Z\rightarrow Y$ and $X\leftarrow Z'\rightarrow Y$, the disjoint union operation $X\leftarrow Z\coprod Z'\rightarrow Y$ endows the homsets a monoid structure. Let $\underline{\textbf{Span}^+(C)}$ denote the preadditive completion of $\textbf{Span}(C)$. 
 \end{definition}
 \end{tcolorbox}
 
@@ -1075,7 +1068,7 @@ Given two morphisms in $\textbf{Span}(C)(X,Y)$ $X\leftarrow Z\rightarrow Y$ and 
 Let $G$ be a finite group. Then, the \underline{\textbf{Burnside Category}} is defined to be $\mathcal{A}(G):=\textbf{Span}^+(\textrm{GSet}^{\textrm{Fin}})$.
 \end{definition}
 \end{tcolorbox}
-Recall in the orbit category, we have a morphism $G/H\to G/K$ iff $H$ is subconjugate to $K$. The Burnside category can be viewed as formally adding the "wrong way maps" to each morphisms in the orbit category. 
+Recall in the orbit category, we have a morphism $G/H\to G/K$ iff $H$ is subconjugate to $K$, given in lemma \ref{equihom}. The Burnside category can be viewed as formally adding the ``wrong way maps" to each morphism in the orbit category. 
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
@@ -1086,7 +1079,7 @@ And Mackey functors are coefficients systems with wrong way maps (transfers) add
 
 
 
-we can then define a functor $i_*:\mathcal{O}_G\to \mathcal{A}(G)$ by sending a morphism $f:G/H\to G/K$ to the span $G/H\xleftarrow{Id}G/H\xrightarrow{f}G/K$; similarly, we have a functor $i^*:\mathcal{O}^{op}_G\to \mathcal{A}(G)$ by sending a morphism $f:G/H\to G/K$ to the span $G/K\xleftarrow{f}G/H\xrightarrow{Id}G/H$. Given a Mackey functor $\underline{M}: \mathcal{A}(G)\to \textrm{Ab}$, precomposition with $i_*$ gives a coefficients system, which we will denote $M^*$, and precomposition with $i^*$ is a covariant funcor $\mathcal{O}_G\to \textrm{Ab}$, which we will denote as $M_*$. By construction, $M_*$ and $M_*$ agree on objects, and they determine the value of the Mackey functor on objects: a Mackey functor is additive, its data is determined by the disjoint orbits. We would also like to know how the morphisms commute: if we have the pullback square of orbits
+We can then define a functor $i_*:\mathcal{O}_G\to \mathcal{A}(G)$ by sending a morphism $f:G/H\to G/K$ to the span $G/H\xleftarrow{Id}G/H\xrightarrow{f}G/K$; similarly, we have a functor $i^*:\mathcal{O}^{op}_G\to \mathcal{A}(G)$ by sending a morphism $f:G/H\to G/K$ to the span $G/K\xleftarrow{f}G/H\xrightarrow{Id}G/H$. Given a Mackey functor $\underline{M}: \mathcal{A}(G)\to \textrm{Ab}$, precomposition with $i_*$ gives a coefficients system, which we will denote $M^*$, and precomposition with $i^*$ is a covariant funcor $\mathcal{O}_G\to \textrm{Ab}$, which we will denote as $M_*$. By construction, $M^*$ and $M_*$ agree on objects, and they determine the value of the Mackey functor on objects: a Mackey functor is additive, its data is determined by the disjoint orbits. We would also like to know how the morphisms commute: if we have the pullback square of orbits
 \[\begin{tikzcd}
 	W & Y \\
 	X & Z
@@ -1210,6 +1203,7 @@ By the above discussion, we have a very concrete alternative definition for Mack
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
+\label{Mackeyex}
 A Mackey functor $\underline{M}: \textrm{GSet}^{\textrm{Fin}}\to \textrm{Ab}$ consists of the following data:  
 \begin{enumerate}
     \item An abelian group $\underline{M}(G/H)$ for every subgroup $H\leq G$;
@@ -1267,7 +1261,7 @@ For any group $G$, we can now give an example of a constant Mackey functor:
 
 
 
-Definintion $3.1.1$ seems bulky, but when we are dealing with $G=C_p$ Mackey functors, the axioms can be reduced to the following: 
+Definintion \ref{Mackeyex} seems bulky, but when we are dealing with $G=C_p$ Mackey functors, the axioms can be reduced to the following: 
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
 \begin{proposition}
@@ -1319,7 +1313,7 @@ since we have availabilities on both variances, the tranfers and restrictions ma
 
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
-\begin{definition}(RO(G))
+\begin{definition}(RO(G)-Graded cohomology theory)
 
 \end{definition}
 \end{tcolorbox}
@@ -1477,6 +1471,9 @@ The last step is to determine the specific case where $p=1,q=-1$, and it is give
 where the last term is $0$ and the first term is the Burnside Mackey functor by dimension axiom, so we realize $H_{C_2}^{1,-1}(S^0)$ as the cokernel. 
 
 
+
+\newpage
+\printbibliography
 
 
 
