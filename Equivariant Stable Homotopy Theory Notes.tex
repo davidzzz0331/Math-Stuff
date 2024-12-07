@@ -8,30 +8,33 @@
 \usepackage{tikz-cd}
 \usepackage{spectralsequences}
 \usepackage{adjustbox}
+\usepackage{hyperref}
 \usepackage[backend=biber, style=alphabetic]{biblatex}
 \usepackage{xfrac}
 \usepackage{tcolorbox}
 \usepackage{xcolor}
 \usepackage{graphicx}
-\graphicspath{ {D:/Chrome Downloads./} }
+\graphicspath{ {./EHT Pics/} }
 \usepackage[parfill]{parskip}
 \usepackage{amsthm}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
 \usetikzlibrary{calc}
 \addbibresource{EHT.bib}
 \theoremstyle{definition}
-\newtheorem{theorem}{Theorem}[section]
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[theorem]
-\theoremstyle{definition}
-\newtheorem{remark}{Remark}[theorem]
-\theoremstyle{definition}
-\newtheorem{proposition}{Proposition}[theorem]
-\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section] % Numbered within sections
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
-\theoremstyle{definition}
-\newtheorem{corollary}{Corollary}[theorem]
-\theoremstyle{definition}
-\newtheorem{example}{Example}[theorem]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}[theorem]{Example}
 \tikzset{curve/.style={settings={#1},to path={(\tikztostart)
     .. controls ($(\tikztostart)!\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
     and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
@@ -44,15 +47,20 @@
 
 \begin{document}
 \maketitle
-For the entire note, we will assume a group $G$ to be a compact Lie group, and subgroups $H\subset G$ are always closed. 
+This is a currently still under construction set of notes for equivariant stable homotopy theory. The materials are primarily drawn from \cite{Blumberg} and \cite{SS}, supplemented by various additional references when I felt for further clarification. These notes likely contain numerous errors and typos, which should be attributed to my own mistakes. 
+
+Throughout the note, a group $G$ is assumed to be a compact Lie group, and all subgroups $H\leq G$ are assumed to be closed. A safe standing assumption is that are $G$ are finite discrete, althought some theorems also hold in more general settings. 
+
+
 
 \section{Unstable Equivariant Homotopy Theory}
 \subsection{G-CW Complexes}
-Fix a compact Lie group $G$ acting on a space $X$. Similar to $CW$-complexes, we want to deconstruct $X$ into cells, but this time with the addditional data of the $G$-action along with each cell. The idea is that cells are of the form of a product $G/H\times D^{n}$, where $G$ acts trivially on $D^n$, and $G/H$ "represents" the orbits of $D^n$. To make this work, $H$ must be the isotropy group of $D^n$. 
+Fix a compact Lie group $G$ acting on a space $X$. Similar to $CW$-complexes, we want to deconstruct $X$ into cells, but this time with the addditional data of the $G$-action along with each cell. The idea is that cells are of the form of a product $G/H\times D^{n}$, where $G$ acts trivially on $D^n$ and canonically on $G/H$. To make this compactible with the $G$-action, we see that $G/H$ is the orbit of the ordinary cell $D^n$ and $H$ must be the isotropy group of $D^n$. 
 
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
+\label{G-CW}
 A \underline{\textbf{G-CW complex}} is the sequential colimit of spaces $X_n$, where $X_{n+1}$ is a pushout: 
 \[\begin{tikzcd}
 \coprod G/H\times S^n\arrow[r]\arrow[d]&X_n\arrow[d]\\
@@ -70,14 +78,33 @@ Note that the topological dimension of an $n$-cell in a $G$-CW complex might be 
 
 \begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
 \begin{example}
-Let $G=C_2$ acting on $S^2$ by rotation by $\pi$ along the Z-axis. It has a $G$-CW structure given by the following cells: $2$ zero-cells $C_2/C_2\times *$, which are the poles corresponding to the fixed points of the $C_2$ action. $1$ one-cell $C_2/e\times D^1$, which are the two great circles joining the poles; $1$ two-cell $C_2/C_2\times D^2$, which are the two hemispheres.  
+\label{2sigma}
+Let $G=C_2$ acting on $S^2$ by rotation by $\pi$ along the Z-axis, given by the figure below. It has a $G$-CW structure given by the following cells:
+\begin{itemize}
+    \item $2$ zero-cells $v_1,v_2$ of the form $C_2/C_2\times *$, which are the poles  corresponding to the fixed points of the $C_2$ action;
+    \item $1$ one-cell $e_1$ of the form $C_2/e\times D^1$, which are the two great circles $e_1$ joining the poles;
+    \item $1$ two-cell $f_1$ of the form $C_2/C_2\times D^2$, which are the two hemispheres. 
+\end{itemize}
+
+
+
+\[\includegraphics[scale=0.35]{Rotation GCW.png}\]
+
 \end{example}
 \end{tcolorbox}
 
 
 \begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
 \begin{example}
-    Let $G=C_2$ acting on $S^2$ by the antipodal map. It has a $G$-CW structure given by the following cells: $1$ zero-cells $C_2/e\times *$, which are the poles; $1$ one-cell $C_2/e\times D^1$, which are the two great circles joining the poles; $1$ two-cell $C_2/C_2\times D^2$, which are the two hemispheres. 
+    Let $G=C_2$ acting on $S^2$ by the antipodal map, given by the figure below. It has a $G$-CW structure given by the following cells: 
+
+    \begin{itemize}
+        \item $1$ zero-cells $v_1$ of the form $C_2/C_2\times *$, which are the poles  corresponding to the fixed points of the $C_2$ action;
+        \item $1$ one-cell $e_1$ of the form $C_2/e\times D^1$, which are the two great circles $e_1$ joining the poles;
+        \item $1$ two-cell $f_1$ of the form $C_2/C_2\times D^2$, which are the two hemispheres. 
+    \end{itemize}
+
+    \[\includegraphics[scale=0.35]{antipodal.png}\]
 \end{example}
 \end{tcolorbox}
 
@@ -94,6 +121,7 @@ Let $\textbf{GTop}$ be the category of $G$-spaces and $G$-maps. There is a cofib
 
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}
+\label{Fine-model}
     There is a cofibrantly-generated model structure on $\textbf{GTop}$, given by 
     \begin{enumerate}
         \item A $G$-map $f:X\to Y$ is a fibration iff for all $H\subset G$, $f^H: X^H\to Y^H$ is a fibration.
@@ -110,19 +138,20 @@ Let $f: X\to Y$ be a weak equivalence of cofibrant-fibrant objects in a model ca
 \end{tcolorbox}
 
 \subsection{Elmendorf's Theorem}
-From the model structure given in Theorem $1.1$, we have a vague sense of the following "equivalence":
-\[\textrm{G-Homotopy Type of } X\Leftrightarrow \{ \textrm{ordinary homotopy type of } X^H:H\subset G \}\]
+From the model structure given in Theorem \ref{Fine-model}, we have a vague sense of the following ``equivalence":
+\[\textrm{G-homotopy type of } X\Leftrightarrow \{ \textrm{ordinary homotopy type of } X^H:H\subset G \}\]
 And Elmendorf's Theorem will make the equivalence precise. We start by introducing the orbit category:
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
-The \underline{\textbf{orbit category}} $\mathcal{O}_G$ is the full subcategory of $\textrm{GTop}$ on the objects $\{G/H: H\subset G\}$.
+The \underline{\textbf{orbit category}} $\mathcal{O}_G$ is the full subcategory of $\textbf{GTop}$ on the objects $\{G/H: H\leq G\}$.
 \end{definition}
 \end{tcolorbox}
 The following lemma will make the structure of $\mathcal{O}_G$ clearer.
 
 \begin{tcolorbox}
 \begin{lemma}
+\label{equihom}
 $\textrm{Map}^G(G/H,G/K)\cong (G/K)^H$
 \end{lemma}
 \end{tcolorbox}
@@ -130,7 +159,20 @@ $\textrm{Map}^G(G/H,G/K)\cong (G/K)^H$
     Note that there exists a $G$-equivariant maps $\varphi: G/H\to G/K$, determined by $\varphi(H)=gK$ iff $gHg^{-1}\subseteq K$ iff $h(gK)=gK$ for all $h\in H$. 
 \end{proof}
 
-Let $\textrm{Fun}(\mathcal{O}_G^op,\textrm{Top})$ be the functor category. We have the following fact on the model structure on functor categories:
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+The orbit category for a finite cylic group $C_p$ is given by 
+\[\begin{tikzcd}
+	{C_p/e} \\
+	{C_p/C_p}
+	\arrow["{C_p}", from=1-1, to=1-1, loop, in=55, out=125, distance=10mm]
+	\arrow["{\textrm{collapse}}", from=1-1, to=2-1]
+\end{tikzcd}\]
+\end{example}
+\end{tcolorbox}
+
+Let $\textrm{Fun}(\mathcal{O}_G^{op},\textbf{Top})$ be the functor category of contravariant functors from $\mathcal{O}_G$ to the category of topological spaces. We have the following fact on the model structure on functor categories:
 
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}
@@ -138,46 +180,49 @@ Let $\mathcal{D}$ be a model category and $\mathcal{C}$ be a cofibrantly generat
 \end{theorem}
 \end{tcolorbox}
 
-It is useful to know that the weak equivalences in $\textrm{Fun}(\mathcal{O}^{op}_G,\textrm{Top})$ is given pointwise: a natural transformation $\eta: \mathcal{F}\to \mathcal{G}$ is a weak equivalence iff $\eta_{G/H}:\mathcal{F}(G/H)\to \mathcal{G}(G/H) $ is a weak equivalence. 
+It is useful to know that the weak equivalences in $\textrm{Fun}(\mathcal{O}_G^{op},\textbf{Top})$ is given pointwise: a natural transformation $\eta: \mathcal{F}\to \mathcal{G}$ is a weak equivalence iff $\eta_{G/H}:\mathcal{F}(G/H)\to \mathcal{G}(G/H) $ is a weak equivalence. 
 
 
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
-There is a functor $\psi: \textrm{GTop}\to \textrm{Fun}(\mathcal{O}^{op}_G,\textrm{Top})$ given by 
+\label{thetafunctor}
+There is a functor $\psi: \textbf{GTop}\to \textrm{Fun}(\mathcal{O}_G^{op},\textbf{Top})$ given by 
 \[X\to (G/H\mapsto X^H)\]
 \end{definition}
 \end{tcolorbox}
-It is easy to check the functoriality. Note that if we restrict $\psi$ to $\mathcal{O}_G$, the functor is just the Yoneda embedding: $\textrm{Map}^G(G/H,G/K)\cong (G/K)^H$.
+It is easy to check the functoriality. Note that if we restrict to the subcategory $\psi$ to $\mathcal{O}_G$, the functor is just the Yoneda embedding: 
+\[\textrm{Hom}_{\mathcal{O}_G}(G/-,G/K)=\textrm{Map}^G(G/-,G/K)\cong (G/K)^-\] 
+as in lemma \ref{equihom}.
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!30!white]
     \begin{proposition}
-    There is a funcor $\theta: \textrm{Fun}(\mathcal{O}^{op}_G,\textrm{Top})\to \textrm{GTop}$ given by $X\mapsto X(G/e)$, where $X(G/e)$ is equipped with the following $G$-action: note that every $g\in G$ defines an $G$-map $G/e\to G/e$, which we denote by $R_g$.
-    \[g\cdot x=X(R_g)(x)\] 
+    There is a funcor $\theta: \textrm{Fun}(\mathcal{O}_G^{op},\textbf{Top})\to \textbf{GTop}$, which is left adjoint to the functor $\psi$ defined in definition \ref{thetafunctor}.
     \end{proposition}
     \end{tcolorbox}
-    
+    The functor $\theta$ is given by $X\mapsto X(G/e)$, where $X(G/e)$ is equipped with the following $G$-action: note that every $g\in G$ defines an $G$-map $G/e\to G/e$, which we denote by $R_g$.\[g\cdot x=X(R_g)(x)\] 
+
     It is easy to check that $(\theta,\psi)$ is an adjoint pair. In fact, more can be said:
     
     \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
-        \begin{theorem}
-        (Elmendorf's Theorem) $\textrm{Fun}(\mathcal{O}^{op}_G,\textrm{Top})$ and $\textrm{GTop}$ have the same homotopy category. 
+        \begin{theorem}[Elmendorf, 83]
+         $\textrm{Fun}(\mathcal{O}_G^{op},\textbf{Top})$ and $\textbf{GTop}$ have isomorphic homotopy category. 
         \end{theorem}
         \end{tcolorbox}
-    The original proof due to Elmendorf constructs the equivalence explicitly using the Bar construction to obtain a homotopy inverse to the embedding $\psi$. The theorem can now be put into a more modern framework:
+    The original proof due to Elmendorf constructs the equivalence explicitly using the Bar construction to obtain a homotopy inverse to the embedding $\psi$. The theorem can also be put into a more modern framework with the development of model categories (we can even promote this to the infinity categories setting):
 
     \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
     \begin{theorem}
-    $(\theta,\psi)$ is an Quillen equivalence. $\psi$ is an equivalence of $(\infty,1)$ categories. 
+    $(\theta,\psi)$ is an Quillen equivalence of model categories.
     \end{theorem}
     \end{tcolorbox}
 
 \subsection{Bredon Cohomology}  
-The goal is to construct a cohomology theory satisfying the Eilenberg-Steenrod axioms under the equivariant setting. 
+The goal is to construct a cohomology theory satisfying the Eilenberg-Steenrod axioms under the equivariant setting. The original construction of this is due to G. Bredon given in \cite{Bredon}.
  \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
  \begin{definition}
- (Equivariant reduced generalized cohomology) Let $G\textrm{CW}_*$ be the category of pointed $G$-CW complexes with equivariant maps. Then, a generalized cohomology theory on $G\textrm{CW}_*$ is a sequence of contravariant functors 
- \[\tilde{H}^n:=G\textrm{CW}_*\to \textbf{Ab} \]
+ (Equivariant generalized cohomology) Let $G\textbf{CW}_*$ be the category of pointed $G$-CW complexes with equivariant maps. Then, a generalized cohomology theory on $G\textrm{CW}_*$ is a sequence of contravariant functors 
+ \[\tilde{H}^n:=G\textbf{CW}_*\to \textbf{Ab} \]
  satisfying the following:
  \begin{enumerate}
     \item if $f,g$ are equivariantly homotopic, then $\tilde{H}^n(f)=\tilde{H}^n(g)$.
@@ -193,30 +238,41 @@ The goal is to construct a cohomology theory satisfying the Eilenberg-Steenrod a
 
 \begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
 \begin{remark}
-The above axioms is built upon pointed "single" spaces. It is in fact equivalent to the usual theory built upon pairs, and is justified in 
+The above axioms is built upon pointed ``single" spaces. It is in fact equivalent to the usual theory built upon pairs, and is justified in \cite{WH}.
 \end{remark}
 \end{tcolorbox}
-For a non-equivariant reduced generalized cohomology theory $\tilde{h}^*$, the Atiyah-Hirzebruch spectral sequence tells us that knowing $\tilde{h}^*(pt)$ basically determines the cohomology theory on CW complexes. Heuristically, the cohomology is determined by the building blocks, which are contractible open cells. However, in the equivariant setting, the building blocks are more complicated: the building blocks have become orbits of the form $G/H$. We are lead to the following definitions:
+For a non-equivariant reduced generalized cohomology theory $\tilde{h}^*$, the Atiyah-Hirzebruch spectral sequence tells us that the coefficients groups $\tilde{h}^*(pt)$ basically determines the cohomology theory on CW complexes. Heuristically, the cohomology is determined by the building blocks, which are contractible open cells. However, in the equivariant setting, the building blocks are more complicated: they are orbits of ordinary cell of the form $G/H\times D^n$. Thus, it makes sense to understand $\tilde{h}^*(G/H)$ for all $H$, and this will be our new ``coefficients." We are led to the following definition:
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
 A \underline{\textbf{coefficient system}} is a contravariant functor $\mathcal{F}: \mathcal{O}_G\to \textrm{Ab}$.
 \end{definition}
 \end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+\label{ccs}
+Fix an abelian group $N$. A \underline{\textbf{constant coefficient system}} $\mathcal{O}_G\to \textbf{Ab}$ is given by mapping all objects to $N$ and all morphisms to the identity. 
+\end{example}
+\end{tcolorbox}
+
+
+
 Recall that if a reduced cohomology theory is called \underline{\textbf{ordinary}} if it satisfies the dimension axiom, i.e the zeroth reduced cohomology group (a.k.a the coeffcient system) is trivial on a point. Our goal now is to construct such a theory in the equivariant setting, which is called Bredon cohomology. 
 
-Note that by the general theory of abelian categories, the functor category of coefficient systems $\mathcal{CS}:=\textrm{Fun}(\mathcal{O}_G, \textrm{Ab})$ is abelian. It is now possible to define Bredon cohomology on a $G$-CW complex by explicitly defining the cochain complexes on cells, for example see . However, we may package the cochains into the following form 
+Note that by the general theory of abelian categories, the functor category of coefficient systems $\mathcal{CS}:=\textrm{Fun}(\mathcal{O}_G, \textbf{Ab})$ is abelian. It is now possible to define Bredon cohomology on a $G$-CW complex by explicitly defining the cochain complexes on cells, similar to CW cohomology and done in \cite{Bredon}. However, we may package the cochains into the following form 
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
-For each $n$, we may define a coefficient system $C_n(-)$, given by 
+Fix an $G$-CW complex $X$. For each $n$, we may define a coefficient system $C_n(X)$ given by 
 \[G/H\mapsto H_n((X^H)_{n},(X^H)_{n-1}; \mathbb{Z})=C_n^{CW}(X^H)\]
 The differential of the CW chain complex induces a chain complex of coefficient systems $C_{\cdot}(-)$. 
 \end{definition}
 \end{tcolorbox}
-It is instructive to $\textcolor{red}{check}$: for a morphism $G/H\to G/K$, the induced morphism 
+Let us see how the definition makes sense: the $G$-CW structure (easy to check when $G$ finite) naturally induces a CW structure on all fixed point spaces $X^H$, for a G-CW cell breaks up into an orbit of ordinary CW cells in a way that respects glueing. Thus, each ordinary cell in $C^{CW}_n(X^H)$ can be viewed as an element in a $G/H$ orbit. For a morphism $G/H\to G/K$, we now have the induced morphism 
 \[C_n^{CW}(X^K)\to C_n^{CW}(X^H)\]
-is given by the viewing each cell as a orbit.
+given by $G$-action.
 
 \begin{tcolorbox}[colback=purple!5!white,colframe=purple!75!black]
 \begin{definition}
@@ -225,7 +281,7 @@ The \underline{\textbf{Bredon cohomology}} of $X$ with coefficients in a system 
 \end{definition}
 \end{tcolorbox}
 
-Similarly, we may define Bredon homology with coefficients: recall singular homology with coefficients, we are tensoring the chain complex with some abelian group; for coefficient systems, we have the analog of ``tensoring," which is a coend. We first recall the following construction
+Similarly, we may define Bredon homology with coefficients: for singular homology, we are tensoring the chain complex with some abelian group; for coefficient systems, we have the analog of ``tensoring," which is a coend. We first recall the following construction
 
 
 \begin{tcolorbox}[colback=green!5!white,colframe=green!30!white]
@@ -271,10 +327,9 @@ where the equivalence relation is given by: for every $f\in \textrm{Hom}_{\mathc
 
 \subsubsection{Constant Coefficients}
 We start with a concrete example: let $\sigma: C_2\to GL_1(\mathbb{R})$ be the sign representation. Taking its direct sum with itself given us a two dimensional real $C_2$-representation $2\sigma$, which on coordinates is given by $(x,y)\mapsto (-x,-y)$. Then, taking the one-point compactification gives us a representation sphere, which we denote as $S^{2\sigma}$. The representation sphere has the following $G$-CW decomposition 
+\[\includegraphics[scale=0.35]{Rotation GCW.png}\]
 
-[Insert Picture]
-
-and we shall compute its Bredon cohomology with constant coefficient system $\underline{\mathbb{Z}}$, which is defined in the obvious way by mapping all cosets to the group $\mathbb{Z}$ and are morphisms to the identity map. 
+which is the same as in example \ref{2sigma} and we shall compute its Bredon cohomology with constant coefficient system $\underline{\mathbb{Z}}$, defined in example \ref{ccs}.
 
 The orbit category of $C_2$ is easy to describe:
 \[\begin{tikzcd}
@@ -283,7 +338,7 @@ The orbit category of $C_2$ is easy to describe:
 	\arrow["{\textrm{swap}}", from=1-1, to=1-1, loop, in=55, out=125, distance=10mm]
 	\arrow["{\textrm{collapse}}", from=1-1, to=2-1]
 \end{tikzcd}\]
-and we suppress all identity maps. Then, the $n$th group in our chain complex, which is $\textrm{Hom}_{\mathcal{CS}}(C_n(X),\underline{\mathbb{Z}})$, is computed as follows: the zero cells are simply the two poles, which are fixed under the $G$-action. Thus, for $n=0$, we are looking for morphisms of the following diagram 
+Then, the $n$th group in our chain complex, which is $\textrm{Hom}_{\mathcal{CS}}(C_n(X),\underline{\mathbb{Z}})$, is computed as follows: the zero cells are simply the two poles, which are fixed under the $G$-action. Thus, for $n=0$, we are looking for morphisms of the following diagram 
 \[\begin{tikzcd}
 	{C_2/e:} & {\mathbb{Z}v_1\oplus\mathbb{Z}v_2} && {\mathbb{Z}} \\
 	{C_2/C_2:} & {\mathbb{Z}v_1\oplus\mathbb{Z}v_2} && {\mathbb{Z}}
@@ -309,7 +364,7 @@ we are looking for morphisms of the following diagram
 	\arrow[dashed, from=2-2, to=2-4]
 	\arrow["Id", from=2-4, to=1-4]
 \end{tikzcd}\]
-so the morphism is determined by the two dashed arrow. To be compatible with the swap map, we see that $e_1,e_2$ must be mapped to the same element, thus $\textrm{Hom}_{\mathcal{CS}}(C_1(X),\underline{\mathbb{Z}})\cong \mathbb{Z}$. The story with $n=2$ is the same as $n=1$, and the Bredon cochain complex is then 
+To be compatible with the swap map, we see that $e_1,e_2$ must be mapped to the same element, thus $\textrm{Hom}_{\mathcal{CS}}(C_1(X),\underline{\mathbb{Z}})\cong \mathbb{Z}$. The story with $n=2$ is the same as $n=1$, and the Bredon cochain complex is then 
 \[0\to \mathbb{Z}\varphi_1\oplus \mathbb{Z}\varphi_2\xrightarrow{d_0} \mathbb{Z}f\xrightarrow{d_1} \mathbb{Z}g\to 0\] 
 It is easy to first \textcolor{red}{correctly compute} the cellular differential $d(e_1)=d(e_2)=v_1+v_2$, and $d(f_1)=f(f_2)=e_1-e_2$. It then follows that the induced differentials $d_0((\varphi_1,0))=d_0((0,\varphi_1))=f$, which also implies $d_1$ is the $0$-map. Thus, we have 
 \[H^n_{\textrm{Bredon}}(S^{2\sigma}; \underline{\mathbb{Z}})=
@@ -334,7 +389,7 @@ so the morphisms is determined by where to send a $G$-orbit of $n$-cells. We the
  \[H^*_{\textrm{Bredon}}(X;\underline{\mathbb{Z}})\cong H^*_{\textrm{CW}}(X/G;\mathbb{Z})\]
  \end{theorem}
  \end{tcolorbox}
-There is a similar statement for homology: take any constant $\mathcal{O}_G$-module, say $\underline{\mathbb{Z}}$. Then, every group $C_n(X)(G/H)\otimes \mathbb{Z}$ is identified with $C_n(X)(G/e)\otimes \mathbb{Z}$; the identification within $C_n(X)(G/e)\otimes \mathbb{Z}$ reduces the group to $C_n(X)/G\otimes \mathbb{Z}$.
+There is a similar statement for homology:
 
  
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
@@ -349,7 +404,7 @@ There is a similar statement for homology: take any constant $\mathcal{O}_G$-mod
 \begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
 \begin{example}
 Consider the Bredon homology of $S^{2\sigma}$ with coefficients $\underline{\mathbb{Z}}$. By Theorem $1.7$, this reduces to the computation of the cellular homology of $S^{2\sigma}/C_2\cong S^2$, 
-\textcolor{red}{Insert Pic}
+\[\includegraphics[scale=0.35]{mod c2.png}\]
 which is concentrated in degree $0,2$. The generalization holds for $S^{n\sigma}$
 \[H_k^{\textrm{Bredon}}(S^{n\sigma}; \underline{\mathbb{Z}})=
 \begin{cases}
@@ -360,7 +415,7 @@ which is concentrated in degree $0,2$. The generalization holds for $S^{n\sigma}
 \end{tcolorbox}
 
 \subsubsection{Free Action} 
-Now let fix some arbitrary coefficients system ($\mathcal{O}_G$-module) $\underline{M}$. It turns out that if the $G$-action on a manifold is free, then the Bredon (co)homology also reduces to cellular homology. We outline the proof for cohomology: suppose the $G$-action on $X$ is free, then the group $C_n(X)(G/H)$ is trivial for all subgroups $H$ except for $H=e$. Thus, $\textrm{Hom}_{\mathcal{CS}}(C_n(X),\underline{M})$ reduces to finding morphisms of the diagram
+Now let fix some arbitrary coefficients system ($\mathcal{O}_G$-module) $\underline{M}$. It turns out that if the $G$-action on a $G$-CW complex is free, then the Bredon (co)homology also reduces to cellular homology. We outline the proof for cohomology: suppose the $G$-action on $X$ is free, then the group $C_n(X)(G/H)$ is trivial for all subgroups $H$ except for $H=e$. Again, we reduce computing $\textrm{Hom}_{\mathcal{CS}}(C_n(X),\underline{M})$ reduces to morphisms at $G/e$ level.
 
 \[\begin{tikzcd}
 	{C_n(X)(G/e)} && {\underline{M}(G/e)}
@@ -368,10 +423,26 @@ Now let fix some arbitrary coefficients system ($\mathcal{O}_G$-module) $\underl
 	\arrow[dashed, from=1-1, to=1-3]
 	\arrow["G", from=1-3, to=1-3, loop, in=55, out=125, distance=10mm]
 \end{tikzcd}\]
+Note that each $C_n(X)(G/e)$ is freely generated by the $n$-cells of $X$, and it has the free $G$-action. Moreover, a morphism of the diagram is equiavalent to specifying a morphism $\mathbb{Z}\to M(G/e)$ for each orbit of the $G$-action, and we have (possibly non-canonically), that 
+\[\textrm{Hom}_{CS}(C_n(X),\underline{M})\cong \textrm{Hom}(C_n(X)/G,M(G/e))\]
+It follows that 
 
-The cell complex $C_n(X)(G/e)$ is a $\mathbb{Z}[G]$-module generated by the $n$-cells of $X$. The group of homomorphisms is then the set of morphisms of $\mathbb{Z}[G]$-modules 
-\[\textrm{Hom}_{\mathbb{Z}[G]}(C_n(X), M(G/e))\cong \textrm{Hom}(C_n(X)/G, M(G/e))\]
+\begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
+\begin{theorem}
+If $G$ acts freely on $X$, we have 
+\[H^*_{\textrm{Bredon}}(X;\underline{M})\cong H^*_{CW}(X/G;M(G/e))\]
+and the similar statement for homology holds as well. 
+\end{theorem}
+\end{tcolorbox}
 
+
+\begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
+\begin{example}
+Consider the unit sphere $S(n\sigma)$ in the $n$-dimensional $C_2$ representation given by the $n$-times direct sum of the sign representation. The induced $C_2$-action on $S(n\sigma)$ is the antipodal action. Thus, 
+\[H_{\textrm{Bredon}}^*(S(n\sigma); \underline{M})\cong H^*(S(n\sigma)/C_2;M(C_2/e))\cong H^*(\mathbb{RP}^{n-1};M(C_2/e))\]
+and we know how to compute the cohomology of real projective space. 
+\end{example}
+\end{tcolorbox}
 
 
 
@@ -381,8 +452,7 @@ The cell complex $C_n(X)(G/e)$ is a $\mathbb{Z}[G]$-module generated by the $n$-
 
 
 \subsection{Classical Application}
-homotopy fixed points and actual fixed points: coarse vs fine
-Here are two questions we may ask: given a finite $p$-group $G$ acting on $X$, can we recover the cohomology of $X^G$ based on the cohomology of $X$, while somehow incoporating the $G$-action? The second point of interest is the Sullivan conjecture: in  The study of \'etale homotopy theory allows one to determines algebraically the profinite completion of a variety given only its \'etale homotopy type. The same situation occurs as before: given a variety $V$ over the complex numbers, there is a natural $\mathbb{Z}/2$-action on the variety, with $V^G=V(\mathbb{R})$. How much can we say about $V(\mathbb{R})$ if we are given the \'etale homotopy type of $V$ and the $G$-action? IN this case, the fixed points is not a homotopy invariant, so we should consider the homotopy fixed points instead, and the sullivan conjecture states that 
+Here are two questions we may ask: given a finite $p$-group $G$ acting on $X$, can we recover the cohomology of $X^G$ based on the cohomology of $X$, while somehow incoporating the $G$-action? The second point of interest is the Sullivan conjecture: the study of \'etale homotopy theory allows one to determines algebraically the profinite completion of a variety from its \'etale homotopy type. The same situation occurs as before: given a variety $V$ over the complex numbers, there is a natural $\mathbb{Z}/2$-action on the variety, with $V^G=V(\mathbb{R})$. How much can we say about $V(\mathbb{R})$ if we are given the \'etale homotopy type of $V$ and the $G$-action? In this case, the fixed points is not a homotopy invariant, so we should consider the homotopy fixed points instead, and the sullivan conjecture states that 
 
 
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
@@ -390,22 +460,14 @@ Here are two questions we may ask: given a finite $p$-group $G$ acting on $X$, c
 (Sullivan Conjecture) $V(\mathbb{C})^{\mathbb{Z}/2}\to V(\mathbb{C})^{h \mathbb{Z}/2}$ becomes an isomorphism after $2$-adic completion. More generally, let $G$ be a finite $p$-group, then $X^G\to X^{hG}$ becomes an equivalence after $p$-adic completion. 
 \end{theorem}
 \end{tcolorbox}
-
-
-
-
-One possible application is a quick proof of a theorem by Smith: 
-
+This is a difficult problem which is resolved by Haynes Miller in 1984, whose problem goes beyond the tools already developed in the notes. However, one possible application is a quick proof of a theorem by Smith: 
 
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
 \begin{theorem}
     Let $G$ be a finite $p$-group and $X$ be a finite $G$-CW complex such that (the underlying topological space of) $X$ is an $p$-cohomology sphere.16 Then, $X^G$ is either empty or an $p$-cohomology sphere of smaller dimension.
 \end{theorem}
 \end{tcolorbox}
-
-
-
-
+A proof of this can be found in \cite{ST}.
 
 
 
