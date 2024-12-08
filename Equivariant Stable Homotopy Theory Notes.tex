@@ -396,6 +396,7 @@ There is a similar statement for homology:
  
 \begin{tcolorbox}[colback=red!5!white,colframe=red!30!white]
     \begin{theorem}
+    \label{freeequiv}
     If $X$ is a $G$-CW complex, and $G$ has a $CW$-decomposition induced from the $G$-CW structure (always hold when $G$ is finite), we have the canonical isomorphism 
    \[C_n(X)\otimes_{\mathcal{O}_G}\underline{\mathbb{Z}}\cong C_n(X)(G/e)/G\otimes \mathbb{Z}\]. As a corollary, we also have the isomorphism:
     \[H_*^{\textrm{Bredon}}(X;\underline{\mathbb{Z}})\cong H_*^{CW}(X/G; \mathbb{Z})\]
@@ -405,7 +406,7 @@ There is a similar statement for homology:
 
 \begin{tcolorbox}[colback=yellow!5!white,colframe=yellow!30!white]
 \begin{example}
-Consider the Bredon homology of $S^{2\sigma}$ with coefficients $\underline{\mathbb{Z}}$. By Theorem $1.7$, this reduces to the computation of the cellular homology of $S^{2\sigma}/C_2\cong S^2$, 
+Consider the Bredon homology of $S^{2\sigma}$ with coefficients $\underline{\mathbb{Z}}$. By Theorem \ref{freeequiv}, this reduces to the computation of the cellular homology of $S^{2\sigma}/C_2\cong S^2$, 
 \[\includegraphics[scale=0.35]{mod c2.png}\]
 which is concentrated in degree $0,2$. The generalization holds for $S^{n\sigma}$
 \[H_k^{\textrm{Bredon}}(S^{n\sigma}; \underline{\mathbb{Z}})=

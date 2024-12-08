@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber Equivariant Stable Homotopy Theory Notes"] 1733607044 "Equivariant Stable Homotopy Theory Notes.bcf" "Equivariant Stable Homotopy Theory Notes.bbl" "Equivariant Stable Homotopy Theory Notes" 1733607183 0
+["biber Equivariant Stable Homotopy Theory Notes"] 1733607044 "Equivariant Stable Homotopy Theory Notes.bcf" "Equivariant Stable Homotopy Theory Notes.bbl" "Equivariant Stable Homotopy Theory Notes" 1733624415 0
   "./EHT.bib" 1733607040 4230 fef47c4acf34c7dd06383fae33eaeac9 ""
-  "Equivariant Stable Homotopy Theory Notes.bcf" 1733607182 108574 73a5a708a47bc1f4535ac5a040b60c9d "pdflatex"
+  "Equivariant Stable Homotopy Theory Notes.bcf" 1733624414 108574 73a5a708a47bc1f4535ac5a040b60c9d "pdflatex"
   (generated)
   "Equivariant Stable Homotopy Theory Notes.bbl"
   "Equivariant Stable Homotopy Theory Notes.blg"
   (rewritten before read)
-["pdflatex"] 1733607180 "/Users/davidzhu/Documents/GitHub/Math-Stuff/Equivariant Stable Homotopy Theory Notes.tex" "Equivariant Stable Homotopy Theory Notes.pdf" "Equivariant Stable Homotopy Theory Notes" 1733607183 0
-  "/Users/davidzhu/Documents/GitHub/Math-Stuff/Equivariant Stable Homotopy Theory Notes.tex" 1733607178 88381 d4a9aa2221e2c51b1dda38b57529b032 ""
+["pdflatex"] 1733624411 "/Users/davidzhu/Documents/GitHub/Math-Stuff/Equivariant Stable Homotopy Theory Notes.tex" "Equivariant Stable Homotopy Theory Notes.pdf" "Equivariant Stable Homotopy Theory Notes" 1733624415 0
+  "/Users/davidzhu/Documents/GitHub/Math-Stuff/Equivariant Stable Homotopy Theory Notes.tex" 1733624410 88413 65f64a8a9b6b2f120f0302b16eb0dd87 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -258,12 +258,12 @@
   "EHT Pics//Rotation GCW.png" 1733599991 63307 d4c868999e30ae7f08b358f54ca5e65e ""
   "EHT Pics//antipodal.png" 1733599991 63729 bda1b802d96b6ee406431baba3b82edb ""
   "EHT Pics//mod c2.png" 1733599991 56293 50cdcbfca7c3f7719df9b75e5da6ba3a ""
-  "Equivariant Stable Homotopy Theory Notes.aux" 1733607182 5721 8ba66e5040cec913a7289056c8808363 "pdflatex"
+  "Equivariant Stable Homotopy Theory Notes.aux" 1733624414 5771 be5f1550f045b1de3e47039c38842eb7 "pdflatex"
   "Equivariant Stable Homotopy Theory Notes.bbl" 1733607046 14745 6de19ad7fe35a8da15252775371893de "biber Equivariant Stable Homotopy Theory Notes"
-  "Equivariant Stable Homotopy Theory Notes.out" 1733607182 4026 fe394e80b8f9d1a0a17344bcb8f11ca9 "pdflatex"
-  "Equivariant Stable Homotopy Theory Notes.run.xml" 1733607182 2570 e96ead207e2b344de88b0916912c10d5 "pdflatex"
-  "Equivariant Stable Homotopy Theory Notes.tex" 1733607178 88381 d4a9aa2221e2c51b1dda38b57529b032 ""
-  "Equivariant Stable Homotopy Theory Notes.toc" 1733607182 2136 1ae16139ac2782a7aff6f4d41f052ab5 "pdflatex"
+  "Equivariant Stable Homotopy Theory Notes.out" 1733624414 4026 fe394e80b8f9d1a0a17344bcb8f11ca9 "pdflatex"
+  "Equivariant Stable Homotopy Theory Notes.run.xml" 1733624414 2570 e96ead207e2b344de88b0916912c10d5 "pdflatex"
+  "Equivariant Stable Homotopy Theory Notes.tex" 1733624410 88413 65f64a8a9b6b2f120f0302b16eb0dd87 ""
+  "Equivariant Stable Homotopy Theory Notes.toc" 1733624414 2136 1ae16139ac2782a7aff6f4d41f052ab5 "pdflatex"
   (generated)
   "Equivariant Stable Homotopy Theory Notes.aux"
   "Equivariant Stable Homotopy Theory Notes.bcf"
